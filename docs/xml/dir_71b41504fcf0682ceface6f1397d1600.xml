@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_71b41504fcf0682ceface6f1397d1600" kind="dir">
+    <compoundname>.metadata/</compoundname>
+    <innerdir refid="dir_ac0328c84a2de10fbd36d64bf3c511bc">.metadata/.plugins/</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/.metadata/"/>
+  </compounddef>
+</doxygen>

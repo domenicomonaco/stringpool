@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="struct_8d" kind="file">
+    <compoundname>struct.d</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">src/</highlight><highlight class="keyword">struct</highlight><highlight class="normal">.d<sp/>src/</highlight><highlight class="keyword">struct</highlight><highlight class="normal">.o:<sp/>../src/</highlight><highlight class="keyword">struct</highlight><highlight class="normal">.c<sp/>../src/<ref refid="structpersona" kindref="compound">persona</ref>.h</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal">../src/<ref refid="structpersona" kindref="compound">persona</ref>.h:</highlight></codeline>
+    </programlisting>
+    <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/Debug/src/struct.d"/>
+  </compounddef>
+</doxygen>

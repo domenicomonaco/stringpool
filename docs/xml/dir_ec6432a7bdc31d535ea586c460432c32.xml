@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_ec6432a7bdc31d535ea586c460432c32" kind="dir">
+    <compoundname>interface/src/</compoundname>
+    <innerfile refid="interface_8c">interface.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/interface/src/"/>
+  </compounddef>
+</doxygen>

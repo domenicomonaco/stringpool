@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_1e1b5e5b7257dfc3d77e335c80880e4b" kind="dir">
+    <compoundname>.metadata/.plugins/org.eclipse.cdt.make.core/</compoundname>
+    <innerfile refid="specs_8c">specs.c</innerfile>
+    <innerfile refid="specs_8cpp">specs.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/.metadata/.plugins/org.eclipse.cdt.make.core/"/>
+  </compounddef>
+</doxygen>

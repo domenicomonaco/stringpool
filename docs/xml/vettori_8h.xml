@@ -1,0 +1,325 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="vettori_8h" kind="file">
+    <compoundname>vettori.h</compoundname>
+    <includedby refid="principale_8c" local="yes">_Other_test/principale/src/principale.c</includedby>
+    <includedby refid="vector__list_8c" local="yes">_Other_test/vector_list/src/vector_list.c</includedby>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="vettori_8h_1a6970205c407f256a517961278dd7f614" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int *</type>
+        <definition>int* vector_int_alloc</definition>
+        <argsstring>(int dim)</argsstring>
+        <name>vector_int_alloc</name>
+        <param>
+          <type>int</type>
+          <declname>dim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.h" line="15" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.c" bodystart="20" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="vettori_8h_1a5f1dba535b74cfe1a66fbc1a56e70293" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float *</type>
+        <definition>float* vector_f_alloc</definition>
+        <argsstring>(int dim)</argsstring>
+        <name>vector_f_alloc</name>
+        <param>
+          <type>int</type>
+          <declname>dim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.h" line="16" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.c" bodystart="28" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="vettori_8h_1ac35e8f1ca37d2232a8824be8a0f6ce9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* vector_c_alloc</definition>
+        <argsstring>(int dim)</argsstring>
+        <name>vector_c_alloc</name>
+        <param>
+          <type>int</type>
+          <declname>dim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.h" line="17" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.c" bodystart="36" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="vettori_8h_1ad746093cfbeea16038c96f417c5c3406" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vector_init</definition>
+        <argsstring>(char init)</argsstring>
+        <name>vector_init</name>
+        <param>
+          <type>char</type>
+          <declname>init</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.h" line="19" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.c" bodystart="11" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="vettori_8h_1a448ff59737c5e00fa5ef5f2c7bc68891" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vector_scan</definition>
+        <argsstring>()</argsstring>
+        <name>vector_scan</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.h" line="21" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.c" bodystart="44" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="vettori_8h_1aa851eac5731535ca57976d5bd335d62c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vector_merge</definition>
+        <argsstring>()</argsstring>
+        <name>vector_merge</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.h" line="22" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.c" bodystart="74" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="vettori_8h_1a696c8a64bfb182409d8a16e777fc5b76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void inputarray</definition>
+        <argsstring>(int *a, const int dim)</argsstring>
+        <name>inputarray</name>
+        <param>
+          <type>int *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>dim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+</parameternamelist>
+<parameterdescription>
+<para>a: puntatore a interi dim: dimensione del vettore da popolare</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+: popola un array di interi con valori da tastiera </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.h" line="24" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.c" bodystart="168" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="vettori_8h_1a80c4909858274bbc84416f8b49ffb934" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void outputarray</definition>
+        <argsstring>(int *a, const int dim)</argsstring>
+        <name>outputarray</name>
+        <param>
+          <type>int *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>dim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.h" line="25"/>
+      </memberdef>
+      <memberdef kind="function" id="vettori_8h_1a8385b440ed4e2eae58da6a5e414bc21c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int conta_parole</definition>
+        <argsstring>(const char *str)</argsstring>
+        <name>conta_parole</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.h" line="27" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.c" bodystart="135" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="vettori_8h_1acf49ff6ed363e2795c01003e1e2a6733" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int conta_parole_bis</definition>
+        <argsstring>(const char *str)</argsstring>
+        <name>conta_parole_bis</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.h" line="28" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.c" bodystart="118" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="vettori_8h_1a2854efa6279649044d0a02b863b5b35c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* nomecognome</definition>
+        <argsstring>()</argsstring>
+        <name>nomecognome</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.h" line="30" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.c" bodystart="201" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="vettori_8h_1a2fa1ab680f49ef462ad6577aa55308ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void array_somma</definition>
+        <argsstring>(const int *input, int *output, const int dim)</argsstring>
+        <name>array_somma</name>
+        <param>
+          <type>const int *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>dim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.h" line="32"/>
+      </memberdef>
+      <memberdef kind="function" id="vettori_8h_1a058a1321d20415be69e234152cac621d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int array_max</definition>
+        <argsstring>(const int *input, int dim)</argsstring>
+        <name>array_max</name>
+        <param>
+          <type>const int *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+</parameternamelist>
+<parameterdescription>
+<para>input puntatore ad interi - vettore di dimensione &quot;dim&quot; dim dimensione del vettore precedente</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+: max = valore massimo dell&apos;array </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.h" line="34" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.c" bodystart="244" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="vettori_8h_1a0c033d0e522aa4565c54fe118b2e6108" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int array_min</definition>
+        <argsstring>(const int *input, int dim)</argsstring>
+        <name>array_min</name>
+        <param>
+          <type>const int *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+</parameternamelist>
+<parameterdescription>
+<para>input puntatore ad interi - vettore di dimensione &quot;dim&quot; dim dimensione del vettore precedente</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+: min = valore minimo dell&apos;array </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.h" line="35" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.c" bodystart="267" bodyend="282"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>@filename:<sp/>vettori.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>@author:<sp/>macbook</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>@rev:<sp/>0.1</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>@license:<sp/>GPLV2</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>@date:<sp/>09/apr/2011</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>@desc:<sp/>Funzioni<sp/>e<sp/>Procedure<sp/>per<sp/>effettuare<sp/>operazioni<sp/>comuni<sp/>su<sp/>vettori</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VETTORI_H_</highlight></codeline>
+<codeline lineno="13"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>VETTORI_H_</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>vector_int_alloc(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>vector_f_alloc(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>vector_c_alloc(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>vector_init(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>init);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>vector_scan();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>vector_merge();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>inputarray(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>outputarray(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>conta_parole(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>conta_parole_bis(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>nomecognome();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>array_somma(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>input,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>output,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>array_max(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>input,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>array_min(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>input,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>VETTORI_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.h"/>
+  </compounddef>
+</doxygen>

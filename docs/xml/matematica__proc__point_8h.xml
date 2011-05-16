@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="matematica__proc__point_8h" kind="file">
+    <compoundname>matematica_proc_point.h</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">math.h</includes>
+    <includedby refid="massimo_8c" local="yes">_Other_test/massimo/src/massimo.c</includedby>
+    <includedby refid="test__matematica__proc__point_8c" local="yes">_Other_test/massimo/src/test_matematica_proc_point.c</includedby>
+    <incdepgraph>
+      <node id="56">
+        <label>stdlib.h</label>
+      </node>
+      <node id="57">
+        <label>math.h</label>
+      </node>
+      <node id="54">
+        <label>_Other_test/massimo/src/matematica_proc_point.h</label>
+        <link refid="matematica_proc_point.h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="matematica__proc__point_8h_1ad4e19abced6c2dc6223a26fe5b4f4b7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void inverti</definition>
+        <argsstring>(int *a, int *b)</argsstring>
+        <name>inverti</name>
+        <param>
+          <type>int *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_proc_point.h" line="24" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_proc_point.c" bodystart="19" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="matematica__proc__point_8h_1ada62d60b4161165e86dfb9cd4ff97275" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int *</type>
+        <definition>int* summ</definition>
+        <argsstring>(int a, int b)</argsstring>
+        <name>summ</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_proc_point.h" line="25" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_proc_point.c" bodystart="26" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="matematica__proc__point_8h_1adc576e084bf226c85625d9d428e1a58d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void summ_p</definition>
+        <argsstring>(int *a, int *b, int *result)</argsstring>
+        <name>summ_p</name>
+        <param>
+          <type>int *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_proc_point.h" line="26"/>
+      </memberdef>
+      <memberdef kind="function" id="matematica__proc__point_8h_1a8cf9f2914db537b12cdc7922372936c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void divisori_p</definition>
+        <argsstring>(int n, int *divisori[])</argsstring>
+        <name>divisori_p</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>divisori</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_proc_point.h" line="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>============================================================================</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>Name<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>matematica_proc_point.h</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>Author<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>Domenico<sp/>Monaco<sp/>&amp;<sp/>Michele<sp/>Chiarello</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>Version<sp/><sp/><sp/><sp/><sp/>:</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>Copyright<sp/><sp/><sp/>:<sp/>Copyright<sp/>Domenico<sp/>Monaco<sp/>and<sp/>Michele<sp/>Chiarello<sp/>2011</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>License<sp/><sp/><sp/><sp/><sp/>:<sp/>GPLv2</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>Description<sp/>:<sp/>Prototipi<sp/>procedure<sp/>matematiche<sp/>con<sp/>uso<sp/>dei<sp/>puntatori</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>Feature:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment">**/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_MATEMATICA_PROC_POINT_H_</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_MATEMATICA_PROC_POINT_H_</highlight></codeline>
+<codeline lineno="18"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>inverti(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*<sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*<sp/>b);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>summ(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>summ_p(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*b,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*result);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//divisori<sp/>di<sp/>n</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>divisori_p(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*divisori[]);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_proc_point.h"/>
+  </compounddef>
+</doxygen>

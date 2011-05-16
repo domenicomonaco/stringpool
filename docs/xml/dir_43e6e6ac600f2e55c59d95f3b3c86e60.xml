@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_43e6e6ac600f2e55c59d95f3b3c86e60" kind="dir">
+    <compoundname>_Other_test/principale/src/</compoundname>
+    <innerfile refid="principale_8c">principale.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/principale/src/"/>
+  </compounddef>
+</doxygen>

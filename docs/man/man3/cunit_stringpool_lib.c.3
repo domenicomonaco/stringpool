@@ -1,0 +1,130 @@
+.TH "cunit_stringpool_lib/src/cunit_stringpool_lib.c" 3 "Lun 16 Mag 2011" "Version stringpool" "StringPool" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cunit_stringpool_lib/src/cunit_stringpool_lib.c \- 
+.PP
+cUnit file  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio.h>\fP
+.br
+\fC#include <stdlib.h>\fP
+.br
+\fC#include <string.h>\fP
+.br
+\fC#include 'CUnit/Basic.h'\fP
+.br
+\fC#include 'spstring.h'\fP
+.br
+\fC#include 'bool.h'\fP
+.br
+
+.SS "Funzioni"
+
+.in +1c
+.ti -1c
+.RI "int \fBsuite_void_init_func\fP (void)"
+.br
+.ti -1c
+.RI "int \fBsuite_void_cleanup_func\fP (void)"
+.br
+.ti -1c
+.RI "int \fBsuite_init_func\fP (void)"
+.br
+.ti -1c
+.RI "int \fBsuite_cleanup_func\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtest_sp_initialize_stringpool\fP ()"
+.br
+.ti -1c
+.RI "void \fBtest_sp_new_empty_string\fP ()"
+.br
+.ti -1c
+.RI "void \fBtest_sp_new_string\fP ()"
+.br
+.ti -1c
+.RI "void \fBtest_sp_get_allocated_size\fP ()"
+.br
+.ti -1c
+.RI "void \fBtest_sp_free\fP ()"
+.br
+.ti -1c
+.RI "void \fBtest_sp_strlen\fP ()"
+.br
+.ti -1c
+.RI "void \fBtest_sp_strcmp\fP ()"
+.br
+.ti -1c
+.RI "void \fBtest_sp_strcpy\fP ()"
+.br
+.ti -1c
+.RI "void \fBtest_sp_strcat\fP ()"
+.br
+.ti -1c
+.RI "void \fBtest_sp_lower_case\fP ()"
+.br
+.ti -1c
+.RI "void \fBtest_sp_upper_case\fP ()"
+.br
+.ti -1c
+.RI "void \fBtest_sp_add_string\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtest_sp_get_string\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtest_sp_add_string_pos\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtest_sp_remove_string\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtest_sp_replace_string\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtest_sp_find_string\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtest_sp_isfull\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtest_sp_isempty\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtest_sp_sizeof\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtest_sp_free_stringpool\fP (void)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SS "Variabili"
+
+.in +1c
+.ti -1c
+.RI "stringpool \fBsp\fP"
+.br
+.ti -1c
+.RI "string * \fBCONST_TEST_STRING_LOWER_CASE\fP = NULL"
+.br
+.ti -1c
+.RI "string * \fBCONST_TEST_STRING_UPPER_CASE\fP = NULL"
+.br
+.ti -1c
+.RI "int \fBCONST_TEST_STRING_LEN\fP"
+.br
+.in -1c
+.SH "Descrizione dettagliata"
+.PP 
+cUnit file 
+
+
+.SH "Autore"
+.PP 
+Generato automaticamente da Doxygen per StringPool a partire dal codice sorgente.

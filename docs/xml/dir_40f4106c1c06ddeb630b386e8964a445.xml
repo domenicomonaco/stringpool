@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_40f4106c1c06ddeb630b386e8964a445" kind="dir">
+    <compoundname>_Other_test/helloword/Debug/</compoundname>
+    <innerdir refid="dir_0ec712f0ebe8446aad290c3914dc13f0">_Other_test/helloword/Debug/src/</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/helloword/Debug/"/>
+  </compounddef>
+</doxygen>

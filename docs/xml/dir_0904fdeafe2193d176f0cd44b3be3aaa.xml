@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_0904fdeafe2193d176f0cd44b3be3aaa" kind="dir">
+    <compoundname>_Other_test/struct/</compoundname>
+    <innerdir refid="dir_02fbddeeb88b5060fd8b6c68996b2785">_Other_test/struct/Debug/</innerdir>
+    <innerdir refid="dir_5e8a52bf8268b080b9362917d759310a">_Other_test/struct/src/</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/"/>
+  </compounddef>
+</doxygen>

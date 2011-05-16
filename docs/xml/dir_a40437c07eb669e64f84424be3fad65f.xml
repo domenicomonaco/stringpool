@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_a40437c07eb669e64f84424be3fad65f" kind="dir">
+    <compoundname>_Other_test/main/</compoundname>
+    <innerdir refid="dir_be73276944241abd7a3c391fc7a54ce8">_Other_test/main/Debug/</innerdir>
+    <innerdir refid="dir_4e6911e82a140edd80ea36940be0bcf5">_Other_test/main/src/</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/main/"/>
+  </compounddef>
+</doxygen>

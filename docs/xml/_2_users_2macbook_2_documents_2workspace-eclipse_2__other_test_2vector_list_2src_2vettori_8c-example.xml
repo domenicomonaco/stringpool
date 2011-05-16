@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="_2_users_2macbook_2_documents_2workspace-eclipse_2__other_test_2vector_list_2src_2vettori_8c-example" kind="example">
+    <compoundname>/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/vettori.c</compoundname>
+    <detaileddescription>
+<para>Esercizio</para><para>: Funzione che fa uso di strcat prende da tastiera nome e cognome separatamente</para><para>: restituise un puntatore/array carattere come risilutato da le due parole concatenate e separate da spazio</para><para>char* output = nomecognome(); printf(&quot;%s&quot;,output); <programlisting></programlisting> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

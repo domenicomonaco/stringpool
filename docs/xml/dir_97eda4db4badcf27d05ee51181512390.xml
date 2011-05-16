@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_97eda4db4badcf27d05ee51181512390" kind="dir">
+    <compoundname>_Other_test/vector_list/src/</compoundname>
+    <innerfile refid="vector__list_8c">vector_list.c</innerfile>
+    <innerfile refid="vettori_8c">vettori.c</innerfile>
+    <innerfile refid="vettori_8h">vettori.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/vector_list/src/"/>
+  </compounddef>
+</doxygen>

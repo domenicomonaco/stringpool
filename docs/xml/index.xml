@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.7.4">
+  <compound refid="specs_8c" kind="file"><name>specs.c</name>
+  </compound>
+  <compound refid="specs_8cpp" kind="file"><name>specs.cpp</name>
+  </compound>
+  <compound refid="cunit__stringpool__lib_8d" kind="file"><name>cunit_stringpool_lib.d</name>
+  </compound>
+  <compound refid="cunit__stringpool__lib_8c" kind="file"><name>cunit_stringpool_lib.c</name>
+    <member refid="cunit__stringpool__lib_8c_1a840291bc02cba5474a4cb46a9b9566fe" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="interface_8d" kind="file"><name>interface.d</name>
+  </compound>
+  <compound refid="interface_8c" kind="file"><name>interface.c</name>
+    <member refid="interface_8c_1a840291bc02cba5474a4cb46a9b9566fe" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="boole_8d" kind="file"><name>boole.d</name>
+  </compound>
+  <compound refid="spstring_8d" kind="file"><name>spstring.d</name>
+  </compound>
+  <compound refid="boole_8c" kind="file"><name>boole.c</name>
+  </compound>
+  <compound refid="boole_8h" kind="file"><name>boole.h</name>
+  </compound>
+  <compound refid="spstring_8c" kind="file"><name>spstring.c</name>
+    <member refid="spstring_8c_1a840291bc02cba5474a4cb46a9b9566fe" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="spstring_8h" kind="file"><name>spstring.h</name>
+    <member refid="spstring_8h_1ac81637c70a2cf19a32c8781080ed1bc2" kind="variable"><name>string</name></member>
+  </compound>
+  <compound refid="dir_71b41504fcf0682ceface6f1397d1600" kind="dir"><name>.metadata/</name>
+  </compound>
+  <compound refid="dir_ac0328c84a2de10fbd36d64bf3c511bc" kind="dir"><name>.metadata/.plugins/</name>
+  </compound>
+  <compound refid="dir_0f3c368c3bf409069e93e4ce4cea4c1a" kind="dir"><name>cunit_stringpool_lib/</name>
+  </compound>
+  <compound refid="dir_f5f4569de20e7c128c4a0ffa00dcb0fa" kind="dir"><name>library/Debug/</name>
+  </compound>
+  <compound refid="dir_dac870f11753ce57a9c33a90b7b5a7ea" kind="dir"><name>interface/Debug/</name>
+  </compound>
+  <compound refid="dir_3a157f27d9b8652a4cc036cbf3a53e7b" kind="dir"><name>cunit_stringpool_lib/Debug/</name>
+  </compound>
+  <compound refid="dir_5f7b1721daf3f23cebe68132ce2a837b" kind="dir"><name>interface/</name>
+  </compound>
+  <compound refid="dir_bdbde8f5eaa565cb05123e62c90c0614" kind="dir"><name>library/</name>
+  </compound>
+  <compound refid="dir_1e1b5e5b7257dfc3d77e335c80880e4b" kind="dir"><name>.metadata/.plugins/org.eclipse.cdt.make.core/</name>
+  </compound>
+  <compound refid="dir_14789f228efac85d0385e4edca2ef40f" kind="dir"><name>library/src/</name>
+  </compound>
+  <compound refid="dir_de3a73e88b98398cbc380eed5f963ab2" kind="dir"><name>library/Debug/src/</name>
+  </compound>
+  <compound refid="dir_ec6432a7bdc31d535ea586c460432c32" kind="dir"><name>interface/src/</name>
+  </compound>
+  <compound refid="dir_7a1e87d842ee70561126c61b0135011c" kind="dir"><name>interface/Debug/src/</name>
+  </compound>
+  <compound refid="dir_89bd20559479c92bfee4e97e61b74b0e" kind="dir"><name>cunit_stringpool_lib/src/</name>
+  </compound>
+  <compound refid="dir_9cbee9ac93da6b36a3da6eecc54220d2" kind="dir"><name>cunit_stringpool_lib/Debug/src/</name>
+  </compound>
+</doxygenindex>

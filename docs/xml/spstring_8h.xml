@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="spstring_8h" kind="file">
+    <compoundname>spstring.h</compoundname>
+    <includedby refid="cunit__stringpool__lib_8c" local="yes">cunit_stringpool_lib/src/cunit_stringpool_lib.c</includedby>
+    <includedby refid="interface_8c" local="yes">interface/src/interface.c</includedby>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="spstring_8h_1ac81637c70a2cf19a32c8781080ed1bc2" prot="public" static="no" mutable="no">
+        <type>struct @0</type>
+        <definition>struct @0  string</definition>
+        <argsstring></argsstring>
+        <name>string</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/library/src/spstring.h" line="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header spstring. </para>    </briefdescription>
+    <detaileddescription>
+<para>Contiene i prototipi e le strutture della libreria &quot;spstring&quot; </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="9"><highlight class="preprocessor">#ifndef<sp/>SPSTRING_H_</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SPSTRING_H_</highlight></codeline>
+<codeline lineno="11"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//Struttura<sp/>denominata<sp/>string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//contiene:<sp/>(1)<sp/>un<sp/>vettore<sp/>di<sp/>caratteri;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//(2)<sp/>un<sp/>intero<sp/>che<sp/>definisce<sp/>la<sp/>dimensione<sp/>fisica<sp/>massima<sp/>allocata<sp/>dinamicamente<sp/>per<sp/>il<sp/>vettore<sp/>di<sp/>caratteri.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}<sp/>string;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">struct</highlight><highlight class="normal">Ê{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//La<sp/>seconda<sp/>struttura,<sp/>denominata<sp/>stringpool,<sp/>contiene:<sp/>(1)<sp/>un<sp/>vettore<sp/>statico<sp/>di<sp/>puntatori<sp/>a<sp/>stringhe<sp/>(string*)<sp/>per<sp/>il<sp/>contenimento<sp/>degli<sp/>elementi;<sp/>(2)<sp/>un<sp/>contatore<sp/>degli<sp/>elementi<sp/>presenti<sp/>nel<sp/>vettore;<sp/>(3)<sp/>un<sp/>vettore<sp/>di<sp/>interi<sp/>indicante<sp/>per<sp/>ciascuna<sp/>posizione<sp/>lo<sp/>stato<sp/>libero<sp/>o<sp/>occupato.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}<sp/>stringpool;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SPSTRING_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macbook/Documents/workspace-eclipse/library/src/spstring.h"/>
+  </compounddef>
+</doxygen>

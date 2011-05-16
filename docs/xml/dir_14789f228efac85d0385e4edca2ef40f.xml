@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_14789f228efac85d0385e4edca2ef40f" kind="dir">
+    <compoundname>library/src/</compoundname>
+    <innerfile refid="boole_8c">boole.c</innerfile>
+    <innerfile refid="boole_8h">boole.h</innerfile>
+    <innerfile refid="spstring_8c">spstring.c</innerfile>
+    <innerfile refid="spstring_8h">spstring.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/library/src/"/>
+  </compounddef>
+</doxygen>

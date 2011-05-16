@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="test__matematica__function_8c" kind="file">
+    <compoundname>test_matematica_function.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="yes">CUnit/basic.h</includes>
+    <includes refid="matematica__function_8h" local="yes">matematica_function.h</includes>
+    <incdepgraph>
+      <node id="62">
+        <label>CUnit/basic.h</label>
+      </node>
+      <node id="61">
+        <label>stdlib.h</label>
+      </node>
+      <node id="64">
+        <label>math.h</label>
+      </node>
+      <node id="63">
+        <label>matematica_function.h</label>
+        <link refid="matematica__function_8h_source"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>_Other_test/massimo/src/test_matematica_function.c</label>
+        <link refid="test_matematica_function.c"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test__matematica__function_8c_1a1f126e883d551b57023d570290082783" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void test_massimo</definition>
+        <argsstring>(void)</argsstring>
+        <name>test_massimo</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/test_matematica_function.c" line="20" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/test_matematica_function.c" bodystart="20" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="test__matematica__function_8c_1abfb7ab409af8ad7809798b2e6a160310" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void test_minimo</definition>
+        <argsstring>(void)</argsstring>
+        <name>test_minimo</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/test_matematica_function.c" line="26" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/test_matematica_function.c" bodystart="26" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="test__matematica__function_8c_1adfb366befaf6ffe4f822fbe7bbb88970" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void test_fattoriale</definition>
+        <argsstring>(void)</argsstring>
+        <name>test_fattoriale</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/test_matematica_function.c" line="38" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/test_matematica_function.c" bodystart="38" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="test__matematica__function_8c_1a57f4a52d77f82dff33e0894190911faf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void test_signof</definition>
+        <argsstring>(void)</argsstring>
+        <name>test_signof</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/test_matematica_function.c" line="50" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/test_matematica_function.c" bodystart="50" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="test__matematica__function_8c_1aa9f73f881c49122b28f3e8f2d062d2d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void test_prodotto</definition>
+        <argsstring>(void)</argsstring>
+        <name>test_prodotto</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/test_matematica_function.c" line="58" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/test_matematica_function.c" bodystart="58" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="test__matematica__function_8c_1adec8884989bbfe023b5eeb3480e85e1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void test_divisione</definition>
+        <argsstring>(void)</argsstring>
+        <name>test_divisione</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/test_matematica_function.c" line="70" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/test_matematica_function.c" bodystart="70" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="test__matematica__function_8c_1abcc9fe2448345317c5b81a3befb827e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void test_somma</definition>
+        <argsstring>(void)</argsstring>
+        <name>test_somma</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/test_matematica_function.c" line="85" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/test_matematica_function.c" bodystart="85" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="test__matematica__function_8c_1a44518650f168db0a023cf4c451d58073" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void test_sottrazione</definition>
+        <argsstring>(void)</argsstring>
+        <name>test_sottrazione</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/test_matematica_function.c" line="102" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/test_matematica_function.c" bodystart="102" bodyend="120"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>============================================================================</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>Name<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>test_matematica_function.c</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>Author<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>Domenico<sp/>Monaco<sp/>&amp;<sp/>Michele<sp/>Chiarello</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>Version<sp/><sp/><sp/><sp/><sp/>:</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>Copyright<sp/><sp/><sp/>:<sp/>Copyright<sp/>Domenico<sp/>Monaco<sp/>and<sp/>Michele<sp/>Chiarello<sp/>2011</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>License<sp/><sp/><sp/><sp/><sp/>:<sp/>GPLv2</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>Description<sp/>:<sp/>Implementzione<sp/>procedure<sp/>di<sp/>test<sp/>per<sp/>le<sp/>procedure<sp/>matematiche_function.c</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>**/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CUnit/basic.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;matematica_function.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//test<sp/>per<sp/>massimo()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>test_massimo(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(massimo(1,<sp/>2),<sp/>2);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT(massimo(0,<sp/>-2)<sp/>==<sp/>0);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_TEST(massimo(2,<sp/>2)<sp/>==<sp/>2);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>test_minimo(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(minimo(1,<sp/>10),<sp/>1);<sp/></highlight><highlight class="comment">//<sp/>DUE<sp/>NUMERI<sp/>POSITIVI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT(minimo(-234,<sp/>-2)<sp/>==<sp/>-234);<sp/></highlight><highlight class="comment">//due<sp/>numero<sp/>negativi</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT(minimo(23,<sp/>-4)<sp/>==<sp/>-4);<sp/></highlight><highlight class="comment">//1<sp/>negativo<sp/>e<sp/>1<sp/>positivo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT(minimo(-234,<sp/>-2)<sp/>==<sp/>-234);<sp/></highlight><highlight class="comment">//due<sp/>numero<sp/>negativi</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_TEST(minimo(0,<sp/>-120)<sp/>==<sp/>-120);<sp/></highlight><highlight class="comment">//zero<sp/>e<sp/>negativo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_TEST(minimo(34,<sp/>0)<sp/>==<sp/>0);<sp/></highlight><highlight class="comment">//zero<sp/>e<sp/>positivo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_TEST(minimo(0,<sp/>0)<sp/>==<sp/>0);<sp/></highlight><highlight class="comment">//zero<sp/>e<sp/>Zero</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>test_fattoriale(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(fattoriale(0),<sp/>1);<sp/></highlight><highlight class="comment">//caso<sp/>con<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(fattoriale(1),<sp/>1);<sp/></highlight><highlight class="comment">//caso<sp/>particolare<sp/>con<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(fattoriale(2),<sp/>2);<sp/></highlight><highlight class="comment">//caso<sp/>di<sp/>numero<sp/>intero<sp/>con<sp/>2<sp/>ma<sp/>nell&apos;implementazione<sp/>pu˜<sp/>essere<sp/>un<sp/>problema</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(fattoriale(3),<sp/>6);<sp/></highlight><highlight class="comment">//Caso<sp/>classico<sp/>13</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(fattoriale(-0),<sp/>1);<sp/></highlight><highlight class="comment">//caso<sp/>strano<sp/>con<sp/>-0<sp/>zero</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(fattoriale(-132),<sp/>0);<sp/></highlight><highlight class="comment">//caso<sp/>con<sp/>numero<sp/>negativo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>test_signof(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(signof(0),<sp/>1);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(signof(-10),<sp/>-1);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(signof(-1),<sp/>-1);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(signof(343),<sp/>1);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(signof(1),<sp/>1);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>test_prodotto(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(prodotto(34,<sp/>43),<sp/>1462);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(prodotto(-13,<sp/>22),<sp/>-286);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(prodotto(-12,<sp/>-20),<sp/>240);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(prodotto(0,<sp/>0),<sp/>0);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(prodotto(0,<sp/>1),<sp/>0);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(prodotto(0,<sp/>-1),<sp/>-0);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(prodotto(0,<sp/>22234),<sp/>0);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>test_divisione(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(divisione(1,<sp/>1),<sp/>1);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(divisione(0,<sp/>1),<sp/>0);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(divisione(15,<sp/>5),<sp/>3);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(divisione(27,<sp/>3),<sp/>9);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(divisione(45,<sp/>8),<sp/>5.625);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT(divisione(190,<sp/>23)<sp/>&gt;=<sp/>8.260869<sp/>&amp;&amp;<sp/>divisione(190,<sp/>23)<sp/>&lt;=<sp/>8.26087);<sp/></highlight><highlight class="comment">//errore<sp/>se<sp/>ometto<sp/><sp/>&amp;&amp;<sp/>divisione(190,23)<sp/>&lt;=<sp/>8.26087</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT(divisione(45,<sp/>254)<sp/>&gt;=<sp/>0.177165<sp/>&amp;&amp;<sp/>divisione(45,<sp/>254)<sp/>&lt;=<sp/>0.17717);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>test_somma(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(somma(1,<sp/>1),<sp/>2);<sp/></highlight><highlight class="comment">//positivo<sp/>+<sp/>Positivo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(somma(267,<sp/>324),<sp/>591);<sp/></highlight><highlight class="comment">//positivo<sp/>+<sp/>positivo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(somma(459,<sp/>-47),<sp/>412);<sp/></highlight><highlight class="comment">//positivo<sp/>+<sp/>negativo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(somma(-37,<sp/>224),<sp/>187);<sp/></highlight><highlight class="comment">//negativo<sp/>+<sp/>positivo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(somma(-60,<sp/>-94),<sp/>-154);<sp/></highlight><highlight class="comment">//negativo<sp/>+<sp/>negativo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(somma(0,<sp/>-48),<sp/>-48);<sp/></highlight><highlight class="comment">//0<sp/>+<sp/>negativo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(somma(-38,<sp/>0),<sp/>-38);<sp/></highlight><highlight class="comment">//<sp/>negativo<sp/>+<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(somma(0,<sp/>35),<sp/>35);<sp/></highlight><highlight class="comment">//0<sp/>+<sp/>positivo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(somma(89,<sp/>0),<sp/>89);<sp/></highlight><highlight class="comment">//positivo<sp/>+<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>test_sottrazione(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(sottrazione(1,<sp/>1),<sp/>0);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(sottrazione(0,<sp/>1),<sp/>-1);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(sottrazione(1,<sp/>0),<sp/>1);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(sottrazione(0,<sp/>0),<sp/>0);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(sottrazione(120,<sp/>243),<sp/>-123);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(sottrazione(-24,<sp/>123),<sp/>-147);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(sottrazione(93,<sp/>-32),<sp/>125);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(sottrazione(-58,<sp/>-38),<sp/>-20);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(sottrazione(0,<sp/>22),<sp/>-22);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(sottrazione(123,<sp/>0),<sp/>123);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(sottrazione(0,<sp/>-56),<sp/>56);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_ASSERT_EQUAL(sottrazione(-47,<sp/>0),<sp/>-47);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/test_matematica_function.c"/>
+  </compounddef>
+</doxygen>

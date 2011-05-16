@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_bdbde8f5eaa565cb05123e62c90c0614" kind="dir">
+    <compoundname>library/</compoundname>
+    <innerdir refid="dir_f5f4569de20e7c128c4a0ffa00dcb0fa">library/Debug/</innerdir>
+    <innerdir refid="dir_14789f228efac85d0385e4edca2ef40f">library/src/</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/library/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_89bd20559479c92bfee4e97e61b74b0e" kind="dir">
+    <compoundname>cunit_stringpool_lib/src/</compoundname>
+    <innerfile refid="cunit__stringpool__lib_8c">cunit_stringpool_lib.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/cunit_stringpool_lib/src/"/>
+  </compounddef>
+</doxygen>

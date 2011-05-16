@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="persona_8h" kind="file">
+    <compoundname>persona.h</compoundname>
+    <includedby refid="persona_8c" local="yes">_Other_test/struct/src/persona.c</includedby>
+    <includedby refid="struct_8c" local="yes">_Other_test/struct/src/struct.c</includedby>
+    <innerclass refid="structpersona" prot="public">persona</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="persona_8h_1ac25189db92959bff3c6c2adf4c34b50a" prot="public" static="no">
+        <name>DIM</name>
+        <initializer>25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h" line="15" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="persona_8h_1a2eb956df618449b338e2d1441c8ba840" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void scrivi_persone_righe</definition>
+        <argsstring>(persona *persone, FILE *fp, int n_righe)</argsstring>
+        <name>scrivi_persone_righe</name>
+        <param>
+          <type><ref refid="structpersona" kindref="compound">persona</ref> *</type>
+          <declname>persone</declname>
+        </param>
+        <param>
+          <type>FILE *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_righe</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h" line="25" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.c" bodystart="20" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="persona_8h_1aa9fed2ebef530d624491458e5a0c691d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void leggi_persone_righe</definition>
+        <argsstring>(persona *persone, FILE *fp, int n_righe)</argsstring>
+        <name>leggi_persone_righe</name>
+        <param>
+          <type><ref refid="structpersona" kindref="compound">persona</ref> *</type>
+          <declname>persone</declname>
+        </param>
+        <param>
+          <type>FILE *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_righe</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h" line="27" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.c" bodystart="40" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="persona_8h_1ab2e9119bebcb229e5f18466db92a239a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void stampa_persone_righe</definition>
+        <argsstring>(persona *persone, int n_righe)</argsstring>
+        <name>stampa_persone_righe</name>
+        <param>
+          <type><ref refid="structpersona" kindref="compound">persona</ref> *</type>
+          <declname>persone</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_righe</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h" line="29" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.c" bodystart="57" bodyend="69"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>@filename:<sp/>persona.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>@author:<sp/>macbook</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>@rev:<sp/>0.1</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>@license:<sp/>GPLV2</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>@date:<sp/>09/mag/2011</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>@desc:<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PERSONA_H_</highlight></codeline>
+<codeline lineno="13"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>PERSONA_H_</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DIM<sp/>25</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="structpersona" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*nome;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*cognome;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*genere;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*datadinascita;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*cf;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}<sp/><ref refid="structpersona" kindref="compound">persona</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>scrivi_persone_righe(<ref refid="structpersona" kindref="compound">persona</ref>*<sp/>persone,<sp/>FILE<sp/>*fp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n_righe);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>leggi_persone_righe(<ref refid="structpersona" kindref="compound">persona</ref>*<sp/>persone,<sp/>FILE<sp/>*fp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n_righe);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>stampa_persone_righe(<ref refid="structpersona" kindref="compound">persona</ref>*<sp/>persone,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n_righe);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>PERSONA_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h"/>
+  </compounddef>
+</doxygen>

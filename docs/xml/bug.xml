@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="bug" kind="page">
+    <compoundname>bug</compoundname>
+    <title>Lista dei bug</title>
+    <detaileddescription>
+<para><anchor id="bug_1_bug000001"/> <variablelist>
+<varlistentry><term>File <ref refid="main_8c" kindref="compound">main.c</ref>  </term></varlistentry>
+<listitem><para>lista di descrizioni di bug </para><para>... </para></listitem>
+</variablelist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

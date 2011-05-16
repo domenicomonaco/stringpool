@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_dac870f11753ce57a9c33a90b7b5a7ea" kind="dir">
+    <compoundname>interface/Debug/</compoundname>
+    <innerdir refid="dir_7a1e87d842ee70561126c61b0135011c">interface/Debug/src/</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/interface/Debug/"/>
+  </compounddef>
+</doxygen>

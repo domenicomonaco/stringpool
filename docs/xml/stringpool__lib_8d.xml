@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="stringpool__lib_8d" kind="file">
+    <compoundname>stringpool_lib.d</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">src/stringpool_lib.d<sp/>src/stringpool_lib.o:<sp/>../src/stringpool_lib.c</highlight></codeline>
+    </programlisting>
+    <location file="/Users/macbook/Documents/workspace-eclipse/stringpool_lib/Debug/src/stringpool_lib.d"/>
+  </compounddef>
+</doxygen>

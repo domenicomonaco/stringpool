@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_8c47a4305e5ffb1f17acfcd18762fa6b" kind="dir">
+    <compoundname>_Other_test/massimo/src/</compoundname>
+    <innerfile refid="massimo_8c">massimo.c</innerfile>
+    <innerfile refid="matematica__function_8c">matematica_function.c</innerfile>
+    <innerfile refid="matematica__function_8h">matematica_function.h</innerfile>
+    <innerfile refid="matematica__proc__point_8c">matematica_proc_point.c</innerfile>
+    <innerfile refid="matematica__proc__point_8h">matematica_proc_point.h</innerfile>
+    <innerfile refid="test__matematica__function_8c">test_matematica_function.c</innerfile>
+    <innerfile refid="test__matematica__function_8h">test_matematica_function.h</innerfile>
+    <innerfile refid="test__matematica__proc__point_8c">test_matematica_proc_point.c</innerfile>
+    <innerfile refid="test__matematica__proc__point_8h">test_matematica_proc_point.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/"/>
+  </compounddef>
+</doxygen>

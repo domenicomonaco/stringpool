@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="structpersona" kind="struct" prot="public">
+    <compoundname>persona</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpersona_1a2ed3f97d34f345afe9db642281887d22" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* persona::nome</definition>
+        <argsstring></argsstring>
+        <name>nome</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h" line="18" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpersona_1adadc0966a1e4a620eb46c8c44ddd8f24" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* persona::cognome</definition>
+        <argsstring></argsstring>
+        <name>cognome</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h" line="19" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpersona_1a6ba9d525cbf92d855c8438b20d65ac85" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* persona::genere</definition>
+        <argsstring></argsstring>
+        <name>genere</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h" line="20" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpersona_1a11b6798f8674cfa082e4d93707100409" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* persona::datadinascita</definition>
+        <argsstring></argsstring>
+        <name>datadinascita</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h" line="21" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpersona_1ae612e20a7597c54001236ec435f6ad0b" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* persona::cf</definition>
+        <argsstring></argsstring>
+        <name>cf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h" line="22" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h" line="17" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/struct/src/persona.h" bodystart="17" bodyend="23"/>
+    <listofallmembers>
+      <member refid="structpersona_1ae612e20a7597c54001236ec435f6ad0b" prot="public" virt="non-virtual"><scope>persona</scope><name>cf</name></member>
+      <member refid="structpersona_1adadc0966a1e4a620eb46c8c44ddd8f24" prot="public" virt="non-virtual"><scope>persona</scope><name>cognome</name></member>
+      <member refid="structpersona_1a11b6798f8674cfa082e4d93707100409" prot="public" virt="non-virtual"><scope>persona</scope><name>datadinascita</name></member>
+      <member refid="structpersona_1a6ba9d525cbf92d855c8438b20d65ac85" prot="public" virt="non-virtual"><scope>persona</scope><name>genere</name></member>
+      <member refid="structpersona_1a2ed3f97d34f345afe9db642281887d22" prot="public" virt="non-virtual"><scope>persona</scope><name>nome</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

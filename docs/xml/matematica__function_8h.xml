@@ -1,0 +1,299 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="matematica__function_8h" kind="file">
+    <compoundname>matematica_function.h</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">math.h</includes>
+    <includedby refid="massimo_8c" local="yes">_Other_test/massimo/src/massimo.c</includedby>
+    <includedby refid="test__matematica__function_8c" local="yes">_Other_test/massimo/src/test_matematica_function.c</includedby>
+    <incdepgraph>
+      <node id="46">
+        <label>stdlib.h</label>
+      </node>
+      <node id="47">
+        <label>math.h</label>
+      </node>
+      <node id="44">
+        <label>_Other_test/massimo/src/matematica_function.h</label>
+        <link refid="matematica_function.h"/>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="matematica__function_8h_1ad499aa5a9cda105cc719960ff5d7cf11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int massimo</definition>
+        <argsstring>(int a, int b)</argsstring>
+        <name>massimo</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.h" line="18" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.c" bodystart="51" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="matematica__function_8h_1a1e0c34cf0b4718ee114dc4d49ff81f25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int minimo</definition>
+        <argsstring>(int a, int b)</argsstring>
+        <name>minimo</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.h" line="19" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.c" bodystart="67" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="matematica__function_8h_1a531760a8d85ab6ff0e0b23a9f83cddee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int fattoriale</definition>
+        <argsstring>(int a)</argsstring>
+        <name>fattoriale</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.h" line="21" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.c" bodystart="35" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="matematica__function_8h_1a81604339423f3643f1b2c724af660c5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int signof</definition>
+        <argsstring>(int a)</argsstring>
+        <name>signof</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Implementation of function to calculate Sign of integer <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+</parameternamelist>
+<parameterdescription>
+<para>int a : -1 or 1 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.h" line="22" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.c" bodystart="23" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="matematica__function_8h_1a5c940593e23054a575d74414ceb6f2d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int isinteger</definition>
+        <argsstring>(float n)</argsstring>
+        <name>isinteger</name>
+        <param>
+          <type>float</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.h" line="23" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.c" bodystart="229" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="matematica__function_8h_1a539ee90b1fdac70b90972901f513030d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int prodotto</definition>
+        <argsstring>(int a, int b)</argsstring>
+        <name>prodotto</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.h" line="25" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.c" bodystart="179" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="matematica__function_8h_1a2be0ba5450e6f4bd5e70f141987ed3c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float divisione</definition>
+        <argsstring>(int dividendo, int divisore)</argsstring>
+        <name>divisione</name>
+        <param>
+          <type>int</type>
+          <declname>dividendo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>divisore</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.h" line="26" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.c" bodystart="97" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="matematica__function_8h_1ad449c2894ea191de9b8c34564355ca2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int somma</definition>
+        <argsstring>(int a, int b)</argsstring>
+        <name>somma</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.h" line="28" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.c" bodystart="194" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="matematica__function_8h_1aac90dbf0da85492781d8ce9a29b9516d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sottrazione</definition>
+        <argsstring>(int a, int b)</argsstring>
+        <name>sottrazione</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.h" line="29" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.c" bodystart="210" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="matematica__function_8h_1a6689195e9ae67ec4dc2cb7ca494cd817" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float primalita</definition>
+        <argsstring>(int input)</argsstring>
+        <name>primalita</name>
+        <param>
+          <type>int</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.h" line="32" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.c" bodystart="150" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="matematica__function_8h_1a9a3963f34360acdcf0e2bfb7ebc12317" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ismul</definition>
+        <argsstring>(int a, int b)</argsstring>
+        <name>ismul</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>if A is mul of B </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.h" line="33" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.c" bodystart="82" bodyend="95"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>matematica.c</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>24/mar/2011</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>Domenico<sp/>Monaco</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_MATEMATICA_H_</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_MATEMATICA_H_</highlight></codeline>
+<codeline lineno="11"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//Declaration<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>massimo(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>minimo(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fattoriale(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>signof(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isinteger(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>prodotto(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>divisione(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dividendo,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>divisore);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>somma(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sottrazione(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//extra</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>primalita(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>input);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ismul(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isinteger(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>input);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/src/matematica_function.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_ac0328c84a2de10fbd36d64bf3c511bc" kind="dir">
+    <compoundname>.metadata/.plugins/</compoundname>
+    <innerdir refid="dir_1e1b5e5b7257dfc3d77e335c80880e4b">.metadata/.plugins/org.eclipse.cdt.make.core/</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/.metadata/.plugins/"/>
+  </compounddef>
+</doxygen>

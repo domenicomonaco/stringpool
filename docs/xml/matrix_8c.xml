@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="matrix_8c" kind="file">
+    <compoundname>matrix.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <incdepgraph>
+      <node id="83">
+        <label>stdlib.h</label>
+      </node>
+      <node id="81">
+        <label>_Other_test/matrix/src/matrix.c</label>
+        <link refid="matrix.c"/>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="matrix_8c_1a840291bc02cba5474a4cb46a9b9566fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(void)</argsstring>
+        <name>main</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/matrix/src/matrix.c" line="14" bodyfile="/Users/macbook/Documents/workspace-eclipse/_Other_test/matrix/src/matrix.c" bodystart="14" bodyend="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>============================================================================</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>Name<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>matrix.c</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>Author<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>Domenico<sp/>Monaco<sp/>&amp;<sp/>Michele<sp/>Chiarello</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>Version<sp/><sp/><sp/><sp/><sp/>:</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>Copyright<sp/><sp/><sp/>:<sp/>Your<sp/>copyright<sp/>notice</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>Description<sp/>:<sp/>Hello<sp/>World<sp/>in<sp/>C,<sp/>Ansi-style</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>============================================================================</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>puts(</highlight><highlight class="stringliteral">&quot;!!!Hello<sp/>World!!!&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">/*<sp/>prints<sp/>!!!Hello<sp/>World!!!<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_SUCCESS;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/matrix/src/matrix.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_ed5f2b0d2439c6a35b5c5f05f6618ddc" kind="dir">
+    <compoundname>_Other_test/</compoundname>
+    <innerdir refid="dir_ef69fb2c3980b05a0c40f900915562f7">_Other_test/helloword/</innerdir>
+    <innerdir refid="dir_a40437c07eb669e64f84424be3fad65f">_Other_test/main/</innerdir>
+    <innerdir refid="dir_e2cbf32bc7d672029c1613072343da96">_Other_test/massimo/</innerdir>
+    <innerdir refid="dir_d878c2ef4bb4e33705f9e7a4b269c81e">_Other_test/matrix/</innerdir>
+    <innerdir refid="dir_a4de41b139c681d5f99814777e071d74">_Other_test/principale/</innerdir>
+    <innerdir refid="dir_0904fdeafe2193d176f0cd44b3be3aaa">_Other_test/struct/</innerdir>
+    <innerdir refid="dir_53c53a2370073b443c4d56ec30f6c323">_Other_test/vector_list/</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_e2cbf32bc7d672029c1613072343da96" kind="dir">
+    <compoundname>_Other_test/massimo/</compoundname>
+    <innerdir refid="dir_4b3a165e4ea8c90dcb7ab6c43bbef7f3">_Other_test/massimo/Debug/</innerdir>
+    <innerdir refid="dir_8c47a4305e5ffb1f17acfcd18762fa6b">_Other_test/massimo/src/</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/_Other_test/massimo/"/>
+  </compounddef>
+</doxygen>
