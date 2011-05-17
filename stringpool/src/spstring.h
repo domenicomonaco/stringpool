@@ -9,6 +9,8 @@
 #ifndef SPSTRING_H_
 #define SPSTRING_H_
 
+#include "bool.h"
+
 #define MAX_DIM_STRING_POOL 10
 
 #define UNUSED_SLOT 0
@@ -42,21 +44,28 @@ typedef struct {
 
 //prototipi
 
-string* sp_new_string(const char* str); //Crea una nuova stringa il cui contenuto è uguale a quello del parametro in ingresso str.
+void sp_initialize_stringpool(stringpool* sp); //Inizializza la struttura stringpool. Pone il contatore di elementi a 0 e rende tutti gli slot disponibili.
 
-string* sp_new_string_as_struct(const string* str);//Crea una nuova stringa il cui contenuto è uguale a quello del parametro in ingresso str.
+void sp_free_stringpool(stringpool* sp); //Libera la memoria per tutte le stringhe salvate in strings e re-inizializza la struttura stringpool (positions e used_counter azzerati).
+
+string* sp_new_string(const char* str); //Crea una nuova stringa il cui contenuto è uguale a quello del parametro in ingresso str.
 
 string* sp_new_empty_string(int len); //Crea una nuova stringa vuota (cioè “”) creata dinamicamente, la cui dimensione fisica è pari a len caratteri.
 
 int sp_get_allocated_size(const string* str); //Restituisce la dimensione massima (fisica) allocata dinamicamente per la stringa.
-
-string* sp_strcpy(string* copy, const char* original, int offset); //Copia il contenuto della stringa original in copy, a partire dal carattere in posizione offset di copy. Se offset è 0, allora la copia avviene dall’inizio della stringa copy. La dimensione di copy deve essere pari o maggiore di quella di original.
 
 void sp_free(string* str); //Funzione per deallocare una stringa str allocata dinamicamente. Dopo la deallocazione str vale NULL
 
 int sp_strlen(const string* str); //Funzione che calcola e restituisce la lunghezza logica della stringa in ingresso str.
 
 boolean sp_strcmp(const string* str1, const char* str2); //Funzione che confronta due stringhe e restituisce il corrispettivo valore di verità.
+
+
+///////////////////////////////////////////
+
+string* sp_new_string_as_struct(const string* str);//Crea una nuova stringa il cui contenuto è uguale a quello del parametro in ingresso str.
+
+string* sp_strcpy(string* copy, const char* original, int offset); //Copia il contenuto della stringa original in copy, a partire dal carattere in posizione offset di copy. Se offset è 0, allora la copia avviene dall’inizio della stringa copy. La dimensione di copy deve essere pari o maggiore di quella di original.
 
 string* sp_strcat(const char* str1, const char* str2); //La funzione crea una nuova stringa ottenuta dalla concatenazione delle due stringhe passate in ingresso, le quali non sono alterate dalla funzione.
 
@@ -65,10 +74,6 @@ string* sp_strcat_as_struct(const string* str1, const string* str2); //La funzio
 string* sp_lower_case(const string* str); //La funzione restituisce una nuova stringa ottenuta ponendo in minuscolo ciascun carattere della stringa in ingresso che non è alterata. Per esempio, se si passa come parametro in ingresso “Ciao”, allora la funzione restituirà una nuova stringa “ciao” in output.
 
 string* sp_upper_case(const string* str); //La funzione restituisce una nuova stringa ottenuta ponendo in maiuscolo ciascun carattere della stringa in ingresso che non è alterata. Per esempio, se si passa come parametro in ingresso “Ciao”, allora la funzione restituirà una nuova stringa “CIAO” in output.
-
-void sp_initialize_stringpool(stringpool* sp); //Inizializza la struttura stringpool. Pone il contatore di elementi a 0 e rende tutti gli slot disponibili.
-
-void sp_free_stringpool(stringpool* sp); //Libera la memoria per tutte le stringhe salvate in strings e re-inizializza la struttura stringpool (positions e used_counter azzerati).
 
 int sp_sizeof(const stringpool* sp); //Restituisce il numero di stringhe in sp. Restituisce 0 se lo stringpool è vuoto; -1 se sp è NULL
 
@@ -95,5 +100,6 @@ int sp_load_from_file(stringpool* sp, const string fname); //Carica il contenuto
 void bubble_sort(stringpool* sp); //Ordina alfabeticamente gli elementi dello stringpool, applicando l’algoritmo di bubble sort.
 
 int bin_search(const stringpool* sp, const string str); //Cerca la stringa str all’interno dello stringpool ordinato attraverso l’algoritmo di ricerca binaria. Ne restituisce la posizione, nel caso in cui str sia presente.
+
 
 #endif /* SPSTRING_H_ */

@@ -3,6 +3,7 @@
 	<name>cunit_stringpool_lib</name>
 	<comment></comment>
 	<projects>
+		<project>stringpool</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

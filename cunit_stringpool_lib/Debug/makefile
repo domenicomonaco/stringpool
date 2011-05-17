@@ -29,7 +29,7 @@ all: cunit_stringpool_lib
 cunit_stringpool_lib: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MacOS X C Linker'
-	gcc -L/opt/local/lib -o "cunit_stringpool_lib" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc -L/opt/local/bin -L/opt/local/lib -o  "cunit_stringpool_lib" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

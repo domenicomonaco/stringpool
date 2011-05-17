@@ -3,7 +3,7 @@
 	<name>interface</name>
 	<comment></comment>
 	<projects>
-		<project>library</project>
+		<project>stringpool</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

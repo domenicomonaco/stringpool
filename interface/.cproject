@@ -39,8 +39,8 @@
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.macosx.exe.debug.1755087855" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.macosx.exe.debug">
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.macosx.exe.debug.option.optimization.level.983513489" name="Optimization Level" superClass="gnu.c.compiler.macosx.exe.debug.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.macosx.exe.debug.option.debugging.level.1604107926" name="Debug Level" superClass="gnu.c.compiler.macosx.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
-								<option id="gnu.c.compiler.option.include.paths.1218782038" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/Users/macbook/Documents/workspace-eclipse/library/src"/>
+								<option id="gnu.c.compiler.option.include.paths.1218782038" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/Users/macbook/Documents/workspace-eclipse/stringpool/src"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1767530409" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>

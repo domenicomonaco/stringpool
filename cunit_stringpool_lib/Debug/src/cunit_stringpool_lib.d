@@ -1,7 +1,10 @@
 src/cunit_stringpool_lib.d src/cunit_stringpool_lib.o:  \
  ../src/cunit_stringpool_lib.c /opt/local/include/CUnit/Basic.h \
   /opt/local/include/CUnit/CUnit.h /opt/local/include/CUnit/CUError.h \
-  /opt/local/include/CUnit/TestDB.h /opt/local/include/CUnit/TestRun.h
+  /opt/local/include/CUnit/TestDB.h /opt/local/include/CUnit/TestRun.h \
+  /Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h \
+  /Users/macbook/Documents/workspace-eclipse/stringpool/src/bool.h \
+  /Users/macbook/Documents/workspace-eclipse/stringpool/src/bool.h
 
 /opt/local/include/CUnit/Basic.h:
 
@@ -12,3 +15,9 @@ src/cunit_stringpool_lib.d src/cunit_stringpool_lib.o:  \
 /opt/local/include/CUnit/TestDB.h:
 
 /opt/local/include/CUnit/TestRun.h:
+
+/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h:
+
+/Users/macbook/Documents/workspace-eclipse/stringpool/src/bool.h:
+
+/Users/macbook/Documents/workspace-eclipse/stringpool/src/bool.h:
