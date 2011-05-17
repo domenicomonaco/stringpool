@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_d29377ef2934874a87021312ff980a20" kind="dir">
+    <compoundname>stringpool/src/</compoundname>
+    <innerfile refid="bool_8h">bool.h</innerfile>
+    <innerfile refid="spstring_8c">spstring.c</innerfile>
+    <innerfile refid="spstring_8h">spstring.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/"/>
+  </compounddef>
+</doxygen>

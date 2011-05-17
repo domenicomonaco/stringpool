@@ -4,19 +4,575 @@
     <compoundname>spstring.h</compoundname>
     <includedby refid="cunit__stringpool__lib_8c" local="yes">cunit_stringpool_lib/src/cunit_stringpool_lib.c</includedby>
     <includedby refid="interface_8c" local="yes">interface/src/interface.c</includedby>
-      <sectiondef kind="var">
-      <memberdef kind="variable" id="spstring_8h_1ac81637c70a2cf19a32c8781080ed1bc2" prot="public" static="no" mutable="no">
-        <type>struct @0</type>
-        <definition>struct @0  string</definition>
-        <argsstring></argsstring>
-        <name>string</name>
+    <includedby refid="spstring_8c" local="yes">stringpool/src/spstring.c</includedby>
+    <innerclass refid="structstring" prot="public">string</innerclass>
+    <innerclass refid="structstringpool" prot="public">stringpool</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="spstring_8h_1af4c76709286f016c09a7f99a070e6a5e" prot="public" static="no">
+        <name>MAX_DIM_STRING_POOL</name>
+        <initializer>10</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/library/src/spstring.h" line="17"/>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="12" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="spstring_8h_1a20af6dd1f5a589e2a11eb37c1ea3ee96" prot="public" static="no">
+        <name>UNUSED_SLOT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="14" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="spstring_8h_1a80b8e6b0b534147058fcfc1187079064" prot="public" static="no">
+        <name>USED_SLOT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="16" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="spstring_8h_1a18ab3dafab1e170404b7ecb5ff7f5a82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structstring" kindref="compound">string</ref> *</type>
+        <definition>string* sp_new_string</definition>
+        <argsstring>(const char *str)</argsstring>
+        <name>sp_new_string</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Crea una nuova stringa il cui contenuto è uguale a quello del parametro in ingresso str.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>&lt; inizializza una struct di tipo string</para><para>Salva in new_string-&gt;allocated size la lunghezza della stringa da allocare </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="45" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.c" bodystart="44" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a68cdb890f144e9ea6a984ee4aec146f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structstring" kindref="compound">string</ref> *</type>
+        <definition>string* sp_new_string_as_struct</definition>
+        <argsstring>(const string *str)</argsstring>
+        <name>sp_new_string_as_struct</name>
+        <param>
+          <type>const <ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="47"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a6ca2fcf5ec5d621e012b93ac47e42df3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structstring" kindref="compound">string</ref> *</type>
+        <definition>string* sp_new_empty_string</definition>
+        <argsstring>(int len)</argsstring>
+        <name>sp_new_empty_string</name>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="49"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1ac6bae0d5bd4140987b042e70f2e3f92c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sp_get_allocated_size</definition>
+        <argsstring>(const string *str)</argsstring>
+        <name>sp_get_allocated_size</name>
+        <param>
+          <type>const <ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="51"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a24b4a6a000610a0bd9d1d42573ab1f67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structstring" kindref="compound">string</ref> *</type>
+        <definition>string* sp_strcpy</definition>
+        <argsstring>(string *copy, const char *original, int offset)</argsstring>
+        <name>sp_strcpy</name>
+        <param>
+          <type><ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>copy</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>original</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="53"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a03c271ff34668b3abd08f09abb7bb0e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sp_free</definition>
+        <argsstring>(string *str)</argsstring>
+        <name>sp_free</name>
+        <param>
+          <type><ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="55"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a8dd6c72c60d09695c4f8ca43b32e4067" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sp_strlen</definition>
+        <argsstring>(const string *str)</argsstring>
+        <name>sp_strlen</name>
+        <param>
+          <type>const <ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="57"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1af4e26884749ec18a2870809932b78f96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean sp_strcmp</definition>
+        <argsstring>(const string *str1, const char *str2)</argsstring>
+        <name>sp_strcmp</name>
+        <param>
+          <type>const <ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>str1</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>str2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="59"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a234a5ae1b3c039d59d5d8c4c9e78114f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structstring" kindref="compound">string</ref> *</type>
+        <definition>string* sp_strcat</definition>
+        <argsstring>(const char *str1, const char *str2)</argsstring>
+        <name>sp_strcat</name>
+        <param>
+          <type>const char *</type>
+          <declname>str1</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>str2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="61"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a86ec3a5501670ddc5151c56cbc1950a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structstring" kindref="compound">string</ref> *</type>
+        <definition>string* sp_strcat_as_struct</definition>
+        <argsstring>(const string *str1, const string *str2)</argsstring>
+        <name>sp_strcat_as_struct</name>
+        <param>
+          <type>const <ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>str1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>str2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="63"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a15544790ca29918d67a6ecc99c25e26e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structstring" kindref="compound">string</ref> *</type>
+        <definition>string* sp_lower_case</definition>
+        <argsstring>(const string *str)</argsstring>
+        <name>sp_lower_case</name>
+        <param>
+          <type>const <ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="65"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a6f2eaae0bc5c50c813604b0ac735d0ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structstring" kindref="compound">string</ref> *</type>
+        <definition>string* sp_upper_case</definition>
+        <argsstring>(const string *str)</argsstring>
+        <name>sp_upper_case</name>
+        <param>
+          <type>const <ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="67"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a4b6d2814d9b5aa512888a91f942c8da0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sp_initialize_stringpool</definition>
+        <argsstring>(stringpool *sp)</argsstring>
+        <name>sp_initialize_stringpool</name>
+        <param>
+          <type><ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Indirizzo alla struttura stringpool</para><para>Abbiamo solo l&apos;indirizzo</para><para>&lt; sp, allocazione di una struct stringpool all&apos;indirizzo passato </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="69" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.c" bodystart="26" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a3fa89b4e4441c6b66e2c18d6f532d4f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sp_free_stringpool</definition>
+        <argsstring>(stringpool *sp)</argsstring>
+        <name>sp_free_stringpool</name>
+        <param>
+          <type><ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="71"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1af6cca73aa0f5f8ea59a81eea99f4cf42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sp_sizeof</definition>
+        <argsstring>(const stringpool *sp)</argsstring>
+        <name>sp_sizeof</name>
+        <param>
+          <type>const <ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="73"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a5bb3845c849c9829a5449dffd5717146" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean sp_isempty</definition>
+        <argsstring>(const stringpool *sp)</argsstring>
+        <name>sp_isempty</name>
+        <param>
+          <type>const <ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="75"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1acd5a78a65dceb1375bfd39ff12c4ad59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean sp_isfull</definition>
+        <argsstring>(const stringpool *sp)</argsstring>
+        <name>sp_isfull</name>
+        <param>
+          <type>const <ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="77"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a814e98bc4b93dde7eca6b39ea3f05e89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sp_find_string</definition>
+        <argsstring>(const stringpool *sp, const string *str)</argsstring>
+        <name>sp_find_string</name>
+        <param>
+          <type>const <ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="79"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a18552c28f0799fc247617ec54cc0c095" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structstring" kindref="compound">string</ref> *</type>
+        <definition>string* sp_get_string</definition>
+        <argsstring>(const stringpool *sp, int pos)</argsstring>
+        <name>sp_get_string</name>
+        <param>
+          <type>const <ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="81"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a828de2b79c0b821ec2568ff0f78fbd5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean sp_add_string</definition>
+        <argsstring>(stringpool *sp, string *str)</argsstring>
+        <name>sp_add_string</name>
+        <param>
+          <type><ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <param>
+          <type><ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="83"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a830d3905a2420fd48a9a67e6965f8914" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean sp_add_string_pos</definition>
+        <argsstring>(stringpool *sp, string *str, int pos)</argsstring>
+        <name>sp_add_string_pos</name>
+        <param>
+          <type><ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <param>
+          <type><ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="85"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a013795d2353e446be36900213cbd8008" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structstring" kindref="compound">string</ref> *</type>
+        <definition>string* sp_remove_string</definition>
+        <argsstring>(stringpool *sp, int pos)</argsstring>
+        <name>sp_remove_string</name>
+        <param>
+          <type><ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="87"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a86df646764e02a5241c8cc7a852a1e4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean sp_replace_string</definition>
+        <argsstring>(stringpool *sp, int pos, string *newstr)</argsstring>
+        <name>sp_replace_string</name>
+        <param>
+          <type><ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type><ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>newstr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="89"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1aa5e17ab368a854629b04d99442fa6b6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sp_save_to_file</definition>
+        <argsstring>(stringpool *sp, const string fname)</argsstring>
+        <name>sp_save_to_file</name>
+        <param>
+          <type><ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structstring" kindref="compound">string</ref></type>
+          <declname>fname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="91"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a19eafeeb094da2fedbe9eae182d22a08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sp_load_from_file</definition>
+        <argsstring>(stringpool *sp, const string fname)</argsstring>
+        <name>sp_load_from_file</name>
+        <param>
+          <type><ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structstring" kindref="compound">string</ref></type>
+          <declname>fname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="93"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a079cb55ebb4e9992c63454c1470baf15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bubble_sort</definition>
+        <argsstring>(stringpool *sp)</argsstring>
+        <name>bubble_sort</name>
+        <param>
+          <type><ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="95"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1ad4c5db94af98508f1a38de0f935d4bc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int bin_search</definition>
+        <argsstring>(const stringpool *sp, const string str)</argsstring>
+        <name>bin_search</name>
+        <param>
+          <type>const <ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structstring" kindref="compound">string</ref></type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="97"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -28,20 +584,95 @@
 <codeline lineno="9"><highlight class="preprocessor">#ifndef<sp/>SPSTRING_H_</highlight></codeline>
 <codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SPSTRING_H_</highlight></codeline>
 <codeline lineno="11"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//Struttura<sp/>denominata<sp/>string</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//contiene:<sp/>(1)<sp/>un<sp/>vettore<sp/>di<sp/>caratteri;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//(2)<sp/>un<sp/>intero<sp/>che<sp/>definisce<sp/>la<sp/>dimensione<sp/>fisica<sp/>massima<sp/>allocata<sp/>dinamicamente<sp/>per<sp/>il<sp/>vettore<sp/>di<sp/>caratteri.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal">}<sp/>string;</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">struct</highlight><highlight class="normal">�{</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//La<sp/>seconda<sp/>struttura,<sp/>denominata<sp/>stringpool,<sp/>contiene:<sp/>(1)<sp/>un<sp/>vettore<sp/>statico<sp/>di<sp/>puntatori<sp/>a<sp/>stringhe<sp/>(string*)<sp/>per<sp/>il<sp/>contenimento<sp/>degli<sp/>elementi;<sp/>(2)<sp/>un<sp/>contatore<sp/>degli<sp/>elementi<sp/>presenti<sp/>nel<sp/>vettore;<sp/>(3)<sp/>un<sp/>vettore<sp/>di<sp/>interi<sp/>indicante<sp/>per<sp/>ciascuna<sp/>posizione<sp/>lo<sp/>stato<sp/>libero<sp/>o<sp/>occupato.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal">}<sp/>stringpool;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_DIM_STRING_POOL<sp/>10</highlight></codeline>
+<codeline lineno="13"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UNUSED_SLOT<sp/>0</highlight></codeline>
+<codeline lineno="15"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>USED_SLOT<sp/>1</highlight></codeline>
+<codeline lineno="17"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="structstring" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//La<sp/>libreria<sp/>stringpool<sp/>prevede<sp/>la<sp/>creazione<sp/>di<sp/>due<sp/>strutture.<sp/>La<sp/>prima<sp/>struttura,<sp/>denominata<sp/>string,<sp/>contiene:<sp/>(1)<sp/>un<sp/>vettore<sp/>di<sp/>caratteri;<sp/>(2)<sp/>un<sp/>intero<sp/>che<sp/>definisce<sp/>la<sp/>dimensione<sp/>fisica<sp/>massima<sp/>allocata<sp/>dinamicamente<sp/>per<sp/>il<sp/>vettore<sp/>di<sp/>caratteri.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>char_array;<sp/></highlight><highlight class="comment">/*&lt;<sp/>Il<sp/>campo<sp/>char_array<sp/>è<sp/>un<sp/>vettore<sp/>di<sp/>caratteri<sp/>da<sp/>allocare<sp/>dinamicamente.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//La<sp/>dimensione<sp/>del<sp/>vettore<sp/>sarà<sp/>specificata<sp/>da<sp/>un<sp/>intero<sp/>dinamico<sp/>in<sp/>fase<sp/>di<sp/>allocazione<sp/>della<sp/>struttura.<sp/>Tale<sp/>numero<sp/>sarà<sp/>salvato<sp/>nel<sp/>campo<sp/>allocated_size<sp/>della<sp/>struttura.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SPSTRING_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>allocated_size;<sp/></highlight><highlight class="comment">//Il<sp/>campo<sp/>allocated_size<sp/>è<sp/>un<sp/>intero<sp/>che<sp/>indica<sp/>la<sp/>dimensione<sp/>massima<sp/>del<sp/>vettore.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//In<sp/>altre<sp/>parole<sp/>se<sp/>allocated_size<sp/>è<sp/>pari<sp/>a<sp/>N&gt;0,<sp/>allora<sp/>char_array<sp/>potrà<sp/>al<sp/>più<sp/>contenere<sp/>una<sp/>stringa<sp/>lunga<sp/>N-1<sp/>caratteri<sp/>più<sp/>il<sp/>terminatore<sp/>‘\0’.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}<sp/><ref refid="structstring" kindref="compound">string</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="structstringpool" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//La<sp/>seconda<sp/>struttura,<sp/>denominata<sp/>stringpool,<sp/>contiene:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(1)<sp/>un<sp/>vettore<sp/>statico<sp/>di<sp/>puntatori<sp/>a<sp/>stringhe<sp/>(string*)<sp/>per<sp/>il<sp/>contenimento<sp/>degli<sp/>elementi;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(2)<sp/>un<sp/>contatore<sp/>degli<sp/>elementi<sp/>presenti<sp/>nel<sp/>vettore;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(3)<sp/>un<sp/>vettore<sp/>di<sp/>interi<sp/>indicante<sp/>per<sp/>ciascuna<sp/>posizione<sp/>lo<sp/>stato<sp/>libero<sp/>o<sp/>occupato.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>strings;<sp/></highlight><highlight class="comment">//Il<sp/>campo<sp/>strings<sp/>è<sp/>un<sp/>vettore<sp/>di<sp/>puntatori<sp/>a<sp/>stringhe.<sp/>La<sp/>dimensione<sp/>del<sp/>vettore<sp/>è<sp/>specificata<sp/>come<sp/>costante<sp/>MAX_DIM_STRING_POOL<sp/>(10),<sp/>in<sp/>modo<sp/>statico,<sp/>nella<sp/>dichiarazione.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>used_counter;<sp/></highlight><highlight class="comment">//Il<sp/>campo<sp/>used_counter<sp/>conta<sp/>il<sp/>numero<sp/>di<sp/>elementi<sp/>presenti<sp/>nel<sp/>vettore<sp/>strings.<sp/>In<sp/>fase<sp/>di<sp/>inizializzazione,<sp/>il<sp/>contatore<sp/>è<sp/>posto<sp/>a<sp/>0.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>positions;<sp/></highlight><highlight class="comment">//Il<sp/>campo<sp/>positions<sp/>è<sp/>un<sp/>vettore<sp/>di<sp/>interi<sp/>di<sp/>dimensione<sp/>pari<sp/>a<sp/>quello<sp/>strings.<sp/>Ciascun<sp/>elemento<sp/>in<sp/>posizione<sp/>i<sp/>può<sp/>valere<sp/>0<sp/>(UNUSED_SLOT)<sp/>oppure<sp/>1<sp/>(USED_SLOT),<sp/>e<sp/>indicherà,<sp/>rispettivamente,<sp/>che<sp/>nel<sp/>vettore<sp/>strings<sp/>la<sp/>posizione<sp/>i<sp/>è<sp/>libera<sp/>o<sp/>già<sp/>occupata.<sp/>In<sp/>fase<sp/>di<sp/>inizializzazione,<sp/>il<sp/>vettore<sp/>positions<sp/>è<sp/>posto<sp/>interamente<sp/>a<sp/>0.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}<sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//prototipi</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_new_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str);<sp/></highlight><highlight class="comment">//Crea<sp/>una<sp/>nuova<sp/>stringa<sp/>il<sp/>cui<sp/>contenuto<sp/>è<sp/>uguale<sp/>a<sp/>quello<sp/>del<sp/>parametro<sp/>in<sp/>ingresso<sp/>str.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_new_string_as_struct(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);</highlight><highlight class="comment">//Crea<sp/>una<sp/>nuova<sp/>stringa<sp/>il<sp/>cui<sp/>contenuto<sp/>è<sp/>uguale<sp/>a<sp/>quello<sp/>del<sp/>parametro<sp/>in<sp/>ingresso<sp/>str.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_new_empty_string(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len);<sp/></highlight><highlight class="comment">//Crea<sp/>una<sp/>nuova<sp/>stringa<sp/>vuota<sp/>(cioè<sp/>“”)<sp/>creata<sp/>dinamicamente,<sp/>la<sp/>cui<sp/>dimensione<sp/>fisica<sp/>è<sp/>pari<sp/>a<sp/>len<sp/>caratteri.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sp_get_allocated_size(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);<sp/></highlight><highlight class="comment">//Restituisce<sp/>la<sp/>dimensione<sp/>massima<sp/>(fisica)<sp/>allocata<sp/>dinamicamente<sp/>per<sp/>la<sp/>stringa.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_strcpy(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>copy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>original,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>offset);<sp/></highlight><highlight class="comment">//Copia<sp/>il<sp/>contenuto<sp/>della<sp/>stringa<sp/>original<sp/>in<sp/>copy,<sp/>a<sp/>partire<sp/>dal<sp/>carattere<sp/>in<sp/>posizione<sp/>offset<sp/>di<sp/>copy.<sp/>Se<sp/>offset<sp/>è<sp/>0,<sp/>allora<sp/>la<sp/>copia<sp/>avviene<sp/>dall’inizio<sp/>della<sp/>stringa<sp/>copy.<sp/>La<sp/>dimensione<sp/>di<sp/>copy<sp/>deve<sp/>essere<sp/>pari<sp/>o<sp/>maggiore<sp/>di<sp/>quella<sp/>di<sp/>original.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>sp_free(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);<sp/></highlight><highlight class="comment">//Funzione<sp/>per<sp/>deallocare<sp/>una<sp/>stringa<sp/>str<sp/>allocata<sp/>dinamicamente.<sp/>Dopo<sp/>la<sp/>deallocazione<sp/>str<sp/>vale<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sp_strlen(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);<sp/></highlight><highlight class="comment">//Funzione<sp/>che<sp/>calcola<sp/>e<sp/>restituisce<sp/>la<sp/>lunghezza<sp/>logica<sp/>della<sp/>stringa<sp/>in<sp/>ingresso<sp/>str.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>sp_strcmp(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str2);<sp/></highlight><highlight class="comment">//Funzione<sp/>che<sp/>confronta<sp/>due<sp/>stringhe<sp/>e<sp/>restituisce<sp/>il<sp/>corrispettivo<sp/>valore<sp/>di<sp/>verità.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_strcat(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str2);<sp/></highlight><highlight class="comment">//La<sp/>funzione<sp/>crea<sp/>una<sp/>nuova<sp/>stringa<sp/>ottenuta<sp/>dalla<sp/>concatenazione<sp/>delle<sp/>due<sp/>stringhe<sp/>passate<sp/>in<sp/>ingresso,<sp/>le<sp/>quali<sp/>non<sp/>sono<sp/>alterate<sp/>dalla<sp/>funzione.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_strcat_as_struct(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str2);<sp/></highlight><highlight class="comment">//La<sp/>funzione<sp/>crea<sp/>una<sp/>nuova<sp/>stringa<sp/>ottenuta<sp/>dalla<sp/>concatenazione<sp/>delle<sp/>due<sp/>stringhe<sp/>passate<sp/>in<sp/>ingresso,<sp/>le<sp/>quali<sp/>non<sp/>sono<sp/>alterate<sp/>dalla<sp/>funzione.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_lower_case(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);<sp/></highlight><highlight class="comment">//La<sp/>funzione<sp/>restituisce<sp/>una<sp/>nuova<sp/>stringa<sp/>ottenuta<sp/>ponendo<sp/>in<sp/>minuscolo<sp/>ciascun<sp/>carattere<sp/>della<sp/>stringa<sp/>in<sp/>ingresso<sp/>che<sp/>non<sp/>è<sp/>alterata.<sp/>Per<sp/>esempio,<sp/>se<sp/>si<sp/>passa<sp/>come<sp/>parametro<sp/>in<sp/>ingresso<sp/>“Ciao”,<sp/>allora<sp/>la<sp/>funzione<sp/>restituirà<sp/>una<sp/>nuova<sp/>stringa<sp/>“ciao”<sp/>in<sp/>output.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_upper_case(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);<sp/></highlight><highlight class="comment">//La<sp/>funzione<sp/>restituisce<sp/>una<sp/>nuova<sp/>stringa<sp/>ottenuta<sp/>ponendo<sp/>in<sp/>maiuscolo<sp/>ciascun<sp/>carattere<sp/>della<sp/>stringa<sp/>in<sp/>ingresso<sp/>che<sp/>non<sp/>è<sp/>alterata.<sp/>Per<sp/>esempio,<sp/>se<sp/>si<sp/>passa<sp/>come<sp/>parametro<sp/>in<sp/>ingresso<sp/>“Ciao”,<sp/>allora<sp/>la<sp/>funzione<sp/>restituirà<sp/>una<sp/>nuova<sp/>stringa<sp/>“CIAO”<sp/>in<sp/>output.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>sp_initialize_stringpool(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp);<sp/></highlight><highlight class="comment">//Inizializza<sp/>la<sp/>struttura<sp/>stringpool.<sp/>Pone<sp/>il<sp/>contatore<sp/>di<sp/>elementi<sp/>a<sp/>0<sp/>e<sp/>rende<sp/>tutti<sp/>gli<sp/>slot<sp/>disponibili.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>sp_free_stringpool(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp);<sp/></highlight><highlight class="comment">//Libera<sp/>la<sp/>memoria<sp/>per<sp/>tutte<sp/>le<sp/>stringhe<sp/>salvate<sp/>in<sp/>strings<sp/>e<sp/>re-inizializza<sp/>la<sp/>struttura<sp/>stringpool<sp/>(positions<sp/>e<sp/>used_counter<sp/>azzerati).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sp_sizeof(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp);<sp/></highlight><highlight class="comment">//Restituisce<sp/>il<sp/>numero<sp/>di<sp/>stringhe<sp/>in<sp/>sp.<sp/>Restituisce<sp/>0<sp/>se<sp/>lo<sp/>stringpool<sp/>è<sp/>vuoto;<sp/>-1<sp/>se<sp/>sp<sp/>è<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>sp_isempty(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp);<sp/></highlight><highlight class="comment">//Restituisce<sp/>un<sp/>valore<sp/>booleno<sp/>stante<sp/>a<sp/>indicare<sp/>se<sp/>lo<sp/>stringpool<sp/>è<sp/>vuoto<sp/>o<sp/>contiene<sp/>uno<sp/>o<sp/>più<sp/>elementi.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>sp_isfull(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp);<sp/></highlight><highlight class="comment">//Restituisce<sp/>un<sp/>valore<sp/>booleno<sp/>stante<sp/>a<sp/>indicare<sp/>se<sp/>lo<sp/>stringpool<sp/>contiene<sp/>già<sp/>il<sp/>massimo<sp/>numero<sp/>di<sp/>elementi<sp/>consentiti<sp/>oppure<sp/>no.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sp_find_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);<sp/></highlight><highlight class="comment">//Cerca<sp/>la<sp/>stringa<sp/>str<sp/>all’interno<sp/>dello<sp/>stringpool<sp/>e<sp/>ne<sp/>restituisce<sp/>la<sp/>posizione,<sp/>nel<sp/>caso<sp/>sia<sp/>presente.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_get_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos);<sp/></highlight><highlight class="comment">//Restituisce<sp/>il<sp/>puntatore<sp/>alla<sp/>stringa<sp/>str<sp/>che<sp/>occupa<sp/>la<sp/>posizione<sp/>pos<sp/>all’interno<sp/>dello<sp/>stringpool.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>sp_add_string(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);<sp/></highlight><highlight class="comment">//Aggiunge<sp/>la<sp/>stringa<sp/>puntata<sp/>da<sp/>str<sp/>all’interno<sp/>dello<sp/>stringpool.<sp/>Nessuna<sp/>operazione<sp/>è<sp/>compiuta<sp/>se<sp/>str<sp/>e/o<sp/>sp<sp/>sono<sp/>nulli,<sp/>oppure<sp/>se<sp/>sp<sp/>è<sp/>pieno.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>sp_add_string_pos(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos);<sp/></highlight><highlight class="comment">//Aggiunge<sp/>la<sp/>stringa<sp/>str<sp/>all’interno<sp/>dello<sp/>stringpool<sp/>in<sp/>posizione<sp/>pos.<sp/>Nessuna<sp/>operazione<sp/>è<sp/>compiuta<sp/>se<sp/>str<sp/>e/o<sp/>sp<sp/>sono<sp/>nulli,<sp/>se<sp/>pos<sp/>è<sp/>fuori<sp/>dall’intervallo<sp/>0&lt;=<sp/>pos<sp/>&lt;<sp/>MAX_DIM_STRING_POOL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_remove_string(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos);<sp/></highlight><highlight class="comment">//Rimuove<sp/>e<sp/>restituisce<sp/>la<sp/>stringa<sp/>str<sp/>all’interno<sp/>dello<sp/>stringpool<sp/>in<sp/>posizione<sp/>pos.<sp/>Nessuna<sp/>operazione<sp/>è<sp/>compiuta<sp/>se<sp/>sp<sp/>è<sp/>nullo,<sp/>oppure<sp/>se<sp/>pos<sp/>è<sp/>fuori<sp/>dall’intervallo<sp/>pos,<sp/>MAX_DIM_STRING_POOL[</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>sp_replace_string(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>newstr);<sp/></highlight><highlight class="comment">//Sostituisce<sp/>la<sp/>stringa<sp/>all’interno<sp/>dello<sp/>stringpool<sp/>in<sp/>posizione<sp/>pos,<sp/>rimpiazzandola<sp/>con<sp/>str.<sp/>Nessuna<sp/>operazione<sp/>è<sp/>compiuta<sp/>se<sp/>str<sp/>e/o<sp/>sp<sp/>sono<sp/>nulli,<sp/>oppure<sp/>se<sp/>pos<sp/>è<sp/>fuori<sp/>dall’intervallo<sp/>[pos,<sp/>MAX_DIM_STRING_POOL[</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sp_save_to_file(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>fname);<sp/></highlight><highlight class="comment">//Salva<sp/>il<sp/>contenuto<sp/>dello<sp/>stringpool<sp/>in<sp/>un<sp/>file<sp/>di<sp/>testo,<sp/>con<sp/>il<sp/>nome<sp/>specificato<sp/>dal<sp/>secondo<sp/>paramentro<sp/>fname.<sp/>Ogni<sp/>elemento<sp/>sarà<sp/>salvato<sp/>su<sp/>una<sp/>riga<sp/>diversa.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sp_load_from_file(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>fname);<sp/></highlight><highlight class="comment">//Carica<sp/>il<sp/>contenuto<sp/>del<sp/>file<sp/>di<sp/>test<sp/>fname<sp/>nello<sp/>o<sp/>stringpool.<sp/>L’intera<sp/>stringa<sp/>letta<sp/>su<sp/>una<sp/>riga<sp/>sarà<sp/>un<sp/>elemento<sp/>dello<sp/>stringpool.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>bubble_sort(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp);<sp/></highlight><highlight class="comment">//Ordina<sp/>alfabeticamente<sp/>gli<sp/>elementi<sp/>dello<sp/>stringpool,<sp/>applicando<sp/>l’algoritmo<sp/>di<sp/>bubble<sp/>sort.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bin_search(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>str);<sp/></highlight><highlight class="comment">//Cerca<sp/>la<sp/>stringa<sp/>str<sp/>all’interno<sp/>dello<sp/>stringpool<sp/>ordinato<sp/>attraverso<sp/>l’algoritmo<sp/>di<sp/>ricerca<sp/>binaria.<sp/>Ne<sp/>restituisce<sp/>la<sp/>posizione,<sp/>nel<sp/>caso<sp/>in<sp/>cui<sp/>str<sp/>sia<sp/>presente.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SPSTRING_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/Users/macbook/Documents/workspace-eclipse/library/src/spstring.h"/>
+    <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h"/>
   </compounddef>
 </doxygen>

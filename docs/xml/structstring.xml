@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="structstring" kind="struct" prot="public">
+    <compoundname>string</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structstring_1acd450648098ba3eaf4db79064af67051" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* string::char_array</definition>
+        <argsstring></argsstring>
+        <name>char_array</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="21" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstring_1ac06bb82958ec7c45e2838ae575b124ec" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int string::allocated_size</definition>
+        <argsstring></argsstring>
+        <name>allocated_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="24" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="18" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" bodystart="18" bodyend="27"/>
+    <listofallmembers>
+      <member refid="structstring_1ac06bb82958ec7c45e2838ae575b124ec" prot="public" virt="non-virtual"><scope>string</scope><name>allocated_size</name></member>
+      <member refid="structstring_1acd450648098ba3eaf4db79064af67051" prot="public" virt="non-virtual"><scope>string</scope><name>char_array</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

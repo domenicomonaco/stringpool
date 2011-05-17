@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.7.4">
+  <compound refid="structstring" kind="struct"><name>string</name>
+    <member refid="structstring_1acd450648098ba3eaf4db79064af67051" kind="variable"><name>char_array</name></member>
+    <member refid="structstring_1ac06bb82958ec7c45e2838ae575b124ec" kind="variable"><name>allocated_size</name></member>
+  </compound>
+  <compound refid="structstringpool" kind="struct"><name>stringpool</name>
+    <member refid="structstringpool_1ade9d898bddb2a241d6fa8811c63078cb" kind="variable"><name>strings</name></member>
+    <member refid="structstringpool_1ae8c4c199ad0a8d10621110791d6d653e" kind="variable"><name>used_counter</name></member>
+    <member refid="structstringpool_1a2cf1860317fee06bf17a8377244be3ee" kind="variable"><name>positions</name></member>
+  </compound>
   <compound refid="specs_8c" kind="file"><name>specs.c</name>
   </compound>
   <compound refid="specs_8cpp" kind="file"><name>specs.cpp</name>
@@ -14,19 +23,49 @@
   <compound refid="interface_8c" kind="file"><name>interface.c</name>
     <member refid="interface_8c_1a840291bc02cba5474a4cb46a9b9566fe" kind="function"><name>main</name></member>
   </compound>
-  <compound refid="boole_8d" kind="file"><name>boole.d</name>
-  </compound>
   <compound refid="spstring_8d" kind="file"><name>spstring.d</name>
   </compound>
-  <compound refid="boole_8c" kind="file"><name>boole.c</name>
-  </compound>
-  <compound refid="boole_8h" kind="file"><name>boole.h</name>
+  <compound refid="bool_8h" kind="file"><name>bool.h</name>
+    <member refid="bool_8h_1a7c6368b321bd9acd0149b030bb8275ed" kind="enum"><name>boolean</name></member>
+    <member refid="bool_8h_1a7c6368b321bd9acd0149b030bb8275edaa1e095cc966dbecf6a0d8aad75348d1a" kind="enumvalue"><name>FALSE</name></member>
+    <member refid="bool_8h_1a7c6368b321bd9acd0149b030bb8275edaa82764c3079aea4e60c80e45befbb839" kind="enumvalue"><name>TRUE</name></member>
   </compound>
   <compound refid="spstring_8c" kind="file"><name>spstring.c</name>
     <member refid="spstring_8c_1a840291bc02cba5474a4cb46a9b9566fe" kind="function"><name>main</name></member>
+    <member refid="spstring_8c_1a4b6d2814d9b5aa512888a91f942c8da0" kind="function"><name>sp_initialize_stringpool</name></member>
+    <member refid="spstring_8c_1a48436fd05ac160ef79ad714a3f8e6867" kind="function"><name>sp_new_string</name></member>
   </compound>
   <compound refid="spstring_8h" kind="file"><name>spstring.h</name>
-    <member refid="spstring_8h_1ac81637c70a2cf19a32c8781080ed1bc2" kind="variable"><name>string</name></member>
+    <member refid="spstring_8h_1af4c76709286f016c09a7f99a070e6a5e" kind="define"><name>MAX_DIM_STRING_POOL</name></member>
+    <member refid="spstring_8h_1a20af6dd1f5a589e2a11eb37c1ea3ee96" kind="define"><name>UNUSED_SLOT</name></member>
+    <member refid="spstring_8h_1a80b8e6b0b534147058fcfc1187079064" kind="define"><name>USED_SLOT</name></member>
+    <member refid="spstring_8h_1a18ab3dafab1e170404b7ecb5ff7f5a82" kind="function"><name>sp_new_string</name></member>
+    <member refid="spstring_8h_1a68cdb890f144e9ea6a984ee4aec146f0" kind="function"><name>sp_new_string_as_struct</name></member>
+    <member refid="spstring_8h_1a6ca2fcf5ec5d621e012b93ac47e42df3" kind="function"><name>sp_new_empty_string</name></member>
+    <member refid="spstring_8h_1ac6bae0d5bd4140987b042e70f2e3f92c" kind="function"><name>sp_get_allocated_size</name></member>
+    <member refid="spstring_8h_1a24b4a6a000610a0bd9d1d42573ab1f67" kind="function"><name>sp_strcpy</name></member>
+    <member refid="spstring_8h_1a03c271ff34668b3abd08f09abb7bb0e0" kind="function"><name>sp_free</name></member>
+    <member refid="spstring_8h_1a8dd6c72c60d09695c4f8ca43b32e4067" kind="function"><name>sp_strlen</name></member>
+    <member refid="spstring_8h_1af4e26884749ec18a2870809932b78f96" kind="function"><name>sp_strcmp</name></member>
+    <member refid="spstring_8h_1a234a5ae1b3c039d59d5d8c4c9e78114f" kind="function"><name>sp_strcat</name></member>
+    <member refid="spstring_8h_1a86ec3a5501670ddc5151c56cbc1950a3" kind="function"><name>sp_strcat_as_struct</name></member>
+    <member refid="spstring_8h_1a15544790ca29918d67a6ecc99c25e26e" kind="function"><name>sp_lower_case</name></member>
+    <member refid="spstring_8h_1a6f2eaae0bc5c50c813604b0ac735d0ad" kind="function"><name>sp_upper_case</name></member>
+    <member refid="spstring_8h_1a4b6d2814d9b5aa512888a91f942c8da0" kind="function"><name>sp_initialize_stringpool</name></member>
+    <member refid="spstring_8h_1a3fa89b4e4441c6b66e2c18d6f532d4f5" kind="function"><name>sp_free_stringpool</name></member>
+    <member refid="spstring_8h_1af6cca73aa0f5f8ea59a81eea99f4cf42" kind="function"><name>sp_sizeof</name></member>
+    <member refid="spstring_8h_1a5bb3845c849c9829a5449dffd5717146" kind="function"><name>sp_isempty</name></member>
+    <member refid="spstring_8h_1acd5a78a65dceb1375bfd39ff12c4ad59" kind="function"><name>sp_isfull</name></member>
+    <member refid="spstring_8h_1a814e98bc4b93dde7eca6b39ea3f05e89" kind="function"><name>sp_find_string</name></member>
+    <member refid="spstring_8h_1a18552c28f0799fc247617ec54cc0c095" kind="function"><name>sp_get_string</name></member>
+    <member refid="spstring_8h_1a828de2b79c0b821ec2568ff0f78fbd5a" kind="function"><name>sp_add_string</name></member>
+    <member refid="spstring_8h_1a830d3905a2420fd48a9a67e6965f8914" kind="function"><name>sp_add_string_pos</name></member>
+    <member refid="spstring_8h_1a013795d2353e446be36900213cbd8008" kind="function"><name>sp_remove_string</name></member>
+    <member refid="spstring_8h_1a86df646764e02a5241c8cc7a852a1e4e" kind="function"><name>sp_replace_string</name></member>
+    <member refid="spstring_8h_1aa5e17ab368a854629b04d99442fa6b6c" kind="function"><name>sp_save_to_file</name></member>
+    <member refid="spstring_8h_1a19eafeeb094da2fedbe9eae182d22a08" kind="function"><name>sp_load_from_file</name></member>
+    <member refid="spstring_8h_1a079cb55ebb4e9992c63454c1470baf15" kind="function"><name>bubble_sort</name></member>
+    <member refid="spstring_8h_1ad4c5db94af98508f1a38de0f935d4bc6" kind="function"><name>bin_search</name></member>
   </compound>
   <compound refid="dir_71b41504fcf0682ceface6f1397d1600" kind="dir"><name>.metadata/</name>
   </compound>
@@ -34,7 +73,7 @@
   </compound>
   <compound refid="dir_0f3c368c3bf409069e93e4ce4cea4c1a" kind="dir"><name>cunit_stringpool_lib/</name>
   </compound>
-  <compound refid="dir_f5f4569de20e7c128c4a0ffa00dcb0fa" kind="dir"><name>library/Debug/</name>
+  <compound refid="dir_56f5e2cb3bb40d1cdf07dffc4ec2b52c" kind="dir"><name>stringpool/Debug/</name>
   </compound>
   <compound refid="dir_dac870f11753ce57a9c33a90b7b5a7ea" kind="dir"><name>interface/Debug/</name>
   </compound>
@@ -42,13 +81,11 @@
   </compound>
   <compound refid="dir_5f7b1721daf3f23cebe68132ce2a837b" kind="dir"><name>interface/</name>
   </compound>
-  <compound refid="dir_bdbde8f5eaa565cb05123e62c90c0614" kind="dir"><name>library/</name>
-  </compound>
   <compound refid="dir_1e1b5e5b7257dfc3d77e335c80880e4b" kind="dir"><name>.metadata/.plugins/org.eclipse.cdt.make.core/</name>
   </compound>
-  <compound refid="dir_14789f228efac85d0385e4edca2ef40f" kind="dir"><name>library/src/</name>
+  <compound refid="dir_d29377ef2934874a87021312ff980a20" kind="dir"><name>stringpool/src/</name>
   </compound>
-  <compound refid="dir_de3a73e88b98398cbc380eed5f963ab2" kind="dir"><name>library/Debug/src/</name>
+  <compound refid="dir_da8f375277ba86797e80ea5385ea1d20" kind="dir"><name>stringpool/Debug/src/</name>
   </compound>
   <compound refid="dir_ec6432a7bdc31d535ea586c460432c32" kind="dir"><name>interface/src/</name>
   </compound>
@@ -57,5 +94,7 @@
   <compound refid="dir_89bd20559479c92bfee4e97e61b74b0e" kind="dir"><name>cunit_stringpool_lib/src/</name>
   </compound>
   <compound refid="dir_9cbee9ac93da6b36a3da6eecc54220d2" kind="dir"><name>cunit_stringpool_lib/Debug/src/</name>
+  </compound>
+  <compound refid="dir_e7569511c4c6def09426a4cb9e7a5d4c" kind="dir"><name>stringpool/</name>
   </compound>
 </doxygenindex>

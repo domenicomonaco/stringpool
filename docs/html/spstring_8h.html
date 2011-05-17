@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>StringPool: Riferimenti per il file library/src/spstring.h</title>
+<title>StringPool: Riferimenti per il file stringpool/src/spstring.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -29,6 +29,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Pagina&#160;Principale</span></a></li>
+      <li><a href="annotated.html"><span>Classi</span></a></li>
       <li class="current"><a href="files.html"><span>File</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -51,14 +52,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Elenco&#160;dei&#160;file</span></a></li>
+      <li><a href="globals.html"><span>Elementi&#160;dei&#160;file</span></a></li>
     </ul>
   </div>
 </div>
 <div class="header">
   <div class="summary">
-<a href="#var-members">Variabili</a>  </div>
+<a href="#nested-classes">Composti</a> &#124;
+<a href="#define-members">Definizioni</a> &#124;
+<a href="#func-members">Funzioni</a>  </div>
   <div class="headertitle">
-<div class="title">Riferimenti per il file library/src/spstring.h</div>  </div>
+<div class="title">Riferimenti per il file stringpool/src/spstring.h</div>  </div>
 </div>
 <div class="contents">
 
@@ -67,22 +71,134 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 
 <p><a href="spstring_8h_source.html">Vai al codice sorgente di questo file.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="var-members"></a>
-Variabili</h2></td></tr>
-<tr><td class="memItemLeft" ><a class="anchor" id="ac81637c70a2cf19a32c8781080ed1bc2"></a><!-- doxytag: member="spstring.h::string" ref="ac81637c70a2cf19a32c8781080ed1bc2" args="" -->
-struct {</td></tr>
-<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><b>string</b></td></tr>
+<tr><td colspan="2"><h2><a name="nested-classes"></a>
+Composti</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstring.html">string</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstringpool.html">stringpool</a></td></tr>
+<tr><td colspan="2"><h2><a name="define-members"></a>
+Definizioni</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af4c76709286f016c09a7f99a070e6a5e"></a><!-- doxytag: member="spstring.h::MAX_DIM_STRING_POOL" ref="af4c76709286f016c09a7f99a070e6a5e" args="" -->
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_DIM_STRING_POOL</b>&#160;&#160;&#160;10</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a20af6dd1f5a589e2a11eb37c1ea3ee96"></a><!-- doxytag: member="spstring.h::UNUSED_SLOT" ref="a20af6dd1f5a589e2a11eb37c1ea3ee96" args="" -->
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>UNUSED_SLOT</b>&#160;&#160;&#160;0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80b8e6b0b534147058fcfc1187079064"></a><!-- doxytag: member="spstring.h::USED_SLOT" ref="a80b8e6b0b534147058fcfc1187079064" args="" -->
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>USED_SLOT</b>&#160;&#160;&#160;1</td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8h.html#a18ab3dafab1e170404b7ecb5ff7f5a82">sp_new_string</a> (const char *str)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a68cdb890f144e9ea6a984ee4aec146f0"></a><!-- doxytag: member="spstring.h::sp_new_string_as_struct" ref="a68cdb890f144e9ea6a984ee4aec146f0" args="(const string *str)" -->
+<a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>sp_new_string_as_struct</b> (const <a class="el" href="structstring.html">string</a> *str)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ca2fcf5ec5d621e012b93ac47e42df3"></a><!-- doxytag: member="spstring.h::sp_new_empty_string" ref="a6ca2fcf5ec5d621e012b93ac47e42df3" args="(int len)" -->
+<a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>sp_new_empty_string</b> (int len)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6bae0d5bd4140987b042e70f2e3f92c"></a><!-- doxytag: member="spstring.h::sp_get_allocated_size" ref="ac6bae0d5bd4140987b042e70f2e3f92c" args="(const string *str)" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>sp_get_allocated_size</b> (const <a class="el" href="structstring.html">string</a> *str)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24b4a6a000610a0bd9d1d42573ab1f67"></a><!-- doxytag: member="spstring.h::sp_strcpy" ref="a24b4a6a000610a0bd9d1d42573ab1f67" args="(string *copy, const char *original, int offset)" -->
+<a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>sp_strcpy</b> (<a class="el" href="structstring.html">string</a> *copy, const char *original, int offset)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03c271ff34668b3abd08f09abb7bb0e0"></a><!-- doxytag: member="spstring.h::sp_free" ref="a03c271ff34668b3abd08f09abb7bb0e0" args="(string *str)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sp_free</b> (<a class="el" href="structstring.html">string</a> *str)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8dd6c72c60d09695c4f8ca43b32e4067"></a><!-- doxytag: member="spstring.h::sp_strlen" ref="a8dd6c72c60d09695c4f8ca43b32e4067" args="(const string *str)" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>sp_strlen</b> (const <a class="el" href="structstring.html">string</a> *str)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af4e26884749ec18a2870809932b78f96"></a><!-- doxytag: member="spstring.h::sp_strcmp" ref="af4e26884749ec18a2870809932b78f96" args="(const string *str1, const char *str2)" -->
+boolean&#160;</td><td class="memItemRight" valign="bottom"><b>sp_strcmp</b> (const <a class="el" href="structstring.html">string</a> *str1, const char *str2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a234a5ae1b3c039d59d5d8c4c9e78114f"></a><!-- doxytag: member="spstring.h::sp_strcat" ref="a234a5ae1b3c039d59d5d8c4c9e78114f" args="(const char *str1, const char *str2)" -->
+<a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>sp_strcat</b> (const char *str1, const char *str2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86ec3a5501670ddc5151c56cbc1950a3"></a><!-- doxytag: member="spstring.h::sp_strcat_as_struct" ref="a86ec3a5501670ddc5151c56cbc1950a3" args="(const string *str1, const string *str2)" -->
+<a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>sp_strcat_as_struct</b> (const <a class="el" href="structstring.html">string</a> *str1, const <a class="el" href="structstring.html">string</a> *str2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15544790ca29918d67a6ecc99c25e26e"></a><!-- doxytag: member="spstring.h::sp_lower_case" ref="a15544790ca29918d67a6ecc99c25e26e" args="(const string *str)" -->
+<a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>sp_lower_case</b> (const <a class="el" href="structstring.html">string</a> *str)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6f2eaae0bc5c50c813604b0ac735d0ad"></a><!-- doxytag: member="spstring.h::sp_upper_case" ref="a6f2eaae0bc5c50c813604b0ac735d0ad" args="(const string *str)" -->
+<a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>sp_upper_case</b> (const <a class="el" href="structstring.html">string</a> *str)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8h.html#a4b6d2814d9b5aa512888a91f942c8da0">sp_initialize_stringpool</a> (<a class="el" href="structstringpool.html">stringpool</a> *sp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3fa89b4e4441c6b66e2c18d6f532d4f5"></a><!-- doxytag: member="spstring.h::sp_free_stringpool" ref="a3fa89b4e4441c6b66e2c18d6f532d4f5" args="(stringpool *sp)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sp_free_stringpool</b> (<a class="el" href="structstringpool.html">stringpool</a> *sp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af6cca73aa0f5f8ea59a81eea99f4cf42"></a><!-- doxytag: member="spstring.h::sp_sizeof" ref="af6cca73aa0f5f8ea59a81eea99f4cf42" args="(const stringpool *sp)" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>sp_sizeof</b> (const <a class="el" href="structstringpool.html">stringpool</a> *sp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5bb3845c849c9829a5449dffd5717146"></a><!-- doxytag: member="spstring.h::sp_isempty" ref="a5bb3845c849c9829a5449dffd5717146" args="(const stringpool *sp)" -->
+boolean&#160;</td><td class="memItemRight" valign="bottom"><b>sp_isempty</b> (const <a class="el" href="structstringpool.html">stringpool</a> *sp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd5a78a65dceb1375bfd39ff12c4ad59"></a><!-- doxytag: member="spstring.h::sp_isfull" ref="acd5a78a65dceb1375bfd39ff12c4ad59" args="(const stringpool *sp)" -->
+boolean&#160;</td><td class="memItemRight" valign="bottom"><b>sp_isfull</b> (const <a class="el" href="structstringpool.html">stringpool</a> *sp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a814e98bc4b93dde7eca6b39ea3f05e89"></a><!-- doxytag: member="spstring.h::sp_find_string" ref="a814e98bc4b93dde7eca6b39ea3f05e89" args="(const stringpool *sp, const string *str)" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>sp_find_string</b> (const <a class="el" href="structstringpool.html">stringpool</a> *sp, const <a class="el" href="structstring.html">string</a> *str)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18552c28f0799fc247617ec54cc0c095"></a><!-- doxytag: member="spstring.h::sp_get_string" ref="a18552c28f0799fc247617ec54cc0c095" args="(const stringpool *sp, int pos)" -->
+<a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>sp_get_string</b> (const <a class="el" href="structstringpool.html">stringpool</a> *sp, int pos)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a828de2b79c0b821ec2568ff0f78fbd5a"></a><!-- doxytag: member="spstring.h::sp_add_string" ref="a828de2b79c0b821ec2568ff0f78fbd5a" args="(stringpool *sp, string *str)" -->
+boolean&#160;</td><td class="memItemRight" valign="bottom"><b>sp_add_string</b> (<a class="el" href="structstringpool.html">stringpool</a> *sp, <a class="el" href="structstring.html">string</a> *str)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a830d3905a2420fd48a9a67e6965f8914"></a><!-- doxytag: member="spstring.h::sp_add_string_pos" ref="a830d3905a2420fd48a9a67e6965f8914" args="(stringpool *sp, string *str, int pos)" -->
+boolean&#160;</td><td class="memItemRight" valign="bottom"><b>sp_add_string_pos</b> (<a class="el" href="structstringpool.html">stringpool</a> *sp, <a class="el" href="structstring.html">string</a> *str, int pos)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a013795d2353e446be36900213cbd8008"></a><!-- doxytag: member="spstring.h::sp_remove_string" ref="a013795d2353e446be36900213cbd8008" args="(stringpool *sp, int pos)" -->
+<a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>sp_remove_string</b> (<a class="el" href="structstringpool.html">stringpool</a> *sp, int pos)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86df646764e02a5241c8cc7a852a1e4e"></a><!-- doxytag: member="spstring.h::sp_replace_string" ref="a86df646764e02a5241c8cc7a852a1e4e" args="(stringpool *sp, int pos, string *newstr)" -->
+boolean&#160;</td><td class="memItemRight" valign="bottom"><b>sp_replace_string</b> (<a class="el" href="structstringpool.html">stringpool</a> *sp, int pos, <a class="el" href="structstring.html">string</a> *newstr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5e17ab368a854629b04d99442fa6b6c"></a><!-- doxytag: member="spstring.h::sp_save_to_file" ref="aa5e17ab368a854629b04d99442fa6b6c" args="(stringpool *sp, const string fname)" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>sp_save_to_file</b> (<a class="el" href="structstringpool.html">stringpool</a> *sp, const <a class="el" href="structstring.html">string</a> fname)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19eafeeb094da2fedbe9eae182d22a08"></a><!-- doxytag: member="spstring.h::sp_load_from_file" ref="a19eafeeb094da2fedbe9eae182d22a08" args="(stringpool *sp, const string fname)" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>sp_load_from_file</b> (<a class="el" href="structstringpool.html">stringpool</a> *sp, const <a class="el" href="structstring.html">string</a> fname)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a079cb55ebb4e9992c63454c1470baf15"></a><!-- doxytag: member="spstring.h::bubble_sort" ref="a079cb55ebb4e9992c63454c1470baf15" args="(stringpool *sp)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>bubble_sort</b> (<a class="el" href="structstringpool.html">stringpool</a> *sp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad4c5db94af98508f1a38de0f935d4bc6"></a><!-- doxytag: member="spstring.h::bin_search" ref="ad4c5db94af98508f1a38de0f935d4bc6" args="(const stringpool *sp, const string str)" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>bin_search</b> (const <a class="el" href="structstringpool.html">stringpool</a> *sp, const <a class="el" href="structstring.html">string</a> str)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Descrizione dettagliata</h2>
 <div class="textblock"><p>Header spstring. </p>
 <p>Contiene i prototipi e le strutture della libreria "spstring" </p>
-</div></div>
+</div><hr/><h2>Documentazione delle funzioni</h2>
+<a class="anchor" id="a4b6d2814d9b5aa512888a91f942c8da0"></a><!-- doxytag: member="spstring.h::sp_initialize_stringpool" ref="a4b6d2814d9b5aa512888a91f942c8da0" args="(stringpool *sp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sp_initialize_stringpool </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstringpool.html">stringpool</a> *&#160;</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><p>Indirizzo alla struttura stringpool</p>
+<p>Abbiamo solo l'indirizzo</p>
+<p>&lt; sp, allocazione di una struct stringpool all'indirizzo passato </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a18ab3dafab1e170404b7ecb5ff7f5a82"></a><!-- doxytag: member="spstring.h::sp_new_string" ref="a18ab3dafab1e170404b7ecb5ff7f5a82" args="(const char *str)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstring.html">string</a>* sp_new_string </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Crea una nuova stringa il cui contenuto è uguale a quello del parametro in ingresso str.</p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><p>&lt; inizializza una struct di tipo string</p>
+<p>Salva in new_string-&gt;allocated size la lunghezza della stringa da allocare </p>
+</p>
+
+</div>
+</div>
+</div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>File</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,7 +207,7 @@ struct {</td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generato Lun 16 Mag 2011 15:11:29 per StringPool da&#160;
+<hr class="footer"/><address class="footer"><small>Generato Mar 17 Mag 2011 08:08:06 per StringPool da&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
 </body>

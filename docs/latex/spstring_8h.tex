@@ -1,25 +1,211 @@
 \hypertarget{spstring_8h}{
-\section{Riferimenti per il file library/src/spstring.h}
-\label{spstring_8h}\index{library/src/spstring.h@{library/src/spstring.h}}
+\section{Riferimenti per il file stringpool/src/spstring.h}
+\label{spstring_8h}\index{stringpool/src/spstring.h@{stringpool/src/spstring.h}}
 }
 
 
 Header spstring.  
 
 
-\subsection*{Variabili}
+\subsection*{Composti}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{spstring_8h_ac81637c70a2cf19a32c8781080ed1bc2}{
-\begin{tabbing}
-xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
-struct \{\\
-\} {\bfseries string}}
-\label{spstring_8h_ac81637c70a2cf19a32c8781080ed1bc2}
-\\
+struct \hyperlink{structstring}{string}
+\item 
+struct \hyperlink{structstringpool}{stringpool}
+\end{DoxyCompactItemize}
+\subsection*{Definizioni}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{spstring_8h_af4c76709286f016c09a7f99a070e6a5e}{
+\#define {\bfseries MAX\_\-DIM\_\-STRING\_\-POOL}~10}
+\label{spstring_8h_af4c76709286f016c09a7f99a070e6a5e}
 
-\end{tabbing}\end{DoxyCompactItemize}
+\item 
+\hypertarget{spstring_8h_a20af6dd1f5a589e2a11eb37c1ea3ee96}{
+\#define {\bfseries UNUSED\_\-SLOT}~0}
+\label{spstring_8h_a20af6dd1f5a589e2a11eb37c1ea3ee96}
+
+\item 
+\hypertarget{spstring_8h_a80b8e6b0b534147058fcfc1187079064}{
+\#define {\bfseries USED\_\-SLOT}~1}
+\label{spstring_8h_a80b8e6b0b534147058fcfc1187079064}
+
+\end{DoxyCompactItemize}
+\subsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structstring}{string} $\ast$ \hyperlink{spstring_8h_a18ab3dafab1e170404b7ecb5ff7f5a82}{sp\_\-new\_\-string} (const char $\ast$str)
+\item 
+\hypertarget{spstring_8h_a68cdb890f144e9ea6a984ee4aec146f0}{
+\hyperlink{structstring}{string} $\ast$ {\bfseries sp\_\-new\_\-string\_\-as\_\-struct} (const \hyperlink{structstring}{string} $\ast$str)}
+\label{spstring_8h_a68cdb890f144e9ea6a984ee4aec146f0}
+
+\item 
+\hypertarget{spstring_8h_a6ca2fcf5ec5d621e012b93ac47e42df3}{
+\hyperlink{structstring}{string} $\ast$ {\bfseries sp\_\-new\_\-empty\_\-string} (int len)}
+\label{spstring_8h_a6ca2fcf5ec5d621e012b93ac47e42df3}
+
+\item 
+\hypertarget{spstring_8h_ac6bae0d5bd4140987b042e70f2e3f92c}{
+int {\bfseries sp\_\-get\_\-allocated\_\-size} (const \hyperlink{structstring}{string} $\ast$str)}
+\label{spstring_8h_ac6bae0d5bd4140987b042e70f2e3f92c}
+
+\item 
+\hypertarget{spstring_8h_a24b4a6a000610a0bd9d1d42573ab1f67}{
+\hyperlink{structstring}{string} $\ast$ {\bfseries sp\_\-strcpy} (\hyperlink{structstring}{string} $\ast$copy, const char $\ast$original, int offset)}
+\label{spstring_8h_a24b4a6a000610a0bd9d1d42573ab1f67}
+
+\item 
+\hypertarget{spstring_8h_a03c271ff34668b3abd08f09abb7bb0e0}{
+void {\bfseries sp\_\-free} (\hyperlink{structstring}{string} $\ast$str)}
+\label{spstring_8h_a03c271ff34668b3abd08f09abb7bb0e0}
+
+\item 
+\hypertarget{spstring_8h_a8dd6c72c60d09695c4f8ca43b32e4067}{
+int {\bfseries sp\_\-strlen} (const \hyperlink{structstring}{string} $\ast$str)}
+\label{spstring_8h_a8dd6c72c60d09695c4f8ca43b32e4067}
+
+\item 
+\hypertarget{spstring_8h_af4e26884749ec18a2870809932b78f96}{
+boolean {\bfseries sp\_\-strcmp} (const \hyperlink{structstring}{string} $\ast$str1, const char $\ast$str2)}
+\label{spstring_8h_af4e26884749ec18a2870809932b78f96}
+
+\item 
+\hypertarget{spstring_8h_a234a5ae1b3c039d59d5d8c4c9e78114f}{
+\hyperlink{structstring}{string} $\ast$ {\bfseries sp\_\-strcat} (const char $\ast$str1, const char $\ast$str2)}
+\label{spstring_8h_a234a5ae1b3c039d59d5d8c4c9e78114f}
+
+\item 
+\hypertarget{spstring_8h_a86ec3a5501670ddc5151c56cbc1950a3}{
+\hyperlink{structstring}{string} $\ast$ {\bfseries sp\_\-strcat\_\-as\_\-struct} (const \hyperlink{structstring}{string} $\ast$str1, const \hyperlink{structstring}{string} $\ast$str2)}
+\label{spstring_8h_a86ec3a5501670ddc5151c56cbc1950a3}
+
+\item 
+\hypertarget{spstring_8h_a15544790ca29918d67a6ecc99c25e26e}{
+\hyperlink{structstring}{string} $\ast$ {\bfseries sp\_\-lower\_\-case} (const \hyperlink{structstring}{string} $\ast$str)}
+\label{spstring_8h_a15544790ca29918d67a6ecc99c25e26e}
+
+\item 
+\hypertarget{spstring_8h_a6f2eaae0bc5c50c813604b0ac735d0ad}{
+\hyperlink{structstring}{string} $\ast$ {\bfseries sp\_\-upper\_\-case} (const \hyperlink{structstring}{string} $\ast$str)}
+\label{spstring_8h_a6f2eaae0bc5c50c813604b0ac735d0ad}
+
+\item 
+void \hyperlink{spstring_8h_a4b6d2814d9b5aa512888a91f942c8da0}{sp\_\-initialize\_\-stringpool} (\hyperlink{structstringpool}{stringpool} $\ast$sp)
+\item 
+\hypertarget{spstring_8h_a3fa89b4e4441c6b66e2c18d6f532d4f5}{
+void {\bfseries sp\_\-free\_\-stringpool} (\hyperlink{structstringpool}{stringpool} $\ast$sp)}
+\label{spstring_8h_a3fa89b4e4441c6b66e2c18d6f532d4f5}
+
+\item 
+\hypertarget{spstring_8h_af6cca73aa0f5f8ea59a81eea99f4cf42}{
+int {\bfseries sp\_\-sizeof} (const \hyperlink{structstringpool}{stringpool} $\ast$sp)}
+\label{spstring_8h_af6cca73aa0f5f8ea59a81eea99f4cf42}
+
+\item 
+\hypertarget{spstring_8h_a5bb3845c849c9829a5449dffd5717146}{
+boolean {\bfseries sp\_\-isempty} (const \hyperlink{structstringpool}{stringpool} $\ast$sp)}
+\label{spstring_8h_a5bb3845c849c9829a5449dffd5717146}
+
+\item 
+\hypertarget{spstring_8h_acd5a78a65dceb1375bfd39ff12c4ad59}{
+boolean {\bfseries sp\_\-isfull} (const \hyperlink{structstringpool}{stringpool} $\ast$sp)}
+\label{spstring_8h_acd5a78a65dceb1375bfd39ff12c4ad59}
+
+\item 
+\hypertarget{spstring_8h_a814e98bc4b93dde7eca6b39ea3f05e89}{
+int {\bfseries sp\_\-find\_\-string} (const \hyperlink{structstringpool}{stringpool} $\ast$sp, const \hyperlink{structstring}{string} $\ast$str)}
+\label{spstring_8h_a814e98bc4b93dde7eca6b39ea3f05e89}
+
+\item 
+\hypertarget{spstring_8h_a18552c28f0799fc247617ec54cc0c095}{
+\hyperlink{structstring}{string} $\ast$ {\bfseries sp\_\-get\_\-string} (const \hyperlink{structstringpool}{stringpool} $\ast$sp, int pos)}
+\label{spstring_8h_a18552c28f0799fc247617ec54cc0c095}
+
+\item 
+\hypertarget{spstring_8h_a828de2b79c0b821ec2568ff0f78fbd5a}{
+boolean {\bfseries sp\_\-add\_\-string} (\hyperlink{structstringpool}{stringpool} $\ast$sp, \hyperlink{structstring}{string} $\ast$str)}
+\label{spstring_8h_a828de2b79c0b821ec2568ff0f78fbd5a}
+
+\item 
+\hypertarget{spstring_8h_a830d3905a2420fd48a9a67e6965f8914}{
+boolean {\bfseries sp\_\-add\_\-string\_\-pos} (\hyperlink{structstringpool}{stringpool} $\ast$sp, \hyperlink{structstring}{string} $\ast$str, int pos)}
+\label{spstring_8h_a830d3905a2420fd48a9a67e6965f8914}
+
+\item 
+\hypertarget{spstring_8h_a013795d2353e446be36900213cbd8008}{
+\hyperlink{structstring}{string} $\ast$ {\bfseries sp\_\-remove\_\-string} (\hyperlink{structstringpool}{stringpool} $\ast$sp, int pos)}
+\label{spstring_8h_a013795d2353e446be36900213cbd8008}
+
+\item 
+\hypertarget{spstring_8h_a86df646764e02a5241c8cc7a852a1e4e}{
+boolean {\bfseries sp\_\-replace\_\-string} (\hyperlink{structstringpool}{stringpool} $\ast$sp, int pos, \hyperlink{structstring}{string} $\ast$newstr)}
+\label{spstring_8h_a86df646764e02a5241c8cc7a852a1e4e}
+
+\item 
+\hypertarget{spstring_8h_aa5e17ab368a854629b04d99442fa6b6c}{
+int {\bfseries sp\_\-save\_\-to\_\-file} (\hyperlink{structstringpool}{stringpool} $\ast$sp, const \hyperlink{structstring}{string} fname)}
+\label{spstring_8h_aa5e17ab368a854629b04d99442fa6b6c}
+
+\item 
+\hypertarget{spstring_8h_a19eafeeb094da2fedbe9eae182d22a08}{
+int {\bfseries sp\_\-load\_\-from\_\-file} (\hyperlink{structstringpool}{stringpool} $\ast$sp, const \hyperlink{structstring}{string} fname)}
+\label{spstring_8h_a19eafeeb094da2fedbe9eae182d22a08}
+
+\item 
+\hypertarget{spstring_8h_a079cb55ebb4e9992c63454c1470baf15}{
+void {\bfseries bubble\_\-sort} (\hyperlink{structstringpool}{stringpool} $\ast$sp)}
+\label{spstring_8h_a079cb55ebb4e9992c63454c1470baf15}
+
+\item 
+\hypertarget{spstring_8h_ad4c5db94af98508f1a38de0f935d4bc6}{
+int {\bfseries bin\_\-search} (const \hyperlink{structstringpool}{stringpool} $\ast$sp, const \hyperlink{structstring}{string} str)}
+\label{spstring_8h_ad4c5db94af98508f1a38de0f935d4bc6}
+
+\end{DoxyCompactItemize}
 
 
 \subsection{Descrizione dettagliata}
 Header spstring. Contiene i prototipi e le strutture della libreria \char`\"{}spstring\char`\"{} 
+
+\subsection{Documentazione delle funzioni}
+\hypertarget{spstring_8h_a4b6d2814d9b5aa512888a91f942c8da0}{
+\index{spstring.h@{spstring.h}!sp\_\-initialize\_\-stringpool@{sp\_\-initialize\_\-stringpool}}
+\index{sp\_\-initialize\_\-stringpool@{sp\_\-initialize\_\-stringpool}!spstring.h@{spstring.h}}
+\subsubsection[{sp\_\-initialize\_\-stringpool}]{\setlength{\rightskip}{0pt plus 5cm}void sp\_\-initialize\_\-stringpool (
+\begin{DoxyParamCaption}
+\item[{{\bf stringpool} $\ast$}]{sp}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8h_a4b6d2814d9b5aa512888a91f942c8da0}
+
+
+Indirizzo alla struttura stringpool
+
+Abbiamo solo l'indirizzo
+
+$<$ sp, allocazione di una struct stringpool all'indirizzo passato 
+
+\hypertarget{spstring_8h_a18ab3dafab1e170404b7ecb5ff7f5a82}{
+\index{spstring.h@{spstring.h}!sp\_\-new\_\-string@{sp\_\-new\_\-string}}
+\index{sp\_\-new\_\-string@{sp\_\-new\_\-string}!spstring.h@{spstring.h}}
+\subsubsection[{sp\_\-new\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}{\bf string}$\ast$ sp\_\-new\_\-string (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8h_a18ab3dafab1e170404b7ecb5ff7f5a82}
+Crea una nuova stringa il cui contenuto è uguale a quello del parametro in ingresso str.
+
+
+\begin{DoxyParams}[1]{Parametri}
+\mbox{\tt in}  & {\em str} & \\
+\hline
+\end{DoxyParams}
+
+
+$<$ inizializza una struct di tipo string
+
+Salva in new\_\-string-\/$>$allocated size la lunghezza della stringa da allocare 
+

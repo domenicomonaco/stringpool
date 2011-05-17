@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="bool_8h" kind="file">
+    <compoundname>bool.h</compoundname>
+    <includedby refid="interface_8c" local="yes">interface/src/interface.c</includedby>
+    <includedby refid="spstring_8c" local="yes">stringpool/src/spstring.c</includedby>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="bool_8h_1a7c6368b321bd9acd0149b030bb8275ed" prot="public" static="no">
+        <name>boolean</name>
+        <enumvalue id="bool_8h_1a7c6368b321bd9acd0149b030bb8275edaa1e095cc966dbecf6a0d8aad75348d1a" prot="public">
+          <name>FALSE</name>
+          <initializer> 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bool_8h_1a7c6368b321bd9acd0149b030bb8275edaa82764c3079aea4e60c80e45befbb839" prot="public">
+          <name>TRUE</name>
+          <initializer> 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/bool.h" line="13" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/bool.h" bodystart="13" bodyend="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>@filename:<sp/>boole.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>@author:<sp/>macbook</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>@rev:<sp/>0.1</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>@license:<sp/>GPLV2</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>@date:<sp/>16/mag/2011</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>@desc:<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>BOOLE_H_</highlight></codeline>
+<codeline lineno="11"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>BOOLE_H_</highlight></codeline>
+<codeline lineno="12"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{FALSE<sp/>=<sp/>0,<sp/>TRUE<sp/>=<sp/>1}<sp/>boolean;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>BOOLE_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/bool.h"/>
+  </compounddef>
+</doxygen>

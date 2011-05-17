@@ -1,22 +1,120 @@
-.TH "library/src/spstring.h" 3 "Lun 16 Mag 2011" "Version stringpool" "StringPool" \" -*- nroff -*-
+.TH "stringpool/src/spstring.h" 3 "Mar 17 Mag 2011" "Version stringpool" "StringPool" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-library/src/spstring.h \- 
+stringpool/src/spstring.h \- 
 .PP
 Header spstring.  
 
 .SH SYNOPSIS
 .br
 .PP
-.SS "Variabili"
+.SS "Composti"
 
 .in +1c
 .ti -1c
-.RI "struct {"
+.RI "struct \fBstring\fP"
 .br
 .ti -1c
-.RI "} \fBstring\fP"
+.RI "struct \fBstringpool\fP"
+.br
+.in -1c
+.SS "Definizioni"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMAX_DIM_STRING_POOL\fP   10"
+.br
+.ti -1c
+.RI "#define \fBUNUSED_SLOT\fP   0"
+.br
+.ti -1c
+.RI "#define \fBUSED_SLOT\fP   1"
+.br
+.in -1c
+.SS "Funzioni"
+
+.in +1c
+.ti -1c
+.RI "\fBstring\fP * \fBsp_new_string\fP (const char *str)"
+.br
+.ti -1c
+.RI "\fBstring\fP * \fBsp_new_string_as_struct\fP (const \fBstring\fP *str)"
+.br
+.ti -1c
+.RI "\fBstring\fP * \fBsp_new_empty_string\fP (int len)"
+.br
+.ti -1c
+.RI "int \fBsp_get_allocated_size\fP (const \fBstring\fP *str)"
+.br
+.ti -1c
+.RI "\fBstring\fP * \fBsp_strcpy\fP (\fBstring\fP *copy, const char *original, int offset)"
+.br
+.ti -1c
+.RI "void \fBsp_free\fP (\fBstring\fP *str)"
+.br
+.ti -1c
+.RI "int \fBsp_strlen\fP (const \fBstring\fP *str)"
+.br
+.ti -1c
+.RI "boolean \fBsp_strcmp\fP (const \fBstring\fP *str1, const char *str2)"
+.br
+.ti -1c
+.RI "\fBstring\fP * \fBsp_strcat\fP (const char *str1, const char *str2)"
+.br
+.ti -1c
+.RI "\fBstring\fP * \fBsp_strcat_as_struct\fP (const \fBstring\fP *str1, const \fBstring\fP *str2)"
+.br
+.ti -1c
+.RI "\fBstring\fP * \fBsp_lower_case\fP (const \fBstring\fP *str)"
+.br
+.ti -1c
+.RI "\fBstring\fP * \fBsp_upper_case\fP (const \fBstring\fP *str)"
+.br
+.ti -1c
+.RI "void \fBsp_initialize_stringpool\fP (\fBstringpool\fP *sp)"
+.br
+.ti -1c
+.RI "void \fBsp_free_stringpool\fP (\fBstringpool\fP *sp)"
+.br
+.ti -1c
+.RI "int \fBsp_sizeof\fP (const \fBstringpool\fP *sp)"
+.br
+.ti -1c
+.RI "boolean \fBsp_isempty\fP (const \fBstringpool\fP *sp)"
+.br
+.ti -1c
+.RI "boolean \fBsp_isfull\fP (const \fBstringpool\fP *sp)"
+.br
+.ti -1c
+.RI "int \fBsp_find_string\fP (const \fBstringpool\fP *sp, const \fBstring\fP *str)"
+.br
+.ti -1c
+.RI "\fBstring\fP * \fBsp_get_string\fP (const \fBstringpool\fP *sp, int pos)"
+.br
+.ti -1c
+.RI "boolean \fBsp_add_string\fP (\fBstringpool\fP *sp, \fBstring\fP *str)"
+.br
+.ti -1c
+.RI "boolean \fBsp_add_string_pos\fP (\fBstringpool\fP *sp, \fBstring\fP *str, int pos)"
+.br
+.ti -1c
+.RI "\fBstring\fP * \fBsp_remove_string\fP (\fBstringpool\fP *sp, int pos)"
+.br
+.ti -1c
+.RI "boolean \fBsp_replace_string\fP (\fBstringpool\fP *sp, int pos, \fBstring\fP *newstr)"
+.br
+.ti -1c
+.RI "int \fBsp_save_to_file\fP (\fBstringpool\fP *sp, const \fBstring\fP fname)"
+.br
+.ti -1c
+.RI "int \fBsp_load_from_file\fP (\fBstringpool\fP *sp, const \fBstring\fP fname)"
+.br
+.ti -1c
+.RI "void \fBbubble_sort\fP (\fBstringpool\fP *sp)"
+.br
+.ti -1c
+.RI "int \fBbin_search\fP (const \fBstringpool\fP *sp, const \fBstring\fP str)"
 .br
 .in -1c
 .SH "Descrizione dettagliata"
@@ -24,6 +122,27 @@ Header spstring.
 Header spstring. 
 
 Contiene i prototipi e le strutture della libreria 'spstring' 
+.SH "Documentazione delle funzioni"
+.PP 
+.SS "void sp_initialize_stringpool (\fBstringpool\fP *sp)"
+.PP
+Indirizzo alla struttura stringpool
+.PP
+Abbiamo solo l'indirizzo
+.PP
+< sp, allocazione di una struct stringpool all'indirizzo passato 
+.SS "\fBstring\fP* sp_new_string (const char *str)"Crea una nuova stringa il cui contenuto è uguale a quello del parametro in ingresso str.
+.PP
+\fBParametri:\fP
+.RS 4
+\fIstr\fP 
+.RE
+.PP
+
+.PP
+< inizializza una struct di tipo string
+.PP
+Salva in new_string->allocated size la lunghezza della stringa da allocare 
 .SH "Autore"
 .PP 
 Generato automaticamente da Doxygen per StringPool a partire dal codice sorgente.

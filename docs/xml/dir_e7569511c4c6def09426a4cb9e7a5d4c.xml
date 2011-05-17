@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_e7569511c4c6def09426a4cb9e7a5d4c" kind="dir">
+    <compoundname>stringpool/</compoundname>
+    <innerdir refid="dir_56f5e2cb3bb40d1cdf07dffc4ec2b52c">stringpool/Debug/</innerdir>
+    <innerdir refid="dir_d29377ef2934874a87021312ff980a20">stringpool/src/</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/"/>
+  </compounddef>
+</doxygen>

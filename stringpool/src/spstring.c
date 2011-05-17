@@ -17,12 +17,30 @@ int main(void) {
 	return EXIT_SUCCESS;
 }
 
-/** \fn
+/**
+ * \fn
+ *
+ * Inizializza la struttura stringpool. Pone il contatore di elementi a 0 e rende tutti gli slot disponibili.
+ *
+ */
+void sp_initialize_stringpool(stringpool* sp){
+
+	/**
+	 * Indirizzo alla struttura stringpool
+	 *
+	 * Abbiamo solo l'indirizzo
+	 */
+	sp = (stringpool*) calloc(1, sizeof(stringpool));/**< sp, allocazione di una struct stringpool all'indirizzo passato */
+
+
+}
+
+/** \fn string* sp_new_string(const char* str)
  *
  * Crea una nuova stringa il cui contenuto è uguale a quello del parametro in ingresso str.
  *
+ * 	\param [in] str
  */
-
 string* sp_new_string(const char* str){
 
 	string* new_string = (string*) calloc(1, sizeof(string));/**< inizializza una struct di tipo string*/
@@ -31,6 +49,7 @@ string* sp_new_string(const char* str){
 
 	(*new_string).char_array = (char*) calloc((new_string.allocated_size+1), sizeof(char));
 
+	return new_string;
 }
 
 

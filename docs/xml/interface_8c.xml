@@ -4,7 +4,7 @@
     <compoundname>interface.c</compoundname>
     <includes local="no">stdio.h</includes>
     <includes local="no">stdlib.h</includes>
-    <includes refid="boole_8h" local="yes">boole.h</includes>
+    <includes refid="bool_8h" local="yes">bool.h</includes>
     <includes refid="spstring_8h" local="yes">spstring.h</includes>
     <incdepgraph>
       <node id="16">
@@ -19,19 +19,19 @@
         <childnode refid="20" relation="include">
         </childnode>
       </node>
+      <node id="20">
+        <label>spstring.h</label>
+        <link refid="spstring_8h"/>
+      </node>
       <node id="18">
         <label>stdlib.h</label>
       </node>
       <node id="19">
-        <label>boole.h</label>
-        <link refid="boole_8h"/>
+        <label>bool.h</label>
+        <link refid="bool_8h_source"/>
       </node>
       <node id="17">
         <label>stdio.h</label>
-      </node>
-      <node id="20">
-        <label>spstring.h</label>
-        <link refid="spstring_8h"/>
       </node>
     </incdepgraph>
       <sectiondef kind="func">
@@ -64,7 +64,7 @@
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="boole_8h" kindref="compound" tooltip="Header boole.">boole.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;bool.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="spstring_8h" kindref="compound" tooltip="Header spstring.">spstring.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>

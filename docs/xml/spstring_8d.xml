@@ -7,8 +7,13 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="normal">src/spstring.d<sp/>src/spstring.o:<sp/>../src/spstring.c</highlight></codeline>
+<codeline lineno="1"><highlight class="normal">src/spstring.d<sp/>src/spstring.o:<sp/>../src/spstring.c<sp/>../src/</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">.h<sp/>\</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"><sp/><sp/>../src/spstring.h</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">../src/</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">.h:</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">../src/spstring.h:</highlight></codeline>
     </programlisting>
-    <location file="/Users/macbook/Documents/workspace-eclipse/library/Debug/src/spstring.d"/>
+    <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/Debug/src/spstring.d"/>
   </compounddef>
 </doxygen>
