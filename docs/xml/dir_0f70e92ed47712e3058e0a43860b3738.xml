@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_0f70e92ed47712e3058e0a43860b3738" kind="dir">
+    <compoundname>Library/Debug/</compoundname>
+    <innerfile refid="_debug_2spstring_8d">spstring.d</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/Library/Debug/"/>
+  </compounddef>
+</doxygen>

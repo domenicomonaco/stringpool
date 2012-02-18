@@ -1,0 +1,93 @@
+.TH "Library/stringpool.h" 3 "Lun 30 Mag 2011" "Version 1.0" "Stringpool" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Library/stringpool.h \- 
+.PP
+Header per tipi di dati stringpool.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Composti"
+
+.in +1c
+.ti -1c
+.RI "struct \fBstring\fP"
+.br
+.ti -1c
+.RI "struct \fBstringpool\fP"
+.br
+.in -1c
+.SS "Definizioni"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSTRINGPOOL_H_\fP"
+.br
+.ti -1c
+.RI "#define \fBUNUSED_SLOT\fP   0"
+.br
+.ti -1c
+.RI "#define \fBUSED_SLOT\fP   1"
+.br
+.ti -1c
+.RI "#define \fBEMPTY_STRING_POOL\fP   0"
+.br
+.ti -1c
+.RI "#define \fBMAX_DIM_STRING_POOL\fP   10"
+.br
+.ti -1c
+.RI "#define \fBSIZE_STRING_STRUCT\fP   1"
+.br
+.ti -1c
+.RI "#define \fBMAX_CHAR_STRING_LOAD_FROM_FILE\fP   255"
+.br
+.ti -1c
+.RI "#define \fBPATTERN_READ_WRITE_LINE\fP   '%d , %d , %s ;\\n'"
+.br
+.ti -1c
+.RI "#define \fBPATTERN_READ_WRITE_START_LINE_SHORT\fP   '%d , %d ,'"
+.br
+.ti -1c
+.RI "#define \fBPATTERN_READ_WRITE_END_LINE_SHORT\fP   ' ;\\n'"
+.br
+.ti -1c
+.RI "#define \fBPATTERN_READ_WRITE_INIT\fP   '%d ;\\n'"
+.br
+.in -1c
+.SH "Descrizione dettagliata"
+.PP 
+Header per tipi di dati stringpool. 
+
+Definizioni di variabili e tipi di dato per la libreria stringpool
+.PP
+\fBAutore:\fP
+.RS 4
+Domenico Monaco, domenico.monaco@kiuz.it 
+.RE
+.PP
+\fBData:\fP
+.RS 4
+2011 
+.RE
+.PP
+.SH "Licenza"
+.PP
+GPLv2 http://www.softwarelibero.it/gnudoc/gpl.it.txt Per maggiori informazioni visitare il link o visualizzare il file LICENSE 
+.SH "Documentazione delle definizioni"
+.PP 
+.SS "#define EMPTY_STRING_POOL   0"Standard per l'identificazione del numero di stringhe contenute in stringpool per identificarlo come Vuoto. Deve contenere interi, si consiglia EMPTY_STRING_POOL 0. 
+.SS "#define MAX_CHAR_STRING_LOAD_FROM_FILE   255"Valore massimo per l'allocazione dell'array di memorizzazione della stringa da file 
+.SS "#define MAX_DIM_STRING_POOL   10"Numero massimo di stringhe che stringpool pu˜ contenere. Identifica anche lo stato di stringpool Pieno. Deve contenere un'intero maggiore di 0, si consiglia MAX_DIM_STRING_POOL 10. 
+.SS "#define PATTERN_READ_WRITE_END_LINE_SHORT   ' ;\\n'"Pattern parziale finale per la scirttura su file 
+.SS "#define PATTERN_READ_WRITE_INIT   '%d ;\\n'"Pattern completo per la lettura/scrittura della riga iniziale su file 
+.SS "#define PATTERN_READ_WRITE_LINE   '%d , %d , %s ;\\n'"Pattern completo per la lettura/scrittura su file 
+.SS "#define PATTERN_READ_WRITE_START_LINE_SHORT   '%d , %d ,'"Pattern parziale iniziale per la scrittura su file 
+.SS "#define SIZE_STRING_STRUCT   1"Dimensione di base per l'allocazione della struttura string 
+.SS "#define STRINGPOOL_H_"Impedisce inclusioni multiple 
+.SS "#define UNUSED_SLOT   0"Standard per l'identificazione degli slot Liberi Deve contenere interi, si consiglia UNUSED_SLOT 0 
+.SS "#define USED_SLOT   1"Standard per l'identificazione degli slot Occupati Deve contenere interi, si consiglia USED_SLOT 1 
+.SH "Autore"
+.PP 
+Generato automaticamente da Doxygen per Stringpool a partire dal codice sorgente.

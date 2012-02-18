@@ -2,21 +2,35 @@
 \section{Riferimenti per la struct string}
 \label{structstring}\index{string@{string}}
 }
+
+
+{\ttfamily \#include $<$stringpool.h$>$}
+
 \subsection*{Attributi pubblici}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{structstring_acd450648098ba3eaf4db79064af67051}{
-char $\ast$ {\bfseries char\_\-array}}
-\label{structstring_acd450648098ba3eaf4db79064af67051}
-
+char $\ast$ \hyperlink{structstring_acd450648098ba3eaf4db79064af67051}{char\_\-array}
 \item 
-\hypertarget{structstring_ac06bb82958ec7c45e2838ae575b124ec}{
-int {\bfseries allocated\_\-size}}
-\label{structstring_ac06bb82958ec7c45e2838ae575b124ec}
-
+int \hyperlink{structstring_ac06bb82958ec7c45e2838ae575b124ec}{allocated\_\-size}
 \end{DoxyCompactItemize}
 
 
+\subsection{Descrizione dettagliata}
+Tipo di dato non primitivo string Insieme di caratteri da allocare dinamicamente, contiene anche un contatore della sua dimensione 
+
+\subsection{Documentazione dei membri dato}
+\hypertarget{structstring_ac06bb82958ec7c45e2838ae575b124ec}{
+\index{string@{string}!allocated\_\-size@{allocated\_\-size}}
+\index{allocated\_\-size@{allocated\_\-size}!string@{string}}
+\subsubsection[{allocated\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf string::allocated\_\-size}}}
+\label{structstring_ac06bb82958ec7c45e2838ae575b124ec}
+Contiene la dimensione massima allocata per tale string, se N$>$0 allora è possibile inserire N-\/1 Caratteri con carattere di terminazione $\backslash$0 in posizione N. \hypertarget{structstring_acd450648098ba3eaf4db79064af67051}{
+\index{string@{string}!char\_\-array@{char\_\-array}}
+\index{char\_\-array@{char\_\-array}!string@{string}}
+\subsubsection[{char\_\-array}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf string::char\_\-array}}}
+\label{structstring_acd450648098ba3eaf4db79064af67051}
+Vettore a caratteri caratteri tramite puntatore a caratteri, rappresenta il contenuto della stringa 
+
 La documentazione per questa struct √® stata generata a partire dal seguente file:\begin{DoxyCompactItemize}
 \item 
-stringpool/src/\hyperlink{spstring_8h}{spstring.h}\end{DoxyCompactItemize}
+Library/\hyperlink{stringpool_8h}{stringpool.h}\end{DoxyCompactItemize}

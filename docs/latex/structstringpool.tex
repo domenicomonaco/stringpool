@@ -2,26 +2,42 @@
 \section{Riferimenti per la struct stringpool}
 \label{structstringpool}\index{stringpool@{stringpool}}
 }
+
+
+{\ttfamily \#include $<$stringpool.h$>$}
+
 \subsection*{Attributi pubblici}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{structstringpool_ade9d898bddb2a241d6fa8811c63078cb}{
-\hyperlink{structstring}{string} $\ast$ {\bfseries strings}}
-\label{structstringpool_ade9d898bddb2a241d6fa8811c63078cb}
-
+\hyperlink{structstring}{string} $\ast$ \hyperlink{structstringpool_af28549aacb7ae1827e1000400381bdbb}{strings} \mbox{[}MAX\_\-DIM\_\-STRING\_\-POOL\mbox{]}
 \item 
-\hypertarget{structstringpool_ae8c4c199ad0a8d10621110791d6d653e}{
-int {\bfseries used\_\-counter}}
-\label{structstringpool_ae8c4c199ad0a8d10621110791d6d653e}
-
+int \hyperlink{structstringpool_ae8c4c199ad0a8d10621110791d6d653e}{used\_\-counter}
 \item 
-\hypertarget{structstringpool_a2cf1860317fee06bf17a8377244be3ee}{
-int {\bfseries positions}}
-\label{structstringpool_a2cf1860317fee06bf17a8377244be3ee}
-
+int \hyperlink{structstringpool_ab0cc50c97d44081fab72467d607a9325}{positions} \mbox{[}MAX\_\-DIM\_\-STRING\_\-POOL\mbox{]}
 \end{DoxyCompactItemize}
 
 
+\subsection{Descrizione dettagliata}
+Tipo di dato non primitivo stringpool Insieme dinamico di elementi di tipo string, contiene anche il numero e la posizione degli slot occupati. Il numero di slot che stringpool può contenere è definito da MAX\_\-DIM\_\-STRING\_\-POOL. 
+
+\subsection{Documentazione dei membri dato}
+\hypertarget{structstringpool_ab0cc50c97d44081fab72467d607a9325}{
+\index{stringpool@{stringpool}!positions@{positions}}
+\index{positions@{positions}!stringpool@{stringpool}}
+\subsubsection[{positions}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf stringpool::positions}\mbox{[}MAX\_\-DIM\_\-STRING\_\-POOL\mbox{]}}}
+\label{structstringpool_ab0cc50c97d44081fab72467d607a9325}
+Array per identificare quali posizioni sono occupati o libere \hypertarget{structstringpool_af28549aacb7ae1827e1000400381bdbb}{
+\index{stringpool@{stringpool}!strings@{strings}}
+\index{strings@{strings}!stringpool@{stringpool}}
+\subsubsection[{strings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf string}$\ast$ {\bf stringpool::strings}\mbox{[}MAX\_\-DIM\_\-STRING\_\-POOL\mbox{]}}}
+\label{structstringpool_af28549aacb7ae1827e1000400381bdbb}
+Array a puntatori di tipo stringa, rappresentano gli slot di stringpool \hypertarget{structstringpool_ae8c4c199ad0a8d10621110791d6d653e}{
+\index{stringpool@{stringpool}!used\_\-counter@{used\_\-counter}}
+\index{used\_\-counter@{used\_\-counter}!stringpool@{stringpool}}
+\subsubsection[{used\_\-counter}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf stringpool::used\_\-counter}}}
+\label{structstringpool_ae8c4c199ad0a8d10621110791d6d653e}
+Contatore delle locazioni utilizzate 
+
 La documentazione per questa struct √® stata generata a partire dal seguente file:\begin{DoxyCompactItemize}
 \item 
-stringpool/src/\hyperlink{spstring_8h}{spstring.h}\end{DoxyCompactItemize}
+Library/\hyperlink{stringpool_8h}{stringpool.h}\end{DoxyCompactItemize}

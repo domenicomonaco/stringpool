@@ -2,7 +2,6 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
   <compounddef id="dir_0f3c368c3bf409069e93e4ce4cea4c1a" kind="dir">
     <compoundname>cunit_stringpool_lib/</compoundname>
-    <innerdir refid="dir_3a157f27d9b8652a4cc036cbf3a53e7b">cunit_stringpool_lib/Debug/</innerdir>
     <innerdir refid="dir_89bd20559479c92bfee4e97e61b74b0e">cunit_stringpool_lib/src/</innerdir>
     <briefdescription>
     </briefdescription>

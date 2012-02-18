@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>StringPool:  File sorgente stringpool/src/spstring.h</title>
+<title>Stringpool:  File sorgente Library/spstring.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -13,14 +13,51 @@
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">StringPool&#160;<span id="projectnumber">stringpool</span></div>
-   <div id="projectbrief">StringPool</div>
+   <div id="projectname">Stringpool&#160;<span id="projectnumber">1.0</span></div>
+   <div id="projectbrief">Libreria Stringpool - Domenico Monaco - 2011</div>
   </td>
  </tr>
  </tbody>
@@ -57,101 +94,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
   </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">stringpool/src/spstring.h</div>  </div>
+<div class="title">Library/spstring.h</div>  </div>
 </div>
 <div class="contents">
 <a href="spstring_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00009"></a>00009 <span class="preprocessor">#ifndef SPSTRING_H_</span>
-<a name="l00010"></a>00010 <span class="preprocessor"></span><span class="preprocessor">#define SPSTRING_H_</span>
-<a name="l00011"></a>00011 <span class="preprocessor"></span>
-<a name="l00012"></a>00012 <span class="preprocessor">#define MAX_DIM_STRING_POOL 10</span>
-<a name="l00013"></a>00013 <span class="preprocessor"></span>
-<a name="l00014"></a>00014 <span class="preprocessor">#define UNUSED_SLOT 0</span>
-<a name="l00015"></a>00015 <span class="preprocessor"></span>
-<a name="l00016"></a>00016 <span class="preprocessor">#define USED_SLOT 1</span>
-<a name="l00017"></a>00017 <span class="preprocessor"></span>
-<a name="l00018"></a><a class="code" href="structstring.html">00018</a> <span class="keyword">typedef</span> <span class="keyword">struct </span>{
-<a name="l00019"></a>00019         <span class="comment">//La libreria stringpool prevede la creazione di due strutture. La prima struttura, denominata string, contiene: (1) un vettore di caratteri; (2) un intero che definisce la dimensione fisica massima allocata dinamicamente per il vettore di caratteri.</span>
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021         <span class="keywordtype">char</span>* char_array; <span class="comment">/*&lt; Il campo char_array è un vettore di caratteri da allocare dinamicamente.*/</span>
-<a name="l00022"></a>00022         <span class="comment">//La dimensione del vettore sarà specificata da un intero dinamico in fase di allocazione della struttura. Tale numero sarà salvato nel campo allocated_size della struttura.</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#ifndef SPSTRING_H_</span>
+<a name="l00014"></a><a class="code" href="spstring_8h.html#aa7eb64789c5be8a291d3551f0cd0ec70">00014</a> <span class="preprocessor"></span><span class="preprocessor">#define SPSTRING_H_ </span>
+<a name="l00018"></a>00018 <span class="preprocessor">#include &quot;bool.h&quot;</span>
+<a name="l00019"></a>00019 <span class="preprocessor"></span>
+<a name="l00022"></a>00022 <span class="preprocessor">#include &quot;<a class="code" href="stringpool_8h.html" title="Header per tipi di dati stringpool.">stringpool.h</a>&quot;</span>
 <a name="l00023"></a>00023 
-<a name="l00024"></a>00024         <span class="keywordtype">int</span> allocated_size; <span class="comment">//Il campo allocated_size è un intero che indica la dimensione massima del vettore.</span>
-<a name="l00025"></a>00025 <span class="comment">//In altre parole se allocated_size è pari a N&gt;0, allora char_array potrà al più contenere una stringa lunga N-1 caratteri più il terminatore ‘\0’.</span>
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 } <a class="code" href="structstring.html">string</a>;
-<a name="l00028"></a>00028 
-<a name="l00029"></a><a class="code" href="structstringpool.html">00029</a> <span class="keyword">typedef</span> <span class="keyword">struct </span>{
-<a name="l00030"></a>00030         <span class="comment">//La seconda struttura, denominata stringpool, contiene:</span>
-<a name="l00031"></a>00031         <span class="comment">// (1) un vettore statico di puntatori a stringhe (string*) per il contenimento degli elementi;</span>
-<a name="l00032"></a>00032         <span class="comment">// (2) un contatore degli elementi presenti nel vettore;</span>
-<a name="l00033"></a>00033         <span class="comment">// (3) un vettore di interi indicante per ciascuna posizione lo stato libero o occupato.</span>
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035         <span class="keywordtype">string</span>* strings; <span class="comment">//Il campo strings è un vettore di puntatori a stringhe. La dimensione del vettore è specificata come costante MAX_DIM_STRING_POOL (10), in modo statico, nella dichiarazione.</span>
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037         <span class="keywordtype">int</span> used_counter; <span class="comment">//Il campo used_counter conta il numero di elementi presenti nel vettore strings. In fase di inizializzazione, il contatore è posto a 0.</span>
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039         <span class="keywordtype">int</span> positions; <span class="comment">//Il campo positions è un vettore di interi di dimensione pari a quello strings. Ciascun elemento in posizione i può valere 0 (UNUSED_SLOT) oppure 1 (USED_SLOT), e indicherà, rispettivamente, che nel vettore strings la posizione i è libera o già occupata. In fase di inizializzazione, il vettore positions è posto interamente a 0.</span>
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041 } <a class="code" href="structstringpool.html">stringpool</a>;
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043 <span class="comment">//prototipi</span>
-<a name="l00044"></a>00044 
-<a name="l00045"></a>00045 <span class="keywordtype">string</span>* sp_new_string(<span class="keyword">const</span> <span class="keywordtype">char</span>* str); <span class="comment">//Crea una nuova stringa il cui contenuto è uguale a quello del parametro in ingresso str.</span>
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047 <span class="keywordtype">string</span>* sp_new_string_as_struct(<span class="keyword">const</span> <span class="keywordtype">string</span>* str);<span class="comment">//Crea una nuova stringa il cui contenuto è uguale a quello del parametro in ingresso str.</span>
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049 <span class="keywordtype">string</span>* sp_new_empty_string(<span class="keywordtype">int</span> len); <span class="comment">//Crea una nuova stringa vuota (cioè “”) creata dinamicamente, la cui dimensione fisica è pari a len caratteri.</span>
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051 <span class="keywordtype">int</span> sp_get_allocated_size(<span class="keyword">const</span> <span class="keywordtype">string</span>* str); <span class="comment">//Restituisce la dimensione massima (fisica) allocata dinamicamente per la stringa.</span>
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053 <span class="keywordtype">string</span>* sp_strcpy(<span class="keywordtype">string</span>* copy, <span class="keyword">const</span> <span class="keywordtype">char</span>* original, <span class="keywordtype">int</span> offset); <span class="comment">//Copia il contenuto della stringa original in copy, a partire dal carattere in posizione offset di copy. Se offset è 0, allora la copia avviene dall’inizio della stringa copy. La dimensione di copy deve essere pari o maggiore di quella di original.</span>
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055 <span class="keywordtype">void</span> sp_free(<span class="keywordtype">string</span>* str); <span class="comment">//Funzione per deallocare una stringa str allocata dinamicamente. Dopo la deallocazione str vale NULL</span>
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057 <span class="keywordtype">int</span> sp_strlen(<span class="keyword">const</span> <span class="keywordtype">string</span>* str); <span class="comment">//Funzione che calcola e restituisce la lunghezza logica della stringa in ingresso str.</span>
-<a name="l00058"></a>00058 
-<a name="l00059"></a>00059 <span class="keywordtype">boolean</span> sp_strcmp(<span class="keyword">const</span> <span class="keywordtype">string</span>* str1, <span class="keyword">const</span> <span class="keywordtype">char</span>* str2); <span class="comment">//Funzione che confronta due stringhe e restituisce il corrispettivo valore di verità.</span>
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061 <span class="keywordtype">string</span>* sp_strcat(<span class="keyword">const</span> <span class="keywordtype">char</span>* str1, <span class="keyword">const</span> <span class="keywordtype">char</span>* str2); <span class="comment">//La funzione crea una nuova stringa ottenuta dalla concatenazione delle due stringhe passate in ingresso, le quali non sono alterate dalla funzione.</span>
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063 <span class="keywordtype">string</span>* sp_strcat_as_struct(<span class="keyword">const</span> <span class="keywordtype">string</span>* str1, <span class="keyword">const</span> <span class="keywordtype">string</span>* str2); <span class="comment">//La funzione crea una nuova stringa ottenuta dalla concatenazione delle due stringhe passate in ingresso, le quali non sono alterate dalla funzione.</span>
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065 <span class="keywordtype">string</span>* sp_lower_case(<span class="keyword">const</span> <span class="keywordtype">string</span>* str); <span class="comment">//La funzione restituisce una nuova stringa ottenuta ponendo in minuscolo ciascun carattere della stringa in ingresso che non è alterata. Per esempio, se si passa come parametro in ingresso “Ciao”, allora la funzione restituirà una nuova stringa “ciao” in output.</span>
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067 <span class="keywordtype">string</span>* sp_upper_case(<span class="keyword">const</span> <span class="keywordtype">string</span>* str); <span class="comment">//La funzione restituisce una nuova stringa ottenuta ponendo in maiuscolo ciascun carattere della stringa in ingresso che non è alterata. Per esempio, se si passa come parametro in ingresso “Ciao”, allora la funzione restituirà una nuova stringa “CIAO” in output.</span>
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069 <span class="keywordtype">void</span> sp_initialize_stringpool(<a class="code" href="structstringpool.html">stringpool</a>* sp); <span class="comment">//Inizializza la struttura stringpool. Pone il contatore di elementi a 0 e rende tutti gli slot disponibili.</span>
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071 <span class="keywordtype">void</span> sp_free_stringpool(<a class="code" href="structstringpool.html">stringpool</a>* sp); <span class="comment">//Libera la memoria per tutte le stringhe salvate in strings e re-inizializza la struttura stringpool (positions e used_counter azzerati).</span>
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073 <span class="keywordtype">int</span> sp_sizeof(<span class="keyword">const</span> <a class="code" href="structstringpool.html">stringpool</a>* sp); <span class="comment">//Restituisce il numero di stringhe in sp. Restituisce 0 se lo stringpool è vuoto; -1 se sp è NULL</span>
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075 <span class="keywordtype">boolean</span> sp_isempty(<span class="keyword">const</span> <a class="code" href="structstringpool.html">stringpool</a>* sp); <span class="comment">//Restituisce un valore booleno stante a indicare se lo stringpool è vuoto o contiene uno o più elementi.</span>
-<a name="l00076"></a>00076 
-<a name="l00077"></a>00077 <span class="keywordtype">boolean</span> sp_isfull(<span class="keyword">const</span> <a class="code" href="structstringpool.html">stringpool</a>* sp); <span class="comment">//Restituisce un valore booleno stante a indicare se lo stringpool contiene già il massimo numero di elementi consentiti oppure no.</span>
-<a name="l00078"></a>00078 
-<a name="l00079"></a>00079 <span class="keywordtype">int</span> sp_find_string(<span class="keyword">const</span> <a class="code" href="structstringpool.html">stringpool</a>* sp, <span class="keyword">const</span> <span class="keywordtype">string</span>* str); <span class="comment">//Cerca la stringa str all’interno dello stringpool e ne restituisce la posizione, nel caso sia presente.</span>
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081 <span class="keywordtype">string</span>* sp_get_string(<span class="keyword">const</span> <a class="code" href="structstringpool.html">stringpool</a>* sp, <span class="keywordtype">int</span> pos); <span class="comment">//Restituisce il puntatore alla stringa str che occupa la posizione pos all’interno dello stringpool.</span>
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083 <span class="keywordtype">boolean</span> sp_add_string(<a class="code" href="structstringpool.html">stringpool</a>* sp, <span class="keywordtype">string</span>* str); <span class="comment">//Aggiunge la stringa puntata da str all’interno dello stringpool. Nessuna operazione è compiuta se str e/o sp sono nulli, oppure se sp è pieno.</span>
-<a name="l00084"></a>00084 
-<a name="l00085"></a>00085 <span class="keywordtype">boolean</span> sp_add_string_pos(<a class="code" href="structstringpool.html">stringpool</a>* sp, <span class="keywordtype">string</span>* str, <span class="keywordtype">int</span> pos); <span class="comment">//Aggiunge la stringa str all’interno dello stringpool in posizione pos. Nessuna operazione è compiuta se str e/o sp sono nulli, se pos è fuori dall’intervallo 0&lt;= pos &lt; MAX_DIM_STRING_POOL</span>
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087 <span class="keywordtype">string</span>* sp_remove_string(<a class="code" href="structstringpool.html">stringpool</a>* sp, <span class="keywordtype">int</span> pos); <span class="comment">//Rimuove e restituisce la stringa str all’interno dello stringpool in posizione pos. Nessuna operazione è compiuta se sp è nullo, oppure se pos è fuori dall’intervallo pos, MAX_DIM_STRING_POOL[</span>
-<a name="l00088"></a>00088 
-<a name="l00089"></a>00089 <span class="keywordtype">boolean</span> sp_replace_string(<a class="code" href="structstringpool.html">stringpool</a>* sp, <span class="keywordtype">int</span> pos, <span class="keywordtype">string</span>* newstr); <span class="comment">//Sostituisce la stringa all’interno dello stringpool in posizione pos, rimpiazzandola con str. Nessuna operazione è compiuta se str e/o sp sono nulli, oppure se pos è fuori dall’intervallo [pos, MAX_DIM_STRING_POOL[</span>
-<a name="l00090"></a>00090 
-<a name="l00091"></a>00091 <span class="keywordtype">int</span> sp_save_to_file(<a class="code" href="structstringpool.html">stringpool</a>* sp, <span class="keyword">const</span> <span class="keywordtype">string</span> fname); <span class="comment">//Salva il contenuto dello stringpool in un file di testo, con il nome specificato dal secondo paramentro fname. Ogni elemento sarà salvato su una riga diversa.</span>
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093 <span class="keywordtype">int</span> sp_load_from_file(<a class="code" href="structstringpool.html">stringpool</a>* sp, <span class="keyword">const</span> <span class="keywordtype">string</span> fname); <span class="comment">//Carica il contenuto del file di test fname nello o stringpool. L’intera stringa letta su una riga sarà un elemento dello stringpool.</span>
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095 <span class="keywordtype">void</span> bubble_sort(<a class="code" href="structstringpool.html">stringpool</a>* sp); <span class="comment">//Ordina alfabeticamente gli elementi dello stringpool, applicando l’algoritmo di bubble sort.</span>
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097 <span class="keywordtype">int</span> bin_search(<span class="keyword">const</span> <a class="code" href="structstringpool.html">stringpool</a>* sp, <span class="keyword">const</span> <span class="keywordtype">string</span> str); <span class="comment">//Cerca la stringa str all’interno dello stringpool ordinato attraverso l’algoritmo di ricerca binaria. Ne restituisce la posizione, nel caso in cui str sia presente.</span>
-<a name="l00098"></a>00098 
-<a name="l00099"></a>00099 <span class="preprocessor">#endif </span><span class="comment">/* SPSTRING_H_ */</span>
+<a name="l00024"></a>00024 <span class="keywordtype">void</span> <a class="code" href="spstring_8c.html#a43109a2f4b18023775b877451f725c13" title="Inizializza una struttura Stringpool.">sp_initialize_stringpool</a>(<a class="code" href="structstringpool.html">stringpool</a>* <a class="code" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>);
+<a name="l00025"></a>00025 <span class="keywordtype">void</span> <a class="code" href="spstring_8c.html#a99f5a66367fa19e42c24211e982c4b56" title="Libera la memoria e reinizializza la struct sringpool.">sp_free_stringpool</a>(<a class="code" href="structstringpool.html">stringpool</a>* <a class="code" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>);
+<a name="l00026"></a>00026 <span class="keywordtype">string</span>* <a class="code" href="spstring_8c.html#ac14d3aa446e78a594b506cf2494b7273" title="Crea una string con contenuto pari a quello in ingresso.">sp_new_string</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* str);
+<a name="l00027"></a>00027 <span class="keywordtype">string</span>* <a class="code" href="spstring_8c.html#aa9f031abbf235a5d16322d97f78c334d" title="Crea una string vuota di dimensione len.">sp_new_empty_string</a>(<span class="keywordtype">int</span> len);
+<a name="l00028"></a>00028 <span class="keywordtype">int</span> <a class="code" href="spstring_8c.html#ab0823663ad7e935718ccfc2db8e316d3" title="Restituisce la dimensione massima allocata per la stringa.">sp_get_allocated_size</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>* str);
+<a name="l00029"></a>00029 <span class="keywordtype">void</span> <a class="code" href="spstring_8c.html#a60ed4be4036600f174388c36a0370818" title="Dealloca lo spazio di memoria a cui sta puntando str.">sp_free</a>(<span class="keywordtype">string</span>* str);
+<a name="l00030"></a>00030 <span class="keywordtype">int</span> <a class="code" href="spstring_8c.html#ac994017d490a951c8f48c37bcbdf0c1b" title="Calcola e restituisce la lunghezza logica di una string.">sp_strlen</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>* str);
+<a name="l00031"></a>00031 <span class="keywordtype">boolean</span> <a class="code" href="spstring_8c.html#abb131e3e4d7f496a47d12c1692b75e15" title="Confronta due stringhe e restituisce il relativo valore di verit�">sp_strcmp</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>* str1, <span class="keyword">const</span> <span class="keywordtype">char</span>* str2);
+<a name="l00032"></a>00032 <span class="keywordtype">string</span>* <a class="code" href="spstring_8c.html#afe063a22db56e1ed3b9de5a81820f002" title="Crea una nuova string il cui contenuto � uguale a quella in ingresso.">sp_new_string_as_struct</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>* str);
+<a name="l00033"></a>00033 <span class="keywordtype">string</span>* <a class="code" href="spstring_8c.html#ad258858c5d6a2aa9b4b9ed5776155afc" title="Copia il contenuto della string original in copy.">sp_strcpy</a>(<span class="keywordtype">string</span>* copy, <span class="keyword">const</span> <span class="keywordtype">char</span>* original, <span class="keywordtype">int</span> offset);
+<a name="l00034"></a>00034 <span class="keywordtype">string</span>* <a class="code" href="spstring_8c.html#af0a1ed949316f182907ea08d4e8bd62b" title="Crea una string ottenuta dalla concatenazione di due stringhe in ingresso.">sp_strcat</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* str1, <span class="keyword">const</span> <span class="keywordtype">char</span>* str2);
+<a name="l00035"></a>00035 <span class="keywordtype">string</span>* <a class="code" href="spstring_8c.html#ad8c5bbe3b367845aaa230e19ac9e7919" title="Crea una string ottenuta dalla conctaenazione delle due string in ingresso.">sp_strcat_as_struct</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>* str1, <span class="keyword">const</span> <span class="keywordtype">string</span>* str2);
+<a name="l00036"></a>00036 <span class="keywordtype">string</span>* <a class="code" href="spstring_8c.html#a8b5d366c459a30a563e83fc8804702e2" title="Restituisce una nuova stringa ottenuta ponendo in minuscolo ciascun carattere della stringa in ingres...">sp_lower_case</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>* str);
+<a name="l00037"></a>00037 <span class="keywordtype">string</span>* <a class="code" href="spstring_8c.html#a70dbcd0b1199382b8a171ec68067370c" title="Restituisce una nuova stringa ottenuta ponendo in maiuscolo ciascun carattere della stringa in ingres...">sp_upper_case</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>* str);
+<a name="l00038"></a>00038 <span class="keywordtype">int</span> <a class="code" href="spstring_8c.html#a96c3685a91d261df2cb06e9745bdca3f" title="Restituisce il numero di stringhe in sp.">sp_sizeof</a>(<span class="keyword">const</span> <a class="code" href="structstringpool.html">stringpool</a>* <a class="code" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>);
+<a name="l00039"></a>00039 <span class="keywordtype">boolean</span> <a class="code" href="spstring_8c.html#aff3ad92cec105f24f415f745ae476ba1" title="Restituisce un valore booleno che indica se lo stringpool � vuoto.">sp_isempty</a>(<span class="keyword">const</span> <a class="code" href="structstringpool.html">stringpool</a>* <a class="code" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>);
+<a name="l00040"></a>00040 <span class="keywordtype">boolean</span> <a class="code" href="spstring_8c.html#a51a9f7cf9dc077b62d01ff8102301841" title="Restituisce un valore booleno che indica se stringpool contiene gi� il massimo numero di elementi cons...">sp_isfull</a>(<span class="keyword">const</span> <a class="code" href="structstringpool.html">stringpool</a>* <a class="code" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>);
+<a name="l00041"></a>00041 <span class="keywordtype">int</span> <a class="code" href="spstring_8c.html#ac0204ece57f1cdce074fe7af7b7419f1" title="Cerca la stringa str all�interno dello stringpool e ne restituisce la posizione, nel caso sia presente...">sp_find_string</a>(<span class="keyword">const</span> <a class="code" href="structstringpool.html">stringpool</a>* <a class="code" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, <span class="keyword">const</span> <span class="keywordtype">string</span>* str);
+<a name="l00042"></a>00042 <span class="keywordtype">string</span>* <a class="code" href="spstring_8c.html#a0b0458114373e76ff2c48696bcae2782" title="Restituisce il puntatore alla stringa str che occupa la posizione pos all�interno dello stringpool...">sp_get_string</a>(<span class="keyword">const</span> <a class="code" href="structstringpool.html">stringpool</a>* <a class="code" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, <span class="keywordtype">int</span> pos);
+<a name="l00043"></a>00043 <span class="keywordtype">boolean</span> <a class="code" href="spstring_8c.html#ae86751935917ec79d819904cfb087817" title="Aggiunge la stringa puntata da str all�interno dello stringpool.">sp_add_string</a>(<a class="code" href="structstringpool.html">stringpool</a>* <a class="code" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, <span class="keywordtype">string</span>* str);
+<a name="l00044"></a>00044 <span class="keywordtype">boolean</span> <a class="code" href="spstring_8c.html#ace396a34f5bb42619cb81756b2f5b375" title="Aggiunge una string all�interno dello stringpool in posizione pos.">sp_add_string_pos</a>(<a class="code" href="structstringpool.html">stringpool</a>* <a class="code" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, <span class="keywordtype">string</span>* str, <span class="keywordtype">int</span> pos);
+<a name="l00045"></a>00045 <span class="keywordtype">string</span>* <a class="code" href="spstring_8c.html#a6fd0b8059482b70aa0bc8ee607e3fadb" title="Rimuove e restituisce la stringa str all�interno dello stringpool in posizione pos.">sp_remove_string</a>(<a class="code" href="structstringpool.html">stringpool</a>* <a class="code" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, <span class="keywordtype">int</span> pos);
+<a name="l00046"></a>00046 <span class="keywordtype">boolean</span> <a class="code" href="spstring_8c.html#a465c42024674ec91ddb1158ee58c3466" title="Sostituisce la stringa all�interno dello stringpool in posizione pos, rimpiazzandola con str...">sp_replace_string</a>(<a class="code" href="structstringpool.html">stringpool</a>* <a class="code" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, <span class="keywordtype">int</span> pos, <span class="keywordtype">string</span>* newstr);
+<a name="l00047"></a>00047 <span class="keywordtype">int</span> <a class="code" href="spstring_8c.html#a971049db5eca3ef305591d1fcd195a0f" title="Salva il contenuto dello stringpool in un file di testo.">sp_save_to_file</a>(<a class="code" href="structstringpool.html">stringpool</a>* <a class="code" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, <span class="keyword">const</span> <span class="keywordtype">string</span> fname);
+<a name="l00048"></a>00048 <span class="keywordtype">int</span> <a class="code" href="spstring_8c.html#acc812ec5efe19197bad45658ffefb1fe" title="Carica il contenuto del file di test fname nello o stringpool.">sp_load_from_file</a>(<a class="code" href="structstringpool.html">stringpool</a>* <a class="code" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, <span class="keyword">const</span> <span class="keywordtype">string</span> fname);
+<a name="l00049"></a>00049 <span class="keywordtype">void</span> <a class="code" href="spstring_8c.html#ae3399d635eb3cd9893e079f6eaef6e1f" title="Ordina alfabeticamente gli elementi dello stringpool, applicando l�algoritmo di bubble sort...">bubble_sort</a>(<a class="code" href="structstringpool.html">stringpool</a>* <a class="code" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>);
+<a name="l00050"></a>00050 <span class="keywordtype">int</span> <a class="code" href="spstring_8c.html#a254f5e6ad18c821b31437d10a923cc83" title="Cerca la stringa str all�interno dello stringpool ordinato attraverso l�algoritmo di ricerca binaria...">bin_search</a>(<span class="keyword">const</span> <a class="code" href="structstringpool.html">stringpool</a>* <a class="code" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, <span class="keyword">const</span> <span class="keywordtype">string</span> str);
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052 <span class="keywordtype">boolean</span> <a class="code" href="spstring_8c.html#a790c017dd9dec0e2b95bf818d10ba005" title="Controlla se esiste gi� il file e se non esiste lo crea.">_sp_file_create</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>* fname);
+<a name="l00053"></a>00053 <span class="keywordtype">boolean</span> <a class="code" href="spstring_8c.html#a126e34dae1b5bfb99d0bbb34b1526dc8" title="Controlla se il file richiesto esiste e ne restituisce il valore di verit�">_sp_file_exist</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>* fname);
+<a name="l00054"></a>00054 <span class="keywordtype">int</span>* <a class="code" href="spstring_8c.html#a6143c920f51cf353336ee72034f68962">_sp_map_array_stringpool</a>(<span class="keyword">const</span> <a class="code" href="structstringpool.html">stringpool</a>* <a class="code" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>);
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 <span class="preprocessor">#endif </span><span class="comment">/* END SPSTRING_H_ */</span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -159,7 +144,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Definizioni</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -168,7 +153,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generato Mar 17 Mag 2011 08:08:06 per StringPool da&#160;
+<hr class="footer"/><address class="footer"><small>Generato Lun 30 Mag 2011 10:09:24 per Stringpool da&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
 </body>

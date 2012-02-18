@@ -1,148 +1,1159 @@
-.TH "stringpool/src/spstring.h" 3 "Mar 17 Mag 2011" "Version stringpool" "StringPool" \" -*- nroff -*-
+.TH "Library/spstring.h" 3 "Lun 30 Mag 2011" "Version 1.0" "Stringpool" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-stringpool/src/spstring.h \- 
+Library/spstring.h \- 
 .PP
-Header spstring.  
+Header per funzioni stringpool.  
 
 .SH SYNOPSIS
 .br
 .PP
-.SS "Composti"
+\fC#include 'bool.h'\fP
+.br
+\fC#include 'stringpool.h'\fP
+.br
 
-.in +1c
-.ti -1c
-.RI "struct \fBstring\fP"
-.br
-.ti -1c
-.RI "struct \fBstringpool\fP"
-.br
-.in -1c
 .SS "Definizioni"
 
 .in +1c
 .ti -1c
-.RI "#define \fBMAX_DIM_STRING_POOL\fP   10"
-.br
-.ti -1c
-.RI "#define \fBUNUSED_SLOT\fP   0"
-.br
-.ti -1c
-.RI "#define \fBUSED_SLOT\fP   1"
+.RI "#define \fBSPSTRING_H_\fP"
 .br
 .in -1c
 .SS "Funzioni"
 
 .in +1c
 .ti -1c
+.RI "void \fBsp_initialize_stringpool\fP (\fBstringpool\fP *\fBsp\fP)"
+.br
+.RI "\fIInizializza una struttura Stringpool. \fP"
+.ti -1c
+.RI "void \fBsp_free_stringpool\fP (\fBstringpool\fP *\fBsp\fP)"
+.br
+.RI "\fILibera la memoria e reinizializza la struct sringpool. \fP"
+.ti -1c
 .RI "\fBstring\fP * \fBsp_new_string\fP (const char *str)"
 .br
-.ti -1c
-.RI "\fBstring\fP * \fBsp_new_string_as_struct\fP (const \fBstring\fP *str)"
-.br
+.RI "\fICrea una string con contenuto pari a quello in ingresso. \fP"
 .ti -1c
 .RI "\fBstring\fP * \fBsp_new_empty_string\fP (int len)"
 .br
+.RI "\fICrea una string vuota di dimensione len. \fP"
 .ti -1c
 .RI "int \fBsp_get_allocated_size\fP (const \fBstring\fP *str)"
 .br
-.ti -1c
-.RI "\fBstring\fP * \fBsp_strcpy\fP (\fBstring\fP *copy, const char *original, int offset)"
-.br
+.RI "\fIRestituisce la dimensione massima allocata per la stringa. \fP"
 .ti -1c
 .RI "void \fBsp_free\fP (\fBstring\fP *str)"
 .br
+.RI "\fIDealloca lo spazio di memoria a cui sta puntando str. \fP"
 .ti -1c
 .RI "int \fBsp_strlen\fP (const \fBstring\fP *str)"
 .br
+.RI "\fICalcola e restituisce la lunghezza logica di una string. \fP"
 .ti -1c
-.RI "boolean \fBsp_strcmp\fP (const \fBstring\fP *str1, const char *str2)"
+.RI "\fBboolean\fP \fBsp_strcmp\fP (const \fBstring\fP *str1, const char *str2)"
 .br
+.RI "\fIConfronta due stringhe e restituisce il relativo valore di verità \fP"
+.ti -1c
+.RI "\fBstring\fP * \fBsp_new_string_as_struct\fP (const \fBstring\fP *str)"
+.br
+.RI "\fICrea una nuova string il cui contenuto è uguale a quella in ingresso. \fP"
+.ti -1c
+.RI "\fBstring\fP * \fBsp_strcpy\fP (\fBstring\fP *copy, const char *original, int offset)"
+.br
+.RI "\fICopia il contenuto della string original in copy. \fP"
 .ti -1c
 .RI "\fBstring\fP * \fBsp_strcat\fP (const char *str1, const char *str2)"
 .br
+.RI "\fICrea una string ottenuta dalla concatenazione di due stringhe in ingresso. \fP"
 .ti -1c
 .RI "\fBstring\fP * \fBsp_strcat_as_struct\fP (const \fBstring\fP *str1, const \fBstring\fP *str2)"
 .br
+.RI "\fICrea una string ottenuta dalla conctaenazione delle due string in ingresso. \fP"
 .ti -1c
 .RI "\fBstring\fP * \fBsp_lower_case\fP (const \fBstring\fP *str)"
 .br
+.RI "\fIRestituisce una nuova stringa ottenuta ponendo in minuscolo ciascun carattere della stringa in ingresso. \fP"
 .ti -1c
 .RI "\fBstring\fP * \fBsp_upper_case\fP (const \fBstring\fP *str)"
 .br
+.RI "\fIRestituisce una nuova stringa ottenuta ponendo in maiuscolo ciascun carattere della stringa in ingresso. \fP"
 .ti -1c
-.RI "void \fBsp_initialize_stringpool\fP (\fBstringpool\fP *sp)"
+.RI "int \fBsp_sizeof\fP (const \fBstringpool\fP *\fBsp\fP)"
 .br
+.RI "\fIRestituisce il numero di stringhe in sp. \fP"
 .ti -1c
-.RI "void \fBsp_free_stringpool\fP (\fBstringpool\fP *sp)"
+.RI "\fBboolean\fP \fBsp_isempty\fP (const \fBstringpool\fP *\fBsp\fP)"
 .br
+.RI "\fIRestituisce un valore booleno che indica se lo stringpool è vuoto. \fP"
 .ti -1c
-.RI "int \fBsp_sizeof\fP (const \fBstringpool\fP *sp)"
+.RI "\fBboolean\fP \fBsp_isfull\fP (const \fBstringpool\fP *\fBsp\fP)"
 .br
+.RI "\fIRestituisce un valore booleno che indica se stringpool contiene già il massimo numero di elementi consentiti. \fP"
 .ti -1c
-.RI "boolean \fBsp_isempty\fP (const \fBstringpool\fP *sp)"
+.RI "int \fBsp_find_string\fP (const \fBstringpool\fP *\fBsp\fP, const \fBstring\fP *str)"
 .br
+.RI "\fICerca la stringa str all’interno dello stringpool e ne restituisce la posizione, nel caso sia presente. \fP"
 .ti -1c
-.RI "boolean \fBsp_isfull\fP (const \fBstringpool\fP *sp)"
+.RI "\fBstring\fP * \fBsp_get_string\fP (const \fBstringpool\fP *\fBsp\fP, int pos)"
 .br
+.RI "\fIRestituisce il puntatore alla stringa str che occupa la posizione pos all’interno dello stringpool. \fP"
 .ti -1c
-.RI "int \fBsp_find_string\fP (const \fBstringpool\fP *sp, const \fBstring\fP *str)"
+.RI "\fBboolean\fP \fBsp_add_string\fP (\fBstringpool\fP *\fBsp\fP, \fBstring\fP *str)"
 .br
+.RI "\fIAggiunge la stringa puntata da str all’interno dello stringpool. \fP"
 .ti -1c
-.RI "\fBstring\fP * \fBsp_get_string\fP (const \fBstringpool\fP *sp, int pos)"
+.RI "\fBboolean\fP \fBsp_add_string_pos\fP (\fBstringpool\fP *\fBsp\fP, \fBstring\fP *str, int pos)"
 .br
+.RI "\fIAggiunge una string all’interno dello stringpool in posizione pos. \fP"
 .ti -1c
-.RI "boolean \fBsp_add_string\fP (\fBstringpool\fP *sp, \fBstring\fP *str)"
+.RI "\fBstring\fP * \fBsp_remove_string\fP (\fBstringpool\fP *\fBsp\fP, int pos)"
 .br
+.RI "\fIRimuove e restituisce la stringa str all’interno dello stringpool in posizione pos. \fP"
 .ti -1c
-.RI "boolean \fBsp_add_string_pos\fP (\fBstringpool\fP *sp, \fBstring\fP *str, int pos)"
+.RI "\fBboolean\fP \fBsp_replace_string\fP (\fBstringpool\fP *\fBsp\fP, int pos, \fBstring\fP *newstr)"
 .br
+.RI "\fISostituisce la stringa all’interno dello stringpool in posizione pos, rimpiazzandola con str. \fP"
 .ti -1c
-.RI "\fBstring\fP * \fBsp_remove_string\fP (\fBstringpool\fP *sp, int pos)"
+.RI "int \fBsp_save_to_file\fP (\fBstringpool\fP *\fBsp\fP, const \fBstring\fP fname)"
 .br
+.RI "\fISalva il contenuto dello stringpool in un file di testo. \fP"
 .ti -1c
-.RI "boolean \fBsp_replace_string\fP (\fBstringpool\fP *sp, int pos, \fBstring\fP *newstr)"
+.RI "int \fBsp_load_from_file\fP (\fBstringpool\fP *\fBsp\fP, const \fBstring\fP fname)"
 .br
+.RI "\fICarica il contenuto del file di test fname nello o stringpool. \fP"
 .ti -1c
-.RI "int \fBsp_save_to_file\fP (\fBstringpool\fP *sp, const \fBstring\fP fname)"
+.RI "void \fBbubble_sort\fP (\fBstringpool\fP *\fBsp\fP)"
 .br
+.RI "\fIOrdina alfabeticamente gli elementi dello stringpool, applicando l’algoritmo di bubble sort. \fP"
 .ti -1c
-.RI "int \fBsp_load_from_file\fP (\fBstringpool\fP *sp, const \fBstring\fP fname)"
+.RI "int \fBbin_search\fP (const \fBstringpool\fP *\fBsp\fP, const \fBstring\fP str)"
 .br
+.RI "\fICerca la stringa str all’interno dello stringpool ordinato attraverso l’algoritmo di ricerca binaria. \fP"
 .ti -1c
-.RI "void \fBbubble_sort\fP (\fBstringpool\fP *sp)"
+.RI "\fBboolean\fP \fB_sp_file_create\fP (const \fBstring\fP *fname)"
 .br
+.RI "\fIControlla se esiste già il file e se non esiste lo crea. \fP"
 .ti -1c
-.RI "int \fBbin_search\fP (const \fBstringpool\fP *sp, const \fBstring\fP str)"
+.RI "\fBboolean\fP \fB_sp_file_exist\fP (const \fBstring\fP *fname)"
+.br
+.RI "\fIControlla se il file richiesto esiste e ne restituisce il valore di verità \fP"
+.ti -1c
+.RI "int * \fB_sp_map_array_stringpool\fP (const \fBstringpool\fP *\fBsp\fP)"
 .br
 .in -1c
 .SH "Descrizione dettagliata"
 .PP 
-Header spstring. 
+Header per funzioni stringpool. 
 
-Contiene i prototipi e le strutture della libreria 'spstring' 
+Protitpi di funzioni per la manipolazione dei dati gestiti dalla libreria stringpool
+.PP
+\fBAutore:\fP
+.RS 4
+Domenico Monaco, domenico.monaco@kiuz.it 
+.RE
+.PP
+\fBData:\fP
+.RS 4
+2011 
+.RE
+.PP
+.SH "Licenza"
+.PP
+GPLv2 http://www.softwarelibero.it/gnudoc/gpl.it.txt Per maggiori informazioni visitare il link o visualizzare il file LICENSE 
+.SH "Documentazione delle definizioni"
+.PP 
+.SS "#define SPSTRING_H_"Impedisce inclusioni multiple 
 .SH "Documentazione delle funzioni"
 .PP 
-.SS "void sp_initialize_stringpool (\fBstringpool\fP *sp)"
+.SS "\fBboolean\fP _sp_file_create (const \fBstring\fP *fname)"
 .PP
-Indirizzo alla struttura stringpool
-.PP
-Abbiamo solo l'indirizzo
-.PP
-< sp, allocazione di una struct stringpool all'indirizzo passato 
-.SS "\fBstring\fP* sp_new_string (const char *str)"Crea una nuova stringa il cui contenuto eÃÄ uguale a quello del parametro in ingresso str.
-.PP
-\fBParametri:\fP
+Controlla se esiste già il file e se non esiste lo crea. \fBParametri:\fP
 .RS 4
-\fIstr\fP 
+\fIfname\fP puntatore a struttura string costante 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+ifcreated boolean valore di verità, TRUE se è esiste già o se non esiste ed è stato Creato, FALSE se non esiste non è stato possibile crearlo 
 .RE
 .PP
 
 .PP
-< inizializza una struct di tipo string
+Dichiaro la variabile di output
 .PP
-Salva in new_string->allocated size la lunghezza della stringa da allocare 
+Dichiaro il puntatore a file
+.PP
+Verifico che fname non sia nullo
+.PP
+Controllo se non esiste già il file
+.PP
+Se non esiste cerco di crearlo
+.PP
+Se non si riesce a a crearlo imposto la variabile di output a FALSE
+.PP
+Altrimenti se sono riuscito* a crerlo imposto la variabile di output a TRUE
+.PP
+Chiudo il file aperto
+.PP
+Se esiste già imposto la variabile outpt a TRUE
+.PP
+Ritorno il valore di output 
+.SS "\fBboolean\fP _sp_file_exist (const \fBstring\fP *fname)"
+.PP
+Controlla se il file richiesto esiste e ne restituisce il valore di verità \fBParametri:\fP
+.RS 4
+\fIfname\fP puntatore a struttura string costante 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+ifexist valore boolean FALSE se non esiste non è possibile aprirlo in modalità di lettura, TRUE se esiste ed è possibile aprirlo in modalità di lettura 
+.RE
+.PP
+
+.PP
+Dichiaro la variabile di output inizializzandola a FAlSE
+.PP
+Dichiaro il puntatore a file
+.PP
+Verifico che fname non sia nullo
+.PP
+Controllo se è possibile aprire il file richiesto in modalità di lettura
+.PP
+Se non è possibile aprirlo imposto la variabile di output a FALSE
+.PP
+Altrimenti se è possibile aprie il file imposto a TRUE la variabile di output
+.PP
+Chiudo il file
+.PP
+Ritorno la variabile di output 
+.SS "int* _sp_map_array_stringpool (const \fBstringpool\fP *sp)"
+.PP
+Dichiaro l'array di output
+.PP
+Dichiaro la variabile indice per il ciclo for e la variabile di posizione
+.PP
+Controllo che sp non sia NULL
+.PP
+Inizializzo lo spazio di memoria per l'array di outpu calcolato sulla dimensione di sp
+.PP
+Itero su tutte le possibili posizioni potenzialmente occupate in sp
+.PP
+Controllo se la i-esima posizione è occupata
+.PP
+In caso sia occupata salvo in posizioni consecutive la posizione i-esima
+.PP
+Incremento la posizione del vettore di output solo se è stato inserito qualcosa
+.PP
+Ritorno la varibile di ouput 
+.SS "int bin_search (const \fBstringpool\fP *sp, const \fBstring\fPstr)"
+.PP
+Cerca la stringa str all’interno dello stringpool ordinato attraverso l’algoritmo di ricerca binaria. Ne restituisce la posizione, nel caso in cui str sia presente.
+.PP
+\fBParametri:\fP
+.RS 4
+\fI\\return\fP iffound pari alla posizione p della stringa, con 0<= p < MAX_DIM_STRING_POOL se str è presente in sp; p=-1, altrimenti. Se sp o str sono nulli, restituisce -1. 
+.RE
+.PP
+
+.PP
+Dichiaro la variabile di output
+.PP
+Dichiaro la variabile indice per il ciclo while della ricerca binaria, rappresenta il numero di controll effettuati
+.PP
+Variabile di controllo per la ricerca della stringa cercata
+.PP
+Variabili per il calcolo dell'i-esima posizione da controlla come da definizione del bin_search
+.PP
+Puntatore ad array di interi contenere la mappa delle posizioni degli slot in stringpool
+.PP
+Controllo che sp e str non siano NULL, altrimenti salta salta e restituisce valore di errore -1
+.PP
+Calcolo e salvo la dimensione di sp
+.PP
+Se ha dimensione diversa da 0 è possibile effettuare la ricerca
+.PP
+Ottengo la mappa delle posizione degli slot di sp
+.PP
+Imposto il parametro hight del binary serch alla dimensione di sp
+.PP
+Imposoto il parametro low del binary search a 1
+.PP
+Itero finchè str_cmp non è 0 ovvero è stata identificata esattamente la stringa ricercata oppure se abbiamo già controllato tutto gli slot
+.PP
+Calcolo mid su base della formula binary search
+.PP
+Controllo la strina in posizione mid, contrale rispetto [low, hight]
+.PP
+In base al risultato associo a low o hight un valore diverso ed incremento la variabile indice
+.PP
+Alla fine dll'iterazione controllo controllo se sia stata identificata o meno la stringa righesta
+.PP
+In caso sia concluso il ciclo senza trovare la stringa o non sia neanche iniziato, imposto il risultato a -1
+.PP
+In caso invece sia stata identificata la stringa resituisco la sua posizione
+.PP
+Ritorno il valore di ritorno che può essere o la posizione p della strnga cercata o -1 in caso di errore 
+.SS "void bubble_sort (\fBstringpool\fP *sp)"
+.PP
+Ordina alfabeticamente gli elementi dello stringpool, applicando l’algoritmo di bubble sort. Ordina effettuando un controllo su ogni coppia di elementi, partendo dal basso sceglie minore del confronto e lo porta verso l'alto. Ho usato la versione 'corta' dell'algoritmo dover per ogni i-esimo ciclo assumiamo che l'elemento appena spostato è già in posizione corretta. Ho dovuto applicare un piccolo hack per poter fare l'ordinamento anche su array con elementi non contiugui e lasciare invariate le posizione vuote, in altri termini l'algoritmo ordina gli elementi solo sulle posizione attualmente utilizzare senza alterare la posizione degli slot vuoti.
+.PP
+\fBParametri:\fP
+.RS 4
+\fIsp\fP puntatore a struttura stringpool 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.PP
+Dichiaro le variabili indici per i due cicli dell'algoritmo Bubble sort
+.PP
+Dichiaro la variabile per identificare se nell'i-esimo controllo è necessario uno Switch degli slot
+.PP
+Dichiaro la variabile per memorizzare temporaneamente la string da sostituire
+.PP
+Dichiaro la variabile per mappare le posizioni degli slot
+.PP
+Controllo prima se sp non sia NULL ed in seguito se sp non è VUOTO altrimenti non faccio null
+.PP
+Ottengo un array della mappa delle posizione dell'array. Dove ogni i-esima posione contiene la posizione reale dello slot. Ad esempio se esistono 4 elementi, ma il sp->position[3] è vuoto mentre il sp->position[4] è pieno il risultato sarà un arrai del tipo [0->0,1->1,2->2,3->4]
+.PP
+Itero su due cicli for come da definizione dell'algoritmo
+.PP
+Il primo ciclo itera da 0 alla dimensione di sp, incrementando il puntatore
+.PP
+Il secondo ciclo itera dalla dimensione di sp meno 1,fino ad i, decrementando l'indice.
+.PP
+Ad ogni iterazione del primo ciclo for, il secndo ciclo for effettuera un passaggio in meno evitando di controllare elementi sicuramente già in posizione corretta
+.PP
+La j esima posione è quella corrente e dipende anche da i. Controlliamo le poszioni (j) e (j-1), identificando se sono o meno in ordine alfabetico utilizzando strcmp. Quindi ifswitch sarà -1 l'elemento j deve essere spostato in posizione j-1 e viceversa
+.PP
+In questi cicli non mi devo preoccupare dei 'buchi' nell'array stringpool dato che le iterazioni sono fatte sulla mappa dele posizione che è un array continuo che ci permette di tradurre per ogni iterazione la reale posizione dello slot trattato
+.PP
+Controllo se bisogna scambiare gli elementi
+.PP
+Memorizzo temporanemente la stringa in posizione j
+.PP
+Rimpiazzo in posizione j la strin j-1
+.PP
+Rimpiazzo in posizione j-1 la stringa memorizzata precedentemente, ovvero quella in posizione j 
+.SS "\fBboolean\fP sp_add_string (\fBstringpool\fP *sp, \fBstring\fP *str)"
+.PP
+Aggiunge la stringa puntata da str all’interno dello stringpool. Viene aggiunta nella prima posizione libera. Nessuna operazione è compiuta se str e/o sp sono nulli, oppure se sp è pieno.
+.PP
+\fBParametri:\fP
+.RS 4
+\fIsp\fP puntatore a struttura stringpool 
+.br
+\fIstr\fP puntatore a struttura string 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+is_added TRUE se l’inserimento è andato a buon fine, FALSE altrimenti. 
+.RE
+.PP
+
+.PP
+Dichiaro la variabile di outpu inizializzandola a FALSE
+.PP
+Dichiaro la varibile di verità per la posizione libera
+.PP
+Variabile indice per ciclo while per la ricerca della posizione libera
+.PP
+Variabile
+.PP
+Controllo che sp ed str non siano NULL
+.PP
+Controllo se lo string pool non è pieno
+.PP
+Ciclo per l'intero stringpool alla ricerca della prima posizione libera
+.PP
+Il ciclo continua finchè check_free è diverso da 1 e non abbiamo controllato tutte le posizini
+.PP
+Per ogni ciclo controllo se l'i-esima posizione è libera
+.PP
+In caso affermativo, imposto check_free a 1
+.PP
+Provo quindi ad aggiungere la string in ingresso nella posizione libera appena trovata
+.PP
+Memoriazando il risutlato di tale operazione
+.PP
+Controllo se l'operazione di aggiunta della string in posizine iesima è andata a buon fine
+.PP
+In caso affermativo imposto la variabile di output a TRUE
+.PP
+In caso negativo, riporto check_free a 0 permettendo di continuare a cercare un'altra posizione
+.PP
+Incremente il contatore iesimo
+.PP
+Ritorno il valore di verità per l'operazione di aggiunta string 
+.SS "\fBboolean\fP sp_add_string_pos (\fBstringpool\fP *sp, \fBstring\fP *str, intpos)"
+.PP
+Aggiunge una string all’interno dello stringpool in posizione pos. Nessuna operazione è compiuta se str e/o sp sono nulli, se pos è fuori dall’intervallo 0<= pos < MAX_DIM_STRING_POOL 
+.PP
+\fBParametri:\fP
+.RS 4
+\fIsp\fP puntatore a struttura stringpool 
+.br
+\fIstr\fP puntatore a struttura string 
+.br
+\fIpos\fP intero che indica la posizione in cui aggiungere la string
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+is_added vale TRUE se l’inserimento è andato a buon fine, FALSE altrimenti. 
+.RE
+.PP
+
+.PP
+Dichiaro la variabile di output inizializzandola a FALSE
+.PP
+Controllo che sp e str non siano null e controllo che la posizione richiesta esista nello stringpool
+.PP
+Controllo che la posizione pos sia già occupata, in tal caso libero la memoria
+.PP
+Inesrisco in strings[pos] il puntatore a str passata
+.PP
+positions e used_counter sono aggiornati solo se è realmente presente in strings[pos] l'indirizzo voluto, altrimenti non aggiorna le variabili
+.PP
+L'assocciazione è andata a buon fine, posso aggiornare le variabili positions, used_counter e is_added per l'output
+.PP
+Ritorno la variabile di output 
+.SS "int sp_find_string (const \fBstringpool\fP *sp, const \fBstring\fP *str)"
+.PP
+Cerca la stringa str all’interno dello stringpool e ne restituisce la posizione, nel caso sia presente. \fBParametri:\fP
+.RS 4
+\fIsp\fP puntatore a struttura stringpool 
+.br
+\fIstr\fP puntatore a struttura string costante 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+position_find Posizione p della stringa, con 0<= p < MAX_DIM_STRING_POOL se str è presente in sp; p=-1, altrimenti. Se sp e/o str sono NULL, restituisce -1. 
+.RE
+.PP
+
+.PP
+Dichiaro la varibile di output e la inizializzo a -1 in caso di problemi durante la computazione
+.PP
+Dichiaro la variabile per l'iterazione su tutto l'array
+.PP
+Variabile di controllo per risultato comparazione
+.PP
+Controllo che sp ed str non siano NUL
+.PP
+Itero su tutta la dimensione possibile dell'array
+.PP
+Controllo se la posizione i-esima è utilizzata
+.PP
+Comparo le stringhe e salvo il risultato
+.PP
+Controllo il risultato della comparazione
+.PP
+Se è stata identificata la stringa salvo la posizione i-esima corrente
+.PP
+Forzo l'indice i a sforare sul valore di uscita dal ciclo for
+.PP
+Resituisco il valore di output, -1 se ci sono stati problemi e/o non è stata trovata o >= pari alla posione della stringa cercata in sp 
+.SS "void sp_free (\fBstring\fP *str)"
+.PP
+Dealloca lo spazio di memoria a cui sta puntando str. \fBParametri:\fP
+.RS 4
+\fIstr\fP puntatore a struttura string 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.PP
+Verifica che il puntatore str non sia NULL
+.PP
+Verifica che sia stato allocato dello spazio in corrispondenza all'area di memoria puntata da str->char_array
+.PP
+Libera lo spazio puntato da str->char_array
+.PP
+Libera lo spazio puntato da str
+.PP
+Forza str a valere NULL dopo la deallocazione 
+.SS "void sp_free_stringpool (\fBstringpool\fP *sp)"
+.PP
+Libera la memoria e reinizializza la struct sringpool. \fBParametri:\fP
+.RS 4
+\fIsp\fP puntatore a stringpool 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.PP
+i - indice intero per ciclo for per la deallocazione delle stringe
+.PP
+Verifica che sp non sia NULL
+.PP
+Iterazione per liberare la memoria delle stringe salvate
+.PP
+Verifica che la posizione i-esima sia occupata da una stringa altrimenti evita istruzioni inutili
+.PP
+Rimuove la stringa decrementando used_counter e ponendo a 0 position[i] Per ogni iterazione la struttura stringpool è consistente e coerente con le string rimosse e da rimuovere
+.PP
+Libero la memoria occupata dalla stringa i-esima
+.PP
+Operazione non necessaria se \fBsp_remove_string()\fP e \fBsp_free()\fP operano correttamente 
+.SS "int sp_get_allocated_size (const \fBstring\fP *str)"
+.PP
+Restituisce la dimensione massima allocata per la stringa. \fBParametri:\fP
+.RS 4
+\fIstr\fP puntatore a string 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+allocated_size dimensione fisica allocata per str; se str è 0, restituisce NULL 
+.RE
+.PP
+
+.PP
+Variabile allocated_size di output
+.PP
+Verifica che str e str->char_array non siano NULL
+.PP
+imposta allocated_size al valore di str->allocated_size
+.PP
+In caso allocated_size è 0 viene portato a NULL
+.PP
+Ritorna allocated_size che sarà > 0 oppure NULL 
+.SS "\fBstring\fP* sp_get_string (const \fBstringpool\fP *sp, intpos)"
+.PP
+Restituisce il puntatore alla stringa str che occupa la posizione pos all’interno dello stringpool. Se pos è fuori da questo intervallo o se sp è nullo, allora la funzione restituisce restituisce NULL.
+.PP
+\fBParametri:\fP
+.RS 4
+\fIsp\fP puntatore costante a struttura string pull 
+.br
+\fIpos\fP intero positivo che indica la posizione da controllare 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+str_output puntatore a string in posizione pos, se 0<= pos < MAX_DIM_STRING_POOL; 
+.RE
+.PP
+
+.PP
+Dichiaro la variabile di output e la inizializzo a NULL
+.PP
+Controllo come da specifica se sp è NULL, se la posizione è all'interno degli indici di stringpool
+.PP
+Controllo se la posizione richiesta è utilizzata
+.PP
+In tal caso assozio l'indirizzo a cui punta stirngs[pos] alla variabile di output
+.PP
+Ritorno la variabile di output 
+.SS "void sp_initialize_stringpool (\fBstringpool\fP *sp)"
+.PP
+Inizializza una struttura Stringpool. .PP
+.nf
+.fi
+.PP
+ Importa tipi di dato boolean 
+.PP
+.nf
+
+.fi
+.PP
+ Importa tipi di dato string e stringpool
+.PP
+\fBParametri:\fP
+.RS 4
+\fIsp\fP puntatore a struttura stringpool 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.PP
+Verifica se il puntatore sp non è NULL
+.PP
+Imposta il counter degli slot utilizzati al valore di EMPTY_STRING_POOL
+.PP
+Imposta le posizioni al valore di UNUSED_SLOT rendendole tutte libere 
+.SS "\fBboolean\fP sp_isempty (const \fBstringpool\fP *sp)"
+.PP
+Restituisce un valore booleno che indica se lo stringpool è vuoto. \fBParametri:\fP
+.RS 4
+\fIsp\fP puntatore a struttura stringpool costante 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+isempty è TRUE se sp è vuoto, FALSE altrimenti; se sp è NULL, restituisce FALSE 
+.RE
+.PP
+
+.PP
+Dichiaro la variabile di output e la inizializzo a FALSE
+.PP
+Verifico che sp non sia NUL
+.PP
+Controllo se il numero di slot usati è EMPTY_STRING_POOL
+.PP
+In caso affermativo, imposta isempty a TRUE, altrimenti rimane FALSE
+.PP
+Ritorno il valore di verità per sp VUOTO 
+.SS "\fBboolean\fP sp_isfull (const \fBstringpool\fP *sp)"
+.PP
+Restituisce un valore booleno che indica se stringpool contiene già il massimo numero di elementi consentiti. \fBParametri:\fP
+.RS 4
+\fIsp\fP puntatore a struttura stringpool costante 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+isfull è TRUE se il numero di elementi presenti è == MAX_DIM_STRING_POOL, FALSE altrimenti; se sp è NULL, restituisce TRUE 
+.RE
+.PP
+
+.PP
+Dichiaro la variabile di output
+.PP
+Controllo se sp è diverso da NULL
+.PP
+Controllo se il counter degli slot è impotato alla dimensione massima di stringpool
+.PP
+Tutti gli slot sono usati, imposto isfull a TRUE
+.PP
+Caso in cui sp == NULL
+.PP
+Imposto come da specifica isfull a TRUE
+.PP
+Ritorno il valore di verita per sp PIENO 
+.SS "int sp_load_from_file (\fBstringpool\fP *sp, const \fBstring\fPfname)"
+.PP
+Carica il contenuto del file di test fname nello o stringpool. L’intera stringa letta su una riga sarà un elemento dello stringpool. Inoltre conserva l'ordinamento ed il posizionamento originale delle stringhe pizzandole esattamene nella posizione originale.
+.PP
+\fBParametri:\fP
+.RS 4
+\fIsp\fP puntatore a struttura stringpool 
+.br
+\fIfname\fP struttura string contenente il nome del file da leggere 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+number_loaded_line il numero di righe lette e caricate 
+.RE
+.PP
+
+.PP
+Dichiaro la variabile di output, la inizializzo a -1 in caso si incontrano problemi nel caricamento
+.PP
+Variabile di indice per ciclo for per caricamento righe
+.PP
+Dichiaro la variabile per la lettura 'massima' di righe da file
+.PP
+Puntatore a file da leggere
+.PP
+Variabile per l'i-esimo slot letto da file
+.PP
+Varibile della posizione dell'i-esimo slot lett da file
+.PP
+array temporanei
+.PP
+tmp_slot_start_line per contenere l'inizio della stringa
+.PP
+tmp_slot_end_line per contenere la fine della riga, ovvero uno spazio un punto e virgola ed il carattere di nuova linea
+.PP
+Controllo che sp non sia NULL, e che il nome del file richiesto non sia vuoto o pari al solo spazio
+.PP
+Controllo che il file richiesto esista
+.PP
+In caso esiste viene ri-aperto
+.PP
+Imposto il numero di righe caricate a 0
+.PP
+Leggo la prima informazione del file che contiene il numero di stringhe salvate Ed imposto tale valore a number_slot.
+.PP
+Effettuo una iterazione su number_slot in modo da leggere le righe e salvarle
+.PP
+Se il puntarore all'i-esima itezione non è NULL continuo
+.PP
+Se il puntatore all'i-esima iterazione non è parti a EOF continuo
+.PP
+Effettuo una prima lettura della righa con fscanf prelevando posizione dello slot letto e la sua dimesione
+.PP
+Effettuo una seconda lettura con fgets leggendo la parte restante del testo basandomi sulla dimensione appena letta
+.PP
+Effettuo una terza lettura utile solo a far avanzare il puntatore, leggendo i 3 caratteri finali della stinga sufficenti a far trovare il puntare ad inizio riga alla prosssima iterazione
+.PP
+Aggiungo in sp lo slot lett con tmp_slot_start_line in posizione pos
+.PP
+Incremento la varibile che indica il numero di righe caricate
+.PP
+Contollo di sicurezza in caso il valore letto da pos non sia compatibile con la dimensione massima e minima contenibile in uno stringpool
+.PP
+Chiudo il file aperto
+.PP
+Restituisco il valore di ritorno pari al numero di righe lette 
+.SS "\fBstring\fP* sp_lower_case (const \fBstring\fP *str)"
+.PP
+Restituisce una nuova stringa ottenuta ponendo in minuscolo ciascun carattere della stringa in ingresso. \fBParametri:\fP
+.RS 4
+\fIstr\fP puntatore a string costante 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+lower_output Puntatore a string contenente caratteri in minuscolo 
+.RE
+.PP
+
+.PP
+Dichiaro variabile di output
+.PP
+Variabile per lunghezza stringa
+.PP
+Variabile temporanea per carattere da porre in minuscolo
+.PP
+Variabile indice per ciclo for, per porre iterativamente tutti i caratteri in minuscolo
+.PP
+Controllo che str sia diverso da NULL
+.PP
+Controllo che sia diverso da NULL anche char_array
+.PP
+Calcolo la lungehzza della stringa, che potrebbe essere diversa dalla dimensione allocata per la stringa
+.PP
+Creo una nuova stringa vuota di dimensione della stringa in ingresso
+.PP
+Ciclo su tutta la lunghezza della stringa
+.PP
+Passo alla funzione tolower il carattere iesimo copiandolo in tmp_lower
+.PP
+Copio quindi tmp_lower nella posizione i-esima della string di output, passaggio inutile ma migliora la leggibilità
+.PP
+Salvo il carattere di terminazine stringa in ultima+1 posizione
+.PP
+Ritorno la nuova stringa ottenuta ponendo in minuscolo ogni carattere 
+.SS "\fBstring\fP* sp_new_empty_string (intlen)"
+.PP
+Crea una string vuota di dimensione len. Equivale alla stringa '' 
+.PP
+\fBParametri:\fP
+.RS 4
+\fIlen\fP intero maggiore uguale a zero 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+new_empty_string puntatore a struttura di tipo stringa 
+.RE
+.PP
+
+.PP
+Variabile di output, puntatre a string, inzializzata a NULL nel caso len non è >= 0
+.PP
+Verifica che len sia maggiore uguale a zero
+.PP
+Alloca la memoria per il puntatore new_empty_string, di dimensione SIZE_STRING_STRUCT
+.PP
+Imposta la memoria allocata al valore di len
+.PP
+Alloca lo spazio di dimensione len caratteria al puntatore char_array
+.PP
+Inserisce il carattere di terminazione nello spazio allocato
+.PP
+Ritorna l'indirizzo della struct string, è NULL solo se len < 0 altrimenti punta ad una locazione di memoria valida
+.SS "\fBstring\fP* sp_new_string (const char *str)"
+.PP
+Crea una string con contenuto pari a quello in ingresso. \fBParametri:\fP
+.RS 4
+\fIstr\fP puntatore costante a caratteri 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+new_string puntatore a string 
+.RE
+.PP
+
+.PP
+Calcolo e salvo la lunghezza della stringa passata, essa non contiene conto del carattere di terminazione \\0
+.PP
+Creo ed alloco una nuova stringa vuota di lunghezza (len_str+1)
+.PP
+Copio il contenuto di str in new_string->char_array
+.PP
+Ritorno il puntatore alla struct string 
+.SS "\fBstring\fP* sp_new_string_as_struct (const \fBstring\fP *str)"
+.PP
+Crea una nuova string il cui contenuto è uguale a quella in ingresso. \fBParametri:\fP
+.RS 4
+\fIstr\fP puntatore a string 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+string_as_struct puntatore a string 
+.RE
+.PP
+
+.PP
+inizializzo la variabile di ritorno
+.PP
+associo alla variabile di ritorno il l'indirizzo della nuova string creata con sp_new_string
+.PP
+Ritorno l'indirizzo della nuova string 
+.SS "\fBstring\fP* sp_remove_string (\fBstringpool\fP *sp, intpos)"
+.PP
+Rimuove e restituisce la stringa str all’interno dello stringpool in posizione pos. Nessuna operazione è compiuta se sp è nullo, oppure se pos è fuori dall’intervallo pos, MAX_DIM_STRING_POOL 
+.PP
+\fBParametri:\fP
+.RS 4
+\fIsp\fP puntatore a struttura stringpool 
+.br
+\fIpos\fP intero che indica una posizione in stringpool 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+removed_str puntatore alla stringa rimossa dallo stringpool, oppure NULL se nessuna stringa è presente in posizione pos 
+.RE
+.PP
+
+.PP
+Dichiaro la variabile di output e la inzializzo a NULL
+.PP
+Controllo se sp è NULL o se pos sia all'interno del range di inidici di stringpool
+.PP
+Controllo se la posizione cercata contiene una Stringa Se la condizione è soddisfatta salvo il suo indirizzo
+.PP
+Una volta salvato l'indirizzo della string rimossa, imposto la posizione come DISPONIBILE
+.PP
+Importo il counter degli slot utilizzati ad un valore inferiore
+.PP
+Ritorno la variabile di ouput contenente l'indirizzo della string rimossa 
+.SS "\fBboolean\fP sp_replace_string (\fBstringpool\fP *sp, intpos, \fBstring\fP *newstr)"
+.PP
+Sostituisce la stringa all’interno dello stringpool in posizione pos, rimpiazzandola con str. Nessuna operazione è compiuta se str e/o sp sono nulli, oppure se pos è fuori dall’intervallo [pos, MAX_DIM_STRING_POOL[ 
+.PP
+\fBParametri:\fP
+.RS 4
+\fIsp\fP puntatore a struttura stringpool 
+.br
+\fInewstr\fP puntatore a struttura string 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+is_relpaced TRUE se la sostituzione è andata a buon fine, FALSE altrimenti 
+.RE
+.PP
+
+.PP
+Dichiaro la variabile di output
+.PP
+Controllo se sp è NULL oppure se la posizione richiesta è all'interno del range di indiici di stringpool
+.PP
+Controllo se la posizone richiesta è utilizzata e se la nuova string è diverso da NULL
+.PP
+Rimuvo la stringa richiesta in posizione POS, verranno decrementati il contatore ed impostato a libera la posizione pos
+.PP
+Aggiungo in posizionepos la nuova stringa, verrano reincrementati il contatore ed il valore di utilizzo dello slot
+.PP
+Salvo com'è andata l'operazione nel valore di ritorno
+.PP
+Ritorno la variabile di output che indica se l'operazione è andata a buon fine 
+.SS "int sp_save_to_file (\fBstringpool\fP *sp, const \fBstring\fPfname)"
+.PP
+Salva il contenuto dello stringpool in un file di testo. Specificando il nome nel secondo paramentro fname. Ogni elemento sarà salvato su una riga diversa.
+.PP
+\fBParametri:\fP
+.RS 4
+\fIsp\fP puntatore a struttura stringpool 
+.br
+\fIfname\fP puntatore a struttura string costante 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+number_writed_line con il numero di elementi scritti nel file oppure -1 in caso di errore. 
+.RE
+.PP
+
+.PP
+Dichiaro la variabile di output e la inizializzo a -1 in caso sia possibile effettuare alcuna operazione
+.PP
+Inizializzo la variabile indice per il ciclo di scruttura delle n linee
+.PP
+Inizializzo il puntatore al file per la lettura
+.PP
+Controllo che sp non sia null e che il nome del file su cui scrivere sia diverso da '' o ' '
+.PP
+Credo il file richiesto e se l'operazione è andata a buon fine continuo
+.PP
+Apro il file appena creato e se l'operazione va a buon fine continuo
+.PP
+Imposto il numero di linee scritte a 0 dato che stiamo per scrivere un numero di righe >= 0
+.PP
+Itero per l'intero numero massimo di posizione dell'array stringpool
+.PP
+controllo che lo slot i-esimo sia occupato da una string
+.PP
+In caso sia passata la condizione precedente, scrivo la riga i-esima basandomi sul pattern di scrittura e lettura PATTERN_READ_WRITE_LINE
+.PP
+Incremento il contatore del numero di righe scritte
+.PP
+In caso la riapertura del file non è andata a buon fine imposto la variabile di output a -1 come da specifica
+.PP
+Chiudo il file aperto
+.PP
+Ritorno il valore di output che sarà -1 se è stato incontrato qualche problema, altrimento sarò >= 0 ovvero il numero di linee scritte pari a sp_sizeof(<STRINPOOL>) 
+.SS "int sp_sizeof (const \fBstringpool\fP *sp)"
+.PP
+Restituisce il numero di stringhe in sp. Restituisce 0 se lo stringpool è vuoto; -1 se sp è NULL 
+.PP
+\fBParametri:\fP
+.RS 4
+\fI\\return\fP size_of_sp intero contenente il numero di elementi n>=0 presenti nello stringpool 
+.RE
+.PP
+
+.PP
+Dichiaro la variabile di output
+.PP
+Controllo che sp sia diverso da NULL
+.PP
+In tal caso, associo alla variabile di output il numero di rigeh utilizzate che sarà sempre n>=0 e 0 solo se sp è vuoto
+.PP
+Nel caso sp sia NULL, associo alla variabile di output il valore -1
+.PP
+Ritorno il valore di Output 
+.SS "\fBstring\fP* sp_strcat (const char *str1, const char *str2)"
+.PP
+Crea una string ottenuta dalla concatenazione di due stringhe in ingresso. \fBParametri:\fP
+.RS 4
+\fIstr1\fP puntatore a caratteri costante 
+.br
+\fIstr2\fP puntatore a caratteri costante 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+str_cat puntatore a string contenete una stringa equivalente a str1+str2 
+.RE
+.PP
+
+.PP
+Dichiarro la variabile di ritorno
+.PP
+Dichiaro le variabili per le lunghezze rispettivamente di str2, str1 e string di output
+.PP
+Verifico che entrambe le stringhe non siano NULL
+.PP
+inizializzo le lunghezze di str1 e str2
+.PP
+Dichiaro la lunghezza complessiva della string concatenata sommando le lunghezze logiche di str1 e str2
+.PP
+Creo una nuova string vuota di lunghezza str_cat_len + 1 dato che sp_new_empty_string non tiene conto del carattere di terminazione
+.PP
+Copio in str_cat a partire dalla posizione 0 il contenuto di str1
+.PP
+Copio in str_cat a partire dalla posizione str_len_str1 la str2
+.PP
+Caso in cui almeno uno delle due string è NULL ma non entrambe NULL
+.PP
+Controllo quale delle due string è NULL
+.PP
+Nel caso fosse NULL la str1, creiamo una nuova string con il solo contenuto della str2
+.PP
+Nel caso fosse NULL la str2, creiamo una nuova string con il solo contenuto della str1
+.PP
+Ritorno il puntatore a string contenente le due stringhe concatenate 
+.SS "\fBstring\fP* sp_strcat_as_struct (const \fBstring\fP *str1, const \fBstring\fP *str2)"
+.PP
+Crea una string ottenuta dalla conctaenazione delle due string in ingresso. \fBParametri:\fP
+.RS 4
+\fIstr1\fP puntatore a string costanti 
+.br
+\fIstr2\fP puntatore a string costanti 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+strcat_as_struct puntatore a string pari a str1+str2 
+.RE
+.PP
+
+.PP
+Dichiaro la variabile di output
+.PP
+Verifico che entrmabe str1 e str2 non siano NULL
+.PP
+Controllo lo spazio allocato, se > 0 vuol dire che non sono vuote
+.PP
+Concateno le due stringhe utilizzando \fBsp_strcat()\fP{}
+.PP
+Caso in cui almeno una delle due ha dimensione 0 ma non entrambe di dimensione 0
+.PP
+Controllo quale delle due string è di dimensione 0
+.PP
+Nel caso str1 è di dimensione 0, creo una string con contenuto di str2
+.PP
+Nel caso str2 è di dimensione 0, creo una string con contenuto di str1
+.PP
+Caso in cui str1 o str2 è NULL ma non entrambe NULL
+.PP
+Verifico quale delle due è NULL
+.PP
+Nel caso fosse srt1 NULL e str2 sia di dimensione mazziore di 0, creo una stringa con il contenuto di str2
+.PP
+Nel caso fosse srt2 NULL e str1 sia di dimensione mazziore di 0, creo una stringa con il contenuto di str1
+.PP
+Ritorno il valore di ritorno 
+.SS "\fBboolean\fP sp_strcmp (const \fBstring\fP *str1, const char *str2)"
+.PP
+Confronta due stringhe e restituisce il relativo valore di verità \fBParametri:\fP
+.RS 4
+\fIstr1\fP puntatore a string costante 
+.br
+\fIstr2\fP puntatore a carattere costante 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+ifequal che sarà TRUE se str1 == str2; FALSE altrimenti 
+.RE
+.PP
+
+.PP
+Dichiaro ed inizializzo variabile di output Booleana a FALSE
+.PP
+Dichiaro le variabili per la lunghezza delle due stringhe
+.PP
+Controllo che str1 e str->char array non siano NULL, str2 sarà al massimo vuoto
+.PP
+inizializzo la lunghezza delle due stringhe
+.PP
+Verifico se hanno la stessa lunghezza, se sono lunghe uguali potrebbero anche essere identiche, altrimenti sono sicuramente diverse. Evito quindi di richiamere strcmp
+.PP
+Se sono lunghe uguali, verifico anche se sono identiche
+.PP
+Se sono anche identiche imposto ifequal a TRUE
+.PP
+Se non sono identiche imposto ifequal a FALSE
+.PP
+Se non sono lunghe uguali sono anche diverse, non faccio niente altro avendo ifequal inizializzato a FALSE
+.PP
+Ritorno il risultato che sarà TRUE solo nel caso siano identiche str1 e str2 altrimenti restuirà FALSE 
+.SS "\fBstring\fP* sp_strcpy (\fBstring\fP *copy, const char *original, intoffset)"
+.PP
+Copia il contenuto della string original in copy. Copia la string partire dal carattere in posizione offset di copy. Se offset è 0, allora la copia avviene dall’inizio della stringa copy. La dimensione di copy deve essere pari o maggiore di quella di original. 
+.PP
+\fBParametri:\fP
+.RS 4
+\fIcopy\fP 
+.br
+\fIoriginal\fP 
+.br
+\fIoffset\fP 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+copy puntatore a string che punga ad una copia della string original, assumendo che N >= M, a partire dalla posizione offset 
+.RE
+.PP
+
+.PP
+Dichiaro la variabile per la lunghezza della stringa original
+.PP
+Verifico che copy non sia NULL
+.PP
+controllo che offset sia minore della grandezza di copy e che original sia diverso da NULL
+.PP
+Ottengo la dimensione di original
+.PP
+Controllo che copy sia maggiore o uguale alla dimensione di original
+.PP
+Copio il contenuto di original in copy dalla posizione offset in poi
+.PP
+Ritorno l'indirizzo di string copy 
+.SS "int sp_strlen (const \fBstring\fP *str)"
+.PP
+Calcola e restituisce la lunghezza logica di una string. \fBParametri:\fP
+.RS 4
+\fIstr\fP puntatore a string 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+strlen_current_str Intero n rappresentante la lunghezza con n>= 0; se str = NULL, allora n = 0 
+.RE
+.PP
+
+.PP
+Dichiaro ed inizializzo la variabile di output a 0
+.PP
+Verifico che str e str->char_array non siano NULL e che la dimensione allocata non sia 0
+.PP
+Calcolo la lunghezza della stringa contenuta in str->char_array
+.PP
+Ritorna la linghezza della stringa, sarà 0 str o str->char_arrat sono NULL 
+.SS "\fBstring\fP* sp_upper_case (const \fBstring\fP *str)"
+.PP
+Restituisce una nuova stringa ottenuta ponendo in maiuscolo ciascun carattere della stringa in ingresso. \fBParametri:\fP
+.RS 4
+\fIstr\fP puntatore a string costante 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+upper_output Puntatore a string contenente caratteri in maiuscolo 
+.RE
+.PP
+
+.PP
+Dichiaro la variabile di output
+.PP
+Variabile per lunghezza string di output
+.PP
+Variabile temporanea per carattere da porre in maiuscolo
+.PP
+Variabile indice per ciclo for, per trasformare in maiuscolo tutti i caratteri
+.PP
+Controllo che str nons ia NULL
+.PP
+Controllo che char_array non sia NULL
+.PP
+Ottengo la lunghezza di str e creo una nuova stringa vuota di lungehzza uguale a str
+.PP
+Ciclo su tutta la lungehzza si str
+.PP
+Ottengo i-esimo carattere di str e lo trasformo in maiuscolo
+.PP
+Salvo l'iesimo carattere maiuscolo nella string di output
+.PP
+Salvo il carattere di terminazine stringa in ultima+1 posizione
+.PP
+Ritorno la string di output con tutti i caratteri di str in maiuscolo 
 .SH "Autore"
 .PP 
-Generato automaticamente da Doxygen per StringPool a partire dal codice sorgente.
+Generato automaticamente da Doxygen per Stringpool a partire dal codice sorgente.

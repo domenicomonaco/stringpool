@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -lcunit -lncurses
+LIBS := -lLibrary -lcunit -lncurses
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>StringPool: Riferimenti per la struct string</title>
+<title>Stringpool: Riferimenti per la struct string</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -13,14 +13,51 @@
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">StringPool&#160;<span id="projectnumber">stringpool</span></div>
-   <div id="projectbrief">StringPool</div>
+   <div id="projectname">Stringpool&#160;<span id="projectnumber">1.0</span></div>
+   <div id="projectbrief">Libreria Stringpool - Domenico Monaco - 2011</div>
   </td>
  </tr>
  </tbody>
@@ -53,6 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Elenco&#160;dei&#160;tipi&#160;composti</span></a></li>
       <li><a href="classes.html"><span>Indice&#160;dei&#160;tipi&#160;composti</span></a></li>
+      <li><a href="functions.html"><span>Membri&#160;dei&#160;composti</span></a></li>
     </ul>
   </div>
 </div>
@@ -64,17 +102,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 </div>
 <div class="contents">
 <!-- doxytag: class="string" -->
+<p><code>#include &lt;<a class="el" href="stringpool_8h_source.html">stringpool.h</a>&gt;</code></p>
+
 <p><a href="structstring-members.html">Elenco di tutti i membri.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Attributi pubblici</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd450648098ba3eaf4db79064af67051"></a><!-- doxytag: member="string::char_array" ref="acd450648098ba3eaf4db79064af67051" args="" -->
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>char_array</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac06bb82958ec7c45e2838ae575b124ec"></a><!-- doxytag: member="string::allocated_size" ref="ac06bb82958ec7c45e2838ae575b124ec" args="" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>allocated_size</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstring.html#acd450648098ba3eaf4db79064af67051">char_array</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstring.html#ac06bb82958ec7c45e2838ae575b124ec">allocated_size</a></td></tr>
 </table>
+<hr/><a name="details" id="details"></a><h2>Descrizione dettagliata</h2>
+<div class="textblock"><p>Tipo di dato non primitivo string Insieme di caratteri da allocare dinamicamente, contiene anche un contatore della sua dimensione </p>
+</div><hr/><h2>Documentazione dei membri dato</h2>
+<a class="anchor" id="ac06bb82958ec7c45e2838ae575b124ec"></a><!-- doxytag: member="string::allocated_size" ref="ac06bb82958ec7c45e2838ae575b124ec" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structstring.html#ac06bb82958ec7c45e2838ae575b124ec">string::allocated_size</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Contiene la dimensione massima allocata per tale string, se N&gt;0 allora è possibile inserire N-1 Caratteri con carattere di terminazione \0 in posizione N. </p>
+
+</div>
+</div>
+<a class="anchor" id="acd450648098ba3eaf4db79064af67051"></a><!-- doxytag: member="string::char_array" ref="acd450648098ba3eaf4db79064af67051" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="structstring.html#acd450648098ba3eaf4db79064af67051">string::char_array</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Vettore a caratteri caratteri tramite puntatore a caratteri, rappresenta il contenuto della stringa </p>
+
+</div>
+</div>
 <hr/>La documentazione per questa struct √® stata generata a partire dal seguente file:<ul>
-<li>stringpool/src/<a class="el" href="spstring_8h_source.html">spstring.h</a></li>
+<li>Library/<a class="el" href="stringpool_8h_source.html">stringpool.h</a></li>
 </ul>
 </div>
 <!-- window showing the filter options -->
@@ -82,7 +151,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>allocated_size</b></td
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Definizioni</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,7 +160,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>allocated_size</b></td
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generato Mar 17 Mag 2011 08:08:06 per StringPool da&#160;
+<hr class="footer"/><address class="footer"><small>Generato Lun 30 Mag 2011 10:09:24 per Stringpool da&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
 </body>

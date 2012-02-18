@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>StringPool: Riferimenti per il file library/src/spstring.c</title>
+<title>Stringpool: Riferimenti per il file Library/spstring.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -13,14 +13,51 @@
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">StringPool&#160;<span id="projectnumber">stringpool</span></div>
-   <div id="projectbrief">StringPool</div>
+   <div id="projectname">Stringpool&#160;<span id="projectnumber">1.0</span></div>
+   <div id="projectbrief">Libreria Stringpool - Domenico Monaco - 2011</div>
   </td>
  </tr>
  </tbody>
@@ -29,6 +66,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Pagina&#160;Principale</span></a></li>
+      <li><a href="annotated.html"><span>Classi</span></a></li>
       <li class="current"><a href="files.html"><span>File</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -51,6 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Elenco&#160;dei&#160;file</span></a></li>
+      <li><a href="globals.html"><span>Elementi&#160;dei&#160;file</span></a></li>
     </ul>
   </div>
 </div>
@@ -58,31 +97,1379 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
   <div class="summary">
 <a href="#func-members">Funzioni</a>  </div>
   <div class="headertitle">
-<div class="title">Riferimenti per il file library/src/spstring.c</div>  </div>
+<div class="title">Riferimenti per il file Library/spstring.c</div>  </div>
 </div>
 <div class="contents">
 
-<p>Implementazione spstring.  
+<p>Implementazione funzioni stringpool.  
 <a href="#details">Continua...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
 <code>#include &lt;stdlib.h&gt;</code><br/>
 <code>#include &lt;string.h&gt;</code><br/>
+<code>#include &lt;stddef.h&gt;</code><br/>
+<code>#include &lt;ctype.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="bool_8h_source.html">bool.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="stringpool_8h_source.html">stringpool.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="spstring_8h_source.html">spstring.h</a>&quot;</code><br/>
 </div><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Funzioni</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a840291bc02cba5474a4cb46a9b9566fe"></a><!-- doxytag: member="spstring.c::main" ref="a840291bc02cba5474a4cb46a9b9566fe" args="(void)" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#a43109a2f4b18023775b877451f725c13">sp_initialize_stringpool</a> (<a class="el" href="structstringpool.html">stringpool</a> *<a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inizializza una struttura Stringpool.  <a href="#a43109a2f4b18023775b877451f725c13"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#a60ed4be4036600f174388c36a0370818">sp_free</a> (<a class="el" href="structstring.html">string</a> *str)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Dealloca lo spazio di memoria a cui sta puntando str.  <a href="#a60ed4be4036600f174388c36a0370818"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#a99f5a66367fa19e42c24211e982c4b56">sp_free_stringpool</a> (<a class="el" href="structstringpool.html">stringpool</a> *<a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Libera la memoria e reinizializza la struct sringpool.  <a href="#a99f5a66367fa19e42c24211e982c4b56"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#aa9f031abbf235a5d16322d97f78c334d">sp_new_empty_string</a> (int len)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una string vuota di dimensione len.  <a href="#aa9f031abbf235a5d16322d97f78c334d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#ac14d3aa446e78a594b506cf2494b7273">sp_new_string</a> (const char *str)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una string con contenuto pari a quello in ingresso.  <a href="#ac14d3aa446e78a594b506cf2494b7273"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#ab0823663ad7e935718ccfc2db8e316d3">sp_get_allocated_size</a> (const <a class="el" href="structstring.html">string</a> *str)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce la dimensione massima allocata per la stringa.  <a href="#ab0823663ad7e935718ccfc2db8e316d3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#ac994017d490a951c8f48c37bcbdf0c1b">sp_strlen</a> (const <a class="el" href="structstring.html">string</a> *str)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcola e restituisce la lunghezza logica di una string.  <a href="#ac994017d490a951c8f48c37bcbdf0c1b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="bool_8h.html#a56a087515036f9d49426777667d056a7">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#abb131e3e4d7f496a47d12c1692b75e15">sp_strcmp</a> (const <a class="el" href="structstring.html">string</a> *str1, const char *str2)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Confronta due stringhe e restituisce il relativo valore di verità  <a href="#abb131e3e4d7f496a47d12c1692b75e15"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#afe063a22db56e1ed3b9de5a81820f002">sp_new_string_as_struct</a> (const <a class="el" href="structstring.html">string</a> *str)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una nuova string il cui contenuto è uguale a quella in ingresso.  <a href="#afe063a22db56e1ed3b9de5a81820f002"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#ad258858c5d6a2aa9b4b9ed5776155afc">sp_strcpy</a> (<a class="el" href="structstring.html">string</a> *copy, const char *original, int offset)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copia il contenuto della string original in copy.  <a href="#ad258858c5d6a2aa9b4b9ed5776155afc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#af0a1ed949316f182907ea08d4e8bd62b">sp_strcat</a> (const char *str1, const char *str2)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una string ottenuta dalla concatenazione di due stringhe in ingresso.  <a href="#af0a1ed949316f182907ea08d4e8bd62b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#ad8c5bbe3b367845aaa230e19ac9e7919">sp_strcat_as_struct</a> (const <a class="el" href="structstring.html">string</a> *str1, const <a class="el" href="structstring.html">string</a> *str2)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una string ottenuta dalla conctaenazione delle due string in ingresso.  <a href="#ad8c5bbe3b367845aaa230e19ac9e7919"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#a8b5d366c459a30a563e83fc8804702e2">sp_lower_case</a> (const <a class="el" href="structstring.html">string</a> *str)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce una nuova stringa ottenuta ponendo in minuscolo ciascun carattere della stringa in ingresso.  <a href="#a8b5d366c459a30a563e83fc8804702e2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#a70dbcd0b1199382b8a171ec68067370c">sp_upper_case</a> (const <a class="el" href="structstring.html">string</a> *str)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce una nuova stringa ottenuta ponendo in maiuscolo ciascun carattere della stringa in ingresso.  <a href="#a70dbcd0b1199382b8a171ec68067370c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="bool_8h.html#a56a087515036f9d49426777667d056a7">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#aff3ad92cec105f24f415f745ae476ba1">sp_isempty</a> (const <a class="el" href="structstringpool.html">stringpool</a> *<a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce un valore booleno che indica se lo stringpool è vuoto.  <a href="#aff3ad92cec105f24f415f745ae476ba1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="bool_8h.html#a56a087515036f9d49426777667d056a7">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#a51a9f7cf9dc077b62d01ff8102301841">sp_isfull</a> (const <a class="el" href="structstringpool.html">stringpool</a> *<a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce un valore booleno che indica se stringpool contiene già il massimo numero di elementi consentiti.  <a href="#a51a9f7cf9dc077b62d01ff8102301841"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="bool_8h.html#a56a087515036f9d49426777667d056a7">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#ace396a34f5bb42619cb81756b2f5b375">sp_add_string_pos</a> (<a class="el" href="structstringpool.html">stringpool</a> *<a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, <a class="el" href="structstring.html">string</a> *str, int pos)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiunge una string all’interno dello stringpool in posizione pos.  <a href="#ace396a34f5bb42619cb81756b2f5b375"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="bool_8h.html#a56a087515036f9d49426777667d056a7">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#ae86751935917ec79d819904cfb087817">sp_add_string</a> (<a class="el" href="structstringpool.html">stringpool</a> *<a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, <a class="el" href="structstring.html">string</a> *str)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiunge la stringa puntata da str all’interno dello stringpool.  <a href="#ae86751935917ec79d819904cfb087817"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#a96c3685a91d261df2cb06e9745bdca3f">sp_sizeof</a> (const <a class="el" href="structstringpool.html">stringpool</a> *<a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il numero di stringhe in sp.  <a href="#a96c3685a91d261df2cb06e9745bdca3f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#a0b0458114373e76ff2c48696bcae2782">sp_get_string</a> (const <a class="el" href="structstringpool.html">stringpool</a> *<a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, int pos)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il puntatore alla stringa str che occupa la posizione pos all’interno dello stringpool.  <a href="#a0b0458114373e76ff2c48696bcae2782"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#a6fd0b8059482b70aa0bc8ee607e3fadb">sp_remove_string</a> (<a class="el" href="structstringpool.html">stringpool</a> *<a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, int pos)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove e restituisce la stringa str all’interno dello stringpool in posizione pos.  <a href="#a6fd0b8059482b70aa0bc8ee607e3fadb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="bool_8h.html#a56a087515036f9d49426777667d056a7">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#a465c42024674ec91ddb1158ee58c3466">sp_replace_string</a> (<a class="el" href="structstringpool.html">stringpool</a> *<a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, int pos, <a class="el" href="structstring.html">string</a> *newstr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sostituisce la stringa all’interno dello stringpool in posizione pos, rimpiazzandola con str.  <a href="#a465c42024674ec91ddb1158ee58c3466"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#a971049db5eca3ef305591d1fcd195a0f">sp_save_to_file</a> (<a class="el" href="structstringpool.html">stringpool</a> *<a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, const <a class="el" href="structstring.html">string</a> fname)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Salva il contenuto dello stringpool in un file di testo.  <a href="#a971049db5eca3ef305591d1fcd195a0f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#acc812ec5efe19197bad45658ffefb1fe">sp_load_from_file</a> (<a class="el" href="structstringpool.html">stringpool</a> *<a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, const <a class="el" href="structstring.html">string</a> fname)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Carica il contenuto del file di test fname nello o stringpool.  <a href="#acc812ec5efe19197bad45658ffefb1fe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#ae3399d635eb3cd9893e079f6eaef6e1f">bubble_sort</a> (<a class="el" href="structstringpool.html">stringpool</a> *<a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ordina alfabeticamente gli elementi dello stringpool, applicando l’algoritmo di bubble sort.  <a href="#ae3399d635eb3cd9893e079f6eaef6e1f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#a254f5e6ad18c821b31437d10a923cc83">bin_search</a> (const <a class="el" href="structstringpool.html">stringpool</a> *<a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, const <a class="el" href="structstring.html">string</a> str)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Cerca la stringa str all’interno dello stringpool ordinato attraverso l’algoritmo di ricerca binaria.  <a href="#a254f5e6ad18c821b31437d10a923cc83"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#ac0204ece57f1cdce074fe7af7b7419f1">sp_find_string</a> (const <a class="el" href="structstringpool.html">stringpool</a> *<a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>, const <a class="el" href="structstring.html">string</a> *str)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Cerca la stringa str all’interno dello stringpool e ne restituisce la posizione, nel caso sia presente.  <a href="#ac0204ece57f1cdce074fe7af7b7419f1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="bool_8h.html#a56a087515036f9d49426777667d056a7">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#a126e34dae1b5bfb99d0bbb34b1526dc8">_sp_file_exist</a> (const <a class="el" href="structstring.html">string</a> *fname)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Controlla se il file richiesto esiste e ne restituisce il valore di verità  <a href="#a126e34dae1b5bfb99d0bbb34b1526dc8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="bool_8h.html#a56a087515036f9d49426777667d056a7">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#a790c017dd9dec0e2b95bf818d10ba005">_sp_file_create</a> (const <a class="el" href="structstring.html">string</a> *fname)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Controlla se esiste già il file e se non esiste lo crea.  <a href="#a790c017dd9dec0e2b95bf818d10ba005"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spstring_8c.html#a6143c920f51cf353336ee72034f68962">_sp_map_array_stringpool</a> (const <a class="el" href="structstringpool.html">stringpool</a> *<a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a>)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Descrizione dettagliata</h2>
-<div class="textblock"><p>Implementazione spstring. </p>
-<p>Contiene il codice di implementazione delle funzioni della libreria "spstring" La libreria stringpool offre i servizi seguenti attraverso funzioni di libreria rivolti alla manipolazione di stringpool, cioeÃÄ di un insieme di stringhe. Inoltre, la libreria permette di ordinare un array di stringhe in ordine alfabetico, salvare e caricare un array da file di test, ed effettuare la ricerca binaria di un elemento </p>
-</div></div>
+<div class="textblock"><p>Implementazione funzioni stringpool. </p>
+<p>La libreria stringpool consente la gestione di un'insieme di dati di tipo string. Due sono i tipi di dato gestiti: string, stringpool.</p>
+<dl class="author"><dt><b>Autore:</b></dt><dd>Domenico Monaco, <a href="mailto:domenico.monaco@kiuz.it">domenico.monaco@kiuz.it</a> </dd></dl>
+<dl class="date"><dt><b>Data:</b></dt><dd>2011 </dd></dl>
+<h2><a class="anchor" id="license"></a>
+Licenza</h2>
+<p>GPLv2 <a href="http://www.softwarelibero.it/gnudoc/gpl.it.txt">http://www.softwarelibero.it/gnudoc/gpl.it.txt</a> Per maggiori informazioni visitare il link o visualizzare il file LICENSE </p>
+</div><hr/><h2>Documentazione delle funzioni</h2>
+<a class="anchor" id="a790c017dd9dec0e2b95bf818d10ba005"></a><!-- doxytag: member="spstring.c::_sp_file_create" ref="a790c017dd9dec0e2b95bf818d10ba005" args="(const string *fname)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_sp_file_create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structstring.html">string</a> *&#160;</td>
+          <td class="paramname"><em>fname</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Controlla se esiste già il file e se non esiste lo crea. </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fname</td><td>puntatore a struttura string costante </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>ifcreated boolean valore di verità, TRUE se è esiste già o se non esiste ed è stato Creato, FALSE se non esiste non è stato possibile crearlo </dd></dl>
+
+<p><p>Dichiaro la variabile di output</p>
+<p>Dichiaro il puntatore a file</p>
+<p>Verifico che fname non sia nullo</p>
+<p>Controllo se non esiste già il file</p>
+<p>Se non esiste cerco di crearlo</p>
+<p>Se non si riesce a a crearlo imposto la variabile di output a FALSE</p>
+<p>Altrimenti se sono riuscito* a crerlo imposto la variabile di output a TRUE</p>
+<p>Chiudo il file aperto</p>
+<p>Se esiste già imposto la variabile outpt a TRUE</p>
+<p>Ritorno il valore di output </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a126e34dae1b5bfb99d0bbb34b1526dc8"></a><!-- doxytag: member="spstring.c::_sp_file_exist" ref="a126e34dae1b5bfb99d0bbb34b1526dc8" args="(const string *fname)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_sp_file_exist </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structstring.html">string</a> *&#160;</td>
+          <td class="paramname"><em>fname</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Controlla se il file richiesto esiste e ne restituisce il valore di verità </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fname</td><td>puntatore a struttura string costante </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>ifexist valore boolean FALSE se non esiste non è possibile aprirlo in modalità di lettura, TRUE se esiste ed è possibile aprirlo in modalità di lettura </dd></dl>
+
+<p><p>Dichiaro la variabile di output inizializzandola a FAlSE</p>
+<p>Dichiaro il puntatore a file</p>
+<p>Verifico che fname non sia nullo</p>
+<p>Controllo se è possibile aprire il file richiesto in modalità di lettura</p>
+<p>Se non è possibile aprirlo imposto la variabile di output a FALSE</p>
+<p>Altrimenti se è possibile aprie il file imposto a TRUE la variabile di output</p>
+<p>Chiudo il file</p>
+<p>Ritorno la variabile di output </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6143c920f51cf353336ee72034f68962"></a><!-- doxytag: member="spstring.c::_sp_map_array_stringpool" ref="a6143c920f51cf353336ee72034f68962" args="(const stringpool *sp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* _sp_map_array_stringpool </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structstringpool.html">stringpool</a> *&#160;</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><p>Dichiaro l'array di output</p>
+<p>Dichiaro la variabile indice per il ciclo for e la variabile di posizione</p>
+<p>Controllo che sp non sia NULL</p>
+<p>Inizializzo lo spazio di memoria per l'array di outpu calcolato sulla dimensione di sp</p>
+<p>Itero su tutte le possibili posizioni potenzialmente occupate in sp</p>
+<p>Controllo se la i-esima posizione è occupata</p>
+<p>In caso sia occupata salvo in posizioni consecutive la posizione i-esima</p>
+<p>Incremento la posizione del vettore di output solo se è stato inserito qualcosa</p>
+<p>Ritorno la varibile di ouput </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a254f5e6ad18c821b31437d10a923cc83"></a><!-- doxytag: member="spstring.c::bin_search" ref="a254f5e6ad18c821b31437d10a923cc83" args="(const stringpool *sp, const string str)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bin_search </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structstringpool.html">stringpool</a> *&#160;</td>
+          <td class="paramname"><em>sp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structstring.html">string</a>&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cerca la stringa str all’interno dello stringpool ordinato attraverso l’algoritmo di ricerca binaria. </p>
+<p>Ne restituisce la posizione, nel caso in cui str sia presente.</p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">\return</td><td>iffound pari alla posizione p della stringa, con 0&lt;= p &lt; MAX_DIM_STRING_POOL se str è presente in sp; p=-1, altrimenti. Se sp o str sono nulli, restituisce -1. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><p>Dichiaro la variabile di output</p>
+<p>Dichiaro la variabile indice per il ciclo while della ricerca binaria, rappresenta il numero di controll effettuati</p>
+<p>Variabile di controllo per la ricerca della stringa cercata</p>
+<p>Variabili per il calcolo dell'i-esima posizione da controlla come da definizione del bin_search</p>
+<p>Puntatore ad array di interi contenere la mappa delle posizioni degli slot in stringpool</p>
+<p>Controllo che sp e str non siano NULL, altrimenti salta salta e restituisce valore di errore -1</p>
+<p>Calcolo e salvo la dimensione di sp</p>
+<p>Se ha dimensione diversa da 0 è possibile effettuare la ricerca</p>
+<p>Ottengo la mappa delle posizione degli slot di sp</p>
+<p>Imposto il parametro hight del binary serch alla dimensione di sp</p>
+<p>Imposoto il parametro low del binary search a 1</p>
+<p>Itero finchè str_cmp non è 0 ovvero è stata identificata esattamente la stringa ricercata oppure se abbiamo già controllato tutto gli slot</p>
+<p>Calcolo mid su base della formula binary search</p>
+<p>Controllo la strina in posizione mid, contrale rispetto [low, hight]</p>
+<p>In base al risultato associo a low o hight un valore diverso ed incremento la variabile indice</p>
+<p>Alla fine dll'iterazione controllo controllo se sia stata identificata o meno la stringa righesta</p>
+<p>In caso sia concluso il ciclo senza trovare la stringa o non sia neanche iniziato, imposto il risultato a -1</p>
+<p>In caso invece sia stata identificata la stringa resituisco la sua posizione</p>
+<p>Ritorno il valore di ritorno che può essere o la posizione p della strnga cercata o -1 in caso di errore </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae3399d635eb3cd9893e079f6eaef6e1f"></a><!-- doxytag: member="spstring.c::bubble_sort" ref="ae3399d635eb3cd9893e079f6eaef6e1f" args="(stringpool *sp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bubble_sort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstringpool.html">stringpool</a> *&#160;</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Ordina alfabeticamente gli elementi dello stringpool, applicando l’algoritmo di bubble sort. </p>
+<p>Ordina effettuando un controllo su ogni coppia di elementi, partendo dal basso sceglie minore del confronto e lo porta verso l'alto. Ho usato la versione "corta" dell'algoritmo dover per ogni i-esimo ciclo assumiamo che l'elemento appena spostato è già in posizione corretta. Ho dovuto applicare un piccolo hack per poter fare l'ordinamento anche su array con elementi non contiugui e lasciare invariate le posizione vuote, in altri termini l'algoritmo ordina gli elementi solo sulle posizione attualmente utilizzare senza alterare la posizione degli slot vuoti.</p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sp</td><td>puntatore a struttura stringpool </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>void </dd></dl>
+
+<p><p>Dichiaro le variabili indici per i due cicli dell'algoritmo Bubble sort</p>
+<p>Dichiaro la variabile per identificare se nell'i-esimo controllo è necessario uno Switch degli slot</p>
+<p>Dichiaro la variabile per memorizzare temporaneamente la string da sostituire</p>
+<p>Dichiaro la variabile per mappare le posizioni degli slot</p>
+<p>Controllo prima se sp non sia NULL ed in seguito se sp non è VUOTO altrimenti non faccio null</p>
+<p>Ottengo un array della mappa delle posizione dell'array. Dove ogni i-esima posione contiene la posizione reale dello slot. Ad esempio se esistono 4 elementi, ma il sp-&gt;position[3] è vuoto mentre il sp-&gt;position[4] è pieno il risultato sarà un arrai del tipo [0-&gt;0,1-&gt;1,2-&gt;2,3-&gt;4]</p>
+<p>Itero su due cicli for come da definizione dell'algoritmo</p>
+<p>Il primo ciclo itera da 0 alla dimensione di sp, incrementando il puntatore</p>
+<p>Il secondo ciclo itera dalla dimensione di sp meno 1,fino ad i, decrementando l'indice.</p>
+<p>Ad ogni iterazione del primo ciclo for, il secndo ciclo for effettuera un passaggio in meno evitando di controllare elementi sicuramente già in posizione corretta</p>
+<p>La j esima posione è quella corrente e dipende anche da i. Controlliamo le poszioni (j) e (j-1), identificando se sono o meno in ordine alfabetico utilizzando strcmp. Quindi ifswitch sarà -1 l'elemento j deve essere spostato in posizione j-1 e viceversa</p>
+<p>In questi cicli non mi devo preoccupare dei "buchi" nell'array stringpool dato che le iterazioni sono fatte sulla mappa dele posizione che è un array continuo che ci permette di tradurre per ogni iterazione la reale posizione dello slot trattato</p>
+<p>Controllo se bisogna scambiare gli elementi</p>
+<p>Memorizzo temporanemente la stringa in posizione j</p>
+<p>Rimpiazzo in posizione j la strin j-1</p>
+<p>Rimpiazzo in posizione j-1 la stringa memorizzata precedentemente, ovvero quella in posizione j </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae86751935917ec79d819904cfb087817"></a><!-- doxytag: member="spstring.c::sp_add_string" ref="ae86751935917ec79d819904cfb087817" args="(stringpool *sp, string *str)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_add_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstringpool.html">stringpool</a> *&#160;</td>
+          <td class="paramname"><em>sp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structstring.html">string</a> *&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Aggiunge la stringa puntata da str all’interno dello stringpool. </p>
+<p>Viene aggiunta nella prima posizione libera. Nessuna operazione è compiuta se str e/o sp sono nulli, oppure se sp è pieno.</p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sp</td><td>puntatore a struttura stringpool </td></tr>
+    <tr><td class="paramname">str</td><td>puntatore a struttura string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>is_added TRUE se l’inserimento è andato a buon fine, FALSE altrimenti. </dd></dl>
+
+<p><p>Dichiaro la variabile di outpu inizializzandola a FALSE</p>
+<p>Dichiaro la varibile di verità per la posizione libera</p>
+<p>Variabile indice per ciclo while per la ricerca della posizione libera</p>
+<p>Variabile</p>
+<p>Controllo che sp ed str non siano NULL</p>
+<p>Controllo se lo string pool non è pieno</p>
+<p>Ciclo per l'intero stringpool alla ricerca della prima posizione libera</p>
+<p>Il ciclo continua finchè check_free è diverso da 1 e non abbiamo controllato tutte le posizini</p>
+<p>Per ogni ciclo controllo se l'i-esima posizione è libera</p>
+<p>In caso affermativo, imposto check_free a 1</p>
+<p>Provo quindi ad aggiungere la string in ingresso nella posizione libera appena trovata</p>
+<p>Memoriazando il risutlato di tale operazione</p>
+<p>Controllo se l'operazione di aggiunta della string in posizine iesima è andata a buon fine</p>
+<p>In caso affermativo imposto la variabile di output a TRUE</p>
+<p>In caso negativo, riporto check_free a 0 permettendo di continuare a cercare un'altra posizione</p>
+<p>Incremente il contatore iesimo</p>
+<p>Ritorno il valore di verità per l'operazione di aggiunta string </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ace396a34f5bb42619cb81756b2f5b375"></a><!-- doxytag: member="spstring.c::sp_add_string_pos" ref="ace396a34f5bb42619cb81756b2f5b375" args="(stringpool *sp, string *str, int pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_add_string_pos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstringpool.html">stringpool</a> *&#160;</td>
+          <td class="paramname"><em>sp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structstring.html">string</a> *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Aggiunge una string all’interno dello stringpool in posizione pos. </p>
+<p>Nessuna operazione è compiuta se str e/o sp sono nulli, se pos è fuori dall’intervallo 0&lt;= pos &lt; MAX_DIM_STRING_POOL </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sp</td><td>puntatore a struttura stringpool </td></tr>
+    <tr><td class="paramname">str</td><td>puntatore a struttura string </td></tr>
+    <tr><td class="paramname">pos</td><td>intero che indica la posizione in cui aggiungere la string</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>is_added vale TRUE se l’inserimento è andato a buon fine, FALSE altrimenti. </dd></dl>
+
+<p><p>Dichiaro la variabile di output inizializzandola a FALSE</p>
+<p>Controllo che sp e str non siano null e controllo che la posizione richiesta esista nello stringpool</p>
+<p>Controllo che la posizione pos sia già occupata, in tal caso libero la memoria</p>
+<p>Inesrisco in strings[pos] il puntatore a str passata</p>
+<p>positions e used_counter sono aggiornati solo se è realmente presente in strings[pos] l'indirizzo voluto, altrimenti non aggiorna le variabili</p>
+<p>L'assocciazione è andata a buon fine, posso aggiornare le variabili positions, used_counter e is_added per l'output</p>
+<p>Ritorno la variabile di output </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac0204ece57f1cdce074fe7af7b7419f1"></a><!-- doxytag: member="spstring.c::sp_find_string" ref="ac0204ece57f1cdce074fe7af7b7419f1" args="(const stringpool *sp, const string *str)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_find_string </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structstringpool.html">stringpool</a> *&#160;</td>
+          <td class="paramname"><em>sp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structstring.html">string</a> *&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cerca la stringa str all’interno dello stringpool e ne restituisce la posizione, nel caso sia presente. </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sp</td><td>puntatore a struttura stringpool </td></tr>
+    <tr><td class="paramname">str</td><td>puntatore a struttura string costante </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>position_find Posizione p della stringa, con 0&lt;= p &lt; MAX_DIM_STRING_POOL se str è presente in sp; p=-1, altrimenti. Se sp e/o str sono NULL, restituisce -1. </dd></dl>
+
+<p><p>Dichiaro la varibile di output e la inizializzo a -1 in caso di problemi durante la computazione</p>
+<p>Dichiaro la variabile per l'iterazione su tutto l'array</p>
+<p>Variabile di controllo per risultato comparazione</p>
+<p>Controllo che sp ed str non siano NUL</p>
+<p>Itero su tutta la dimensione possibile dell'array</p>
+<p>Controllo se la posizione i-esima è utilizzata</p>
+<p>Comparo le stringhe e salvo il risultato</p>
+<p>Controllo il risultato della comparazione</p>
+<p>Se è stata identificata la stringa salvo la posizione i-esima corrente</p>
+<p>Forzo l'indice i a sforare sul valore di uscita dal ciclo for</p>
+<p>Resituisco il valore di output, -1 se ci sono stati problemi e/o non è stata trovata o &gt;= pari alla posione della stringa cercata in sp </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a60ed4be4036600f174388c36a0370818"></a><!-- doxytag: member="spstring.c::sp_free" ref="a60ed4be4036600f174388c36a0370818" args="(string *str)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstring.html">string</a> *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Dealloca lo spazio di memoria a cui sta puntando str. </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>puntatore a struttura string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>void </dd></dl>
+
+<p><p>Verifica che il puntatore str non sia NULL</p>
+<p>Verifica che sia stato allocato dello spazio in corrispondenza all'area di memoria puntata da str-&gt;char_array</p>
+<p>Libera lo spazio puntato da str-&gt;char_array</p>
+<p>Libera lo spazio puntato da str</p>
+<p>Forza str a valere NULL dopo la deallocazione </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a99f5a66367fa19e42c24211e982c4b56"></a><!-- doxytag: member="spstring.c::sp_free_stringpool" ref="a99f5a66367fa19e42c24211e982c4b56" args="(stringpool *sp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_free_stringpool </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstringpool.html">stringpool</a> *&#160;</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Libera la memoria e reinizializza la struct sringpool. </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sp</td><td>puntatore a stringpool </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>void </dd></dl>
+
+<p><p>i - indice intero per ciclo for per la deallocazione delle stringe</p>
+<p>Verifica che sp non sia NULL</p>
+<p>Iterazione per liberare la memoria delle stringe salvate</p>
+<p>Verifica che la posizione i-esima sia occupata da una stringa altrimenti evita istruzioni inutili</p>
+<p>Rimuove la stringa decrementando used_counter e ponendo a 0 position[i] Per ogni iterazione la struttura stringpool è consistente e coerente con le string rimosse e da rimuovere</p>
+<p>Libero la memoria occupata dalla stringa i-esima</p>
+<p>Operazione non necessaria se <a class="el" href="spstring_8c.html#a6fd0b8059482b70aa0bc8ee607e3fadb" title="Rimuove e restituisce la stringa str all’interno dello stringpool in posizione pos.">sp_remove_string()</a> e <a class="el" href="spstring_8c.html#a60ed4be4036600f174388c36a0370818" title="Dealloca lo spazio di memoria a cui sta puntando str.">sp_free()</a> operano correttamente </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab0823663ad7e935718ccfc2db8e316d3"></a><!-- doxytag: member="spstring.c::sp_get_allocated_size" ref="ab0823663ad7e935718ccfc2db8e316d3" args="(const string *str)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_get_allocated_size </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structstring.html">string</a> *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Restituisce la dimensione massima allocata per la stringa. </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>puntatore a string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>allocated_size dimensione fisica allocata per str; se str è 0, restituisce NULL </dd></dl>
+
+<p><p>Variabile allocated_size di output</p>
+<p>Verifica che str e str-&gt;char_array non siano NULL</p>
+<p>imposta allocated_size al valore di str-&gt;allocated_size</p>
+<p>In caso allocated_size è 0 viene portato a NULL</p>
+<p>Ritorna allocated_size che sarà &gt; 0 oppure NULL </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0b0458114373e76ff2c48696bcae2782"></a><!-- doxytag: member="spstring.c::sp_get_string" ref="a0b0458114373e76ff2c48696bcae2782" args="(const stringpool *sp, int pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_get_string </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structstringpool.html">stringpool</a> *&#160;</td>
+          <td class="paramname"><em>sp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Restituisce il puntatore alla stringa str che occupa la posizione pos all’interno dello stringpool. </p>
+<p>Se pos è fuori da questo intervallo o se sp è nullo, allora la funzione restituisce restituisce NULL.</p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sp</td><td>puntatore costante a struttura string pull </td></tr>
+    <tr><td class="paramname">pos</td><td>intero positivo che indica la posizione da controllare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>str_output puntatore a string in posizione pos, se 0&lt;= pos &lt; MAX_DIM_STRING_POOL; </dd></dl>
+
+<p><p>Dichiaro la variabile di output e la inizializzo a NULL</p>
+<p>Controllo come da specifica se sp è NULL, se la posizione è all'interno degli indici di stringpool</p>
+<p>Controllo se la posizione richiesta è utilizzata</p>
+<p>In tal caso assozio l'indirizzo a cui punta stirngs[pos] alla variabile di output</p>
+<p>Ritorno la variabile di output </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a43109a2f4b18023775b877451f725c13"></a><!-- doxytag: member="spstring.c::sp_initialize_stringpool" ref="a43109a2f4b18023775b877451f725c13" args="(stringpool *sp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_initialize_stringpool </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstringpool.html">stringpool</a> *&#160;</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Inizializza una struttura Stringpool. </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sp</td><td>puntatore a struttura stringpool </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>void </dd></dl>
+
+<p><p>Verifica se il puntatore sp non è NULL</p>
+<p>Imposta il counter degli slot utilizzati al valore di EMPTY_STRING_POOL</p>
+<p>Imposta le posizioni al valore di UNUSED_SLOT rendendole tutte libere </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aff3ad92cec105f24f415f745ae476ba1"></a><!-- doxytag: member="spstring.c::sp_isempty" ref="aff3ad92cec105f24f415f745ae476ba1" args="(const stringpool *sp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_isempty </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structstringpool.html">stringpool</a> *&#160;</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Restituisce un valore booleno che indica se lo stringpool è vuoto. </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sp</td><td>puntatore a struttura stringpool costante </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>isempty è TRUE se sp è vuoto, FALSE altrimenti; se sp è NULL, restituisce FALSE </dd></dl>
+
+<p><p>Dichiaro la variabile di output e la inizializzo a FALSE</p>
+<p>Verifico che sp non sia NUL</p>
+<p>Controllo se il numero di slot usati è EMPTY_STRING_POOL</p>
+<p>In caso affermativo, imposta isempty a TRUE, altrimenti rimane FALSE</p>
+<p>Ritorno il valore di verità per sp VUOTO </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a51a9f7cf9dc077b62d01ff8102301841"></a><!-- doxytag: member="spstring.c::sp_isfull" ref="a51a9f7cf9dc077b62d01ff8102301841" args="(const stringpool *sp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_isfull </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structstringpool.html">stringpool</a> *&#160;</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Restituisce un valore booleno che indica se stringpool contiene già il massimo numero di elementi consentiti. </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sp</td><td>puntatore a struttura stringpool costante </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>isfull è TRUE se il numero di elementi presenti è == MAX_DIM_STRING_POOL, FALSE altrimenti; se sp è NULL, restituisce TRUE </dd></dl>
+
+<p><p>Dichiaro la variabile di output</p>
+<p>Controllo se sp è diverso da NULL</p>
+<p>Controllo se il counter degli slot è impotato alla dimensione massima di stringpool</p>
+<p>Tutti gli slot sono usati, imposto isfull a TRUE</p>
+<p>Caso in cui sp == NULL</p>
+<p>Imposto come da specifica isfull a TRUE</p>
+<p>Ritorno il valore di verita per sp PIENO </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="acc812ec5efe19197bad45658ffefb1fe"></a><!-- doxytag: member="spstring.c::sp_load_from_file" ref="acc812ec5efe19197bad45658ffefb1fe" args="(stringpool *sp, const string fname)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_load_from_file </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstringpool.html">stringpool</a> *&#160;</td>
+          <td class="paramname"><em>sp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structstring.html">string</a>&#160;</td>
+          <td class="paramname"><em>fname</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Carica il contenuto del file di test fname nello o stringpool. </p>
+<p>L’intera stringa letta su una riga sarà un elemento dello stringpool. Inoltre conserva l'ordinamento ed il posizionamento originale delle stringhe pizzandole esattamene nella posizione originale.</p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sp</td><td>puntatore a struttura stringpool </td></tr>
+    <tr><td class="paramname">fname</td><td>struttura string contenente il nome del file da leggere </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>number_loaded_line il numero di righe lette e caricate </dd></dl>
+
+<p><p>Dichiaro la variabile di output, la inizializzo a -1 in caso si incontrano problemi nel caricamento</p>
+<p>Variabile di indice per ciclo for per caricamento righe</p>
+<p>Dichiaro la variabile per la lettura "massima" di righe da file</p>
+<p>Puntatore a file da leggere</p>
+<p>Variabile per l'i-esimo slot letto da file</p>
+<p>Varibile della posizione dell'i-esimo slot lett da file</p>
+<p>array temporanei</p>
+<p>tmp_slot_start_line per contenere l'inizio della stringa</p>
+<p>tmp_slot_end_line per contenere la fine della riga, ovvero uno spazio un punto e virgola ed il carattere di nuova linea</p>
+<p>Controllo che sp non sia NULL, e che il nome del file richiesto non sia vuoto o pari al solo spazio</p>
+<p>Controllo che il file richiesto esista</p>
+<p>In caso esiste viene ri-aperto</p>
+<p>Imposto il numero di righe caricate a 0</p>
+<p>Leggo la prima informazione del file che contiene il numero di stringhe salvate Ed imposto tale valore a number_slot.</p>
+<p>Effettuo una iterazione su number_slot in modo da leggere le righe e salvarle</p>
+<p>Se il puntarore all'i-esima itezione non è NULL continuo</p>
+<p>Se il puntatore all'i-esima iterazione non è parti a EOF continuo</p>
+<p>Effettuo una prima lettura della righa con fscanf prelevando posizione dello slot letto e la sua dimesione</p>
+<p>Effettuo una seconda lettura con fgets leggendo la parte restante del testo basandomi sulla dimensione appena letta</p>
+<p>Effettuo una terza lettura utile solo a far avanzare il puntatore, leggendo i 3 caratteri finali della stinga sufficenti a far trovare il puntare ad inizio riga alla prosssima iterazione</p>
+<p>Aggiungo in sp lo slot lett con tmp_slot_start_line in posizione pos</p>
+<p>Incremento la varibile che indica il numero di righe caricate</p>
+<p>Contollo di sicurezza in caso il valore letto da pos non sia compatibile con la dimensione massima e minima contenibile in uno stringpool</p>
+<p>Chiudo il file aperto</p>
+<p>Restituisco il valore di ritorno pari al numero di righe lette </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8b5d366c459a30a563e83fc8804702e2"></a><!-- doxytag: member="spstring.c::sp_lower_case" ref="a8b5d366c459a30a563e83fc8804702e2" args="(const string *str)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_lower_case </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structstring.html">string</a> *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Restituisce una nuova stringa ottenuta ponendo in minuscolo ciascun carattere della stringa in ingresso. </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>puntatore a string costante </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>lower_output Puntatore a string contenente caratteri in minuscolo </dd></dl>
+
+<p><p>Dichiaro variabile di output</p>
+<p>Variabile per lunghezza stringa</p>
+<p>Variabile temporanea per carattere da porre in minuscolo</p>
+<p>Variabile indice per ciclo for, per porre iterativamente tutti i caratteri in minuscolo</p>
+<p>Controllo che str sia diverso da NULL</p>
+<p>Controllo che sia diverso da NULL anche char_array</p>
+<p>Calcolo la lungehzza della stringa, che potrebbe essere diversa dalla dimensione allocata per la stringa</p>
+<p>Creo una nuova stringa vuota di dimensione della stringa in ingresso</p>
+<p>Ciclo su tutta la lunghezza della stringa</p>
+<p>Passo alla funzione tolower il carattere iesimo copiandolo in tmp_lower</p>
+<p>Copio quindi tmp_lower nella posizione i-esima della string di output, passaggio inutile ma migliora la leggibilità</p>
+<p>Salvo il carattere di terminazine stringa in ultima+1 posizione</p>
+<p>Ritorno la nuova stringa ottenuta ponendo in minuscolo ogni carattere </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa9f031abbf235a5d16322d97f78c334d"></a><!-- doxytag: member="spstring.c::sp_new_empty_string" ref="aa9f031abbf235a5d16322d97f78c334d" args="(int len)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_new_empty_string </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Crea una string vuota di dimensione len. </p>
+<p>Equivale alla stringa "" </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">len</td><td>intero maggiore uguale a zero </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>new_empty_string puntatore a struttura di tipo stringa </dd></dl>
+
+<p><p>Variabile di output, puntatre a string, inzializzata a NULL nel caso len non è &gt;= 0</p>
+<p>Verifica che len sia maggiore uguale a zero</p>
+<p>Alloca la memoria per il puntatore new_empty_string, di dimensione SIZE_STRING_STRUCT</p>
+<p>Imposta la memoria allocata al valore di len</p>
+<p>Alloca lo spazio di dimensione len caratteria al puntatore char_array</p>
+<p>Inserisce il carattere di terminazione nello spazio allocato</p>
+<p>Ritorna l'indirizzo della struct string, è NULL solo se len &lt; 0 altrimenti punta ad una locazione di memoria valida</p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac14d3aa446e78a594b506cf2494b7273"></a><!-- doxytag: member="spstring.c::sp_new_string" ref="ac14d3aa446e78a594b506cf2494b7273" args="(const char *str)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_new_string </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Crea una string con contenuto pari a quello in ingresso. </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>puntatore costante a caratteri </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>new_string puntatore a string </dd></dl>
+
+<p><p>Calcolo e salvo la lunghezza della stringa passata, essa non contiene conto del carattere di terminazione \0</p>
+<p>Creo ed alloco una nuova stringa vuota di lunghezza (len_str+1)</p>
+<p>Copio il contenuto di str in new_string-&gt;char_array</p>
+<p>Ritorno il puntatore alla struct string </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afe063a22db56e1ed3b9de5a81820f002"></a><!-- doxytag: member="spstring.c::sp_new_string_as_struct" ref="afe063a22db56e1ed3b9de5a81820f002" args="(const string *str)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_new_string_as_struct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structstring.html">string</a> *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Crea una nuova string il cui contenuto è uguale a quella in ingresso. </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>puntatore a string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>string_as_struct puntatore a string </dd></dl>
+
+<p><p>inizializzo la variabile di ritorno</p>
+<p>associo alla variabile di ritorno il l'indirizzo della nuova string creata con sp_new_string</p>
+<p>Ritorno l'indirizzo della nuova string </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6fd0b8059482b70aa0bc8ee607e3fadb"></a><!-- doxytag: member="spstring.c::sp_remove_string" ref="a6fd0b8059482b70aa0bc8ee607e3fadb" args="(stringpool *sp, int pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_remove_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstringpool.html">stringpool</a> *&#160;</td>
+          <td class="paramname"><em>sp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Rimuove e restituisce la stringa str all’interno dello stringpool in posizione pos. </p>
+<p>Nessuna operazione è compiuta se sp è nullo, oppure se pos è fuori dall’intervallo pos, MAX_DIM_STRING_POOL </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sp</td><td>puntatore a struttura stringpool </td></tr>
+    <tr><td class="paramname">pos</td><td>intero che indica una posizione in stringpool </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>removed_str puntatore alla stringa rimossa dallo stringpool, oppure NULL se nessuna stringa è presente in posizione pos </dd></dl>
+
+<p><p>Dichiaro la variabile di output e la inzializzo a NULL</p>
+<p>Controllo se sp è NULL o se pos sia all'interno del range di inidici di stringpool</p>
+<p>Controllo se la posizione cercata contiene una Stringa Se la condizione è soddisfatta salvo il suo indirizzo</p>
+<p>Una volta salvato l'indirizzo della string rimossa, imposto la posizione come DISPONIBILE</p>
+<p>Importo il counter degli slot utilizzati ad un valore inferiore</p>
+<p>Ritorno la variabile di ouput contenente l'indirizzo della string rimossa </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a465c42024674ec91ddb1158ee58c3466"></a><!-- doxytag: member="spstring.c::sp_replace_string" ref="a465c42024674ec91ddb1158ee58c3466" args="(stringpool *sp, int pos, string *newstr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_replace_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstringpool.html">stringpool</a> *&#160;</td>
+          <td class="paramname"><em>sp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structstring.html">string</a> *&#160;</td>
+          <td class="paramname"><em>newstr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sostituisce la stringa all’interno dello stringpool in posizione pos, rimpiazzandola con str. </p>
+<p>Nessuna operazione è compiuta se str e/o sp sono nulli, oppure se pos è fuori dall’intervallo [pos, MAX_DIM_STRING_POOL[ </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sp</td><td>puntatore a struttura stringpool </td></tr>
+    <tr><td class="paramname">newstr</td><td>puntatore a struttura string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>is_relpaced TRUE se la sostituzione è andata a buon fine, FALSE altrimenti </dd></dl>
+
+<p><p>Dichiaro la variabile di output</p>
+<p>Controllo se sp è NULL oppure se la posizione richiesta è all'interno del range di indiici di stringpool</p>
+<p>Controllo se la posizone richiesta è utilizzata e se la nuova string è diverso da NULL</p>
+<p>Rimuvo la stringa richiesta in posizione POS, verranno decrementati il contatore ed impostato a libera la posizione pos</p>
+<p>Aggiungo in posizionepos la nuova stringa, verrano reincrementati il contatore ed il valore di utilizzo dello slot</p>
+<p>Salvo com'è andata l'operazione nel valore di ritorno</p>
+<p>Ritorno la variabile di output che indica se l'operazione è andata a buon fine </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a971049db5eca3ef305591d1fcd195a0f"></a><!-- doxytag: member="spstring.c::sp_save_to_file" ref="a971049db5eca3ef305591d1fcd195a0f" args="(stringpool *sp, const string fname)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_save_to_file </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstringpool.html">stringpool</a> *&#160;</td>
+          <td class="paramname"><em>sp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structstring.html">string</a>&#160;</td>
+          <td class="paramname"><em>fname</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Salva il contenuto dello stringpool in un file di testo. </p>
+<p>Specificando il nome nel secondo paramentro fname. Ogni elemento sarà salvato su una riga diversa.</p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sp</td><td>puntatore a struttura stringpool </td></tr>
+    <tr><td class="paramname">fname</td><td>puntatore a struttura string costante </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>number_writed_line con il numero di elementi scritti nel file oppure -1 in caso di errore. </dd></dl>
+
+<p><p>Dichiaro la variabile di output e la inizializzo a -1 in caso sia possibile effettuare alcuna operazione</p>
+<p>Inizializzo la variabile indice per il ciclo di scruttura delle n linee</p>
+<p>Inizializzo il puntatore al file per la lettura</p>
+<p>Controllo che sp non sia null e che il nome del file su cui scrivere sia diverso da "" o " "</p>
+<p>Credo il file richiesto e se l'operazione è andata a buon fine continuo</p>
+<p>Apro il file appena creato e se l'operazione va a buon fine continuo</p>
+<p>Imposto il numero di linee scritte a 0 dato che stiamo per scrivere un numero di righe &gt;= 0</p>
+<p>Itero per l'intero numero massimo di posizione dell'array stringpool</p>
+<p>controllo che lo slot i-esimo sia occupato da una string</p>
+<p>In caso sia passata la condizione precedente, scrivo la riga i-esima basandomi sul pattern di scrittura e lettura PATTERN_READ_WRITE_LINE</p>
+<p>Incremento il contatore del numero di righe scritte</p>
+<p>In caso la riapertura del file non è andata a buon fine imposto la variabile di output a -1 come da specifica</p>
+<p>Chiudo il file aperto</p>
+<p>Ritorno il valore di output che sarà -1 se è stato incontrato qualche problema, altrimento sarò &gt;= 0 ovvero il numero di linee scritte pari a sp_sizeof(&lt;STRINPOOL&gt;) </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a96c3685a91d261df2cb06e9745bdca3f"></a><!-- doxytag: member="spstring.c::sp_sizeof" ref="a96c3685a91d261df2cb06e9745bdca3f" args="(const stringpool *sp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_sizeof </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structstringpool.html">stringpool</a> *&#160;</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Restituisce il numero di stringhe in sp. </p>
+<p>Restituisce 0 se lo stringpool è vuoto; -1 se sp è NULL </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">\return</td><td>size_of_sp intero contenente il numero di elementi n&gt;=0 presenti nello stringpool </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><p>Dichiaro la variabile di output</p>
+<p>Controllo che sp sia diverso da NULL</p>
+<p>In tal caso, associo alla variabile di output il numero di rigeh utilizzate che sarà sempre n&gt;=0 e 0 solo se sp è vuoto</p>
+<p>Nel caso sp sia NULL, associo alla variabile di output il valore -1</p>
+<p>Ritorno il valore di Output </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af0a1ed949316f182907ea08d4e8bd62b"></a><!-- doxytag: member="spstring.c::sp_strcat" ref="af0a1ed949316f182907ea08d4e8bd62b" args="(const char *str1, const char *str2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_strcat </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Crea una string ottenuta dalla concatenazione di due stringhe in ingresso. </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str1</td><td>puntatore a caratteri costante </td></tr>
+    <tr><td class="paramname">str2</td><td>puntatore a caratteri costante </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>str_cat puntatore a string contenete una stringa equivalente a str1+str2 </dd></dl>
+
+<p><p>Dichiarro la variabile di ritorno</p>
+<p>Dichiaro le variabili per le lunghezze rispettivamente di str2, str1 e string di output</p>
+<p>Verifico che entrambe le stringhe non siano NULL</p>
+<p>inizializzo le lunghezze di str1 e str2</p>
+<p>Dichiaro la lunghezza complessiva della string concatenata sommando le lunghezze logiche di str1 e str2</p>
+<p>Creo una nuova string vuota di lunghezza str_cat_len + 1 dato che sp_new_empty_string non tiene conto del carattere di terminazione</p>
+<p>Copio in str_cat a partire dalla posizione 0 il contenuto di str1</p>
+<p>Copio in str_cat a partire dalla posizione str_len_str1 la str2</p>
+<p>Caso in cui almeno uno delle due string è NULL ma non entrambe NULL</p>
+<p>Controllo quale delle due string è NULL</p>
+<p>Nel caso fosse NULL la str1, creiamo una nuova string con il solo contenuto della str2</p>
+<p>Nel caso fosse NULL la str2, creiamo una nuova string con il solo contenuto della str1</p>
+<p>Ritorno il puntatore a string contenente le due stringhe concatenate </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad8c5bbe3b367845aaa230e19ac9e7919"></a><!-- doxytag: member="spstring.c::sp_strcat_as_struct" ref="ad8c5bbe3b367845aaa230e19ac9e7919" args="(const string *str1, const string *str2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_strcat_as_struct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structstring.html">string</a> *&#160;</td>
+          <td class="paramname"><em>str1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structstring.html">string</a> *&#160;</td>
+          <td class="paramname"><em>str2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Crea una string ottenuta dalla conctaenazione delle due string in ingresso. </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str1</td><td>puntatore a string costanti </td></tr>
+    <tr><td class="paramname">str2</td><td>puntatore a string costanti </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>strcat_as_struct puntatore a string pari a str1+str2 </dd></dl>
+
+<p><p>Dichiaro la variabile di output</p>
+<p>Verifico che entrmabe str1 e str2 non siano NULL</p>
+<p>Controllo lo spazio allocato, se &gt; 0 vuol dire che non sono vuote</p>
+<p>Concateno le due stringhe utilizzando <a class="el" href="spstring_8c.html#af0a1ed949316f182907ea08d4e8bd62b" title="Crea una string ottenuta dalla concatenazione di due stringhe in ingresso.">sp_strcat()</a>{}</p>
+<p>Caso in cui almeno una delle due ha dimensione 0 ma non entrambe di dimensione 0</p>
+<p>Controllo quale delle due string è di dimensione 0</p>
+<p>Nel caso str1 è di dimensione 0, creo una string con contenuto di str2</p>
+<p>Nel caso str2 è di dimensione 0, creo una string con contenuto di str1</p>
+<p>Caso in cui str1 o str2 è NULL ma non entrambe NULL</p>
+<p>Verifico quale delle due è NULL</p>
+<p>Nel caso fosse srt1 NULL e str2 sia di dimensione mazziore di 0, creo una stringa con il contenuto di str2</p>
+<p>Nel caso fosse srt2 NULL e str1 sia di dimensione mazziore di 0, creo una stringa con il contenuto di str1</p>
+<p>Ritorno il valore di ritorno </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abb131e3e4d7f496a47d12c1692b75e15"></a><!-- doxytag: member="spstring.c::sp_strcmp" ref="abb131e3e4d7f496a47d12c1692b75e15" args="(const string *str1, const char *str2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_strcmp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structstring.html">string</a> *&#160;</td>
+          <td class="paramname"><em>str1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Confronta due stringhe e restituisce il relativo valore di verità </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str1</td><td>puntatore a string costante </td></tr>
+    <tr><td class="paramname">str2</td><td>puntatore a carattere costante </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>ifequal che sarà TRUE se str1 == str2; FALSE altrimenti </dd></dl>
+
+<p><p>Dichiaro ed inizializzo variabile di output Booleana a FALSE</p>
+<p>Dichiaro le variabili per la lunghezza delle due stringhe</p>
+<p>Controllo che str1 e str-&gt;char array non siano NULL, str2 sarà al massimo vuoto</p>
+<p>inizializzo la lunghezza delle due stringhe</p>
+<p>Verifico se hanno la stessa lunghezza, se sono lunghe uguali potrebbero anche essere identiche, altrimenti sono sicuramente diverse. Evito quindi di richiamere strcmp</p>
+<p>Se sono lunghe uguali, verifico anche se sono identiche</p>
+<p>Se sono anche identiche imposto ifequal a TRUE</p>
+<p>Se non sono identiche imposto ifequal a FALSE</p>
+<p>Se non sono lunghe uguali sono anche diverse, non faccio niente altro avendo ifequal inizializzato a FALSE</p>
+<p>Ritorno il risultato che sarà TRUE solo nel caso siano identiche str1 e str2 altrimenti restuirà FALSE </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad258858c5d6a2aa9b4b9ed5776155afc"></a><!-- doxytag: member="spstring.c::sp_strcpy" ref="ad258858c5d6a2aa9b4b9ed5776155afc" args="(string *copy, const char *original, int offset)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_strcpy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstring.html">string</a> *&#160;</td>
+          <td class="paramname"><em>copy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>original</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copia il contenuto della string original in copy. </p>
+<p>Copia la string partire dal carattere in posizione offset di copy. Se offset è 0, allora la copia avviene dall’inizio della stringa copy. La dimensione di copy deve essere pari o maggiore di quella di original. </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">copy</td><td></td></tr>
+    <tr><td class="paramname">original</td><td></td></tr>
+    <tr><td class="paramname">offset</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>copy puntatore a string che punga ad una copia della string original, assumendo che N &gt;= M, a partire dalla posizione offset </dd></dl>
+
+<p><p>Dichiaro la variabile per la lunghezza della stringa original</p>
+<p>Verifico che copy non sia NULL</p>
+<p>controllo che offset sia minore della grandezza di copy e che original sia diverso da NULL</p>
+<p>Ottengo la dimensione di original</p>
+<p>Controllo che copy sia maggiore o uguale alla dimensione di original</p>
+<p>Copio il contenuto di original in copy dalla posizione offset in poi</p>
+<p>Ritorno l'indirizzo di string copy </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac994017d490a951c8f48c37bcbdf0c1b"></a><!-- doxytag: member="spstring.c::sp_strlen" ref="ac994017d490a951c8f48c37bcbdf0c1b" args="(const string *str)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_strlen </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structstring.html">string</a> *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calcola e restituisce la lunghezza logica di una string. </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>puntatore a string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>strlen_current_str Intero n rappresentante la lunghezza con n&gt;= 0; se str = NULL, allora n = 0 </dd></dl>
+
+<p><p>Dichiaro ed inizializzo la variabile di output a 0</p>
+<p>Verifico che str e str-&gt;char_array non siano NULL e che la dimensione allocata non sia 0</p>
+<p>Calcolo la lunghezza della stringa contenuta in str-&gt;char_array</p>
+<p>Ritorna la linghezza della stringa, sarà 0 str o str-&gt;char_arrat sono NULL </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a70dbcd0b1199382b8a171ec68067370c"></a><!-- doxytag: member="spstring.c::sp_upper_case" ref="a70dbcd0b1199382b8a171ec68067370c" args="(const string *str)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sp_upper_case </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structstring.html">string</a> *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Restituisce una nuova stringa ottenuta ponendo in maiuscolo ciascun carattere della stringa in ingresso. </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>puntatore a string costante </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>upper_output Puntatore a string contenente caratteri in maiuscolo </dd></dl>
+
+<p><p>Dichiaro la variabile di output</p>
+<p>Variabile per lunghezza string di output</p>
+<p>Variabile temporanea per carattere da porre in maiuscolo</p>
+<p>Variabile indice per ciclo for, per trasformare in maiuscolo tutti i caratteri</p>
+<p>Controllo che str nons ia NULL</p>
+<p>Controllo che char_array non sia NULL</p>
+<p>Ottengo la lunghezza di str e creo una nuova stringa vuota di lungehzza uguale a str</p>
+<p>Ciclo su tutta la lungehzza si str</p>
+<p>Ottengo i-esimo carattere di str e lo trasformo in maiuscolo</p>
+<p>Salvo l'iesimo carattere maiuscolo nella string di output</p>
+<p>Salvo il carattere di terminazine stringa in ultima+1 posizione</p>
+<p>Ritorno la string di output con tutti i caratteri di str in maiuscolo </p>
+</p>
+
+</div>
+</div>
+</div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>File</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Definizioni</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,7 +1478,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (void)</td></
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generato Lun 16 Mag 2011 15:11:29 per StringPool da&#160;
+<hr class="footer"/><address class="footer"><small>Generato Lun 30 Mag 2011 10:09:24 per Stringpool da&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
 </body>

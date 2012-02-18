@@ -2,57 +2,97 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
   <compounddef id="bool_8h" kind="file">
     <compoundname>bool.h</compoundname>
-    <includedby refid="interface_8c" local="yes">interface/src/interface.c</includedby>
-    <includedby refid="spstring_8c" local="yes">stringpool/src/spstring.c</includedby>
+    <includedby refid="cunit__stringpool__lib_8c" local="yes">cunit_stringpool_lib/src/cunit_stringpool_lib.c</includedby>
+    <includedby refid="spstring_8c" local="yes">Library/spstring.c</includedby>
+    <includedby refid="spstring_8h" local="yes">Library/spstring.h</includedby>
+    <invincdepgraph>
+      <node id="12">
+        <label>cunit_stringpool_lib/src/cunit_stringpool_lib.c</label>
+        <link refid="cunit__stringpool__lib_8c"/>
+      </node>
+      <node id="11">
+        <label>Library/bool.h</label>
+        <link refid="bool.h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Library/spstring.c</label>
+        <link refid="spstring_8c"/>
+      </node>
+      <node id="14">
+        <label>Library/spstring.h</label>
+        <link refid="spstring_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="bool_8h_1a749658f1eed84e1a4035adaf384252e0" prot="public" static="no">
+        <name>BOOLE_H_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Impedisce inclusioni multiple </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/bool.h" line="12" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/bool.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="enum">
-      <memberdef kind="enum" id="bool_8h_1a7c6368b321bd9acd0149b030bb8275ed" prot="public" static="no">
+      <memberdef kind="enum" id="bool_8h_1a56a087515036f9d49426777667d056a7" prot="public" static="no">
         <name>boolean</name>
-        <enumvalue id="bool_8h_1a7c6368b321bd9acd0149b030bb8275edaa1e095cc966dbecf6a0d8aad75348d1a" prot="public">
+        <enumvalue id="bool_8h_1a56a087515036f9d49426777667d056a7aa1e095cc966dbecf6a0d8aad75348d1a" prot="public">
           <name>FALSE</name>
           <initializer> 0</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-          </detaileddescription>
+<para>valore boolean FALSE = 0 </para>          </detaileddescription>
         </enumvalue>
-        <enumvalue id="bool_8h_1a7c6368b321bd9acd0149b030bb8275edaa82764c3079aea4e60c80e45befbb839" prot="public">
+        <enumvalue id="bool_8h_1a56a087515036f9d49426777667d056a7aa82764c3079aea4e60c80e45befbb839" prot="public">
           <name>TRUE</name>
           <initializer> 1</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-          </detaileddescription>
+<para>valore boolean TRUE = 1 </para>          </detaileddescription>
         </enumvalue>
         <briefdescription>
-        </briefdescription>
+<para>Tipo di dato non primitivo boolean. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>vale 1 se TRUE, 0 se FALSE </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/bool.h" line="13" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/bool.h" bodystart="13" bodyend="13"/>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/bool.h" line="19" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/bool.h" bodystart="19" bodyend="22"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>Header per valori Booleani. </para>    </briefdescription>
     <detaileddescription>
+<para><simplesect kind="author"><para>Domenico Monaco, <ulink url="mailto:domenico.monaco@kiuz.it">domenico.monaco@kiuz.it</ulink> </para></simplesect>
+<simplesect kind="date"><para>2011 </para></simplesect>
+</para><sect1 id="stringpool_8h_1license">
+<title>Licenza</title>
+<para>GPLv2 <ulink url="http://www.softwarelibero.it/gnudoc/gpl.it.txt">http://www.softwarelibero.it/gnudoc/gpl.it.txt</ulink> Per maggiori informazioni visitare il link o visualizzare il file LICENSE </para></sect1>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>@filename:<sp/>boole.h</highlight></codeline>
-<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>@author:<sp/>macbook</highlight></codeline>
-<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>@rev:<sp/>0.1</highlight></codeline>
-<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>@license:<sp/>GPLV2</highlight></codeline>
-<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>@date:<sp/>16/mag/2011</highlight></codeline>
-<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>@desc:<sp/></highlight></codeline>
-<codeline lineno="8"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>BOOLE_H_</highlight></codeline>
-<codeline lineno="11"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>BOOLE_H_</highlight></codeline>
-<codeline lineno="12"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{FALSE<sp/>=<sp/>0,<sp/>TRUE<sp/>=<sp/>1}<sp/>boolean;</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>BOOLE_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"></codeline>
+<codeline lineno="11"><highlight class="preprocessor">#ifndef<sp/>BOOLE_H_</highlight></codeline>
+<codeline lineno="12" refid="bool_8h_1a749658f1eed84e1a4035adaf384252e0" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>BOOLE_H_<sp/></highlight></codeline>
+<codeline lineno="19" refid="bool_8h_1a56a087515036f9d49426777667d056a7" refkind="member"><highlight class="preprocessor">typedef<sp/>enum<sp/>{</highlight></codeline>
+<codeline lineno="20" refid="bool_8h_1a56a087515036f9d49426777667d056a7aa1e095cc966dbecf6a0d8aad75348d1a" refkind="member"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><ref refid="bool_8h_1a56a087515036f9d49426777667d056a7aa1e095cc966dbecf6a0d8aad75348d1a" kindref="member">FALSE</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="21" refid="bool_8h_1a56a087515036f9d49426777667d056a7aa82764c3079aea4e60c80e45befbb839" refkind="member"><highlight class="normal"><sp/><ref refid="bool_8h_1a56a087515036f9d49426777667d056a7aa82764c3079aea4e60c80e45befbb839" kindref="member">TRUE</ref><sp/>=<sp/>1<sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}<sp/><ref refid="bool_8h_1a56a087515036f9d49426777667d056a7" kindref="member" tooltip="Tipo di dato non primitivo boolean.">boolean</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>END<sp/>BOOLE_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/bool.h"/>
+    <location file="/Users/macbook/Documents/workspace-eclipse/Library/bool.h"/>
   </compounddef>
 </doxygen>

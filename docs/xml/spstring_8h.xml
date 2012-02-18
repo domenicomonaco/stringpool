@@ -2,47 +2,111 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
   <compounddef id="spstring_8h" kind="file">
     <compoundname>spstring.h</compoundname>
+    <includes refid="bool_8h" local="yes">bool.h</includes>
+    <includes refid="stringpool_8h" local="yes">stringpool.h</includes>
     <includedby refid="cunit__stringpool__lib_8c" local="yes">cunit_stringpool_lib/src/cunit_stringpool_lib.c</includedby>
-    <includedby refid="interface_8c" local="yes">interface/src/interface.c</includedby>
-    <includedby refid="spstring_8c" local="yes">stringpool/src/spstring.c</includedby>
-    <innerclass refid="structstring" prot="public">string</innerclass>
-    <innerclass refid="structstringpool" prot="public">stringpool</innerclass>
+    <includedby refid="spstring_8c" local="yes">Library/spstring.c</includedby>
+    <incdepgraph>
+      <node id="26">
+        <label>bool.h</label>
+        <link refid="bool_8h"/>
+      </node>
+      <node id="25">
+        <label>Library/spstring.h</label>
+        <link refid="spstring.h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>stringpool.h</label>
+        <link refid="stringpool_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="29">
+        <label>cunit_stringpool_lib/src/cunit_stringpool_lib.c</label>
+        <link refid="cunit__stringpool__lib_8c"/>
+      </node>
+      <node id="30">
+        <label>Library/spstring.c</label>
+        <link refid="spstring_8c"/>
+      </node>
+      <node id="28">
+        <label>Library/spstring.h</label>
+        <link refid="spstring.h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
       <sectiondef kind="define">
-      <memberdef kind="define" id="spstring_8h_1af4c76709286f016c09a7f99a070e6a5e" prot="public" static="no">
-        <name>MAX_DIM_STRING_POOL</name>
-        <initializer>10</initializer>
+      <memberdef kind="define" id="spstring_8h_1aa7eb64789c5be8a291d3551f0cd0ec70" prot="public" static="no">
+        <name>SPSTRING_H_</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Impedisce inclusioni multiple </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="12" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" bodystart="12" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="spstring_8h_1a20af6dd1f5a589e2a11eb37c1ea3ee96" prot="public" static="no">
-        <name>UNUSED_SLOT</name>
-        <initializer>0</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="14" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" bodystart="14" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="spstring_8h_1a80b8e6b0b534147058fcfc1187079064" prot="public" static="no">
-        <name>USED_SLOT</name>
-        <initializer>1</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="16" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" bodystart="16" bodyend="-1"/>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="14" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" bodystart="14" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="spstring_8h_1a4b6d2814d9b5aa512888a91f942c8da0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sp_initialize_stringpool</definition>
+        <argsstring>(stringpool *sp)</argsstring>
+        <name>sp_initialize_stringpool</name>
+        <param>
+          <type><ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <briefdescription>
+<para>Inizializza una struttura Stringpool. </para>        </briefdescription>
+        <detaileddescription>
+<para><programlisting></programlisting> Importa tipi di dato boolean <programlisting></programlisting> Importa tipi di dato string e stringpool</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura stringpool </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Verifica se il puntatore sp non è NULL</para><para>Imposta il counter degli slot utilizzati al valore di EMPTY_STRING_POOL</para><para>Imposta le posizioni al valore di UNUSED_SLOT rendendole tutte libere </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="24" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="30" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a3fa89b4e4441c6b66e2c18d6f532d4f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sp_free_stringpool</definition>
+        <argsstring>(stringpool *sp)</argsstring>
+        <name>sp_free_stringpool</name>
+        <param>
+          <type><ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <briefdescription>
+<para>Libera la memoria e reinizializza la struct sringpool. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a stringpool </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>i - indice intero per ciclo for per la deallocazione delle stringe</para><para>Verifica che sp non sia NULL</para><para>Iterazione per liberare la memoria delle stringe salvate</para><para>Verifica che la posizione i-esima sia occupata da una stringa altrimenti evita istruzioni inutili</para><para>Rimuove la stringa decrementando used_counter e ponendo a 0 position[i] Per ogni iterazione la struttura stringpool è consistente e coerente con le string rimosse e da rimuovere</para><para>Libero la memoria occupata dalla stringa i-esima</para><para>Operazione non necessaria se <ref refid="spstring_8c_1a6fd0b8059482b70aa0bc8ee607e3fadb" kindref="member">sp_remove_string()</ref> e <ref refid="spstring_8c_1a60ed4be4036600f174388c36a0370818" kindref="member">sp_free()</ref> operano correttamente </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="25" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="72" bodyend="98"/>
+      </memberdef>
       <memberdef kind="function" id="spstring_8h_1a18ab3dafab1e170404b7ecb5ff7f5a82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structstring" kindref="compound">string</ref> *</type>
         <definition>string* sp_new_string</definition>
@@ -53,37 +117,21 @@
           <declname>str</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Crea una string con contenuto pari a quello in ingresso. </para>        </briefdescription>
         <detaileddescription>
-<para>Crea una nuova stringa il cui contenuto eÃÄ uguale a quello del parametro in ingresso str.</para><para><parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">str</parametername>
+<parametername>str</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para></parameterdescription>
+<para>puntatore costante a caratteri </para></parameterdescription>
 </parameteritem>
 </parameterlist>
+<simplesect kind="return"><para>new_string puntatore a string </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
-<para>&lt; inizializza una struct di tipo string</para><para>Salva in new_string-&gt;allocated size la lunghezza della stringa da allocare </para>        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="45" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.c" bodystart="44" bodyend="53"/>
-      </memberdef>
-      <memberdef kind="function" id="spstring_8h_1a68cdb890f144e9ea6a984ee4aec146f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structstring" kindref="compound">string</ref> *</type>
-        <definition>string* sp_new_string_as_struct</definition>
-        <argsstring>(const string *str)</argsstring>
-        <name>sp_new_string_as_struct</name>
-        <param>
-          <type>const <ref refid="structstring" kindref="compound">string</ref> *</type>
-          <declname>str</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="47"/>
+<para>Calcolo e salvo la lunghezza della stringa passata, essa non contiene conto del carattere di terminazione \0</para><para>Creo ed alloco una nuova stringa vuota di lunghezza (len_str+1)</para><para>Copio il contenuto di str in new_string-&gt;char_array</para><para>Ritorno il puntatore alla struct string </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="26" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="139" bodyend="151"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1a6ca2fcf5ec5d621e012b93ac47e42df3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structstring" kindref="compound">string</ref> *</type>
@@ -95,12 +143,21 @@
           <declname>len</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Crea una string vuota di dimensione len. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Equivale alla stringa &quot;&quot; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>intero maggiore uguale a zero </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>new_empty_string puntatore a struttura di tipo stringa </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="49"/>
+<para>Variabile di output, puntatre a string, inzializzata a NULL nel caso len non è &gt;= 0</para><para>Verifica che len sia maggiore uguale a zero</para><para>Alloca la memoria per il puntatore new_empty_string, di dimensione SIZE_STRING_STRUCT</para><para>Imposta la memoria allocata al valore di len</para><para>Alloca lo spazio di dimensione len caratteria al puntatore char_array</para><para>Inserisce il carattere di terminazione nello spazio allocato</para><para>Ritorna l&apos;indirizzo della struct string, è NULL solo se len &lt; 0 altrimenti punta ad una locazione di memoria valida</para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="27" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="107" bodyend="131"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1ac6bae0d5bd4140987b042e70f2e3f92c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -112,12 +169,136 @@
           <declname>str</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Restituisce la dimensione massima allocata per la stringa. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>allocated_size dimensione fisica allocata per str; se str è 0, restituisce NULL </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="51"/>
+<para>Variabile allocated_size di output</para><para>Verifica che str e str-&gt;char_array non siano NULL</para><para>imposta allocated_size al valore di str-&gt;allocated_size</para><para>In caso allocated_size è 0 viene portato a NULL</para><para>Ritorna allocated_size che sarà &gt; 0 oppure NULL </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="28" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="159" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a03c271ff34668b3abd08f09abb7bb0e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sp_free</definition>
+        <argsstring>(string *str)</argsstring>
+        <name>sp_free</name>
+        <param>
+          <type><ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Dealloca lo spazio di memoria a cui sta puntando str. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Verifica che il puntatore str non sia NULL</para><para>Verifica che sia stato allocato dello spazio in corrispondenza all&apos;area di memoria puntata da str-&gt;char_array</para><para>Libera lo spazio puntato da str-&gt;char_array</para><para>Libera lo spazio puntato da str</para><para>Forza str a valere NULL dopo la deallocazione </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="29" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="47" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a8dd6c72c60d09695c4f8ca43b32e4067" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sp_strlen</definition>
+        <argsstring>(const string *str)</argsstring>
+        <name>sp_strlen</name>
+        <param>
+          <type>const <ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Calcola e restituisce la lunghezza logica di una string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>strlen_current_str Intero n rappresentante la lunghezza con n&gt;= 0; se str = NULL, allora n = 0 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Dichiaro ed inizializzo la variabile di output a 0</para><para>Verifico che str e str-&gt;char_array non siano NULL e che la dimensione allocata non sia 0</para><para>Calcolo la lunghezza della stringa contenuta in str-&gt;char_array</para><para>Ritorna la linghezza della stringa, sarà 0 str o str-&gt;char_arrat sono NULL </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="30" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="186" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1af4e26884749ec18a2870809932b78f96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="bool_8h_1a56a087515036f9d49426777667d056a7" kindref="member">boolean</ref></type>
+        <definition>boolean sp_strcmp</definition>
+        <argsstring>(const string *str1, const char *str2)</argsstring>
+        <name>sp_strcmp</name>
+        <param>
+          <type>const <ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>str1</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>str2</declname>
+        </param>
+        <briefdescription>
+<para>Confronta due stringhe e restituisce il relativo valore di verità </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a string costante </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a carattere costante </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>ifequal che sarà TRUE se str1 == str2; FALSE altrimenti </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Dichiaro ed inizializzo variabile di output Booleana a FALSE</para><para>Dichiaro le variabili per la lunghezza delle due stringhe</para><para>Controllo che str1 e str-&gt;char array non siano NULL, str2 sarà al massimo vuoto</para><para>inizializzo la lunghezza delle due stringhe</para><para>Verifico se hanno la stessa lunghezza, se sono lunghe uguali potrebbero anche essere identiche, altrimenti sono sicuramente diverse. Evito quindi di richiamere strcmp</para><para>Se sono lunghe uguali, verifico anche se sono identiche</para><para>Se sono anche identiche imposto ifequal a TRUE</para><para>Se non sono identiche imposto ifequal a FALSE</para><para>Se non sono lunghe uguali sono anche diverse, non faccio niente altro avendo ifequal inizializzato a FALSE</para><para>Ritorno il risultato che sarà TRUE solo nel caso siano identiche str1 e str2 altrimenti restuirà FALSE </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="31" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="208" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a68cdb890f144e9ea6a984ee4aec146f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structstring" kindref="compound">string</ref> *</type>
+        <definition>string* sp_new_string_as_struct</definition>
+        <argsstring>(const string *str)</argsstring>
+        <name>sp_new_string_as_struct</name>
+        <param>
+          <type>const <ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Crea una nuova string il cui contenuto è uguale a quella in ingresso. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>string_as_struct puntatore a string </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>inizializzo la variabile di ritorno</para><para>associo alla variabile di ritorno il l&apos;indirizzo della nuova string creata con sp_new_string</para><para>Ritorno l&apos;indirizzo della nuova string </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="32" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="250" bodyend="257"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1a24b4a6a000610a0bd9d1d42573ab1f67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structstring" kindref="compound">string</ref> *</type>
@@ -137,67 +318,35 @@
           <declname>offset</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Copia il contenuto della string original in copy. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Copia la string partire dal carattere in posizione offset di copy. Se offset è 0, allora la copia avviene dall’inizio della stringa copy. La dimensione di copy deve essere pari o maggiore di quella di original. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>copy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>original</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>copy puntatore a string che punga ad una copia della string original, assumendo che N &gt;= M, a partire dalla posizione offset </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="53"/>
-      </memberdef>
-      <memberdef kind="function" id="spstring_8h_1a03c271ff34668b3abd08f09abb7bb0e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void sp_free</definition>
-        <argsstring>(string *str)</argsstring>
-        <name>sp_free</name>
-        <param>
-          <type><ref refid="structstring" kindref="compound">string</ref> *</type>
-          <declname>str</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="55"/>
-      </memberdef>
-      <memberdef kind="function" id="spstring_8h_1a8dd6c72c60d09695c4f8ca43b32e4067" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>int</type>
-        <definition>int sp_strlen</definition>
-        <argsstring>(const string *str)</argsstring>
-        <name>sp_strlen</name>
-        <param>
-          <type>const <ref refid="structstring" kindref="compound">string</ref> *</type>
-          <declname>str</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="57"/>
-      </memberdef>
-      <memberdef kind="function" id="spstring_8h_1af4e26884749ec18a2870809932b78f96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>boolean</type>
-        <definition>boolean sp_strcmp</definition>
-        <argsstring>(const string *str1, const char *str2)</argsstring>
-        <name>sp_strcmp</name>
-        <param>
-          <type>const <ref refid="structstring" kindref="compound">string</ref> *</type>
-          <declname>str1</declname>
-        </param>
-        <param>
-          <type>const char *</type>
-          <declname>str2</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="59"/>
+<para>Dichiaro la variabile per la lunghezza della stringa original</para><para>Verifico che copy non sia NULL</para><para>controllo che offset sia minore della grandezza di copy e che original sia diverso da NULL</para><para>Ottengo la dimensione di original</para><para>Controllo che copy sia maggiore o uguale alla dimensione di original</para><para>Copio il contenuto di original in copy dalla posizione offset in poi</para><para>Ritorno l&apos;indirizzo di string copy </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="33" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="269" bodyend="290"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1a234a5ae1b3c039d59d5d8c4c9e78114f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structstring" kindref="compound">string</ref> *</type>
@@ -213,12 +362,28 @@
           <declname>str2</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Crea una string ottenuta dalla concatenazione di due stringhe in ingresso. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a caratteri costante </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a caratteri costante </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>str_cat puntatore a string contenete una stringa equivalente a str1+str2 </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="61"/>
+<para>Dichiarro la variabile di ritorno</para><para>Dichiaro le variabili per le lunghezze rispettivamente di str2, str1 e string di output</para><para>Verifico che entrambe le stringhe non siano NULL</para><para>inizializzo le lunghezze di str1 e str2</para><para>Dichiaro la lunghezza complessiva della string concatenata sommando le lunghezze logiche di str1 e str2</para><para>Creo una nuova string vuota di lunghezza str_cat_len + 1 dato che sp_new_empty_string non tiene conto del carattere di terminazione</para><para>Copio in str_cat a partire dalla posizione 0 il contenuto di str1</para><para>Copio in str_cat a partire dalla posizione str_len_str1 la str2</para><para>Caso in cui almeno uno delle due string è NULL ma non entrambe NULL</para><para>Controllo quale delle due string è NULL</para><para>Nel caso fosse NULL la str1, creiamo una nuova string con il solo contenuto della str2</para><para>Nel caso fosse NULL la str2, creiamo una nuova string con il solo contenuto della str1</para><para>Ritorno il puntatore a string contenente le due stringhe concatenate </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="34" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="298" bodyend="345"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1a86ec3a5501670ddc5151c56cbc1950a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structstring" kindref="compound">string</ref> *</type>
@@ -234,12 +399,28 @@
           <declname>str2</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Crea una string ottenuta dalla conctaenazione delle due string in ingresso. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a string costanti </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a string costanti </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>strcat_as_struct puntatore a string pari a str1+str2 </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="63"/>
+<para>Dichiaro la variabile di output</para><para>Verifico che entrmabe str1 e str2 non siano NULL</para><para>Controllo lo spazio allocato, se &gt; 0 vuol dire che non sono vuote</para><para>Concateno le due stringhe utilizzando <ref refid="spstring_8c_1af0a1ed949316f182907ea08d4e8bd62b" kindref="member">sp_strcat()</ref>{}</para><para>Caso in cui almeno una delle due ha dimensione 0 ma non entrambe di dimensione 0</para><para>Controllo quale delle due string è di dimensione 0</para><para>Nel caso str1 è di dimensione 0, creo una string con contenuto di str2</para><para>Nel caso str2 è di dimensione 0, creo una string con contenuto di str1</para><para>Caso in cui str1 o str2 è NULL ma non entrambe NULL</para><para>Verifico quale delle due è NULL</para><para>Nel caso fosse srt1 NULL e str2 sia di dimensione mazziore di 0, creo una stringa con il contenuto di str2</para><para>Nel caso fosse srt2 NULL e str1 sia di dimensione mazziore di 0, creo una stringa con il contenuto di str1</para><para>Ritorno il valore di ritorno </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="35" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="353" bodyend="399"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1a15544790ca29918d67a6ecc99c25e26e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structstring" kindref="compound">string</ref> *</type>
@@ -251,12 +432,21 @@
           <declname>str</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Restituisce una nuova stringa ottenuta ponendo in minuscolo ciascun carattere della stringa in ingresso. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a string costante </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>lower_output Puntatore a string contenente caratteri in minuscolo </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="65"/>
+<para>Dichiaro variabile di output</para><para>Variabile per lunghezza stringa</para><para>Variabile temporanea per carattere da porre in minuscolo</para><para>Variabile indice per ciclo for, per porre iterativamente tutti i caratteri in minuscolo</para><para>Controllo che str sia diverso da NULL</para><para>Controllo che sia diverso da NULL anche char_array</para><para>Calcolo la lungehzza della stringa, che potrebbe essere diversa dalla dimensione allocata per la stringa</para><para>Creo una nuova stringa vuota di dimensione della stringa in ingresso</para><para>Ciclo su tutta la lunghezza della stringa</para><para>Passo alla funzione tolower il carattere iesimo copiandolo in tmp_lower</para><para>Copio quindi tmp_lower nella posizione i-esima della string di output, passaggio inutile ma migliora la leggibilità</para><para>Salvo il carattere di terminazine stringa in ultima+1 posizione</para><para>Ritorno la nuova stringa ottenuta ponendo in minuscolo ogni carattere </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="36" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="406" bodyend="449"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1a6f2eaae0bc5c50c813604b0ac735d0ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structstring" kindref="compound">string</ref> *</type>
@@ -268,46 +458,21 @@
           <declname>str</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Restituisce una nuova stringa ottenuta ponendo in maiuscolo ciascun carattere della stringa in ingresso. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a string costante </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>upper_output Puntatore a string contenente caratteri in maiuscolo </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="67"/>
-      </memberdef>
-      <memberdef kind="function" id="spstring_8h_1a4b6d2814d9b5aa512888a91f942c8da0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void sp_initialize_stringpool</definition>
-        <argsstring>(stringpool *sp)</argsstring>
-        <name>sp_initialize_stringpool</name>
-        <param>
-          <type><ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
-          <declname>sp</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-<para>Indirizzo alla struttura stringpool</para><para>Abbiamo solo l&apos;indirizzo</para><para>&lt; sp, allocazione di una struct stringpool all&apos;indirizzo passato </para>        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="69" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.c" bodystart="26" bodyend="36"/>
-      </memberdef>
-      <memberdef kind="function" id="spstring_8h_1a3fa89b4e4441c6b66e2c18d6f532d4f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void sp_free_stringpool</definition>
-        <argsstring>(stringpool *sp)</argsstring>
-        <name>sp_free_stringpool</name>
-        <param>
-          <type><ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
-          <declname>sp</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="71"/>
+<para>Dichiaro la variabile di output</para><para>Variabile per lunghezza string di output</para><para>Variabile temporanea per carattere da porre in maiuscolo</para><para>Variabile indice per ciclo for, per trasformare in maiuscolo tutti i caratteri</para><para>Controllo che str nons ia NULL</para><para>Controllo che char_array non sia NULL</para><para>Ottengo la lunghezza di str e creo una nuova stringa vuota di lungehzza uguale a str</para><para>Ciclo su tutta la lungehzza si str</para><para>Ottengo i-esimo carattere di str e lo trasformo in maiuscolo</para><para>Salvo l&apos;iesimo carattere maiuscolo nella string di output</para><para>Salvo il carattere di terminazine stringa in ultima+1 posizione</para><para>Ritorno la string di output con tutti i caratteri di str in maiuscolo </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="37" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="456" bodyend="497"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1af6cca73aa0f5f8ea59a81eea99f4cf42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -319,15 +484,23 @@
           <declname>sp</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Restituisce il numero di stringhe in sp. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Restituisce 0 se lo stringpool è vuoto; -1 se sp è NULL <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>\return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size_of_sp intero contenente il numero di elementi n&gt;=0 presenti nello stringpool </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="73"/>
+<para>Dichiaro la variabile di output</para><para>Controllo che sp sia diverso da NULL</para><para>In tal caso, associo alla variabile di output il numero di rigeh utilizzate che sarà sempre n&gt;=0 e 0 solo se sp è vuoto</para><para>Nel caso sp sia NULL, associo alla variabile di output il valore -1</para><para>Ritorno il valore di Output </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="38" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="664" bodyend="681"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1a5bb3845c849c9829a5449dffd5717146" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>boolean</type>
+        <type><ref refid="bool_8h_1a56a087515036f9d49426777667d056a7" kindref="member">boolean</ref></type>
         <definition>boolean sp_isempty</definition>
         <argsstring>(const stringpool *sp)</argsstring>
         <name>sp_isempty</name>
@@ -336,15 +509,24 @@
           <declname>sp</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Restituisce un valore booleno che indica se lo stringpool è vuoto. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura stringpool costante </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>isempty è TRUE se sp è vuoto, FALSE altrimenti; se sp è NULL, restituisce FALSE </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="75"/>
+<para>Dichiaro la variabile di output e la inizializzo a FALSE</para><para>Verifico che sp non sia NUL</para><para>Controllo se il numero di slot usati è EMPTY_STRING_POOL</para><para>In caso affermativo, imposta isempty a TRUE, altrimenti rimane FALSE</para><para>Ritorno il valore di verità per sp VUOTO </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="39" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="505" bodyend="521"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1acd5a78a65dceb1375bfd39ff12c4ad59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>boolean</type>
+        <type><ref refid="bool_8h_1a56a087515036f9d49426777667d056a7" kindref="member">boolean</ref></type>
         <definition>boolean sp_isfull</definition>
         <argsstring>(const stringpool *sp)</argsstring>
         <name>sp_isfull</name>
@@ -353,12 +535,21 @@
           <declname>sp</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Restituisce un valore booleno che indica se stringpool contiene già il massimo numero di elementi consentiti. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura stringpool costante </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>isfull è TRUE se il numero di elementi presenti è == MAX_DIM_STRING_POOL, FALSE altrimenti; se sp è NULL, restituisce TRUE </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="77"/>
+<para>Dichiaro la variabile di output</para><para>Controllo se sp è diverso da NULL</para><para>Controllo se il counter degli slot è impotato alla dimensione massima di stringpool</para><para>Tutti gli slot sono usati, imposto isfull a TRUE</para><para>Caso in cui sp == NULL</para><para>Imposto come da specifica isfull a TRUE</para><para>Ritorno il valore di verita per sp PIENO </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="40" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="528" bodyend="550"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1a814e98bc4b93dde7eca6b39ea3f05e89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -374,12 +565,28 @@
           <declname>str</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Cerca la stringa str all’interno dello stringpool e ne restituisce la posizione, nel caso sia presente. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura stringpool </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura string costante </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>position_find Posizione p della stringa, con 0&lt;= p &lt; MAX_DIM_STRING_POOL se str è presente in sp; p=-1, altrimenti. Se sp e/o str sono NULL, restituisce -1. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="79"/>
+<para>Dichiaro la varibile di output e la inizializzo a -1 in caso di problemi durante la computazione</para><para>Dichiaro la variabile per l&apos;iterazione su tutto l&apos;array</para><para>Variabile di controllo per risultato comparazione</para><para>Controllo che sp ed str non siano NUL</para><para>Itero su tutta la dimensione possibile dell&apos;array</para><para>Controllo se la posizione i-esima è utilizzata</para><para>Comparo le stringhe e salvo il risultato</para><para>Controllo il risultato della comparazione</para><para>Se è stata identificata la stringa salvo la posizione i-esima corrente</para><para>Forzo l&apos;indice i a sforare sul valore di uscita dal ciclo for</para><para>Resituisco il valore di output, -1 se ci sono stati problemi e/o non è stata trovata o &gt;= pari alla posione della stringa cercata in sp </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="41" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="1112" bodyend="1151"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1a18552c28f0799fc247617ec54cc0c095" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structstring" kindref="compound">string</ref> *</type>
@@ -395,15 +602,31 @@
           <declname>pos</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Restituisce il puntatore alla stringa str che occupa la posizione pos all’interno dello stringpool. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Se pos è fuori da questo intervallo o se sp è nullo, allora la funzione restituisce restituisce NULL.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore costante a struttura string pull </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>intero positivo che indica la posizione da controllare </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>str_output puntatore a string in posizione pos, se 0&lt;= pos &lt; MAX_DIM_STRING_POOL; </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="81"/>
+<para>Dichiaro la variabile di output e la inizializzo a NULL</para><para>Controllo come da specifica se sp è NULL, se la posizione è all&apos;interno degli indici di stringpool</para><para>Controllo se la posizione richiesta è utilizzata</para><para>In tal caso assozio l&apos;indirizzo a cui punta stirngs[pos] alla variabile di output</para><para>Ritorno la variabile di output </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="42" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="692" bodyend="709"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1a828de2b79c0b821ec2568ff0f78fbd5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>boolean</type>
+        <type><ref refid="bool_8h_1a56a087515036f9d49426777667d056a7" kindref="member">boolean</ref></type>
         <definition>boolean sp_add_string</definition>
         <argsstring>(stringpool *sp, string *str)</argsstring>
         <name>sp_add_string</name>
@@ -416,15 +639,31 @@
           <declname>str</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Aggiunge la stringa puntata da str all’interno dello stringpool. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Viene aggiunta nella prima posizione libera. Nessuna operazione è compiuta se str e/o sp sono nulli, oppure se sp è pieno.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura stringpool </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>is_added TRUE se l’inserimento è andato a buon fine, FALSE altrimenti. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="83"/>
+<para>Dichiaro la variabile di outpu inizializzandola a FALSE</para><para>Dichiaro la varibile di verità per la posizione libera</para><para>Variabile indice per ciclo while per la ricerca della posizione libera</para><para>Variabile</para><para>Controllo che sp ed str non siano NULL</para><para>Controllo se lo string pool non è pieno</para><para>Ciclo per l&apos;intero stringpool alla ricerca della prima posizione libera</para><para>Il ciclo continua finchè check_free è diverso da 1 e non abbiamo controllato tutte le posizini</para><para>Per ogni ciclo controllo se l&apos;i-esima posizione è libera</para><para>In caso affermativo, imposto check_free a 1</para><para>Provo quindi ad aggiungere la string in ingresso nella posizione libera appena trovata</para><para>Memoriazando il risutlato di tale operazione</para><para>Controllo se l&apos;operazione di aggiunta della string in posizine iesima è andata a buon fine</para><para>In caso affermativo imposto la variabile di output a TRUE</para><para>In caso negativo, riporto check_free a 0 permettendo di continuare a cercare un&apos;altra posizione</para><para>Incremente il contatore iesimo</para><para>Ritorno il valore di verità per l&apos;operazione di aggiunta string </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="43" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="604" bodyend="655"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1a830d3905a2420fd48a9a67e6965f8914" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>boolean</type>
+        <type><ref refid="bool_8h_1a56a087515036f9d49426777667d056a7" kindref="member">boolean</ref></type>
         <definition>boolean sp_add_string_pos</definition>
         <argsstring>(stringpool *sp, string *str, int pos)</argsstring>
         <name>sp_add_string_pos</name>
@@ -441,12 +680,35 @@
           <declname>pos</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Aggiunge una string all’interno dello stringpool in posizione pos. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Nessuna operazione è compiuta se str e/o sp sono nulli, se pos è fuori dall’intervallo 0&lt;= pos &lt; MAX_DIM_STRING_POOL <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura stringpool </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>intero che indica la posizione in cui aggiungere la string</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>is_added vale TRUE se l’inserimento è andato a buon fine, FALSE altrimenti. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="85"/>
+<para>Dichiaro la variabile di output inizializzandola a FALSE</para><para>Controllo che sp e str non siano null e controllo che la posizione richiesta esista nello stringpool</para><para>Controllo che la posizione pos sia già occupata, in tal caso libero la memoria</para><para>Inesrisco in strings[pos] il puntatore a str passata</para><para>positions e used_counter sono aggiornati solo se è realmente presente in strings[pos] l&apos;indirizzo voluto, altrimenti non aggiorna le variabili</para><para>L&apos;assocciazione è andata a buon fine, posso aggiornare le variabili positions, used_counter e is_added per l&apos;output</para><para>Ritorno la variabile di output </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="44" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="562" bodyend="593"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1a013795d2353e446be36900213cbd8008" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structstring" kindref="compound">string</ref> *</type>
@@ -462,15 +724,31 @@
           <declname>pos</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Rimuove e restituisce la stringa str all’interno dello stringpool in posizione pos. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Nessuna operazione è compiuta se sp è nullo, oppure se pos è fuori dall’intervallo pos, MAX_DIM_STRING_POOL <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura stringpool </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>intero che indica una posizione in stringpool </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>removed_str puntatore alla stringa rimossa dallo stringpool, oppure NULL se nessuna stringa è presente in posizione pos </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="87"/>
+<para>Dichiaro la variabile di output e la inzializzo a NULL</para><para>Controllo se sp è NULL o se pos sia all&apos;interno del range di inidici di stringpool</para><para>Controllo se la posizione cercata contiene una Stringa Se la condizione è soddisfatta salvo il suo indirizzo</para><para>Una volta salvato l&apos;indirizzo della string rimossa, imposto la posizione come DISPONIBILE</para><para>Importo il counter degli slot utilizzati ad un valore inferiore</para><para>Ritorno la variabile di ouput contenente l&apos;indirizzo della string rimossa </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="45" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="719" bodyend="744"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1a86df646764e02a5241c8cc7a852a1e4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>boolean</type>
+        <type><ref refid="bool_8h_1a56a087515036f9d49426777667d056a7" kindref="member">boolean</ref></type>
         <definition>boolean sp_replace_string</definition>
         <argsstring>(stringpool *sp, int pos, string *newstr)</argsstring>
         <name>sp_replace_string</name>
@@ -487,12 +765,28 @@
           <declname>newstr</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Sostituisce la stringa all’interno dello stringpool in posizione pos, rimpiazzandola con str. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Nessuna operazione è compiuta se str e/o sp sono nulli, oppure se pos è fuori dall’intervallo [pos, MAX_DIM_STRING_POOL[ <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura stringpool </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newstr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>is_relpaced TRUE se la sostituzione è andata a buon fine, FALSE altrimenti </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="89"/>
+<para>Dichiaro la variabile di output</para><para>Controllo se sp è NULL oppure se la posizione richiesta è all&apos;interno del range di indiici di stringpool</para><para>Controllo se la posizone richiesta è utilizzata e se la nuova string è diverso da NULL</para><para>Rimuvo la stringa richiesta in posizione POS, verranno decrementati il contatore ed impostato a libera la posizione pos</para><para>Aggiungo in posizionepos la nuova stringa, verrano reincrementati il contatore ed il valore di utilizzo dello slot</para><para>Salvo com&apos;è andata l&apos;operazione nel valore di ritorno</para><para>Ritorno la variabile di output che indica se l&apos;operazione è andata a buon fine </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="46" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="754" bodyend="775"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1aa5e17ab368a854629b04d99442fa6b6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -508,12 +802,28 @@
           <declname>fname</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Salva il contenuto dello stringpool in un file di testo. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Specificando il nome nel secondo paramentro fname. Ogni elemento sarà salvato su una riga diversa.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura stringpool </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura string costante </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>number_writed_line con il numero di elementi scritti nel file oppure -1 in caso di errore. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="91"/>
+<para>Dichiaro la variabile di output e la inizializzo a -1 in caso sia possibile effettuare alcuna operazione</para><para>Inizializzo la variabile indice per il ciclo di scruttura delle n linee</para><para>Inizializzo il puntatore al file per la lettura</para><para>Controllo che sp non sia null e che il nome del file su cui scrivere sia diverso da &quot;&quot; o &quot; &quot;</para><para>Credo il file richiesto e se l&apos;operazione è andata a buon fine continuo</para><para>Apro il file appena creato e se l&apos;operazione va a buon fine continuo</para><para>Imposto il numero di linee scritte a 0 dato che stiamo per scrivere un numero di righe &gt;= 0</para><para>Itero per l&apos;intero numero massimo di posizione dell&apos;array stringpool</para><para>controllo che lo slot i-esimo sia occupato da una string</para><para>In caso sia passata la condizione precedente, scrivo la riga i-esima basandomi sul pattern di scrittura e lettura PATTERN_READ_WRITE_LINE</para><para>Incremento il contatore del numero di righe scritte</para><para>In caso la riapertura del file non è andata a buon fine imposto la variabile di output a -1 come da specifica</para><para>Chiudo il file aperto</para><para>Ritorno il valore di output che sarà -1 se è stato incontrato qualche problema, altrimento sarò &gt;= 0 ovvero il numero di linee scritte pari a sp_sizeof(&lt;STRINPOOL&gt;) </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="47" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="786" bodyend="839"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1a19eafeeb094da2fedbe9eae182d22a08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -529,12 +839,28 @@
           <declname>fname</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Carica il contenuto del file di test fname nello o stringpool. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>L’intera stringa letta su una riga sarà un elemento dello stringpool. Inoltre conserva l&apos;ordinamento ed il posizionamento originale delle stringhe pizzandole esattamene nella posizione originale.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura stringpool </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>struttura string contenente il nome del file da leggere </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>number_loaded_line il numero di righe lette e caricate </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="93"/>
+<para>Dichiaro la variabile di output, la inizializzo a -1 in caso si incontrano problemi nel caricamento</para><para>Variabile di indice per ciclo for per caricamento righe</para><para>Dichiaro la variabile per la lettura &quot;massima&quot; di righe da file</para><para>Puntatore a file da leggere</para><para>Variabile per l&apos;i-esimo slot letto da file</para><para>Varibile della posizione dell&apos;i-esimo slot lett da file</para><para>array temporanei</para><para>tmp_slot_start_line per contenere l&apos;inizio della stringa</para><para>tmp_slot_end_line per contenere la fine della riga, ovvero uno spazio un punto e virgola ed il carattere di nuova linea</para><para>Controllo che sp non sia NULL, e che il nome del file richiesto non sia vuoto o pari al solo spazio</para><para>Controllo che il file richiesto esista</para><para>In caso esiste viene ri-aperto</para><para>Imposto il numero di righe caricate a 0</para><para>Leggo la prima informazione del file che contiene il numero di stringhe salvate Ed imposto tale valore a number_slot.</para><para>Effettuo una iterazione su number_slot in modo da leggere le righe e salvarle</para><para>Se il puntarore all&apos;i-esima itezione non è NULL continuo</para><para>Se il puntatore all&apos;i-esima iterazione non è parti a EOF continuo</para><para>Effettuo una prima lettura della righa con fscanf prelevando posizione dello slot letto e la sua dimesione</para><para>Effettuo una seconda lettura con fgets leggendo la parte restante del testo basandomi sulla dimensione appena letta</para><para>Effettuo una terza lettura utile solo a far avanzare il puntatore, leggendo i 3 caratteri finali della stinga sufficenti a far trovare il puntare ad inizio riga alla prosssima iterazione</para><para>Aggiungo in sp lo slot lett con tmp_slot_start_line in posizione pos</para><para>Incremento la varibile che indica il numero di righe caricate</para><para>Contollo di sicurezza in caso il valore letto da pos non sia compatibile con la dimensione massima e minima contenibile in uno stringpool</para><para>Chiudo il file aperto</para><para>Restituisco il valore di ritorno pari al numero di righe lette </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="48" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="850" bodyend="950"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1a079cb55ebb4e9992c63454c1470baf15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -546,12 +872,21 @@
           <declname>sp</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Ordina alfabeticamente gli elementi dello stringpool, applicando l’algoritmo di bubble sort. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Ordina effettuando un controllo su ogni coppia di elementi, partendo dal basso sceglie minore del confronto e lo porta verso l&apos;alto. Ho usato la versione &quot;corta&quot; dell&apos;algoritmo dover per ogni i-esimo ciclo assumiamo che l&apos;elemento appena spostato è già in posizione corretta. Ho dovuto applicare un piccolo hack per poter fare l&apos;ordinamento anche su array con elementi non contiugui e lasciare invariate le posizione vuote, in altri termini l&apos;algoritmo ordina gli elementi solo sulle posizione attualmente utilizzare senza alterare la posizione degli slot vuoti.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura stringpool </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="95"/>
+<para>Dichiaro le variabili indici per i due cicli dell&apos;algoritmo Bubble sort</para><para>Dichiaro la variabile per identificare se nell&apos;i-esimo controllo è necessario uno Switch degli slot</para><para>Dichiaro la variabile per memorizzare temporaneamente la string da sostituire</para><para>Dichiaro la variabile per mappare le posizioni degli slot</para><para>Controllo prima se sp non sia NULL ed in seguito se sp non è VUOTO altrimenti non faccio null</para><para>Ottengo un array della mappa delle posizione dell&apos;array. Dove ogni i-esima posione contiene la posizione reale dello slot. Ad esempio se esistono 4 elementi, ma il sp-&gt;position[3] è vuoto mentre il sp-&gt;position[4] è pieno il risultato sarà un arrai del tipo [0-&gt;0,1-&gt;1,2-&gt;2,3-&gt;4]</para><para>Itero su due cicli for come da definizione dell&apos;algoritmo</para><para>Il primo ciclo itera da 0 alla dimensione di sp, incrementando il puntatore</para><para>Il secondo ciclo itera dalla dimensione di sp meno 1,fino ad i, decrementando l&apos;indice.</para><para>Ad ogni iterazione del primo ciclo for, il secndo ciclo for effettuera un passaggio in meno evitando di controllare elementi sicuramente già in posizione corretta</para><para>La j esima posione è quella corrente e dipende anche da i. Controlliamo le poszioni (j) e (j-1), identificando se sono o meno in ordine alfabetico utilizzando strcmp. Quindi ifswitch sarà -1 l&apos;elemento j deve essere spostato in posizione j-1 e viceversa</para><para>In questi cicli non mi devo preoccupare dei &quot;buchi&quot; nell&apos;array stringpool dato che le iterazioni sono fatte sulla mappa dele posizione che è un array continuo che ci permette di tradurre per ogni iterazione la reale posizione dello slot trattato</para><para>Controllo se bisogna scambiare gli elementi</para><para>Memorizzo temporanemente la stringa in posizione j</para><para>Rimpiazzo in posizione j la strin j-1</para><para>Rimpiazzo in posizione j-1 la stringa memorizzata precedentemente, ovvero quella in posizione j </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="49" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="962" bodyend="1025"/>
       </memberdef>
       <memberdef kind="function" id="spstring_8h_1ad4c5db94af98508f1a38de0f935d4bc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -567,112 +902,142 @@
           <declname>str</declname>
         </param>
         <briefdescription>
+<para>Cerca la stringa str all’interno dello stringpool ordinato attraverso l’algoritmo di ricerca binaria. </para>        </briefdescription>
+        <detaileddescription>
+<para>Ne restituisce la posizione, nel caso in cui str sia presente.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>\return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>iffound pari alla posizione p della stringa, con 0&lt;= p &lt; MAX_DIM_STRING_POOL se str è presente in sp; p=-1, altrimenti. Se sp o str sono nulli, restituisce -1. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Dichiaro la variabile di output</para><para>Dichiaro la variabile indice per il ciclo while della ricerca binaria, rappresenta il numero di controll effettuati</para><para>Variabile di controllo per la ricerca della stringa cercata</para><para>Variabili per il calcolo dell&apos;i-esima posizione da controlla come da definizione del bin_search</para><para>Puntatore ad array di interi contenere la mappa delle posizioni degli slot in stringpool</para><para>Controllo che sp e str non siano NULL, altrimenti salta salta e restituisce valore di errore -1</para><para>Calcolo e salvo la dimensione di sp</para><para>Se ha dimensione diversa da 0 è possibile effettuare la ricerca</para><para>Ottengo la mappa delle posizione degli slot di sp</para><para>Imposto il parametro hight del binary serch alla dimensione di sp</para><para>Imposoto il parametro low del binary search a 1</para><para>Itero finchè str_cmp non è 0 ovvero è stata identificata esattamente la stringa ricercata oppure se abbiamo già controllato tutto gli slot</para><para>Calcolo mid su base della formula binary search</para><para>Controllo la strina in posizione mid, contrale rispetto [low, hight]</para><para>In base al risultato associo a low o hight un valore diverso ed incremento la variabile indice</para><para>Alla fine dll&apos;iterazione controllo controllo se sia stata identificata o meno la stringa righesta</para><para>In caso sia concluso il ciclo senza trovare la stringa o non sia neanche iniziato, imposto il risultato a -1</para><para>In caso invece sia stata identificata la stringa resituisco la sua posizione</para><para>Ritorno il valore di ritorno che può essere o la posizione p della strnga cercata o -1 in caso di errore </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="50" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="1035" bodyend="1104"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1aaed6cf7f6d6627256d98ff3b006efd69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="bool_8h_1a56a087515036f9d49426777667d056a7" kindref="member">boolean</ref></type>
+        <definition>boolean _sp_file_create</definition>
+        <argsstring>(const string *fname)</argsstring>
+        <name>_sp_file_create</name>
+        <param>
+          <type>const <ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>fname</declname>
+        </param>
+        <briefdescription>
+<para>Controlla se esiste già il file e se non esiste lo crea. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura string costante </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>ifcreated boolean valore di verità, TRUE se è esiste già o se non esiste ed è stato Creato, FALSE se non esiste non è stato possibile crearlo </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Dichiaro la variabile di output</para><para>Dichiaro il puntatore a file</para><para>Verifico che fname non sia nullo</para><para>Controllo se non esiste già il file</para><para>Se non esiste cerco di crearlo</para><para>Se non si riesce a a crearlo imposto la variabile di output a FALSE</para><para>Altrimenti se sono riuscito* a crerlo imposto la variabile di output a TRUE</para><para>Chiudo il file aperto</para><para>Se esiste già imposto la variabile outpt a TRUE</para><para>Ritorno il valore di output </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="52" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="1195" bodyend="1231"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a88c4763051fb21a1fd954e22595249d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="bool_8h_1a56a087515036f9d49426777667d056a7" kindref="member">boolean</ref></type>
+        <definition>boolean _sp_file_exist</definition>
+        <argsstring>(const string *fname)</argsstring>
+        <name>_sp_file_exist</name>
+        <param>
+          <type>const <ref refid="structstring" kindref="compound">string</ref> *</type>
+          <declname>fname</declname>
+        </param>
+        <briefdescription>
+<para>Controlla se il file richiesto esiste e ne restituisce il valore di verità </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puntatore a struttura string costante </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>ifexist valore boolean FALSE se non esiste non è possibile aprirlo in modalità di lettura, TRUE se esiste ed è possibile aprirlo in modalità di lettura </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Dichiaro la variabile di output inizializzandola a FAlSE</para><para>Dichiaro il puntatore a file</para><para>Verifico che fname non sia nullo</para><para>Controllo se è possibile aprire il file richiesto in modalità di lettura</para><para>Se non è possibile aprirlo imposto la variabile di output a FALSE</para><para>Altrimenti se è possibile aprie il file imposto a TRUE la variabile di output</para><para>Chiudo il file</para><para>Ritorno la variabile di output </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="53" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="1158" bodyend="1187"/>
+      </memberdef>
+      <memberdef kind="function" id="spstring_8h_1a6143c920f51cf353336ee72034f68962" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int *</type>
+        <definition>int* _sp_map_array_stringpool</definition>
+        <argsstring>(const stringpool *sp)</argsstring>
+        <name>_sp_map_array_stringpool</name>
+        <param>
+          <type>const <ref refid="structstringpool" kindref="compound">stringpool</ref> *</type>
+          <declname>sp</declname>
+        </param>
+        <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="97"/>
+<para>Dichiaro l&apos;array di output</para><para>Dichiaro la variabile indice per il ciclo for e la variabile di posizione</para><para>Controllo che sp non sia NULL</para><para>Inizializzo lo spazio di memoria per l&apos;array di outpu calcolato sulla dimensione di sp</para><para>Itero su tutte le possibili posizioni potenzialmente occupate in sp</para><para>Controllo se la i-esima posizione è occupata</para><para>In caso sia occupata salvo in posizioni consecutive la posizione i-esima</para><para>Incremento la posizione del vettore di output solo se è stato inserito qualcosa</para><para>Ritorno la varibile di ouput </para>        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h" line="54" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/spstring.c" bodystart="1244" bodyend="1274"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Header spstring. </para>    </briefdescription>
+<para>Header per funzioni stringpool. </para>    </briefdescription>
     <detaileddescription>
-<para>Contiene i prototipi e le strutture della libreria &quot;spstring&quot; </para>    </detaileddescription>
+<para>Protitpi di funzioni per la manipolazione dei dati gestiti dalla libreria stringpool</para><para><simplesect kind="author"><para>Domenico Monaco, <ulink url="mailto:domenico.monaco@kiuz.it">domenico.monaco@kiuz.it</ulink> </para></simplesect>
+<simplesect kind="date"><para>2011 </para></simplesect>
+</para><sect1 id="stringpool_8h_1license">
+<title>Licenza</title>
+<para>GPLv2 <ulink url="http://www.softwarelibero.it/gnudoc/gpl.it.txt">http://www.softwarelibero.it/gnudoc/gpl.it.txt</ulink> Per maggiori informazioni visitare il link o visualizzare il file LICENSE </para></sect1>
+    </detaileddescription>
     <programlisting>
 <codeline lineno="1"></codeline>
-<codeline lineno="9"><highlight class="preprocessor">#ifndef<sp/>SPSTRING_H_</highlight></codeline>
-<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SPSTRING_H_</highlight></codeline>
-<codeline lineno="11"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_DIM_STRING_POOL<sp/>10</highlight></codeline>
-<codeline lineno="13"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UNUSED_SLOT<sp/>0</highlight></codeline>
-<codeline lineno="15"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>USED_SLOT<sp/>1</highlight></codeline>
-<codeline lineno="17"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18" refid="structstring" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//La<sp/>libreria<sp/>stringpool<sp/>prevede<sp/>la<sp/>creazione<sp/>di<sp/>due<sp/>strutture.<sp/>La<sp/>prima<sp/>struttura,<sp/>denominata<sp/>string,<sp/>contiene:<sp/>(1)<sp/>un<sp/>vettore<sp/>di<sp/>caratteri;<sp/>(2)<sp/>un<sp/>intero<sp/>che<sp/>definisce<sp/>la<sp/>dimensione<sp/>fisica<sp/>massima<sp/>allocata<sp/>dinamicamente<sp/>per<sp/>il<sp/>vettore<sp/>di<sp/>caratteri.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>char_array;<sp/></highlight><highlight class="comment">/*&lt;<sp/>Il<sp/>campo<sp/>char_array<sp/>√®<sp/>un<sp/>vettore<sp/>di<sp/>caratteri<sp/>da<sp/>allocare<sp/>dinamicamente.*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//La<sp/>dimensione<sp/>del<sp/>vettore<sp/>sar√†<sp/>specificata<sp/>da<sp/>un<sp/>intero<sp/>dinamico<sp/>in<sp/>fase<sp/>di<sp/>allocazione<sp/>della<sp/>struttura.<sp/>Tale<sp/>numero<sp/>sar√†<sp/>salvato<sp/>nel<sp/>campo<sp/>allocated_size<sp/>della<sp/>struttura.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="preprocessor">#ifndef<sp/>SPSTRING_H_</highlight></codeline>
+<codeline lineno="14" refid="spstring_8h_1aa7eb64789c5be8a291d3551f0cd0ec70" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SPSTRING_H_<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="preprocessor">#include<sp/>&quot;bool.h&quot;</highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stringpool_8h" kindref="compound" tooltip="Header per tipi di dati stringpool.">stringpool.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>allocated_size;<sp/></highlight><highlight class="comment">//Il<sp/>campo<sp/>allocated_size<sp/>√®<sp/>un<sp/>intero<sp/>che<sp/>indica<sp/>la<sp/>dimensione<sp/>massima<sp/>del<sp/>vettore.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//In<sp/>altre<sp/>parole<sp/>se<sp/>allocated_size<sp/>√®<sp/>pari<sp/>a<sp/>N&gt;0,<sp/>allora<sp/>char_array<sp/>potr√†<sp/>al<sp/>pi√π<sp/>contenere<sp/>una<sp/>stringa<sp/>lunga<sp/>N-1<sp/>caratteri<sp/>pi√π<sp/>il<sp/>terminatore<sp/>‚Äò\0‚Äô.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal">}<sp/><ref refid="structstring" kindref="compound">string</ref>;</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29" refid="structstringpool" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//La<sp/>seconda<sp/>struttura,<sp/>denominata<sp/>stringpool,<sp/>contiene:</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(1)<sp/>un<sp/>vettore<sp/>statico<sp/>di<sp/>puntatori<sp/>a<sp/>stringhe<sp/>(string*)<sp/>per<sp/>il<sp/>contenimento<sp/>degli<sp/>elementi;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(2)<sp/>un<sp/>contatore<sp/>degli<sp/>elementi<sp/>presenti<sp/>nel<sp/>vettore;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(3)<sp/>un<sp/>vettore<sp/>di<sp/>interi<sp/>indicante<sp/>per<sp/>ciascuna<sp/>posizione<sp/>lo<sp/>stato<sp/>libero<sp/>o<sp/>occupato.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>strings;<sp/></highlight><highlight class="comment">//Il<sp/>campo<sp/>strings<sp/>eÃÄ<sp/>un<sp/>vettore<sp/>di<sp/>puntatori<sp/>a<sp/>stringhe.<sp/>La<sp/>dimensione<sp/>del<sp/>vettore<sp/>eÃÄ<sp/>specificata<sp/>come<sp/>costante<sp/>MAX_DIM_STRING_POOL<sp/>(10),<sp/>in<sp/>modo<sp/>statico,<sp/>nella<sp/>dichiarazione.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>used_counter;<sp/></highlight><highlight class="comment">//Il<sp/>campo<sp/>used_counter<sp/>conta<sp/>il<sp/>numero<sp/>di<sp/>elementi<sp/>presenti<sp/>nel<sp/>vettore<sp/>strings.<sp/>In<sp/>fase<sp/>di<sp/>inizializzazione,<sp/>il<sp/>contatore<sp/>eÃÄ<sp/>posto<sp/>a<sp/>0.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>positions;<sp/></highlight><highlight class="comment">//Il<sp/>campo<sp/>positions<sp/>eÃÄ<sp/>un<sp/>vettore<sp/>di<sp/>interi<sp/>di<sp/>dimensione<sp/>pari<sp/>a<sp/>quello<sp/>strings.<sp/>Ciascun<sp/>elemento<sp/>in<sp/>posizione<sp/>i<sp/>puoÃÄ<sp/>valere<sp/>0<sp/>(UNUSED_SLOT)<sp/>oppure<sp/>1<sp/>(USED_SLOT),<sp/>e<sp/>indicheraÃÄ,<sp/>rispettivamente,<sp/>che<sp/>nel<sp/>vettore<sp/>strings<sp/>la<sp/>posizione<sp/>i<sp/>eÃÄ<sp/>libera<sp/>o<sp/>giaÃÄ<sp/>occupata.<sp/>In<sp/>fase<sp/>di<sp/>inizializzazione,<sp/>il<sp/>vettore<sp/>positions<sp/>eÃÄ<sp/>posto<sp/>interamente<sp/>a<sp/>0.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal">}<sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>;</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//prototipi</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_new_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str);<sp/></highlight><highlight class="comment">//Crea<sp/>una<sp/>nuova<sp/>stringa<sp/>il<sp/>cui<sp/>contenuto<sp/>eÃÄ<sp/>uguale<sp/>a<sp/>quello<sp/>del<sp/>parametro<sp/>in<sp/>ingresso<sp/>str.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_new_string_as_struct(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);</highlight><highlight class="comment">//Crea<sp/>una<sp/>nuova<sp/>stringa<sp/>il<sp/>cui<sp/>contenuto<sp/>eÃÄ<sp/>uguale<sp/>a<sp/>quello<sp/>del<sp/>parametro<sp/>in<sp/>ingresso<sp/>str.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_new_empty_string(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len);<sp/></highlight><highlight class="comment">//Crea<sp/>una<sp/>nuova<sp/>stringa<sp/>vuota<sp/>(cioeÃÄ<sp/>‚Äú‚Äù)<sp/>creata<sp/>dinamicamente,<sp/>la<sp/>cui<sp/>dimensione<sp/>fisica<sp/>eÃÄ<sp/>pari<sp/>a<sp/>len<sp/>caratteri.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sp_get_allocated_size(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);<sp/></highlight><highlight class="comment">//Restituisce<sp/>la<sp/>dimensione<sp/>massima<sp/>(fisica)<sp/>allocata<sp/>dinamicamente<sp/>per<sp/>la<sp/>stringa.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_strcpy(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>copy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>original,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>offset);<sp/></highlight><highlight class="comment">//Copia<sp/>il<sp/>contenuto<sp/>della<sp/>stringa<sp/>original<sp/>in<sp/>copy,<sp/>a<sp/>partire<sp/>dal<sp/>carattere<sp/>in<sp/>posizione<sp/>offset<sp/>di<sp/>copy.<sp/>Se<sp/>offset<sp/>eÃÄ<sp/>0,<sp/>allora<sp/>la<sp/>copia<sp/>avviene<sp/>dall‚Äôinizio<sp/>della<sp/>stringa<sp/>copy.<sp/>La<sp/>dimensione<sp/>di<sp/>copy<sp/>deve<sp/>essere<sp/>pari<sp/>o<sp/>maggiore<sp/>di<sp/>quella<sp/>di<sp/>original.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>sp_free(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);<sp/></highlight><highlight class="comment">//Funzione<sp/>per<sp/>deallocare<sp/>una<sp/>stringa<sp/>str<sp/>allocata<sp/>dinamicamente.<sp/>Dopo<sp/>la<sp/>deallocazione<sp/>str<sp/>vale<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sp_strlen(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);<sp/></highlight><highlight class="comment">//Funzione<sp/>che<sp/>calcola<sp/>e<sp/>restituisce<sp/>la<sp/>lunghezza<sp/>logica<sp/>della<sp/>stringa<sp/>in<sp/>ingresso<sp/>str.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>sp_strcmp(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str2);<sp/></highlight><highlight class="comment">//Funzione<sp/>che<sp/>confronta<sp/>due<sp/>stringhe<sp/>e<sp/>restituisce<sp/>il<sp/>corrispettivo<sp/>valore<sp/>di<sp/>veritaÃÄ.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_strcat(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str2);<sp/></highlight><highlight class="comment">//La<sp/>funzione<sp/>crea<sp/>una<sp/>nuova<sp/>stringa<sp/>ottenuta<sp/>dalla<sp/>concatenazione<sp/>delle<sp/>due<sp/>stringhe<sp/>passate<sp/>in<sp/>ingresso,<sp/>le<sp/>quali<sp/>non<sp/>sono<sp/>alterate<sp/>dalla<sp/>funzione.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_strcat_as_struct(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str2);<sp/></highlight><highlight class="comment">//La<sp/>funzione<sp/>crea<sp/>una<sp/>nuova<sp/>stringa<sp/>ottenuta<sp/>dalla<sp/>concatenazione<sp/>delle<sp/>due<sp/>stringhe<sp/>passate<sp/>in<sp/>ingresso,<sp/>le<sp/>quali<sp/>non<sp/>sono<sp/>alterate<sp/>dalla<sp/>funzione.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_lower_case(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);<sp/></highlight><highlight class="comment">//La<sp/>funzione<sp/>restituisce<sp/>una<sp/>nuova<sp/>stringa<sp/>ottenuta<sp/>ponendo<sp/>in<sp/>minuscolo<sp/>ciascun<sp/>carattere<sp/>della<sp/>stringa<sp/>in<sp/>ingresso<sp/>che<sp/>non<sp/>eÃÄ<sp/>alterata.<sp/>Per<sp/>esempio,<sp/>se<sp/>si<sp/>passa<sp/>come<sp/>parametro<sp/>in<sp/>ingresso<sp/>‚ÄúCiao‚Äù,<sp/>allora<sp/>la<sp/>funzione<sp/>restituiraÃÄ<sp/>una<sp/>nuova<sp/>stringa<sp/>‚Äúciao‚Äù<sp/>in<sp/>output.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_upper_case(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);<sp/></highlight><highlight class="comment">//La<sp/>funzione<sp/>restituisce<sp/>una<sp/>nuova<sp/>stringa<sp/>ottenuta<sp/>ponendo<sp/>in<sp/>maiuscolo<sp/>ciascun<sp/>carattere<sp/>della<sp/>stringa<sp/>in<sp/>ingresso<sp/>che<sp/>non<sp/>eÃÄ<sp/>alterata.<sp/>Per<sp/>esempio,<sp/>se<sp/>si<sp/>passa<sp/>come<sp/>parametro<sp/>in<sp/>ingresso<sp/>‚ÄúCiao‚Äù,<sp/>allora<sp/>la<sp/>funzione<sp/>restituiraÃÄ<sp/>una<sp/>nuova<sp/>stringa<sp/>‚ÄúCIAO‚Äù<sp/>in<sp/>output.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>sp_initialize_stringpool(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp);<sp/></highlight><highlight class="comment">//Inizializza<sp/>la<sp/>struttura<sp/>stringpool.<sp/>Pone<sp/>il<sp/>contatore<sp/>di<sp/>elementi<sp/>a<sp/>0<sp/>e<sp/>rende<sp/>tutti<sp/>gli<sp/>slot<sp/>disponibili.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>sp_free_stringpool(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp);<sp/></highlight><highlight class="comment">//Libera<sp/>la<sp/>memoria<sp/>per<sp/>tutte<sp/>le<sp/>stringhe<sp/>salvate<sp/>in<sp/>strings<sp/>e<sp/>re-inizializza<sp/>la<sp/>struttura<sp/>stringpool<sp/>(positions<sp/>e<sp/>used_counter<sp/>azzerati).</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sp_sizeof(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp);<sp/></highlight><highlight class="comment">//Restituisce<sp/>il<sp/>numero<sp/>di<sp/>stringhe<sp/>in<sp/>sp.<sp/>Restituisce<sp/>0<sp/>se<sp/>lo<sp/>stringpool<sp/>eÃÄ<sp/>vuoto;<sp/>-1<sp/>se<sp/>sp<sp/>eÃÄ<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>sp_isempty(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp);<sp/></highlight><highlight class="comment">//Restituisce<sp/>un<sp/>valore<sp/>booleno<sp/>stante<sp/>a<sp/>indicare<sp/>se<sp/>lo<sp/>stringpool<sp/>eÃÄ<sp/>vuoto<sp/>o<sp/>contiene<sp/>uno<sp/>o<sp/>piuÃÄ<sp/>elementi.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>sp_isfull(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp);<sp/></highlight><highlight class="comment">//Restituisce<sp/>un<sp/>valore<sp/>booleno<sp/>stante<sp/>a<sp/>indicare<sp/>se<sp/>lo<sp/>stringpool<sp/>contiene<sp/>giaÃÄ<sp/>il<sp/>massimo<sp/>numero<sp/>di<sp/>elementi<sp/>consentiti<sp/>oppure<sp/>no.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sp_find_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);<sp/></highlight><highlight class="comment">//Cerca<sp/>la<sp/>stringa<sp/>str<sp/>all‚Äôinterno<sp/>dello<sp/>stringpool<sp/>e<sp/>ne<sp/>restituisce<sp/>la<sp/>posizione,<sp/>nel<sp/>caso<sp/>sia<sp/>presente.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_get_string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos);<sp/></highlight><highlight class="comment">//Restituisce<sp/>il<sp/>puntatore<sp/>alla<sp/>stringa<sp/>str<sp/>che<sp/>occupa<sp/>la<sp/>posizione<sp/>pos<sp/>all‚Äôinterno<sp/>dello<sp/>stringpool.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>sp_add_string(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);<sp/></highlight><highlight class="comment">//Aggiunge<sp/>la<sp/>stringa<sp/>puntata<sp/>da<sp/>str<sp/>all‚Äôinterno<sp/>dello<sp/>stringpool.<sp/>Nessuna<sp/>operazione<sp/>eÃÄ<sp/>compiuta<sp/>se<sp/>str<sp/>e/o<sp/>sp<sp/>sono<sp/>nulli,<sp/>oppure<sp/>se<sp/>sp<sp/>eÃÄ<sp/>pieno.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>sp_add_string_pos(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos);<sp/></highlight><highlight class="comment">//Aggiunge<sp/>la<sp/>stringa<sp/>str<sp/>all‚Äôinterno<sp/>dello<sp/>stringpool<sp/>in<sp/>posizione<sp/>pos.<sp/>Nessuna<sp/>operazione<sp/>eÃÄ<sp/>compiuta<sp/>se<sp/>str<sp/>e/o<sp/>sp<sp/>sono<sp/>nulli,<sp/>se<sp/>pos<sp/>eÃÄ<sp/>fuori<sp/>dall‚Äôintervallo<sp/>0&lt;=<sp/>pos<sp/>&lt;<sp/>MAX_DIM_STRING_POOL</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>sp_remove_string(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos);<sp/></highlight><highlight class="comment">//Rimuove<sp/>e<sp/>restituisce<sp/>la<sp/>stringa<sp/>str<sp/>all‚Äôinterno<sp/>dello<sp/>stringpool<sp/>in<sp/>posizione<sp/>pos.<sp/>Nessuna<sp/>operazione<sp/>eÃÄ<sp/>compiuta<sp/>se<sp/>sp<sp/>eÃÄ<sp/>nullo,<sp/>oppure<sp/>se<sp/>pos<sp/>eÃÄ<sp/>fuori<sp/>dall‚Äôintervallo<sp/>pos,<sp/>MAX_DIM_STRING_POOL[</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>sp_replace_string(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>newstr);<sp/></highlight><highlight class="comment">//Sostituisce<sp/>la<sp/>stringa<sp/>all‚Äôinterno<sp/>dello<sp/>stringpool<sp/>in<sp/>posizione<sp/>pos,<sp/>rimpiazzandola<sp/>con<sp/>str.<sp/>Nessuna<sp/>operazione<sp/>eÃÄ<sp/>compiuta<sp/>se<sp/>str<sp/>e/o<sp/>sp<sp/>sono<sp/>nulli,<sp/>oppure<sp/>se<sp/>pos<sp/>eÃÄ<sp/>fuori<sp/>dall‚Äôintervallo<sp/>[pos,<sp/>MAX_DIM_STRING_POOL[</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sp_save_to_file(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>fname);<sp/></highlight><highlight class="comment">//Salva<sp/>il<sp/>contenuto<sp/>dello<sp/>stringpool<sp/>in<sp/>un<sp/>file<sp/>di<sp/>testo,<sp/>con<sp/>il<sp/>nome<sp/>specificato<sp/>dal<sp/>secondo<sp/>paramentro<sp/>fname.<sp/>Ogni<sp/>elemento<sp/>saraÃÄ<sp/>salvato<sp/>su<sp/>una<sp/>riga<sp/>diversa.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sp_load_from_file(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>fname);<sp/></highlight><highlight class="comment">//Carica<sp/>il<sp/>contenuto<sp/>del<sp/>file<sp/>di<sp/>test<sp/>fname<sp/>nello<sp/>o<sp/>stringpool.<sp/>L‚Äôintera<sp/>stringa<sp/>letta<sp/>su<sp/>una<sp/>riga<sp/>saraÃÄ<sp/>un<sp/>elemento<sp/>dello<sp/>stringpool.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>bubble_sort(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp);<sp/></highlight><highlight class="comment">//Ordina<sp/>alfabeticamente<sp/>gli<sp/>elementi<sp/>dello<sp/>stringpool,<sp/>applicando<sp/>l‚Äôalgoritmo<sp/>di<sp/>bubble<sp/>sort.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bin_search(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/>sp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>str);<sp/></highlight><highlight class="comment">//Cerca<sp/>la<sp/>stringa<sp/>str<sp/>all‚Äôinterno<sp/>dello<sp/>stringpool<sp/>ordinato<sp/>attraverso<sp/>l‚Äôalgoritmo<sp/>di<sp/>ricerca<sp/>binaria.<sp/>Ne<sp/>restituisce<sp/>la<sp/>posizione,<sp/>nel<sp/>caso<sp/>in<sp/>cui<sp/>str<sp/>sia<sp/>presente.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SPSTRING_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1a43109a2f4b18023775b877451f725c13" kindref="member" tooltip="Inizializza una struttura Stringpool.">sp_initialize_stringpool</ref>(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/><ref refid="cunit__stringpool__lib_8c_1a421ecbacf6dacc6f5e391d074522db9e" kindref="member">sp</ref>);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1a99f5a66367fa19e42c24211e982c4b56" kindref="member" tooltip="Libera la memoria e reinizializza la struct sringpool.">sp_free_stringpool</ref>(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/><ref refid="cunit__stringpool__lib_8c_1a421ecbacf6dacc6f5e391d074522db9e" kindref="member">sp</ref>);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/><ref refid="spstring_8c_1ac14d3aa446e78a594b506cf2494b7273" kindref="member" tooltip="Crea una string con contenuto pari a quello in ingresso.">sp_new_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/><ref refid="spstring_8c_1aa9f031abbf235a5d16322d97f78c334d" kindref="member" tooltip="Crea una string vuota di dimensione len.">sp_new_empty_string</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1ab0823663ad7e935718ccfc2db8e316d3" kindref="member" tooltip="Restituisce la dimensione massima allocata per la stringa.">sp_get_allocated_size</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1a60ed4be4036600f174388c36a0370818" kindref="member" tooltip="Dealloca lo spazio di memoria a cui sta puntando str.">sp_free</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1ac994017d490a951c8f48c37bcbdf0c1b" kindref="member" tooltip="Calcola e restituisce la lunghezza logica di una string.">sp_strlen</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1abb131e3e4d7f496a47d12c1692b75e15" kindref="member" tooltip="Confronta due stringhe e restituisce il relativo valore di verità">sp_strcmp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str2);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/><ref refid="spstring_8c_1afe063a22db56e1ed3b9de5a81820f002" kindref="member" tooltip="Crea una nuova string il cui contenuto è uguale a quella in ingresso.">sp_new_string_as_struct</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/><ref refid="spstring_8c_1ad258858c5d6a2aa9b4b9ed5776155afc" kindref="member" tooltip="Copia il contenuto della string original in copy.">sp_strcpy</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>copy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>original,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>offset);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/><ref refid="spstring_8c_1af0a1ed949316f182907ea08d4e8bd62b" kindref="member" tooltip="Crea una string ottenuta dalla concatenazione di due stringhe in ingresso.">sp_strcat</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str2);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/><ref refid="spstring_8c_1ad8c5bbe3b367845aaa230e19ac9e7919" kindref="member" tooltip="Crea una string ottenuta dalla conctaenazione delle due string in ingresso.">sp_strcat_as_struct</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str2);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/><ref refid="spstring_8c_1a8b5d366c459a30a563e83fc8804702e2" kindref="member" tooltip="Restituisce una nuova stringa ottenuta ponendo in minuscolo ciascun carattere della stringa in ingres...">sp_lower_case</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/><ref refid="spstring_8c_1a70dbcd0b1199382b8a171ec68067370c" kindref="member" tooltip="Restituisce una nuova stringa ottenuta ponendo in maiuscolo ciascun carattere della stringa in ingres...">sp_upper_case</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1a96c3685a91d261df2cb06e9745bdca3f" kindref="member" tooltip="Restituisce il numero di stringhe in sp.">sp_sizeof</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/><ref refid="cunit__stringpool__lib_8c_1a421ecbacf6dacc6f5e391d074522db9e" kindref="member">sp</ref>);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1aff3ad92cec105f24f415f745ae476ba1" kindref="member" tooltip="Restituisce un valore booleno che indica se lo stringpool è vuoto.">sp_isempty</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/><ref refid="cunit__stringpool__lib_8c_1a421ecbacf6dacc6f5e391d074522db9e" kindref="member">sp</ref>);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1a51a9f7cf9dc077b62d01ff8102301841" kindref="member" tooltip="Restituisce un valore booleno che indica se stringpool contiene già il massimo numero di elementi cons...">sp_isfull</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/><ref refid="cunit__stringpool__lib_8c_1a421ecbacf6dacc6f5e391d074522db9e" kindref="member">sp</ref>);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1ac0204ece57f1cdce074fe7af7b7419f1" kindref="member" tooltip="Cerca la stringa str all’interno dello stringpool e ne restituisce la posizione, nel caso sia presente...">sp_find_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/><ref refid="cunit__stringpool__lib_8c_1a421ecbacf6dacc6f5e391d074522db9e" kindref="member">sp</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/><ref refid="spstring_8c_1a0b0458114373e76ff2c48696bcae2782" kindref="member" tooltip="Restituisce il puntatore alla stringa str che occupa la posizione pos all’interno dello stringpool...">sp_get_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/><ref refid="cunit__stringpool__lib_8c_1a421ecbacf6dacc6f5e391d074522db9e" kindref="member">sp</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1ae86751935917ec79d819904cfb087817" kindref="member" tooltip="Aggiunge la stringa puntata da str all’interno dello stringpool.">sp_add_string</ref>(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/><ref refid="cunit__stringpool__lib_8c_1a421ecbacf6dacc6f5e391d074522db9e" kindref="member">sp</ref>,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1ace396a34f5bb42619cb81756b2f5b375" kindref="member" tooltip="Aggiunge una string all’interno dello stringpool in posizione pos.">sp_add_string_pos</ref>(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/><ref refid="cunit__stringpool__lib_8c_1a421ecbacf6dacc6f5e391d074522db9e" kindref="member">sp</ref>,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>str,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/><ref refid="spstring_8c_1a6fd0b8059482b70aa0bc8ee607e3fadb" kindref="member" tooltip="Rimuove e restituisce la stringa str all’interno dello stringpool in posizione pos.">sp_remove_string</ref>(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/><ref refid="cunit__stringpool__lib_8c_1a421ecbacf6dacc6f5e391d074522db9e" kindref="member">sp</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1a465c42024674ec91ddb1158ee58c3466" kindref="member" tooltip="Sostituisce la stringa all’interno dello stringpool in posizione pos, rimpiazzandola con str...">sp_replace_string</ref>(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/><ref refid="cunit__stringpool__lib_8c_1a421ecbacf6dacc6f5e391d074522db9e" kindref="member">sp</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>newstr);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1a971049db5eca3ef305591d1fcd195a0f" kindref="member" tooltip="Salva il contenuto dello stringpool in un file di testo.">sp_save_to_file</ref>(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/><ref refid="cunit__stringpool__lib_8c_1a421ecbacf6dacc6f5e391d074522db9e" kindref="member">sp</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>fname);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1acc812ec5efe19197bad45658ffefb1fe" kindref="member" tooltip="Carica il contenuto del file di test fname nello o stringpool.">sp_load_from_file</ref>(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/><ref refid="cunit__stringpool__lib_8c_1a421ecbacf6dacc6f5e391d074522db9e" kindref="member">sp</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>fname);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1ae3399d635eb3cd9893e079f6eaef6e1f" kindref="member" tooltip="Ordina alfabeticamente gli elementi dello stringpool, applicando l’algoritmo di bubble sort...">bubble_sort</ref>(<ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/><ref refid="cunit__stringpool__lib_8c_1a421ecbacf6dacc6f5e391d074522db9e" kindref="member">sp</ref>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1a254f5e6ad18c821b31437d10a923cc83" kindref="member" tooltip="Cerca la stringa str all’interno dello stringpool ordinato attraverso l’algoritmo di ricerca binaria...">bin_search</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/><ref refid="cunit__stringpool__lib_8c_1a421ecbacf6dacc6f5e391d074522db9e" kindref="member">sp</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>str);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1a790c017dd9dec0e2b95bf818d10ba005" kindref="member" tooltip="Controlla se esiste già il file e se non esiste lo crea.">_sp_file_create</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>fname);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="spstring_8c_1a126e34dae1b5bfb99d0bbb34b1526dc8" kindref="member" tooltip="Controlla se il file richiesto esiste e ne restituisce il valore di verità">_sp_file_exist</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>fname);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/><ref refid="spstring_8c_1a6143c920f51cf353336ee72034f68962" kindref="member">_sp_map_array_stringpool</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>*<sp/><ref refid="cunit__stringpool__lib_8c_1a421ecbacf6dacc6f5e391d074522db9e" kindref="member">sp</ref>);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>END<sp/>SPSTRING_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h"/>
+    <location file="/Users/macbook/Documents/workspace-eclipse/Library/spstring.h"/>
   </compounddef>
 </doxygen>

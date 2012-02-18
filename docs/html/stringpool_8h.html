@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Stringpool: Riferimenti per il file Library/stringpool.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generato da Doxygen 1.7.4 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+--></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Stringpool&#160;<span id="projectnumber">1.0</span></div>
+   <div id="projectbrief">Libreria Stringpool - Domenico Monaco - 2011</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Pagina&#160;Principale</span></a></li>
+      <li><a href="annotated.html"><span>Classi</span></a></li>
+      <li class="current"><a href="files.html"><span>File</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Elenco&#160;dei&#160;file</span></a></li>
+      <li><a href="globals.html"><span>Elementi&#160;dei&#160;file</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Composti</a> &#124;
+<a href="#define-members">Definizioni</a>  </div>
+  <div class="headertitle">
+<div class="title">Riferimenti per il file Library/stringpool.h</div>  </div>
+</div>
+<div class="contents">
+
+<p>Header per tipi di dati stringpool.  
+<a href="#details">Continua...</a></p>
+
+<p><a href="stringpool_8h_source.html">Vai al codice sorgente di questo file.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="nested-classes"></a>
+Composti</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstring.html">string</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstringpool.html">stringpool</a></td></tr>
+<tr><td colspan="2"><h2><a name="define-members"></a>
+Definizioni</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stringpool_8h.html#a95a9e5b28e59f711a67f326b868a36f9">STRINGPOOL_H_</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stringpool_8h.html#a20af6dd1f5a589e2a11eb37c1ea3ee96">UNUSED_SLOT</a>&#160;&#160;&#160;0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stringpool_8h.html#a80b8e6b0b534147058fcfc1187079064">USED_SLOT</a>&#160;&#160;&#160;1</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stringpool_8h.html#aae221160aeb62c7ea119f68a5a79062e">EMPTY_STRING_POOL</a>&#160;&#160;&#160;0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stringpool_8h.html#af4c76709286f016c09a7f99a070e6a5e">MAX_DIM_STRING_POOL</a>&#160;&#160;&#160;10</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stringpool_8h.html#a402d2a2201ce976dc56cc87fe4e657da">SIZE_STRING_STRUCT</a>&#160;&#160;&#160;1</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stringpool_8h.html#a5b593cfbd4a9d757bacf4df235240ce1">MAX_CHAR_STRING_LOAD_FROM_FILE</a>&#160;&#160;&#160;255</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stringpool_8h.html#a0eb0be35c4612957306af850919f865d">PATTERN_READ_WRITE_LINE</a>&#160;&#160;&#160;&quot;%d , %d , %s ;\n&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stringpool_8h.html#a8faae73aa34bbae0ef857459f165cc44">PATTERN_READ_WRITE_START_LINE_SHORT</a>&#160;&#160;&#160;&quot;%d , %d ,&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stringpool_8h.html#ac01ee82d919f7fa4aa02d04bf97a9bbd">PATTERN_READ_WRITE_END_LINE_SHORT</a>&#160;&#160;&#160;&quot; ;\n&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stringpool_8h.html#a4be697a4e0e76af4dc284f700e920678">PATTERN_READ_WRITE_INIT</a>&#160;&#160;&#160;&quot;%d ;\n&quot;</td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Descrizione dettagliata</h2>
+<div class="textblock"><p>Header per tipi di dati stringpool. </p>
+<p>Definizioni di variabili e tipi di dato per la libreria stringpool</p>
+<dl class="author"><dt><b>Autore:</b></dt><dd>Domenico Monaco, <a href="mailto:domenico.monaco@kiuz.it">domenico.monaco@kiuz.it</a> </dd></dl>
+<dl class="date"><dt><b>Data:</b></dt><dd>2011 </dd></dl>
+<h2><a class="anchor" id="license"></a>
+Licenza</h2>
+<p>GPLv2 <a href="http://www.softwarelibero.it/gnudoc/gpl.it.txt">http://www.softwarelibero.it/gnudoc/gpl.it.txt</a> Per maggiori informazioni visitare il link o visualizzare il file LICENSE </p>
+</div><hr/><h2>Documentazione delle definizioni</h2>
+<a class="anchor" id="aae221160aeb62c7ea119f68a5a79062e"></a><!-- doxytag: member="stringpool.h::EMPTY_STRING_POOL" ref="aae221160aeb62c7ea119f68a5a79062e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EMPTY_STRING_POOL&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Standard per l'identificazione del numero di stringhe contenute in stringpool per identificarlo come Vuoto. Deve contenere interi, si consiglia EMPTY_STRING_POOL 0. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5b593cfbd4a9d757bacf4df235240ce1"></a><!-- doxytag: member="stringpool.h::MAX_CHAR_STRING_LOAD_FROM_FILE" ref="a5b593cfbd4a9d757bacf4df235240ce1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_CHAR_STRING_LOAD_FROM_FILE&#160;&#160;&#160;255</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Valore massimo per l'allocazione dell'array di memorizzazione della stringa da file </p>
+
+</div>
+</div>
+<a class="anchor" id="af4c76709286f016c09a7f99a070e6a5e"></a><!-- doxytag: member="stringpool.h::MAX_DIM_STRING_POOL" ref="af4c76709286f016c09a7f99a070e6a5e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_DIM_STRING_POOL&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Numero massimo di stringhe che stringpool pu˜ contenere. Identifica anche lo stato di stringpool Pieno. Deve contenere un'intero maggiore di 0, si consiglia MAX_DIM_STRING_POOL 10. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac01ee82d919f7fa4aa02d04bf97a9bbd"></a><!-- doxytag: member="stringpool.h::PATTERN_READ_WRITE_END_LINE_SHORT" ref="ac01ee82d919f7fa4aa02d04bf97a9bbd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATTERN_READ_WRITE_END_LINE_SHORT&#160;&#160;&#160;&quot; ;\n&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Pattern parziale finale per la scirttura su file </p>
+
+</div>
+</div>
+<a class="anchor" id="a4be697a4e0e76af4dc284f700e920678"></a><!-- doxytag: member="stringpool.h::PATTERN_READ_WRITE_INIT" ref="a4be697a4e0e76af4dc284f700e920678" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATTERN_READ_WRITE_INIT&#160;&#160;&#160;&quot;%d ;\n&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Pattern completo per la lettura/scrittura della riga iniziale su file </p>
+
+</div>
+</div>
+<a class="anchor" id="a0eb0be35c4612957306af850919f865d"></a><!-- doxytag: member="stringpool.h::PATTERN_READ_WRITE_LINE" ref="a0eb0be35c4612957306af850919f865d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATTERN_READ_WRITE_LINE&#160;&#160;&#160;&quot;%d , %d , %s ;\n&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Pattern completo per la lettura/scrittura su file </p>
+
+</div>
+</div>
+<a class="anchor" id="a8faae73aa34bbae0ef857459f165cc44"></a><!-- doxytag: member="stringpool.h::PATTERN_READ_WRITE_START_LINE_SHORT" ref="a8faae73aa34bbae0ef857459f165cc44" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATTERN_READ_WRITE_START_LINE_SHORT&#160;&#160;&#160;&quot;%d , %d ,&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Pattern parziale iniziale per la scrittura su file </p>
+
+</div>
+</div>
+<a class="anchor" id="a402d2a2201ce976dc56cc87fe4e657da"></a><!-- doxytag: member="stringpool.h::SIZE_STRING_STRUCT" ref="a402d2a2201ce976dc56cc87fe4e657da" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SIZE_STRING_STRUCT&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Dimensione di base per l'allocazione della struttura string </p>
+
+</div>
+</div>
+<a class="anchor" id="a95a9e5b28e59f711a67f326b868a36f9"></a><!-- doxytag: member="stringpool.h::STRINGPOOL_H_" ref="a95a9e5b28e59f711a67f326b868a36f9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STRINGPOOL_H_</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Impedisce inclusioni multiple </p>
+
+</div>
+</div>
+<a class="anchor" id="a20af6dd1f5a589e2a11eb37c1ea3ee96"></a><!-- doxytag: member="stringpool.h::UNUSED_SLOT" ref="a20af6dd1f5a589e2a11eb37c1ea3ee96" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNUSED_SLOT&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Standard per l'identificazione degli slot Liberi Deve contenere interi, si consiglia UNUSED_SLOT 0 </p>
+
+</div>
+</div>
+<a class="anchor" id="a80b8e6b0b534147058fcfc1187079064"></a><!-- doxytag: member="stringpool.h::USED_SLOT" ref="a80b8e6b0b534147058fcfc1187079064" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USED_SLOT&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Standard per l'identificazione degli slot Occupati Deve contenere interi, si consiglia USED_SLOT 1 </p>
+
+</div>
+</div>
+</div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Definizioni</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generato Lun 30 Mag 2011 10:09:24 per Stringpool da&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
+</body>
+</html>

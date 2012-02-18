@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
   <compounddef id="structstring" kind="struct" prot="public">
     <compoundname>string</compoundname>
+    <includes refid="stringpool_8h" local="no">stringpool.h</includes>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structstring_1acd450648098ba3eaf4db79064af67051" prot="public" static="no" mutable="no">
         <type>char *</type>
@@ -11,10 +12,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Vettore a caratteri caratteri tramite puntatore a caratteri, rappresenta il contenuto della stringa </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="21" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" bodystart="21" bodyend="-1"/>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="75" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="75" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structstring_1ac06bb82958ec7c45e2838ae575b124ec" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -24,17 +25,17 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Contiene la dimensione massima allocata per tale string, se N&gt;0 allora è possibile inserire N-1 Caratteri con carattere di terminazione \0 in posizione N. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="24" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" bodystart="24" bodyend="-1"/>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="76" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="76" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
-    <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="18" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" bodystart="18" bodyend="27"/>
+<para>Tipo di dato non primitivo string Insieme di caratteri da allocare dinamicamente, contiene anche un contatore della sua dimensione </para>    </detaileddescription>
+    <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="74" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="74" bodyend="77"/>
     <listofallmembers>
       <member refid="structstring_1ac06bb82958ec7c45e2838ae575b124ec" prot="public" virt="non-virtual"><scope>string</scope><name>allocated_size</name></member>
       <member refid="structstring_1acd450648098ba3eaf4db79064af67051" prot="public" virt="non-virtual"><scope>string</scope><name>char_array</name></member>

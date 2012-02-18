@@ -2,19 +2,20 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
   <compounddef id="structstringpool" kind="struct" prot="public">
     <compoundname>stringpool</compoundname>
+    <includes refid="stringpool_8h" local="no">stringpool.h</includes>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structstringpool_1ade9d898bddb2a241d6fa8811c63078cb" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structstringpool_1af28549aacb7ae1827e1000400381bdbb" prot="public" static="no" mutable="no">
         <type><ref refid="structstring" kindref="compound">string</ref> *</type>
-        <definition>string* stringpool::strings</definition>
-        <argsstring></argsstring>
+        <definition>string* stringpool::strings[MAX_DIM_STRING_POOL]</definition>
+        <argsstring>[MAX_DIM_STRING_POOL]</argsstring>
         <name>strings</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Array a puntatori di tipo stringa, rappresentano gli slot di stringpool </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="35" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" bodystart="35" bodyend="-1"/>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="85" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="85" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structstringpool_1ae8c4c199ad0a8d10621110791d6d653e" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -24,29 +25,29 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Contatore delle locazioni utilizzate </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="37" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" bodystart="37" bodyend="-1"/>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="86" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="86" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structstringpool_1a2cf1860317fee06bf17a8377244be3ee" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structstringpool_1ab0cc50c97d44081fab72467d607a9325" prot="public" static="no" mutable="no">
         <type>int</type>
-        <definition>int stringpool::positions</definition>
-        <argsstring></argsstring>
+        <definition>int stringpool::positions[MAX_DIM_STRING_POOL]</definition>
+        <argsstring>[MAX_DIM_STRING_POOL]</argsstring>
         <name>positions</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Array per identificare quali posizioni sono occupati o libere </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="39" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" bodystart="39" bodyend="-1"/>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="87" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="87" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Tipo di dato non primitivo stringpool Insieme dinamico di elementi di tipo string, contiene anche il numero e la posizione degli slot occupati. Il numero di slot che stringpool può contenere è definito da MAX_DIM_STRING_POOL. </para>    </detaileddescription>
     <collaborationgraph>
       <node id="3">
         <label>stringpool</label>
@@ -60,10 +61,10 @@
         <link refid="structstring"/>
       </node>
     </collaborationgraph>
-    <location file="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" line="29" bodyfile="/Users/macbook/Documents/workspace-eclipse/stringpool/src/spstring.h" bodystart="29" bodyend="41"/>
+    <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="84" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="84" bodyend="88"/>
     <listofallmembers>
-      <member refid="structstringpool_1a2cf1860317fee06bf17a8377244be3ee" prot="public" virt="non-virtual"><scope>stringpool</scope><name>positions</name></member>
-      <member refid="structstringpool_1ade9d898bddb2a241d6fa8811c63078cb" prot="public" virt="non-virtual"><scope>stringpool</scope><name>strings</name></member>
+      <member refid="structstringpool_1ab0cc50c97d44081fab72467d607a9325" prot="public" virt="non-virtual"><scope>stringpool</scope><name>positions</name></member>
+      <member refid="structstringpool_1af28549aacb7ae1827e1000400381bdbb" prot="public" virt="non-virtual"><scope>stringpool</scope><name>strings</name></member>
       <member refid="structstringpool_1ae8c4c199ad0a8d10621110791d6d653e" prot="public" virt="non-virtual"><scope>stringpool</scope><name>used_counter</name></member>
     </listofallmembers>
   </compounddef>

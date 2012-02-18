@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="stringpool_8h" kind="file">
+    <compoundname>stringpool.h</compoundname>
+    <includedby refid="cunit__stringpool__lib_8c" local="yes">cunit_stringpool_lib/src/cunit_stringpool_lib.c</includedby>
+    <includedby refid="spstring_8c" local="yes">Library/spstring.c</includedby>
+    <includedby refid="spstring_8h" local="yes">Library/spstring.h</includedby>
+    <invincdepgraph>
+      <node id="33">
+        <label>cunit_stringpool_lib/src/cunit_stringpool_lib.c</label>
+        <link refid="cunit__stringpool__lib_8c"/>
+      </node>
+      <node id="34">
+        <label>Library/spstring.c</label>
+        <link refid="spstring_8c"/>
+      </node>
+      <node id="35">
+        <label>Library/spstring.h</label>
+        <link refid="spstring_8h"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>Library/stringpool.h</label>
+        <link refid="stringpool.h"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structstring" prot="public">string</innerclass>
+    <innerclass refid="structstringpool" prot="public">stringpool</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="stringpool_8h_1a95a9e5b28e59f711a67f326b868a36f9" prot="public" static="no">
+        <name>STRINGPOOL_H_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Impedisce inclusioni multiple </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="14" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stringpool_8h_1a20af6dd1f5a589e2a11eb37c1ea3ee96" prot="public" static="no">
+        <name>UNUSED_SLOT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Standard per l&apos;identificazione degli slot Liberi Deve contenere interi, si consiglia UNUSED_SLOT 0 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="20" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stringpool_8h_1a80b8e6b0b534147058fcfc1187079064" prot="public" static="no">
+        <name>USED_SLOT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Standard per l&apos;identificazione degli slot Occupati Deve contenere interi, si consiglia USED_SLOT 1 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="26" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stringpool_8h_1aae221160aeb62c7ea119f68a5a79062e" prot="public" static="no">
+        <name>EMPTY_STRING_POOL</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Standard per l&apos;identificazione del numero di stringhe contenute in stringpool per identificarlo come Vuoto. Deve contenere interi, si consiglia EMPTY_STRING_POOL 0. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="32" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stringpool_8h_1af4c76709286f016c09a7f99a070e6a5e" prot="public" static="no">
+        <name>MAX_DIM_STRING_POOL</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Numero massimo di stringhe che stringpool pu˜ contenere. Identifica anche lo stato di stringpool Pieno. Deve contenere un&apos;intero maggiore di 0, si consiglia MAX_DIM_STRING_POOL 10. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="38" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stringpool_8h_1a402d2a2201ce976dc56cc87fe4e657da" prot="public" static="no">
+        <name>SIZE_STRING_STRUCT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Dimensione di base per l&apos;allocazione della struttura string </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="43" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stringpool_8h_1a5b593cfbd4a9d757bacf4df235240ce1" prot="public" static="no">
+        <name>MAX_CHAR_STRING_LOAD_FROM_FILE</name>
+        <initializer>255</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Valore massimo per l&apos;allocazione dell&apos;array di memorizzazione della stringa da file </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="48" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stringpool_8h_1a0eb0be35c4612957306af850919f865d" prot="public" static="no">
+        <name>PATTERN_READ_WRITE_LINE</name>
+        <initializer>&quot;%d , %d , %s ;\n&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pattern completo per la lettura/scrittura su file </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="53" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stringpool_8h_1a8faae73aa34bbae0ef857459f165cc44" prot="public" static="no">
+        <name>PATTERN_READ_WRITE_START_LINE_SHORT</name>
+        <initializer>&quot;%d , %d ,&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pattern parziale iniziale per la scrittura su file </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="58" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stringpool_8h_1ac01ee82d919f7fa4aa02d04bf97a9bbd" prot="public" static="no">
+        <name>PATTERN_READ_WRITE_END_LINE_SHORT</name>
+        <initializer>&quot; ;\n&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pattern parziale finale per la scirttura su file </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="63" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stringpool_8h_1a4be697a4e0e76af4dc284f700e920678" prot="public" static="no">
+        <name>PATTERN_READ_WRITE_INIT</name>
+        <initializer>&quot;%d ;\n&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pattern completo per la lettura/scrittura della riga iniziale su file </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" line="68" bodyfile="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header per tipi di dati stringpool. </para>    </briefdescription>
+    <detaileddescription>
+<para>Definizioni di variabili e tipi di dato per la libreria stringpool</para><para><simplesect kind="author"><para>Domenico Monaco, <ulink url="mailto:domenico.monaco@kiuz.it">domenico.monaco@kiuz.it</ulink> </para></simplesect>
+<simplesect kind="date"><para>2011 </para></simplesect>
+</para><sect1 id="stringpool_8h_1license">
+<title>Licenza</title>
+<para>GPLv2 <ulink url="http://www.softwarelibero.it/gnudoc/gpl.it.txt">http://www.softwarelibero.it/gnudoc/gpl.it.txt</ulink> Per maggiori informazioni visitare il link o visualizzare il file LICENSE </para></sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="13"><highlight class="preprocessor">#ifndef<sp/>STRINGPOOL_H_</highlight></codeline>
+<codeline lineno="14" refid="stringpool_8h_1a95a9e5b28e59f711a67f326b868a36f9" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>STRINGPOOL_H_</highlight></codeline>
+<codeline lineno="20" refid="stringpool_8h_1a20af6dd1f5a589e2a11eb37c1ea3ee96" refkind="member"><highlight class="preprocessor">#define<sp/>UNUSED_SLOT<sp/>0</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="26" refid="stringpool_8h_1a80b8e6b0b534147058fcfc1187079064" refkind="member"><highlight class="preprocessor">#define<sp/>USED_SLOT<sp/>1</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="32" refid="stringpool_8h_1aae221160aeb62c7ea119f68a5a79062e" refkind="member"><highlight class="preprocessor">#define<sp/>EMPTY_STRING_POOL<sp/>0</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="38" refid="stringpool_8h_1af4c76709286f016c09a7f99a070e6a5e" refkind="member"><highlight class="preprocessor">#define<sp/>MAX_DIM_STRING_POOL<sp/>10</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="43" refid="stringpool_8h_1a402d2a2201ce976dc56cc87fe4e657da" refkind="member"><highlight class="preprocessor">#define<sp/>SIZE_STRING_STRUCT<sp/>1</highlight></codeline>
+<codeline lineno="44"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="48" refid="stringpool_8h_1a5b593cfbd4a9d757bacf4df235240ce1" refkind="member"><highlight class="preprocessor">#define<sp/>MAX_CHAR_STRING_LOAD_FROM_FILE<sp/>255</highlight></codeline>
+<codeline lineno="49"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="53" refid="stringpool_8h_1a0eb0be35c4612957306af850919f865d" refkind="member"><highlight class="preprocessor">#define<sp/>PATTERN_READ_WRITE_LINE<sp/>&quot;%d<sp/>,<sp/>%d<sp/>,<sp/>%s<sp/>;\n&quot;</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="58" refid="stringpool_8h_1a8faae73aa34bbae0ef857459f165cc44" refkind="member"><highlight class="preprocessor">#define<sp/>PATTERN_READ_WRITE_START_LINE_SHORT<sp/>&quot;%d<sp/>,<sp/>%d<sp/>,&quot;</highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="63" refid="stringpool_8h_1ac01ee82d919f7fa4aa02d04bf97a9bbd" refkind="member"><highlight class="preprocessor">#define<sp/>PATTERN_READ_WRITE_END_LINE_SHORT<sp/>&quot;<sp/>;\n&quot;</highlight></codeline>
+<codeline lineno="64"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="68" refid="stringpool_8h_1a4be697a4e0e76af4dc284f700e920678" refkind="member"><highlight class="preprocessor">#define<sp/>PATTERN_READ_WRITE_INIT<sp/>&quot;%d<sp/>;\n&quot;</highlight></codeline>
+<codeline lineno="69"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="74" refid="structstring" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75" refid="structstring_1acd450648098ba3eaf4db79064af67051" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="structstring_1acd450648098ba3eaf4db79064af67051" kindref="member">char_array</ref>;<sp/></highlight></codeline>
+<codeline lineno="76" refid="structstring_1ac06bb82958ec7c45e2838ae575b124ec" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structstring_1ac06bb82958ec7c45e2838ae575b124ec" kindref="member">allocated_size</ref>;<sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}<sp/><ref refid="structstring" kindref="compound">string</ref>;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="structstringpool" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85" refid="structstringpool_1af28549aacb7ae1827e1000400381bdbb" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>strings[<ref refid="stringpool_8h_1af4c76709286f016c09a7f99a070e6a5e" kindref="member">MAX_DIM_STRING_POOL</ref>];<sp/></highlight></codeline>
+<codeline lineno="86" refid="structstringpool_1ae8c4c199ad0a8d10621110791d6d653e" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structstringpool_1ae8c4c199ad0a8d10621110791d6d653e" kindref="member">used_counter</ref>;<sp/></highlight></codeline>
+<codeline lineno="87" refid="structstringpool_1ab0cc50c97d44081fab72467d607a9325" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>positions[<ref refid="stringpool_8h_1af4c76709286f016c09a7f99a070e6a5e" kindref="member">MAX_DIM_STRING_POOL</ref>];<sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}<sp/><ref refid="structstringpool" kindref="compound">stringpool</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>END<sp/>STRINGPOOL_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macbook/Documents/workspace-eclipse/Library/stringpool.h"/>
+  </compounddef>
+</doxygen>

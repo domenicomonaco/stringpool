@@ -1,4 +1,4 @@
-.TH "string" 3 "Mar 17 Mag 2011" "Version stringpool" "StringPool" \" -*- nroff -*-
+.TH "string" 3 "Lun 30 Mag 2011" "Version 1.0" "Stringpool" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -6,6 +6,8 @@ string \-
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <stringpool.h>\fP
 .SS "Attributi pubblici"
 
 .in +1c
@@ -16,7 +18,14 @@ string \-
 .RI "int \fBallocated_size\fP"
 .br
 .in -1c
+.SH "Descrizione dettagliata"
+.PP 
+Tipo di dato non primitivo string Insieme di caratteri da allocare dinamicamente, contiene anche un contatore della sua dimensione 
+.SH "Documentazione dei membri dato"
+.PP 
+.SS "int \fBstring::allocated_size\fP"Contiene la dimensione massima allocata per tale string, se N>0 allora è possibile inserire N-1 Caratteri con carattere di terminazione \\0 in posizione N. 
+.SS "char* \fBstring::char_array\fP"Vettore a caratteri caratteri tramite puntatore a caratteri, rappresenta il contenuto della stringa 
 
 .SH "Autore"
 .PP 
-Generato automaticamente da Doxygen per StringPool a partire dal codice sorgente.
+Generato automaticamente da Doxygen per Stringpool a partire dal codice sorgente.

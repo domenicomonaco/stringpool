@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>StringPool: Riferimenti per la struct stringpool</title>
+<title>Stringpool: Riferimenti per la struct stringpool</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -13,14 +13,51 @@
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">StringPool&#160;<span id="projectnumber">stringpool</span></div>
-   <div id="projectbrief">StringPool</div>
+   <div id="projectname">Stringpool&#160;<span id="projectnumber">1.0</span></div>
+   <div id="projectbrief">Libreria Stringpool - Domenico Monaco - 2011</div>
   </td>
  </tr>
  </tbody>
@@ -53,6 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Elenco&#160;dei&#160;tipi&#160;composti</span></a></li>
       <li><a href="classes.html"><span>Indice&#160;dei&#160;tipi&#160;composti</span></a></li>
+      <li><a href="functions.html"><span>Membri&#160;dei&#160;composti</span></a></li>
     </ul>
   </div>
 </div>
@@ -64,19 +102,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 </div>
 <div class="contents">
 <!-- doxytag: class="stringpool" -->
+<p><code>#include &lt;<a class="el" href="stringpool_8h_source.html">stringpool.h</a>&gt;</code></p>
+
 <p><a href="structstringpool-members.html">Elenco di tutti i membri.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Attributi pubblici</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade9d898bddb2a241d6fa8811c63078cb"></a><!-- doxytag: member="stringpool::strings" ref="ade9d898bddb2a241d6fa8811c63078cb" args="" -->
-<a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>strings</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae8c4c199ad0a8d10621110791d6d653e"></a><!-- doxytag: member="stringpool::used_counter" ref="ae8c4c199ad0a8d10621110791d6d653e" args="" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>used_counter</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2cf1860317fee06bf17a8377244be3ee"></a><!-- doxytag: member="stringpool::positions" ref="a2cf1860317fee06bf17a8377244be3ee" args="" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>positions</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstringpool.html#af28549aacb7ae1827e1000400381bdbb">strings</a> [MAX_DIM_STRING_POOL]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstringpool.html#ae8c4c199ad0a8d10621110791d6d653e">used_counter</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstringpool.html#ab0cc50c97d44081fab72467d607a9325">positions</a> [MAX_DIM_STRING_POOL]</td></tr>
 </table>
+<hr/><a name="details" id="details"></a><h2>Descrizione dettagliata</h2>
+<div class="textblock"><p>Tipo di dato non primitivo stringpool Insieme dinamico di elementi di tipo string, contiene anche il numero e la posizione degli slot occupati. Il numero di slot che stringpool può contenere è definito da MAX_DIM_STRING_POOL. </p>
+</div><hr/><h2>Documentazione dei membri dato</h2>
+<a class="anchor" id="ab0cc50c97d44081fab72467d607a9325"></a><!-- doxytag: member="stringpool::positions" ref="ab0cc50c97d44081fab72467d607a9325" args="[MAX_DIM_STRING_POOL]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structstringpool.html#ab0cc50c97d44081fab72467d607a9325">stringpool::positions</a>[MAX_DIM_STRING_POOL]</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Array per identificare quali posizioni sono occupati o libere </p>
+
+</div>
+</div>
+<a class="anchor" id="af28549aacb7ae1827e1000400381bdbb"></a><!-- doxytag: member="stringpool::strings" ref="af28549aacb7ae1827e1000400381bdbb" args="[MAX_DIM_STRING_POOL]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstring.html">string</a>* <a class="el" href="structstringpool.html#af28549aacb7ae1827e1000400381bdbb">stringpool::strings</a>[MAX_DIM_STRING_POOL]</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Array a puntatori di tipo stringa, rappresentano gli slot di stringpool </p>
+
+</div>
+</div>
+<a class="anchor" id="ae8c4c199ad0a8d10621110791d6d653e"></a><!-- doxytag: member="stringpool::used_counter" ref="ae8c4c199ad0a8d10621110791d6d653e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structstringpool.html#ae8c4c199ad0a8d10621110791d6d653e">stringpool::used_counter</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Contatore delle locazioni utilizzate </p>
+
+</div>
+</div>
 <hr/>La documentazione per questa struct √® stata generata a partire dal seguente file:<ul>
-<li>stringpool/src/<a class="el" href="spstring_8h_source.html">spstring.h</a></li>
+<li>Library/<a class="el" href="stringpool_8h_source.html">stringpool.h</a></li>
 </ul>
 </div>
 <!-- window showing the filter options -->
@@ -84,7 +166,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>positions</b></td></tr
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Definizioni</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,7 +175,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>positions</b></td></tr
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generato Mar 17 Mag 2011 08:08:06 per StringPool da&#160;
+<hr class="footer"/><address class="footer"><small>Generato Lun 30 Mag 2011 10:09:24 per Stringpool da&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
 </body>

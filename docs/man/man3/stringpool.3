@@ -1,4 +1,4 @@
-.TH "stringpool" 3 "Mar 17 Mag 2011" "Version stringpool" "StringPool" \" -*- nroff -*-
+.TH "stringpool" 3 "Lun 30 Mag 2011" "Version 1.0" "Stringpool" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -6,20 +6,30 @@ stringpool \-
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <stringpool.h>\fP
 .SS "Attributi pubblici"
 
 .in +1c
 .ti -1c
-.RI "\fBstring\fP * \fBstrings\fP"
+.RI "\fBstring\fP * \fBstrings\fP [MAX_DIM_STRING_POOL]"
 .br
 .ti -1c
 .RI "int \fBused_counter\fP"
 .br
 .ti -1c
-.RI "int \fBpositions\fP"
+.RI "int \fBpositions\fP [MAX_DIM_STRING_POOL]"
 .br
 .in -1c
+.SH "Descrizione dettagliata"
+.PP 
+Tipo di dato non primitivo stringpool Insieme dinamico di elementi di tipo string, contiene anche il numero e la posizione degli slot occupati. Il numero di slot che stringpool può contenere è definito da MAX_DIM_STRING_POOL. 
+.SH "Documentazione dei membri dato"
+.PP 
+.SS "int \fBstringpool::positions\fP[MAX_DIM_STRING_POOL]"Array per identificare quali posizioni sono occupati o libere 
+.SS "\fBstring\fP* \fBstringpool::strings\fP[MAX_DIM_STRING_POOL]"Array a puntatori di tipo stringa, rappresentano gli slot di stringpool 
+.SS "int \fBstringpool::used_counter\fP"Contatore delle locazioni utilizzate 
 
 .SH "Autore"
 .PP 
-Generato automaticamente da Doxygen per StringPool a partire dal codice sorgente.
+Generato automaticamente da Doxygen per Stringpool a partire dal codice sorgente.

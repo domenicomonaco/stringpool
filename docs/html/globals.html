@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>StringPool: Elementi dei file</title>
+<title>Stringpool: Elementi dei file</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -13,14 +13,51 @@
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">StringPool&#160;<span id="projectnumber">stringpool</span></div>
-   <div id="projectbrief">StringPool</div>
+   <div id="projectname">Stringpool&#160;<span id="projectnumber">1.0</span></div>
+   <div id="projectbrief">Libreria Stringpool - Domenico Monaco - 2011</div>
   </td>
  </tr>
  </tbody>
@@ -59,16 +96,345 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
     <ul class="tablist">
       <li class="current"><a href="globals.html"><span>Tutto</span></a></li>
       <li><a href="globals_func.html"><span>Funzioni</span></a></li>
+      <li><a href="globals_vars.html"><span>Variabili</span></a></li>
+      <li><a href="globals_enum.html"><span>Tipi&#160;enumerati&#160;(enum)</span></a></li>
+      <li><a href="globals_eval.html"><span>Valori&#160;del&#160;tipo&#160;enumerato</span></a></li>
+      <li><a href="globals_defs.html"><span>Definizioni</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow4" class="tabs3">
+    <ul class="tablist">
+      <li><a href="#index__"><span>_</span></a></li>
+      <li><a href="#index_b"><span>b</span></a></li>
+      <li><a href="#index_c"><span>c</span></a></li>
+      <li><a href="#index_e"><span>e</span></a></li>
+      <li><a href="#index_f"><span>f</span></a></li>
+      <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_p"><span>p</span></a></li>
+      <li><a href="#index_s"><span>s</span></a></li>
+      <li><a href="#index_t"><span>t</span></a></li>
+      <li><a href="#index_u"><span>u</span></a></li>
     </ul>
   </div>
 </div>
 <div class="contents">
-<div class="textblock">Questo è un elenco degli elementi documentati dei file con collegamenti alla documentazione:</div><ul>
+<div class="textblock">Questo è un elenco di tutti gli elementi dei file con collegamenti alla documentazione del file a cui appartengono:</div>
+
+<h3><a class="anchor" id="index__"></a>- _ -</h3><ul>
+<li>_sp_file_create()
+: <a class="el" href="spstring_8c.html#a790c017dd9dec0e2b95bf818d10ba005">spstring.c</a>
+, <a class="el" href="spstring_8h.html#aaed6cf7f6d6627256d98ff3b006efd69">spstring.h</a>
+</li>
+<li>_sp_file_exist()
+: <a class="el" href="spstring_8h.html#a88c4763051fb21a1fd954e22595249d5">spstring.h</a>
+, <a class="el" href="spstring_8c.html#a126e34dae1b5bfb99d0bbb34b1526dc8">spstring.c</a>
+</li>
+<li>_sp_map_array_stringpool()
+: <a class="el" href="spstring_8h.html#a6143c920f51cf353336ee72034f68962">spstring.h</a>
+, <a class="el" href="spstring_8c.html#a6143c920f51cf353336ee72034f68962">spstring.c</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
+<li>bin_search()
+: <a class="el" href="spstring_8c.html#a254f5e6ad18c821b31437d10a923cc83">spstring.c</a>
+, <a class="el" href="spstring_8h.html#ad4c5db94af98508f1a38de0f935d4bc6">spstring.h</a>
+</li>
+<li>BOOLE_H_
+: <a class="el" href="bool_8h.html#a749658f1eed84e1a4035adaf384252e0">bool.h</a>
+</li>
+<li>boolean
+: <a class="el" href="bool_8h.html#a56a087515036f9d49426777667d056a7">bool.h</a>
+</li>
+<li>bubble_sort()
+: <a class="el" href="spstring_8c.html#ae3399d635eb3cd9893e079f6eaef6e1f">spstring.c</a>
+, <a class="el" href="spstring_8h.html#a079cb55ebb4e9992c63454c1470baf15">spstring.h</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>CONST_TEST_STRING_LEN
+: <a class="el" href="cunit__stringpool__lib_8c.html#a7d3d82e855eaacc2afd0fdfe29c1d81d">cunit_stringpool_lib.c</a>
+</li>
+<li>CONST_TEST_STRING_LOWER_CASE
+: <a class="el" href="cunit__stringpool__lib_8c.html#a1be08f87f6ede06b8b2cbd03924ee32b">cunit_stringpool_lib.c</a>
+</li>
+<li>CONST_TEST_STRING_UPPER_CASE
+: <a class="el" href="cunit__stringpool__lib_8c.html#adf3a3e5aa1be473b644c5575259cad94">cunit_stringpool_lib.c</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
+<li>EMPTY_STRING_POOL
+: <a class="el" href="stringpool_8h.html#aae221160aeb62c7ea119f68a5a79062e">stringpool.h</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
+<li>FALSE
+: <a class="el" href="bool_8h.html#a56a087515036f9d49426777667d056a7aa1e095cc966dbecf6a0d8aad75348d1a">bool.h</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>main()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a0ddf1224851353fc92bfbff6f499fa97">cunit_stringpool_lib.c</a>
+</li>
+<li>MAX_CHAR_STRING_LOAD_FROM_FILE
+: <a class="el" href="stringpool_8h.html#a5b593cfbd4a9d757bacf4df235240ce1">stringpool.h</a>
+</li>
+<li>MAX_DIM_STRING_POOL
+: <a class="el" href="stringpool_8h.html#af4c76709286f016c09a7f99a070e6a5e">stringpool.h</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
+<li>PATTERN_READ_WRITE_END_LINE_SHORT
+: <a class="el" href="stringpool_8h.html#ac01ee82d919f7fa4aa02d04bf97a9bbd">stringpool.h</a>
+</li>
+<li>PATTERN_READ_WRITE_INIT
+: <a class="el" href="stringpool_8h.html#a4be697a4e0e76af4dc284f700e920678">stringpool.h</a>
+</li>
+<li>PATTERN_READ_WRITE_LINE
+: <a class="el" href="stringpool_8h.html#a0eb0be35c4612957306af850919f865d">stringpool.h</a>
+</li>
+<li>PATTERN_READ_WRITE_START_LINE_SHORT
+: <a class="el" href="stringpool_8h.html#a8faae73aa34bbae0ef857459f165cc44">stringpool.h</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
+<li>SIZE_STRING_STRUCT
+: <a class="el" href="stringpool_8h.html#a402d2a2201ce976dc56cc87fe4e657da">stringpool.h</a>
+</li>
+<li>sp
+: <a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">cunit_stringpool_lib.c</a>
+</li>
+<li>sp_add_string()
+: <a class="el" href="spstring_8h.html#a828de2b79c0b821ec2568ff0f78fbd5a">spstring.h</a>
+, <a class="el" href="spstring_8c.html#ae86751935917ec79d819904cfb087817">spstring.c</a>
+</li>
+<li>sp_add_string_pos()
+: <a class="el" href="spstring_8c.html#ace396a34f5bb42619cb81756b2f5b375">spstring.c</a>
+, <a class="el" href="spstring_8h.html#a830d3905a2420fd48a9a67e6965f8914">spstring.h</a>
+</li>
+<li>sp_find_string()
+: <a class="el" href="spstring_8h.html#a814e98bc4b93dde7eca6b39ea3f05e89">spstring.h</a>
+, <a class="el" href="spstring_8c.html#ac0204ece57f1cdce074fe7af7b7419f1">spstring.c</a>
+</li>
+<li>sp_free()
+: <a class="el" href="spstring_8c.html#a60ed4be4036600f174388c36a0370818">spstring.c</a>
+, <a class="el" href="spstring_8h.html#a03c271ff34668b3abd08f09abb7bb0e0">spstring.h</a>
+</li>
+<li>sp_free_stringpool()
+: <a class="el" href="spstring_8c.html#a99f5a66367fa19e42c24211e982c4b56">spstring.c</a>
+, <a class="el" href="spstring_8h.html#a3fa89b4e4441c6b66e2c18d6f532d4f5">spstring.h</a>
+</li>
+<li>sp_get_allocated_size()
+: <a class="el" href="spstring_8c.html#ab0823663ad7e935718ccfc2db8e316d3">spstring.c</a>
+, <a class="el" href="spstring_8h.html#ac6bae0d5bd4140987b042e70f2e3f92c">spstring.h</a>
+</li>
+<li>sp_get_string()
+: <a class="el" href="spstring_8h.html#a18552c28f0799fc247617ec54cc0c095">spstring.h</a>
+, <a class="el" href="spstring_8c.html#a0b0458114373e76ff2c48696bcae2782">spstring.c</a>
+</li>
 <li>sp_initialize_stringpool()
-: <a class="el" href="spstring_8h.html#a4b6d2814d9b5aa512888a91f942c8da0">spstring.h</a>
+: <a class="el" href="spstring_8c.html#a43109a2f4b18023775b877451f725c13">spstring.c</a>
+, <a class="el" href="spstring_8h.html#a4b6d2814d9b5aa512888a91f942c8da0">spstring.h</a>
+</li>
+<li>sp_isempty()
+: <a class="el" href="spstring_8c.html#aff3ad92cec105f24f415f745ae476ba1">spstring.c</a>
+, <a class="el" href="spstring_8h.html#a5bb3845c849c9829a5449dffd5717146">spstring.h</a>
+</li>
+<li>sp_isfull()
+: <a class="el" href="spstring_8c.html#a51a9f7cf9dc077b62d01ff8102301841">spstring.c</a>
+, <a class="el" href="spstring_8h.html#acd5a78a65dceb1375bfd39ff12c4ad59">spstring.h</a>
+</li>
+<li>sp_load_from_file()
+: <a class="el" href="spstring_8c.html#acc812ec5efe19197bad45658ffefb1fe">spstring.c</a>
+, <a class="el" href="spstring_8h.html#a19eafeeb094da2fedbe9eae182d22a08">spstring.h</a>
+</li>
+<li>sp_lower_case()
+: <a class="el" href="spstring_8c.html#a8b5d366c459a30a563e83fc8804702e2">spstring.c</a>
+, <a class="el" href="spstring_8h.html#a15544790ca29918d67a6ecc99c25e26e">spstring.h</a>
+</li>
+<li>sp_new_empty_string()
+: <a class="el" href="spstring_8c.html#aa9f031abbf235a5d16322d97f78c334d">spstring.c</a>
+, <a class="el" href="spstring_8h.html#a6ca2fcf5ec5d621e012b93ac47e42df3">spstring.h</a>
 </li>
 <li>sp_new_string()
-: <a class="el" href="spstring_8h.html#a18ab3dafab1e170404b7ecb5ff7f5a82">spstring.h</a>
+: <a class="el" href="spstring_8c.html#ac14d3aa446e78a594b506cf2494b7273">spstring.c</a>
+, <a class="el" href="spstring_8h.html#a18ab3dafab1e170404b7ecb5ff7f5a82">spstring.h</a>
+</li>
+<li>sp_new_string_as_struct()
+: <a class="el" href="spstring_8h.html#a68cdb890f144e9ea6a984ee4aec146f0">spstring.h</a>
+, <a class="el" href="spstring_8c.html#afe063a22db56e1ed3b9de5a81820f002">spstring.c</a>
+</li>
+<li>sp_remove_string()
+: <a class="el" href="spstring_8c.html#a6fd0b8059482b70aa0bc8ee607e3fadb">spstring.c</a>
+, <a class="el" href="spstring_8h.html#a013795d2353e446be36900213cbd8008">spstring.h</a>
+</li>
+<li>sp_replace_string()
+: <a class="el" href="spstring_8c.html#a465c42024674ec91ddb1158ee58c3466">spstring.c</a>
+, <a class="el" href="spstring_8h.html#a86df646764e02a5241c8cc7a852a1e4e">spstring.h</a>
+</li>
+<li>sp_save_to_file()
+: <a class="el" href="spstring_8c.html#a971049db5eca3ef305591d1fcd195a0f">spstring.c</a>
+, <a class="el" href="spstring_8h.html#aa5e17ab368a854629b04d99442fa6b6c">spstring.h</a>
+</li>
+<li>sp_sizeof()
+: <a class="el" href="spstring_8h.html#af6cca73aa0f5f8ea59a81eea99f4cf42">spstring.h</a>
+, <a class="el" href="spstring_8c.html#a96c3685a91d261df2cb06e9745bdca3f">spstring.c</a>
+</li>
+<li>sp_strcat()
+: <a class="el" href="spstring_8h.html#a234a5ae1b3c039d59d5d8c4c9e78114f">spstring.h</a>
+, <a class="el" href="spstring_8c.html#af0a1ed949316f182907ea08d4e8bd62b">spstring.c</a>
+</li>
+<li>sp_strcat_as_struct()
+: <a class="el" href="spstring_8h.html#a86ec3a5501670ddc5151c56cbc1950a3">spstring.h</a>
+, <a class="el" href="spstring_8c.html#ad8c5bbe3b367845aaa230e19ac9e7919">spstring.c</a>
+</li>
+<li>sp_strcmp()
+: <a class="el" href="spstring_8c.html#abb131e3e4d7f496a47d12c1692b75e15">spstring.c</a>
+, <a class="el" href="spstring_8h.html#af4e26884749ec18a2870809932b78f96">spstring.h</a>
+</li>
+<li>sp_strcpy()
+: <a class="el" href="spstring_8h.html#a24b4a6a000610a0bd9d1d42573ab1f67">spstring.h</a>
+, <a class="el" href="spstring_8c.html#ad258858c5d6a2aa9b4b9ed5776155afc">spstring.c</a>
+</li>
+<li>sp_strlen()
+: <a class="el" href="spstring_8h.html#a8dd6c72c60d09695c4f8ca43b32e4067">spstring.h</a>
+, <a class="el" href="spstring_8c.html#ac994017d490a951c8f48c37bcbdf0c1b">spstring.c</a>
+</li>
+<li>sp_upper_case()
+: <a class="el" href="spstring_8c.html#a70dbcd0b1199382b8a171ec68067370c">spstring.c</a>
+, <a class="el" href="spstring_8h.html#a6f2eaae0bc5c50c813604b0ac735d0ad">spstring.h</a>
+</li>
+<li>SPSTRING_H_
+: <a class="el" href="spstring_8h.html#aa7eb64789c5be8a291d3551f0cd0ec70">spstring.h</a>
+</li>
+<li>STRINGPOOL_H_
+: <a class="el" href="stringpool_8h.html#a95a9e5b28e59f711a67f326b868a36f9">stringpool.h</a>
+</li>
+<li>suite_cleanup_func()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a5b91e5ad6276dc51f560a0bb2105597e">cunit_stringpool_lib.c</a>
+</li>
+<li>suite_init_func()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a78a44015dc0dc2ace96bebe3764bee65">cunit_stringpool_lib.c</a>
+</li>
+<li>suite_void_cleanup_func()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a0701eb2a5f62048a23ac59e34234a259">cunit_stringpool_lib.c</a>
+</li>
+<li>suite_void_init_func()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a0a8246be9bb3a2ee11cebc821777310c">cunit_stringpool_lib.c</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
+<li>test_sp_add_string()
+: <a class="el" href="cunit__stringpool__lib_8c.html#af266927c924c79119489d99e13b79358">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_add_string_pos()
+: <a class="el" href="cunit__stringpool__lib_8c.html#abdec3bdc4320f341cb3c9422afae73c3">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_bin_search()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a687a9fee0821aba1d04ecb97effa7358">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_bubble_sort()
+: <a class="el" href="cunit__stringpool__lib_8c.html#ad998697ab077be382192beab2c7e7371">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_file_exist_create()
+: <a class="el" href="cunit__stringpool__lib_8c.html#aafc1aba865ad783053508bf2fec3886d">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_find_string()
+: <a class="el" href="cunit__stringpool__lib_8c.html#ace46eafb246f789bb38ac51be93d448d">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_free()
+: <a class="el" href="cunit__stringpool__lib_8c.html#aea503a3cce11b440ea5fbe5495ffff68">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_free_stringpool()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a99f435a4cdeed3380e53ea11c0a47362">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_get_allocated_size()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a8c4715f527ad1d4f9f64f4c951f2ca60">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_get_string()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a8961a2653c73d541390f06e88abdd4fe">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_initialize_stringpool()
+: <a class="el" href="cunit__stringpool__lib_8c.html#abd1ac4d9f80d303dd6f9d66430e80bb7">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_isempty()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a5ebd133c704fbbcd804c973285ab229d">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_isfull()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a69c1a2ee0a8921170ae1c53b819c3a3f">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_load_from_file()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a7f017fca52e5abd55d3556d5c1895f38">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_lower_case()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a03117506d7c71ebc5e4e28d51cf1342b">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_map_array_stringpool()
+: <a class="el" href="cunit__stringpool__lib_8c.html#abb04b0327234015cb2b9eb368d28a86c">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_new_empty_string()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a63e0f7efedf84dc6d138f85b9239dd43">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_new_string()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a0412719d05e9f43fb3e16eeca5fcd634">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_remove_string()
+: <a class="el" href="cunit__stringpool__lib_8c.html#abfb3db89f8c9b9fd6cf1db4883379c4a">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_replace_string()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a13bbd8b3128d03461bc6002d8af03653">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_save_to_file()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a3b28d0c988a607f9457e96624618d6c6">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_sizeof()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a00495ad85275950c4830234cc68ac84d">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_strcat()
+: <a class="el" href="cunit__stringpool__lib_8c.html#ac70d777cc30992e127ad5558ca5f3fd4">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_strcat_as_struct()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a1d01a6ae4afcd1ec169f4dc7998ab813">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_strcmp()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a2b53839d9b5625d5c95d23eed9ac72bd">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_strcpy()
+: <a class="el" href="cunit__stringpool__lib_8c.html#aadc58d980b0879d14269a8373c11f960">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_strlen()
+: <a class="el" href="cunit__stringpool__lib_8c.html#a2951f0443cfada9b6bbc387eff9315de">cunit_stringpool_lib.c</a>
+</li>
+<li>test_sp_upper_case()
+: <a class="el" href="cunit__stringpool__lib_8c.html#acc2f8593e9e4f9cc5806e8825fff2ad4">cunit_stringpool_lib.c</a>
+</li>
+<li>TRUE
+: <a class="el" href="bool_8h.html#a56a087515036f9d49426777667d056a7aa82764c3079aea4e60c80e45befbb839">bool.h</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
+<li>UNUSED_SLOT
+: <a class="el" href="stringpool_8h.html#a20af6dd1f5a589e2a11eb37c1ea3ee96">stringpool.h</a>
+</li>
+<li>USED_SLOT
+: <a class="el" href="stringpool_8h.html#a80b8e6b0b534147058fcfc1187079064">stringpool.h</a>
 </li>
 </ul>
 </div>
@@ -77,7 +443,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Definizioni</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,7 +452,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generato Mar 17 Mag 2011 08:08:07 per StringPool da&#160;
+<hr class="footer"/><address class="footer"><small>Generato Lun 30 Mag 2011 10:09:24 per Stringpool da&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
 </body>

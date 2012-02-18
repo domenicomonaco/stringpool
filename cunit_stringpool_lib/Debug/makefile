@@ -25,11 +25,14 @@ endif
 # All Target
 all: cunit_stringpool_lib
 
+dependents:
+	-cd /Users/macbook/Documents/workspace-eclipse/Library/Debug && $(MAKE) clean all
+
 # Tool invocations
-cunit_stringpool_lib: $(OBJS) $(USER_OBJS)
+cunit_stringpool_lib: $(OBJS) $(USER_OBJS) /Users/macbook/Documents/workspace-eclipse/Library/Debug/libLibrary.a
 	@echo 'Building target: $@'
 	@echo 'Invoking: MacOS X C Linker'
-	gcc -L/opt/local/bin -L/opt/local/lib -o  "cunit_stringpool_lib" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc -L"/Users/macbook/Documents/workspace-eclipse/Library/Debug" -L/opt/local/lib -L/opt/local/bin -L/Users/macbook/Documents/workspace-eclipse/Library -L/Users/macbook/Documents/workspace-eclipse/Library/Release -o "cunit_stringpool_lib" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -40,5 +43,6 @@ clean:
 
 .PHONY: all clean dependents
 .SECONDARY:
+/Users/macbook/Documents/workspace-eclipse/Library/Debug/libLibrary.a:
 
 -include ../makefile.targets

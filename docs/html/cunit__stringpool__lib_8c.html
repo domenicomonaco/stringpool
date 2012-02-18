@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>StringPool: Riferimenti per il file cunit_stringpool_lib/src/cunit_stringpool_lib.c</title>
+<title>Stringpool: Riferimenti per il file cunit_stringpool_lib/src/cunit_stringpool_lib.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -13,14 +13,51 @@
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">StringPool&#160;<span id="projectnumber">stringpool</span></div>
-   <div id="projectbrief">StringPool</div>
+   <div id="projectname">Stringpool&#160;<span id="projectnumber">1.0</span></div>
+   <div id="projectbrief">Libreria Stringpool - Domenico Monaco - 2011</div>
   </td>
  </tr>
  </tbody>
@@ -29,6 +66,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Pagina&#160;Principale</span></a></li>
+      <li><a href="annotated.html"><span>Classi</span></a></li>
       <li class="current"><a href="files.html"><span>File</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -51,6 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Elenco&#160;dei&#160;file</span></a></li>
+      <li><a href="globals.html"><span>Elementi&#160;dei&#160;file</span></a></li>
     </ul>
   </div>
 </div>
@@ -63,89 +102,836 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 </div>
 <div class="contents">
 
-<p>cUnit file  
+<p>File per il testing della libreria stringpool.  
 <a href="#details">Continua...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
 <code>#include &lt;stdlib.h&gt;</code><br/>
 <code>#include &lt;string.h&gt;</code><br/>
+<code>#include &lt;stddef.h&gt;</code><br/>
 <code>#include &quot;CUnit/Basic.h&quot;</code><br/>
+<code>#include &quot;<a class="el" href="bool_8h_source.html">bool.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="stringpool_8h_source.html">stringpool.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="spstring_8h_source.html">spstring.h</a>&quot;</code><br/>
-<code>#include &quot;bool.h&quot;</code><br/>
 </div><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Funzioni</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0a8246be9bb3a2ee11cebc821777310c"></a><!-- doxytag: member="cunit_stringpool_lib.c::suite_void_init_func" ref="a0a8246be9bb3a2ee11cebc821777310c" args="(void)" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>suite_void_init_func</b> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0701eb2a5f62048a23ac59e34234a259"></a><!-- doxytag: member="cunit_stringpool_lib.c::suite_void_cleanup_func" ref="a0701eb2a5f62048a23ac59e34234a259" args="(void)" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>suite_void_cleanup_func</b> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a78a44015dc0dc2ace96bebe3764bee65"></a><!-- doxytag: member="cunit_stringpool_lib.c::suite_init_func" ref="a78a44015dc0dc2ace96bebe3764bee65" args="(void)" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>suite_init_func</b> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5b91e5ad6276dc51f560a0bb2105597e"></a><!-- doxytag: member="cunit_stringpool_lib.c::suite_cleanup_func" ref="a5b91e5ad6276dc51f560a0bb2105597e" args="(void)" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>suite_cleanup_func</b> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd1ac4d9f80d303dd6f9d66430e80bb7"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_initialize_stringpool" ref="abd1ac4d9f80d303dd6f9d66430e80bb7" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_initialize_stringpool</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63e0f7efedf84dc6d138f85b9239dd43"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_new_empty_string" ref="a63e0f7efedf84dc6d138f85b9239dd43" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_new_empty_string</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0412719d05e9f43fb3e16eeca5fcd634"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_new_string" ref="a0412719d05e9f43fb3e16eeca5fcd634" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_new_string</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c4715f527ad1d4f9f64f4c951f2ca60"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_get_allocated_size" ref="a8c4715f527ad1d4f9f64f4c951f2ca60" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_get_allocated_size</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea503a3cce11b440ea5fbe5495ffff68"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_free" ref="aea503a3cce11b440ea5fbe5495ffff68" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_free</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2951f0443cfada9b6bbc387eff9315de"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_strlen" ref="a2951f0443cfada9b6bbc387eff9315de" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_strlen</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b53839d9b5625d5c95d23eed9ac72bd"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_strcmp" ref="a2b53839d9b5625d5c95d23eed9ac72bd" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_strcmp</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aadc58d980b0879d14269a8373c11f960"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_strcpy" ref="aadc58d980b0879d14269a8373c11f960" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_strcpy</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac70d777cc30992e127ad5558ca5f3fd4"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_strcat" ref="ac70d777cc30992e127ad5558ca5f3fd4" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_strcat</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03117506d7c71ebc5e4e28d51cf1342b"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_lower_case" ref="a03117506d7c71ebc5e4e28d51cf1342b" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_lower_case</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc2f8593e9e4f9cc5806e8825fff2ad4"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_upper_case" ref="acc2f8593e9e4f9cc5806e8825fff2ad4" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_upper_case</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af266927c924c79119489d99e13b79358"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_add_string" ref="af266927c924c79119489d99e13b79358" args="(void)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_add_string</b> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8961a2653c73d541390f06e88abdd4fe"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_get_string" ref="a8961a2653c73d541390f06e88abdd4fe" args="(void)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_get_string</b> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abdec3bdc4320f341cb3c9422afae73c3"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_add_string_pos" ref="abdec3bdc4320f341cb3c9422afae73c3" args="(void)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_add_string_pos</b> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abfb3db89f8c9b9fd6cf1db4883379c4a"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_remove_string" ref="abfb3db89f8c9b9fd6cf1db4883379c4a" args="(void)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_remove_string</b> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13bbd8b3128d03461bc6002d8af03653"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_replace_string" ref="a13bbd8b3128d03461bc6002d8af03653" args="(void)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_replace_string</b> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace46eafb246f789bb38ac51be93d448d"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_find_string" ref="ace46eafb246f789bb38ac51be93d448d" args="(void)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_find_string</b> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a69c1a2ee0a8921170ae1c53b819c3a3f"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_isfull" ref="a69c1a2ee0a8921170ae1c53b819c3a3f" args="(void)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_isfull</b> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ebd133c704fbbcd804c973285ab229d"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_isempty" ref="a5ebd133c704fbbcd804c973285ab229d" args="(void)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_isempty</b> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a00495ad85275950c4830234cc68ac84d"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_sizeof" ref="a00495ad85275950c4830234cc68ac84d" args="(void)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_sizeof</b> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99f435a4cdeed3380e53ea11c0a47362"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_free_stringpool" ref="a99f435a4cdeed3380e53ea11c0a47362" args="(void)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>test_sp_free_stringpool</b> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ddf1224851353fc92bfbff6f499fa97"></a><!-- doxytag: member="cunit_stringpool_lib.c::main" ref="a0ddf1224851353fc92bfbff6f499fa97" args="(int argc, char *argv[])" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, char *argv[])</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a0a8246be9bb3a2ee11cebc821777310c">suite_void_init_func</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a0701eb2a5f62048a23ac59e34234a259">suite_void_cleanup_func</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a78a44015dc0dc2ace96bebe3764bee65">suite_init_func</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a5b91e5ad6276dc51f560a0bb2105597e">suite_cleanup_func</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#abd1ac4d9f80d303dd6f9d66430e80bb7">test_sp_initialize_stringpool</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a63e0f7efedf84dc6d138f85b9239dd43">test_sp_new_empty_string</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a0412719d05e9f43fb3e16eeca5fcd634">test_sp_new_string</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a8c4715f527ad1d4f9f64f4c951f2ca60">test_sp_get_allocated_size</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#aea503a3cce11b440ea5fbe5495ffff68">test_sp_free</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a2951f0443cfada9b6bbc387eff9315de">test_sp_strlen</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a2b53839d9b5625d5c95d23eed9ac72bd">test_sp_strcmp</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#aadc58d980b0879d14269a8373c11f960">test_sp_strcpy</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#ac70d777cc30992e127ad5558ca5f3fd4">test_sp_strcat</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a03117506d7c71ebc5e4e28d51cf1342b">test_sp_lower_case</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#acc2f8593e9e4f9cc5806e8825fff2ad4">test_sp_upper_case</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#af266927c924c79119489d99e13b79358">test_sp_add_string</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a8961a2653c73d541390f06e88abdd4fe">test_sp_get_string</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#abdec3bdc4320f341cb3c9422afae73c3">test_sp_add_string_pos</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#abfb3db89f8c9b9fd6cf1db4883379c4a">test_sp_remove_string</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a13bbd8b3128d03461bc6002d8af03653">test_sp_replace_string</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#ace46eafb246f789bb38ac51be93d448d">test_sp_find_string</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a69c1a2ee0a8921170ae1c53b819c3a3f">test_sp_isfull</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a5ebd133c704fbbcd804c973285ab229d">test_sp_isempty</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a00495ad85275950c4830234cc68ac84d">test_sp_sizeof</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a99f435a4cdeed3380e53ea11c0a47362">test_sp_free_stringpool</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a1d01a6ae4afcd1ec169f4dc7998ab813">test_sp_strcat_as_struct</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Test per sp_strcat_as_struct.  <a href="#a1d01a6ae4afcd1ec169f4dc7998ab813"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a3b28d0c988a607f9457e96624618d6c6">test_sp_save_to_file</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Test per sp_save_to_file.  <a href="#a3b28d0c988a607f9457e96624618d6c6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a7f017fca52e5abd55d3556d5c1895f38">test_sp_load_from_file</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Test per sp_load_from_file.  <a href="#a7f017fca52e5abd55d3556d5c1895f38"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#ad998697ab077be382192beab2c7e7371">test_sp_bubble_sort</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Test per sp_bubble_sor.  <a href="#ad998697ab077be382192beab2c7e7371"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a687a9fee0821aba1d04ecb97effa7358">test_sp_bin_search</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Test per sp_bin_search.  <a href="#a687a9fee0821aba1d04ecb97effa7358"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#aafc1aba865ad783053508bf2fec3886d">test_sp_file_exist_create</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Test per _sp_file_exist _sp_file_create.  <a href="#aafc1aba865ad783053508bf2fec3886d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#abb04b0327234015cb2b9eb368d28a86c">test_sp_map_array_stringpool</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Test per _sp_map_array_stringpool.  <a href="#abb04b0327234015cb2b9eb368d28a86c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variabili</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a421ecbacf6dacc6f5e391d074522db9e"></a><!-- doxytag: member="cunit_stringpool_lib.c::sp" ref="a421ecbacf6dacc6f5e391d074522db9e" args="" -->
-stringpool&#160;</td><td class="memItemRight" valign="bottom"><b>sp</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1be08f87f6ede06b8b2cbd03924ee32b"></a><!-- doxytag: member="cunit_stringpool_lib.c::CONST_TEST_STRING_LOWER_CASE" ref="a1be08f87f6ede06b8b2cbd03924ee32b" args="" -->
-string *&#160;</td><td class="memItemRight" valign="bottom"><b>CONST_TEST_STRING_LOWER_CASE</b> = NULL</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf3a3e5aa1be473b644c5575259cad94"></a><!-- doxytag: member="cunit_stringpool_lib.c::CONST_TEST_STRING_UPPER_CASE" ref="adf3a3e5aa1be473b644c5575259cad94" args="" -->
-string *&#160;</td><td class="memItemRight" valign="bottom"><b>CONST_TEST_STRING_UPPER_CASE</b> = NULL</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d3d82e855eaacc2afd0fdfe29c1d81d"></a><!-- doxytag: member="cunit_stringpool_lib.c::CONST_TEST_STRING_LEN" ref="a7d3d82e855eaacc2afd0fdfe29c1d81d" args="" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>CONST_TEST_STRING_LEN</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstringpool.html">stringpool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a1be08f87f6ede06b8b2cbd03924ee32b">CONST_TEST_STRING_LOWER_CASE</a> = NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring.html">string</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#adf3a3e5aa1be473b644c5575259cad94">CONST_TEST_STRING_UPPER_CASE</a> = NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cunit__stringpool__lib_8c.html#a7d3d82e855eaacc2afd0fdfe29c1d81d">CONST_TEST_STRING_LEN</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Descrizione dettagliata</h2>
-<div class="textblock"><p>cUnit file </p>
-</div></div>
+<div class="textblock"><p>File per il testing della libreria stringpool. </p>
+<dl class="date"><dt><b>Data:</b></dt><dd>2011 </dd></dl>
+<h2><a class="anchor" id="license"></a>
+Licenza</h2>
+<p>GPLv2 <a href="http://www.softwarelibero.it/gnudoc/gpl.it.txt">http://www.softwarelibero.it/gnudoc/gpl.it.txt</a> Per maggiori informazioni visitare il link o visualizzare il file LICENSE </p>
+</div><hr/><h2>Documentazione delle funzioni</h2>
+<a class="anchor" id="a0ddf1224851353fc92bfbff6f499fa97"></a><!-- doxytag: member="cunit_stringpool_lib.c::main" ref="a0ddf1224851353fc92bfbff6f499fa97" args="(int argc, char *argv[])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5b91e5ad6276dc51f560a0bb2105597e"></a><!-- doxytag: member="cunit_stringpool_lib.c::suite_cleanup_func" ref="a5b91e5ad6276dc51f560a0bb2105597e" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int suite_cleanup_func </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a78a44015dc0dc2ace96bebe3764bee65"></a><!-- doxytag: member="cunit_stringpool_lib.c::suite_init_func" ref="a78a44015dc0dc2ace96bebe3764bee65" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int suite_init_func </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0701eb2a5f62048a23ac59e34234a259"></a><!-- doxytag: member="cunit_stringpool_lib.c::suite_void_cleanup_func" ref="a0701eb2a5f62048a23ac59e34234a259" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int suite_void_cleanup_func </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0a8246be9bb3a2ee11cebc821777310c"></a><!-- doxytag: member="cunit_stringpool_lib.c::suite_void_init_func" ref="a0a8246be9bb3a2ee11cebc821777310c" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int suite_void_init_func </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af266927c924c79119489d99e13b79358"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_add_string" ref="af266927c924c79119489d99e13b79358" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_add_string </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abdec3bdc4320f341cb3c9422afae73c3"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_add_string_pos" ref="abdec3bdc4320f341cb3c9422afae73c3" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_add_string_pos </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a687a9fee0821aba1d04ecb97effa7358"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_bin_search" ref="a687a9fee0821aba1d04ecb97effa7358" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">test_sp_bin_search </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Test per sp_bin_search. </p>
+<p>Caso di test aggiunto per testare la ricerca binaria in concomitanza del bubble sort</p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>void </dd></dl>
+
+<p><p>Controllo che sp sia vuoto</p>
+<p>Inserisco in ordine casuale 6 stringhe</p>
+<p>Ne rimuovo una in posizione 3, Ragusa</p>
+<p>Ricontrollo la dimensione</p>
+<p>Ordino l'array, è una specifica per il binary search</p>
+<p>Dopo l'ordinamento mi aspetto che sp sia ordinato in questo modo: Colombo Domenico Flickr Google Monaco</p>
+<p>Effettuo una prima ricerca sul valore elimnato e mi aspetto di riceve errore</p>
+<p>Controllo che le posizioni degli elementi sia quella che mi aspetto </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad998697ab077be382192beab2c7e7371"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_bubble_sort" ref="ad998697ab077be382192beab2c7e7371" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">test_sp_bubble_sort </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Test per sp_bubble_sor. </p>
+<p>Caso di test aggiunto per testare l'ordinamento con bubble sort conservando posizioni vuote/piene</p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>void </dd></dl>
+
+<p><p>Dichiaro ed inizializzo un nuovo nome di file da leggere, sempre che esista</p>
+<p>Carichiamo da file e controlliamo che il numero di righe caricate corrisponda alla dimensione di sp e che sp sia della dimensione che ci aspettiamo</p>
+<p>Ho ordinato le 4 frasi con gEdit e mi aspetto che esse siano nel seguente ordine</p>
+<p>Ci aspettiamo che anche dopo l'ordinamente la posizione 3 sia NULL </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aafc1aba865ad783053508bf2fec3886d"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_file_exist_create" ref="aafc1aba865ad783053508bf2fec3886d" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">test_sp_file_exist_create </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Test per _sp_file_exist _sp_file_create. </p>
+<p>Caso di test aggiunto per testare le funzioni per creare file e controllare se esite già il file</p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>void </dd></dl>
+
+<p><p>Dichiaro e creo la variabile per il nome del file</p>
+<p>Controllo se esiste</p>
+<p>Cerco di crearlo</p>
+<p>Ricontrollo se esiste</p>
+<p>Rimuovo il file</p>
+<p>Rimuovo il file</p>
+<p>Controllo se esiste un file NULL</p>
+<p>Dichiaro un nome di file pre-esistenbte</p>
+<p>Controlliamo se esiste</p>
+<p>Controlliamo se possiamo sovrascriverlo </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ace46eafb246f789bb38ac51be93d448d"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_find_string" ref="ace46eafb246f789bb38ac51be93d448d" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_find_string </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aea503a3cce11b440ea5fbe5495ffff68"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_free" ref="aea503a3cce11b440ea5fbe5495ffff68" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_free </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a99f435a4cdeed3380e53ea11c0a47362"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_free_stringpool" ref="a99f435a4cdeed3380e53ea11c0a47362" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_free_stringpool </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8c4715f527ad1d4f9f64f4c951f2ca60"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_get_allocated_size" ref="a8c4715f527ad1d4f9f64f4c951f2ca60" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_get_allocated_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8961a2653c73d541390f06e88abdd4fe"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_get_string" ref="a8961a2653c73d541390f06e88abdd4fe" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_get_string </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abd1ac4d9f80d303dd6f9d66430e80bb7"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_initialize_stringpool" ref="abd1ac4d9f80d303dd6f9d66430e80bb7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_initialize_stringpool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5ebd133c704fbbcd804c973285ab229d"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_isempty" ref="a5ebd133c704fbbcd804c973285ab229d" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_isempty </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a69c1a2ee0a8921170ae1c53b819c3a3f"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_isfull" ref="a69c1a2ee0a8921170ae1c53b819c3a3f" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_isfull </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7f017fca52e5abd55d3556d5c1895f38"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_load_from_file" ref="a7f017fca52e5abd55d3556d5c1895f38" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">test_sp_load_from_file </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Test per sp_load_from_file. </p>
+<p>Caso di test aggiunto per testare il caricamento da file</p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>void </dd></dl>
+
+<p><p>Credo la string con il nome del file da caricare, è stato creato nel test precedente</p>
+<p>Controlliamo che sp sia vuoto, riceverà in ingresso le righe del file letto</p>
+<p>Controlliamo che il caricamento ritorni il numero di righe della dimensione di sp</p>
+<p>Controllo se le stringhe caricate sono esattamente quelle che avevo scritto su file e nella loro posizione</p>
+<p>Rimuovo le stringhe da sp</p>
+<p>Controllo che sp sia vuoto</p>
+<p>Dichiaro ed inizializzo un nuovo nome di file da leggere, sempre che esista</p>
+<p>Carichiamo da file e controlliamo che il numero di righe caricate corrisponda alla dimensione di sp e che sp sia della dimensione che ci aspettiamo</p>
+<p>Controlliamo che il caricamento in posizioni non contigue sia andato a buon fine</p>
+<p>Ci aspettiam che la posizione 3 sia NULL </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a03117506d7c71ebc5e4e28d51cf1342b"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_lower_case" ref="a03117506d7c71ebc5e4e28d51cf1342b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_lower_case </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abb04b0327234015cb2b9eb368d28a86c"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_map_array_stringpool" ref="abb04b0327234015cb2b9eb368d28a86c" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">test_sp_map_array_stringpool </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Test per _sp_map_array_stringpool. </p>
+<p>Caso di test aggiunto per testare la creazione della mappa di stringpool</p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>void </dd></dl>
+
+<p><p>Controllo che sp sia vuoto</p>
+<p>Inseriamo a salti alcuni elemnti in sp</p>
+<p>Ricontrollo la dimensione</p>
+<p>Controlleremo in modo "consecutivo" le posizioni sp ignorando le posizoni reali, Controllando passo per passo elementi consecuitivi, il primo elemento, il secondo ecc...</p>
+<p>Il termine Drupal è in posizione reale 0 ed in posizione virtuale map_array 0. In entrambi i casi è il primo elemento.</p>
+<p>Il termine Django è in posizione reale 2 ed in posizione virtuale map_array 1. In entrambi i casi è il Secondo elemento.</p>
+<p>Il termine Wordpress è in posizione reale 3 ed in posizione virtuale map_array 2. In entrambi i casi è il Terzo elemento.</p>
+<p>Il termine Php è in posizione reale 5 ed in posizione virtuale map_array 3. In entrambi i casi è il Quarto elemento.</p>
+<p>Il termine Magento è in posizione reale 7 ed in posizione virtuale map_array 4. In entrambi i casi è il Quinto elemento.</p>
+<p>Il termine Python è in posizione reale 8 ed in posizione virtuale map_array 5. In entrambi i casi è il Sesto elemento.</p>
+<p>Controlliamo immettendo direttamente le posizioni reali </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a63e0f7efedf84dc6d138f85b9239dd43"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_new_empty_string" ref="a63e0f7efedf84dc6d138f85b9239dd43" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_new_empty_string </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0412719d05e9f43fb3e16eeca5fcd634"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_new_string" ref="a0412719d05e9f43fb3e16eeca5fcd634" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_new_string </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abfb3db89f8c9b9fd6cf1db4883379c4a"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_remove_string" ref="abfb3db89f8c9b9fd6cf1db4883379c4a" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_remove_string </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a13bbd8b3128d03461bc6002d8af03653"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_replace_string" ref="a13bbd8b3128d03461bc6002d8af03653" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_replace_string </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3b28d0c988a607f9457e96624618d6c6"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_save_to_file" ref="a3b28d0c988a607f9457e96624618d6c6" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">test_sp_save_to_file </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Test per sp_save_to_file. </p>
+<p>Caso di test aggiunto per testare il salvataggio su file </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>void </dd></dl>
+
+<p><p>Dichiaro il puntare a string per il nome dle file</p>
+<p>Ci assicuriamo che sia vuoto sp</p>
+<p>Aggiungiamo 5 string a sp, possibilmente con spazi per verificare se la scrittura di frasi con spazi funziona</p>
+<p>Creiamo uno spazio vuoto eliminando la string in posizione 3</p>
+<p>Controlliamo se in prima posizine abbimo il nome del file</p>
+<p>Controlliamo che sia di dimensione 4</p>
+<p>Controlliamo che la dimensione di sp corrisponda al numero di righe scritte</p>
+<p>Rimuoviamo le stringhe scritte</p>
+<p>Controlliamo che sp sia vuoto</p>
+<p>Creiamo una stringa con il nome del file senza metterlo in sp</p>
+<p>Aggiungiamo le stringhe in sp, miste con spazi, numeri e simboli speciali</p>
+<p>Verifichiamo la dimensione di sp</p>
+<p>Verifichiamo che la dimensioni di sp corrisponda al numero di righe scritte</p>
+<p>Liberiamo sp dalle righe scritte, svuotandolo</p>
+<p>Verifichiamo che sia vuoto</p>
+<p>Scriviamo un file vuoto</p>
+<p>Non dovrebbe scrivere nessun file e ritornare errore -1 a causa del nome sbagliato del file</p>
+<p>Non dovrebbe scrivere nessun file e ritornare errore -1 a causa del nome sbagliato del file</p>
+<p>Non dovrebbe scrivere nessun file e ritornare errore -1 a causa del puntatore a sp NULL </p>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a00495ad85275950c4830234cc68ac84d"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_sizeof" ref="a00495ad85275950c4830234cc68ac84d" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_sizeof </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac70d777cc30992e127ad5558ca5f3fd4"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_strcat" ref="ac70d777cc30992e127ad5558ca5f3fd4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_strcat </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1d01a6ae4afcd1ec169f4dc7998ab813"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_strcat_as_struct" ref="a1d01a6ae4afcd1ec169f4dc7998ab813" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">test_sp_strcat_as_struct </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Test per sp_strcat_as_struct. </p>
+<p>Caso di test aggiunto in string_manipulation </p>
+<dl><dt><b>Parametri:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Restituisce:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2b53839d9b5625d5c95d23eed9ac72bd"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_strcmp" ref="a2b53839d9b5625d5c95d23eed9ac72bd" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_strcmp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aadc58d980b0879d14269a8373c11f960"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_strcpy" ref="aadc58d980b0879d14269a8373c11f960" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_strcpy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2951f0443cfada9b6bbc387eff9315de"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_strlen" ref="a2951f0443cfada9b6bbc387eff9315de" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_strlen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acc2f8593e9e4f9cc5806e8825fff2ad4"></a><!-- doxytag: member="cunit_stringpool_lib.c::test_sp_upper_case" ref="acc2f8593e9e4f9cc5806e8825fff2ad4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_sp_upper_case </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Documentazione delle variabili</h2>
+<a class="anchor" id="a7d3d82e855eaacc2afd0fdfe29c1d81d"></a><!-- doxytag: member="cunit_stringpool_lib.c::CONST_TEST_STRING_LEN" ref="a7d3d82e855eaacc2afd0fdfe29c1d81d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="cunit__stringpool__lib_8c.html#a7d3d82e855eaacc2afd0fdfe29c1d81d">CONST_TEST_STRING_LEN</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1be08f87f6ede06b8b2cbd03924ee32b"></a><!-- doxytag: member="cunit_stringpool_lib.c::CONST_TEST_STRING_LOWER_CASE" ref="a1be08f87f6ede06b8b2cbd03924ee32b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstring.html">string</a>* <a class="el" href="cunit__stringpool__lib_8c.html#a1be08f87f6ede06b8b2cbd03924ee32b">CONST_TEST_STRING_LOWER_CASE</a> = NULL</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adf3a3e5aa1be473b644c5575259cad94"></a><!-- doxytag: member="cunit_stringpool_lib.c::CONST_TEST_STRING_UPPER_CASE" ref="adf3a3e5aa1be473b644c5575259cad94" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstring.html">string</a>* <a class="el" href="cunit__stringpool__lib_8c.html#adf3a3e5aa1be473b644c5575259cad94">CONST_TEST_STRING_UPPER_CASE</a> = NULL</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a421ecbacf6dacc6f5e391d074522db9e"></a><!-- doxytag: member="cunit_stringpool_lib.c::sp" ref="a421ecbacf6dacc6f5e391d074522db9e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstringpool.html">stringpool</a> <a class="el" href="cunit__stringpool__lib_8c.html#a421ecbacf6dacc6f5e391d074522db9e">sp</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+</div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>File</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Definizioni</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -154,7 +940,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>CONST_TEST_STRING_LEN<
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generato Lun 16 Mag 2011 14:39:39 per StringPool da&#160;
+<hr class="footer"/><address class="footer"><small>Generato Lun 30 Mag 2011 10:09:24 per Stringpool da&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
 </body>

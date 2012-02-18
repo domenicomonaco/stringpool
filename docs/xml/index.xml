@@ -5,54 +5,103 @@
     <member refid="structstring_1ac06bb82958ec7c45e2838ae575b124ec" kind="variable"><name>allocated_size</name></member>
   </compound>
   <compound refid="structstringpool" kind="struct"><name>stringpool</name>
-    <member refid="structstringpool_1ade9d898bddb2a241d6fa8811c63078cb" kind="variable"><name>strings</name></member>
+    <member refid="structstringpool_1af28549aacb7ae1827e1000400381bdbb" kind="variable"><name>strings</name></member>
     <member refid="structstringpool_1ae8c4c199ad0a8d10621110791d6d653e" kind="variable"><name>used_counter</name></member>
-    <member refid="structstringpool_1a2cf1860317fee06bf17a8377244be3ee" kind="variable"><name>positions</name></member>
-  </compound>
-  <compound refid="specs_8c" kind="file"><name>specs.c</name>
-  </compound>
-  <compound refid="specs_8cpp" kind="file"><name>specs.cpp</name>
-  </compound>
-  <compound refid="cunit__stringpool__lib_8d" kind="file"><name>cunit_stringpool_lib.d</name>
+    <member refid="structstringpool_1ab0cc50c97d44081fab72467d607a9325" kind="variable"><name>positions</name></member>
   </compound>
   <compound refid="cunit__stringpool__lib_8c" kind="file"><name>cunit_stringpool_lib.c</name>
-    <member refid="cunit__stringpool__lib_8c_1a840291bc02cba5474a4cb46a9b9566fe" kind="function"><name>main</name></member>
-  </compound>
-  <compound refid="interface_8d" kind="file"><name>interface.d</name>
-  </compound>
-  <compound refid="interface_8c" kind="file"><name>interface.c</name>
-    <member refid="interface_8c_1a840291bc02cba5474a4cb46a9b9566fe" kind="function"><name>main</name></member>
-  </compound>
-  <compound refid="spstring_8d" kind="file"><name>spstring.d</name>
+    <member refid="cunit__stringpool__lib_8c_1a421ecbacf6dacc6f5e391d074522db9e" kind="variable"><name>sp</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a1be08f87f6ede06b8b2cbd03924ee32b" kind="variable"><name>CONST_TEST_STRING_LOWER_CASE</name></member>
+    <member refid="cunit__stringpool__lib_8c_1adf3a3e5aa1be473b644c5575259cad94" kind="variable"><name>CONST_TEST_STRING_UPPER_CASE</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a7d3d82e855eaacc2afd0fdfe29c1d81d" kind="variable"><name>CONST_TEST_STRING_LEN</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a0a8246be9bb3a2ee11cebc821777310c" kind="function"><name>suite_void_init_func</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a0701eb2a5f62048a23ac59e34234a259" kind="function"><name>suite_void_cleanup_func</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a78a44015dc0dc2ace96bebe3764bee65" kind="function"><name>suite_init_func</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a5b91e5ad6276dc51f560a0bb2105597e" kind="function"><name>suite_cleanup_func</name></member>
+    <member refid="cunit__stringpool__lib_8c_1abd1ac4d9f80d303dd6f9d66430e80bb7" kind="function"><name>test_sp_initialize_stringpool</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a63e0f7efedf84dc6d138f85b9239dd43" kind="function"><name>test_sp_new_empty_string</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a0412719d05e9f43fb3e16eeca5fcd634" kind="function"><name>test_sp_new_string</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a8c4715f527ad1d4f9f64f4c951f2ca60" kind="function"><name>test_sp_get_allocated_size</name></member>
+    <member refid="cunit__stringpool__lib_8c_1aea503a3cce11b440ea5fbe5495ffff68" kind="function"><name>test_sp_free</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a2951f0443cfada9b6bbc387eff9315de" kind="function"><name>test_sp_strlen</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a2b53839d9b5625d5c95d23eed9ac72bd" kind="function"><name>test_sp_strcmp</name></member>
+    <member refid="cunit__stringpool__lib_8c_1aadc58d980b0879d14269a8373c11f960" kind="function"><name>test_sp_strcpy</name></member>
+    <member refid="cunit__stringpool__lib_8c_1ac70d777cc30992e127ad5558ca5f3fd4" kind="function"><name>test_sp_strcat</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a03117506d7c71ebc5e4e28d51cf1342b" kind="function"><name>test_sp_lower_case</name></member>
+    <member refid="cunit__stringpool__lib_8c_1acc2f8593e9e4f9cc5806e8825fff2ad4" kind="function"><name>test_sp_upper_case</name></member>
+    <member refid="cunit__stringpool__lib_8c_1af266927c924c79119489d99e13b79358" kind="function"><name>test_sp_add_string</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a8961a2653c73d541390f06e88abdd4fe" kind="function"><name>test_sp_get_string</name></member>
+    <member refid="cunit__stringpool__lib_8c_1abdec3bdc4320f341cb3c9422afae73c3" kind="function"><name>test_sp_add_string_pos</name></member>
+    <member refid="cunit__stringpool__lib_8c_1abfb3db89f8c9b9fd6cf1db4883379c4a" kind="function"><name>test_sp_remove_string</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a13bbd8b3128d03461bc6002d8af03653" kind="function"><name>test_sp_replace_string</name></member>
+    <member refid="cunit__stringpool__lib_8c_1ace46eafb246f789bb38ac51be93d448d" kind="function"><name>test_sp_find_string</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a69c1a2ee0a8921170ae1c53b819c3a3f" kind="function"><name>test_sp_isfull</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a5ebd133c704fbbcd804c973285ab229d" kind="function"><name>test_sp_isempty</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a00495ad85275950c4830234cc68ac84d" kind="function"><name>test_sp_sizeof</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a99f435a4cdeed3380e53ea11c0a47362" kind="function"><name>test_sp_free_stringpool</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a1d01a6ae4afcd1ec169f4dc7998ab813" kind="function"><name>test_sp_strcat_as_struct</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a3b28d0c988a607f9457e96624618d6c6" kind="function"><name>test_sp_save_to_file</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a7f017fca52e5abd55d3556d5c1895f38" kind="function"><name>test_sp_load_from_file</name></member>
+    <member refid="cunit__stringpool__lib_8c_1ad998697ab077be382192beab2c7e7371" kind="function"><name>test_sp_bubble_sort</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a687a9fee0821aba1d04ecb97effa7358" kind="function"><name>test_sp_bin_search</name></member>
+    <member refid="cunit__stringpool__lib_8c_1aafc1aba865ad783053508bf2fec3886d" kind="function"><name>test_sp_file_exist_create</name></member>
+    <member refid="cunit__stringpool__lib_8c_1abb04b0327234015cb2b9eb368d28a86c" kind="function"><name>test_sp_map_array_stringpool</name></member>
+    <member refid="cunit__stringpool__lib_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
   </compound>
   <compound refid="bool_8h" kind="file"><name>bool.h</name>
-    <member refid="bool_8h_1a7c6368b321bd9acd0149b030bb8275ed" kind="enum"><name>boolean</name></member>
-    <member refid="bool_8h_1a7c6368b321bd9acd0149b030bb8275edaa1e095cc966dbecf6a0d8aad75348d1a" kind="enumvalue"><name>FALSE</name></member>
-    <member refid="bool_8h_1a7c6368b321bd9acd0149b030bb8275edaa82764c3079aea4e60c80e45befbb839" kind="enumvalue"><name>TRUE</name></member>
+    <member refid="bool_8h_1a749658f1eed84e1a4035adaf384252e0" kind="define"><name>BOOLE_H_</name></member>
+    <member refid="bool_8h_1a56a087515036f9d49426777667d056a7" kind="enum"><name>boolean</name></member>
+    <member refid="bool_8h_1a56a087515036f9d49426777667d056a7aa1e095cc966dbecf6a0d8aad75348d1a" kind="enumvalue"><name>FALSE</name></member>
+    <member refid="bool_8h_1a56a087515036f9d49426777667d056a7aa82764c3079aea4e60c80e45befbb839" kind="enumvalue"><name>TRUE</name></member>
   </compound>
   <compound refid="spstring_8c" kind="file"><name>spstring.c</name>
-    <member refid="spstring_8c_1a840291bc02cba5474a4cb46a9b9566fe" kind="function"><name>main</name></member>
-    <member refid="spstring_8c_1a4b6d2814d9b5aa512888a91f942c8da0" kind="function"><name>sp_initialize_stringpool</name></member>
-    <member refid="spstring_8c_1a48436fd05ac160ef79ad714a3f8e6867" kind="function"><name>sp_new_string</name></member>
+    <member refid="spstring_8c_1a43109a2f4b18023775b877451f725c13" kind="function"><name>sp_initialize_stringpool</name></member>
+    <member refid="spstring_8c_1a60ed4be4036600f174388c36a0370818" kind="function"><name>sp_free</name></member>
+    <member refid="spstring_8c_1a99f5a66367fa19e42c24211e982c4b56" kind="function"><name>sp_free_stringpool</name></member>
+    <member refid="spstring_8c_1aa9f031abbf235a5d16322d97f78c334d" kind="function"><name>sp_new_empty_string</name></member>
+    <member refid="spstring_8c_1ac14d3aa446e78a594b506cf2494b7273" kind="function"><name>sp_new_string</name></member>
+    <member refid="spstring_8c_1ab0823663ad7e935718ccfc2db8e316d3" kind="function"><name>sp_get_allocated_size</name></member>
+    <member refid="spstring_8c_1ac994017d490a951c8f48c37bcbdf0c1b" kind="function"><name>sp_strlen</name></member>
+    <member refid="spstring_8c_1abb131e3e4d7f496a47d12c1692b75e15" kind="function"><name>sp_strcmp</name></member>
+    <member refid="spstring_8c_1afe063a22db56e1ed3b9de5a81820f002" kind="function"><name>sp_new_string_as_struct</name></member>
+    <member refid="spstring_8c_1ad258858c5d6a2aa9b4b9ed5776155afc" kind="function"><name>sp_strcpy</name></member>
+    <member refid="spstring_8c_1af0a1ed949316f182907ea08d4e8bd62b" kind="function"><name>sp_strcat</name></member>
+    <member refid="spstring_8c_1ad8c5bbe3b367845aaa230e19ac9e7919" kind="function"><name>sp_strcat_as_struct</name></member>
+    <member refid="spstring_8c_1a8b5d366c459a30a563e83fc8804702e2" kind="function"><name>sp_lower_case</name></member>
+    <member refid="spstring_8c_1a70dbcd0b1199382b8a171ec68067370c" kind="function"><name>sp_upper_case</name></member>
+    <member refid="spstring_8c_1aff3ad92cec105f24f415f745ae476ba1" kind="function"><name>sp_isempty</name></member>
+    <member refid="spstring_8c_1a51a9f7cf9dc077b62d01ff8102301841" kind="function"><name>sp_isfull</name></member>
+    <member refid="spstring_8c_1ace396a34f5bb42619cb81756b2f5b375" kind="function"><name>sp_add_string_pos</name></member>
+    <member refid="spstring_8c_1ae86751935917ec79d819904cfb087817" kind="function"><name>sp_add_string</name></member>
+    <member refid="spstring_8c_1a96c3685a91d261df2cb06e9745bdca3f" kind="function"><name>sp_sizeof</name></member>
+    <member refid="spstring_8c_1a0b0458114373e76ff2c48696bcae2782" kind="function"><name>sp_get_string</name></member>
+    <member refid="spstring_8c_1a6fd0b8059482b70aa0bc8ee607e3fadb" kind="function"><name>sp_remove_string</name></member>
+    <member refid="spstring_8c_1a465c42024674ec91ddb1158ee58c3466" kind="function"><name>sp_replace_string</name></member>
+    <member refid="spstring_8c_1a971049db5eca3ef305591d1fcd195a0f" kind="function"><name>sp_save_to_file</name></member>
+    <member refid="spstring_8c_1acc812ec5efe19197bad45658ffefb1fe" kind="function"><name>sp_load_from_file</name></member>
+    <member refid="spstring_8c_1ae3399d635eb3cd9893e079f6eaef6e1f" kind="function"><name>bubble_sort</name></member>
+    <member refid="spstring_8c_1a254f5e6ad18c821b31437d10a923cc83" kind="function"><name>bin_search</name></member>
+    <member refid="spstring_8c_1ac0204ece57f1cdce074fe7af7b7419f1" kind="function"><name>sp_find_string</name></member>
+    <member refid="spstring_8c_1a126e34dae1b5bfb99d0bbb34b1526dc8" kind="function"><name>_sp_file_exist</name></member>
+    <member refid="spstring_8c_1a790c017dd9dec0e2b95bf818d10ba005" kind="function"><name>_sp_file_create</name></member>
+    <member refid="spstring_8c_1a6143c920f51cf353336ee72034f68962" kind="function"><name>_sp_map_array_stringpool</name></member>
   </compound>
   <compound refid="spstring_8h" kind="file"><name>spstring.h</name>
-    <member refid="spstring_8h_1af4c76709286f016c09a7f99a070e6a5e" kind="define"><name>MAX_DIM_STRING_POOL</name></member>
-    <member refid="spstring_8h_1a20af6dd1f5a589e2a11eb37c1ea3ee96" kind="define"><name>UNUSED_SLOT</name></member>
-    <member refid="spstring_8h_1a80b8e6b0b534147058fcfc1187079064" kind="define"><name>USED_SLOT</name></member>
+    <member refid="spstring_8h_1aa7eb64789c5be8a291d3551f0cd0ec70" kind="define"><name>SPSTRING_H_</name></member>
+    <member refid="spstring_8h_1a4b6d2814d9b5aa512888a91f942c8da0" kind="function"><name>sp_initialize_stringpool</name></member>
+    <member refid="spstring_8h_1a3fa89b4e4441c6b66e2c18d6f532d4f5" kind="function"><name>sp_free_stringpool</name></member>
     <member refid="spstring_8h_1a18ab3dafab1e170404b7ecb5ff7f5a82" kind="function"><name>sp_new_string</name></member>
-    <member refid="spstring_8h_1a68cdb890f144e9ea6a984ee4aec146f0" kind="function"><name>sp_new_string_as_struct</name></member>
     <member refid="spstring_8h_1a6ca2fcf5ec5d621e012b93ac47e42df3" kind="function"><name>sp_new_empty_string</name></member>
     <member refid="spstring_8h_1ac6bae0d5bd4140987b042e70f2e3f92c" kind="function"><name>sp_get_allocated_size</name></member>
-    <member refid="spstring_8h_1a24b4a6a000610a0bd9d1d42573ab1f67" kind="function"><name>sp_strcpy</name></member>
     <member refid="spstring_8h_1a03c271ff34668b3abd08f09abb7bb0e0" kind="function"><name>sp_free</name></member>
     <member refid="spstring_8h_1a8dd6c72c60d09695c4f8ca43b32e4067" kind="function"><name>sp_strlen</name></member>
     <member refid="spstring_8h_1af4e26884749ec18a2870809932b78f96" kind="function"><name>sp_strcmp</name></member>
+    <member refid="spstring_8h_1a68cdb890f144e9ea6a984ee4aec146f0" kind="function"><name>sp_new_string_as_struct</name></member>
+    <member refid="spstring_8h_1a24b4a6a000610a0bd9d1d42573ab1f67" kind="function"><name>sp_strcpy</name></member>
     <member refid="spstring_8h_1a234a5ae1b3c039d59d5d8c4c9e78114f" kind="function"><name>sp_strcat</name></member>
     <member refid="spstring_8h_1a86ec3a5501670ddc5151c56cbc1950a3" kind="function"><name>sp_strcat_as_struct</name></member>
     <member refid="spstring_8h_1a15544790ca29918d67a6ecc99c25e26e" kind="function"><name>sp_lower_case</name></member>
     <member refid="spstring_8h_1a6f2eaae0bc5c50c813604b0ac735d0ad" kind="function"><name>sp_upper_case</name></member>
-    <member refid="spstring_8h_1a4b6d2814d9b5aa512888a91f942c8da0" kind="function"><name>sp_initialize_stringpool</name></member>
-    <member refid="spstring_8h_1a3fa89b4e4441c6b66e2c18d6f532d4f5" kind="function"><name>sp_free_stringpool</name></member>
     <member refid="spstring_8h_1af6cca73aa0f5f8ea59a81eea99f4cf42" kind="function"><name>sp_sizeof</name></member>
     <member refid="spstring_8h_1a5bb3845c849c9829a5449dffd5717146" kind="function"><name>sp_isempty</name></member>
     <member refid="spstring_8h_1acd5a78a65dceb1375bfd39ff12c4ad59" kind="function"><name>sp_isfull</name></member>
@@ -66,35 +115,27 @@
     <member refid="spstring_8h_1a19eafeeb094da2fedbe9eae182d22a08" kind="function"><name>sp_load_from_file</name></member>
     <member refid="spstring_8h_1a079cb55ebb4e9992c63454c1470baf15" kind="function"><name>bubble_sort</name></member>
     <member refid="spstring_8h_1ad4c5db94af98508f1a38de0f935d4bc6" kind="function"><name>bin_search</name></member>
+    <member refid="spstring_8h_1aaed6cf7f6d6627256d98ff3b006efd69" kind="function"><name>_sp_file_create</name></member>
+    <member refid="spstring_8h_1a88c4763051fb21a1fd954e22595249d5" kind="function"><name>_sp_file_exist</name></member>
+    <member refid="spstring_8h_1a6143c920f51cf353336ee72034f68962" kind="function"><name>_sp_map_array_stringpool</name></member>
   </compound>
-  <compound refid="dir_71b41504fcf0682ceface6f1397d1600" kind="dir"><name>.metadata/</name>
-  </compound>
-  <compound refid="dir_ac0328c84a2de10fbd36d64bf3c511bc" kind="dir"><name>.metadata/.plugins/</name>
+  <compound refid="stringpool_8h" kind="file"><name>stringpool.h</name>
+    <member refid="stringpool_8h_1a95a9e5b28e59f711a67f326b868a36f9" kind="define"><name>STRINGPOOL_H_</name></member>
+    <member refid="stringpool_8h_1a20af6dd1f5a589e2a11eb37c1ea3ee96" kind="define"><name>UNUSED_SLOT</name></member>
+    <member refid="stringpool_8h_1a80b8e6b0b534147058fcfc1187079064" kind="define"><name>USED_SLOT</name></member>
+    <member refid="stringpool_8h_1aae221160aeb62c7ea119f68a5a79062e" kind="define"><name>EMPTY_STRING_POOL</name></member>
+    <member refid="stringpool_8h_1af4c76709286f016c09a7f99a070e6a5e" kind="define"><name>MAX_DIM_STRING_POOL</name></member>
+    <member refid="stringpool_8h_1a402d2a2201ce976dc56cc87fe4e657da" kind="define"><name>SIZE_STRING_STRUCT</name></member>
+    <member refid="stringpool_8h_1a5b593cfbd4a9d757bacf4df235240ce1" kind="define"><name>MAX_CHAR_STRING_LOAD_FROM_FILE</name></member>
+    <member refid="stringpool_8h_1a0eb0be35c4612957306af850919f865d" kind="define"><name>PATTERN_READ_WRITE_LINE</name></member>
+    <member refid="stringpool_8h_1a8faae73aa34bbae0ef857459f165cc44" kind="define"><name>PATTERN_READ_WRITE_START_LINE_SHORT</name></member>
+    <member refid="stringpool_8h_1ac01ee82d919f7fa4aa02d04bf97a9bbd" kind="define"><name>PATTERN_READ_WRITE_END_LINE_SHORT</name></member>
+    <member refid="stringpool_8h_1a4be697a4e0e76af4dc284f700e920678" kind="define"><name>PATTERN_READ_WRITE_INIT</name></member>
   </compound>
   <compound refid="dir_0f3c368c3bf409069e93e4ce4cea4c1a" kind="dir"><name>cunit_stringpool_lib/</name>
   </compound>
-  <compound refid="dir_56f5e2cb3bb40d1cdf07dffc4ec2b52c" kind="dir"><name>stringpool/Debug/</name>
-  </compound>
-  <compound refid="dir_dac870f11753ce57a9c33a90b7b5a7ea" kind="dir"><name>interface/Debug/</name>
-  </compound>
-  <compound refid="dir_3a157f27d9b8652a4cc036cbf3a53e7b" kind="dir"><name>cunit_stringpool_lib/Debug/</name>
-  </compound>
-  <compound refid="dir_5f7b1721daf3f23cebe68132ce2a837b" kind="dir"><name>interface/</name>
-  </compound>
-  <compound refid="dir_1e1b5e5b7257dfc3d77e335c80880e4b" kind="dir"><name>.metadata/.plugins/org.eclipse.cdt.make.core/</name>
-  </compound>
-  <compound refid="dir_d29377ef2934874a87021312ff980a20" kind="dir"><name>stringpool/src/</name>
-  </compound>
-  <compound refid="dir_da8f375277ba86797e80ea5385ea1d20" kind="dir"><name>stringpool/Debug/src/</name>
-  </compound>
-  <compound refid="dir_ec6432a7bdc31d535ea586c460432c32" kind="dir"><name>interface/src/</name>
-  </compound>
-  <compound refid="dir_7a1e87d842ee70561126c61b0135011c" kind="dir"><name>interface/Debug/src/</name>
+  <compound refid="dir_2f63e591f10a549a98e00ec9e6f8cc40" kind="dir"><name>Library/</name>
   </compound>
   <compound refid="dir_89bd20559479c92bfee4e97e61b74b0e" kind="dir"><name>cunit_stringpool_lib/src/</name>
-  </compound>
-  <compound refid="dir_9cbee9ac93da6b36a3da6eecc54220d2" kind="dir"><name>cunit_stringpool_lib/Debug/src/</name>
-  </compound>
-  <compound refid="dir_e7569511c4c6def09426a4cb9e7a5d4c" kind="dir"><name>stringpool/</name>
   </compound>
 </doxygenindex>

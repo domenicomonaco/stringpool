@@ -4,172 +4,655 @@
 }
 
 
-cUnit file  
+File per il testing della libreria stringpool.  
 
 
 {\ttfamily \#include $<$stdio.h$>$}\par
 {\ttfamily \#include $<$stdlib.h$>$}\par
 {\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$stddef.h$>$}\par
 {\ttfamily \#include \char`\"{}CUnit/Basic.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}spstring.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}bool.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}stringpool.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}spstring.h\char`\"{}}\par
 \subsection*{Funzioni}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a0a8246be9bb3a2ee11cebc821777310c}{
-int {\bfseries suite\_\-void\_\-init\_\-func} (void)}
-\label{cunit__stringpool__lib_8c_a0a8246be9bb3a2ee11cebc821777310c}
-
+int \hyperlink{cunit__stringpool__lib_8c_a0a8246be9bb3a2ee11cebc821777310c}{suite\_\-void\_\-init\_\-func} (void)
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a0701eb2a5f62048a23ac59e34234a259}{
-int {\bfseries suite\_\-void\_\-cleanup\_\-func} (void)}
-\label{cunit__stringpool__lib_8c_a0701eb2a5f62048a23ac59e34234a259}
-
+int \hyperlink{cunit__stringpool__lib_8c_a0701eb2a5f62048a23ac59e34234a259}{suite\_\-void\_\-cleanup\_\-func} (void)
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a78a44015dc0dc2ace96bebe3764bee65}{
-int {\bfseries suite\_\-init\_\-func} (void)}
-\label{cunit__stringpool__lib_8c_a78a44015dc0dc2ace96bebe3764bee65}
-
+int \hyperlink{cunit__stringpool__lib_8c_a78a44015dc0dc2ace96bebe3764bee65}{suite\_\-init\_\-func} (void)
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a5b91e5ad6276dc51f560a0bb2105597e}{
-int {\bfseries suite\_\-cleanup\_\-func} (void)}
-\label{cunit__stringpool__lib_8c_a5b91e5ad6276dc51f560a0bb2105597e}
-
+int \hyperlink{cunit__stringpool__lib_8c_a5b91e5ad6276dc51f560a0bb2105597e}{suite\_\-cleanup\_\-func} (void)
 \item 
-\hypertarget{cunit__stringpool__lib_8c_abd1ac4d9f80d303dd6f9d66430e80bb7}{
-void {\bfseries test\_\-sp\_\-initialize\_\-stringpool} ()}
-\label{cunit__stringpool__lib_8c_abd1ac4d9f80d303dd6f9d66430e80bb7}
-
+void \hyperlink{cunit__stringpool__lib_8c_abd1ac4d9f80d303dd6f9d66430e80bb7}{test\_\-sp\_\-initialize\_\-stringpool} ()
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a63e0f7efedf84dc6d138f85b9239dd43}{
-void {\bfseries test\_\-sp\_\-new\_\-empty\_\-string} ()}
-\label{cunit__stringpool__lib_8c_a63e0f7efedf84dc6d138f85b9239dd43}
-
+void \hyperlink{cunit__stringpool__lib_8c_a63e0f7efedf84dc6d138f85b9239dd43}{test\_\-sp\_\-new\_\-empty\_\-string} ()
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a0412719d05e9f43fb3e16eeca5fcd634}{
-void {\bfseries test\_\-sp\_\-new\_\-string} ()}
-\label{cunit__stringpool__lib_8c_a0412719d05e9f43fb3e16eeca5fcd634}
-
+void \hyperlink{cunit__stringpool__lib_8c_a0412719d05e9f43fb3e16eeca5fcd634}{test\_\-sp\_\-new\_\-string} ()
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a8c4715f527ad1d4f9f64f4c951f2ca60}{
-void {\bfseries test\_\-sp\_\-get\_\-allocated\_\-size} ()}
-\label{cunit__stringpool__lib_8c_a8c4715f527ad1d4f9f64f4c951f2ca60}
-
+void \hyperlink{cunit__stringpool__lib_8c_a8c4715f527ad1d4f9f64f4c951f2ca60}{test\_\-sp\_\-get\_\-allocated\_\-size} ()
 \item 
-\hypertarget{cunit__stringpool__lib_8c_aea503a3cce11b440ea5fbe5495ffff68}{
-void {\bfseries test\_\-sp\_\-free} ()}
-\label{cunit__stringpool__lib_8c_aea503a3cce11b440ea5fbe5495ffff68}
-
+void \hyperlink{cunit__stringpool__lib_8c_aea503a3cce11b440ea5fbe5495ffff68}{test\_\-sp\_\-free} ()
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a2951f0443cfada9b6bbc387eff9315de}{
-void {\bfseries test\_\-sp\_\-strlen} ()}
-\label{cunit__stringpool__lib_8c_a2951f0443cfada9b6bbc387eff9315de}
-
+void \hyperlink{cunit__stringpool__lib_8c_a2951f0443cfada9b6bbc387eff9315de}{test\_\-sp\_\-strlen} ()
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a2b53839d9b5625d5c95d23eed9ac72bd}{
-void {\bfseries test\_\-sp\_\-strcmp} ()}
-\label{cunit__stringpool__lib_8c_a2b53839d9b5625d5c95d23eed9ac72bd}
-
+void \hyperlink{cunit__stringpool__lib_8c_a2b53839d9b5625d5c95d23eed9ac72bd}{test\_\-sp\_\-strcmp} ()
 \item 
-\hypertarget{cunit__stringpool__lib_8c_aadc58d980b0879d14269a8373c11f960}{
-void {\bfseries test\_\-sp\_\-strcpy} ()}
-\label{cunit__stringpool__lib_8c_aadc58d980b0879d14269a8373c11f960}
-
+void \hyperlink{cunit__stringpool__lib_8c_aadc58d980b0879d14269a8373c11f960}{test\_\-sp\_\-strcpy} ()
 \item 
-\hypertarget{cunit__stringpool__lib_8c_ac70d777cc30992e127ad5558ca5f3fd4}{
-void {\bfseries test\_\-sp\_\-strcat} ()}
-\label{cunit__stringpool__lib_8c_ac70d777cc30992e127ad5558ca5f3fd4}
-
+void \hyperlink{cunit__stringpool__lib_8c_ac70d777cc30992e127ad5558ca5f3fd4}{test\_\-sp\_\-strcat} ()
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a03117506d7c71ebc5e4e28d51cf1342b}{
-void {\bfseries test\_\-sp\_\-lower\_\-case} ()}
-\label{cunit__stringpool__lib_8c_a03117506d7c71ebc5e4e28d51cf1342b}
-
+void \hyperlink{cunit__stringpool__lib_8c_a03117506d7c71ebc5e4e28d51cf1342b}{test\_\-sp\_\-lower\_\-case} ()
 \item 
-\hypertarget{cunit__stringpool__lib_8c_acc2f8593e9e4f9cc5806e8825fff2ad4}{
-void {\bfseries test\_\-sp\_\-upper\_\-case} ()}
-\label{cunit__stringpool__lib_8c_acc2f8593e9e4f9cc5806e8825fff2ad4}
-
+void \hyperlink{cunit__stringpool__lib_8c_acc2f8593e9e4f9cc5806e8825fff2ad4}{test\_\-sp\_\-upper\_\-case} ()
 \item 
-\hypertarget{cunit__stringpool__lib_8c_af266927c924c79119489d99e13b79358}{
-void {\bfseries test\_\-sp\_\-add\_\-string} (void)}
-\label{cunit__stringpool__lib_8c_af266927c924c79119489d99e13b79358}
-
+void \hyperlink{cunit__stringpool__lib_8c_af266927c924c79119489d99e13b79358}{test\_\-sp\_\-add\_\-string} (void)
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a8961a2653c73d541390f06e88abdd4fe}{
-void {\bfseries test\_\-sp\_\-get\_\-string} (void)}
-\label{cunit__stringpool__lib_8c_a8961a2653c73d541390f06e88abdd4fe}
-
+void \hyperlink{cunit__stringpool__lib_8c_a8961a2653c73d541390f06e88abdd4fe}{test\_\-sp\_\-get\_\-string} (void)
 \item 
-\hypertarget{cunit__stringpool__lib_8c_abdec3bdc4320f341cb3c9422afae73c3}{
-void {\bfseries test\_\-sp\_\-add\_\-string\_\-pos} (void)}
-\label{cunit__stringpool__lib_8c_abdec3bdc4320f341cb3c9422afae73c3}
-
+void \hyperlink{cunit__stringpool__lib_8c_abdec3bdc4320f341cb3c9422afae73c3}{test\_\-sp\_\-add\_\-string\_\-pos} (void)
 \item 
-\hypertarget{cunit__stringpool__lib_8c_abfb3db89f8c9b9fd6cf1db4883379c4a}{
-void {\bfseries test\_\-sp\_\-remove\_\-string} (void)}
-\label{cunit__stringpool__lib_8c_abfb3db89f8c9b9fd6cf1db4883379c4a}
-
+void \hyperlink{cunit__stringpool__lib_8c_abfb3db89f8c9b9fd6cf1db4883379c4a}{test\_\-sp\_\-remove\_\-string} (void)
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a13bbd8b3128d03461bc6002d8af03653}{
-void {\bfseries test\_\-sp\_\-replace\_\-string} (void)}
-\label{cunit__stringpool__lib_8c_a13bbd8b3128d03461bc6002d8af03653}
-
+void \hyperlink{cunit__stringpool__lib_8c_a13bbd8b3128d03461bc6002d8af03653}{test\_\-sp\_\-replace\_\-string} (void)
 \item 
-\hypertarget{cunit__stringpool__lib_8c_ace46eafb246f789bb38ac51be93d448d}{
-void {\bfseries test\_\-sp\_\-find\_\-string} (void)}
-\label{cunit__stringpool__lib_8c_ace46eafb246f789bb38ac51be93d448d}
-
+void \hyperlink{cunit__stringpool__lib_8c_ace46eafb246f789bb38ac51be93d448d}{test\_\-sp\_\-find\_\-string} (void)
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a69c1a2ee0a8921170ae1c53b819c3a3f}{
-void {\bfseries test\_\-sp\_\-isfull} (void)}
-\label{cunit__stringpool__lib_8c_a69c1a2ee0a8921170ae1c53b819c3a3f}
-
+void \hyperlink{cunit__stringpool__lib_8c_a69c1a2ee0a8921170ae1c53b819c3a3f}{test\_\-sp\_\-isfull} (void)
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a5ebd133c704fbbcd804c973285ab229d}{
-void {\bfseries test\_\-sp\_\-isempty} (void)}
-\label{cunit__stringpool__lib_8c_a5ebd133c704fbbcd804c973285ab229d}
-
+void \hyperlink{cunit__stringpool__lib_8c_a5ebd133c704fbbcd804c973285ab229d}{test\_\-sp\_\-isempty} (void)
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a00495ad85275950c4830234cc68ac84d}{
-void {\bfseries test\_\-sp\_\-sizeof} (void)}
-\label{cunit__stringpool__lib_8c_a00495ad85275950c4830234cc68ac84d}
-
+void \hyperlink{cunit__stringpool__lib_8c_a00495ad85275950c4830234cc68ac84d}{test\_\-sp\_\-sizeof} (void)
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a99f435a4cdeed3380e53ea11c0a47362}{
-void {\bfseries test\_\-sp\_\-free\_\-stringpool} (void)}
-\label{cunit__stringpool__lib_8c_a99f435a4cdeed3380e53ea11c0a47362}
-
+void \hyperlink{cunit__stringpool__lib_8c_a99f435a4cdeed3380e53ea11c0a47362}{test\_\-sp\_\-free\_\-stringpool} (void)
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a0ddf1224851353fc92bfbff6f499fa97}{
-int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})}
-\label{cunit__stringpool__lib_8c_a0ddf1224851353fc92bfbff6f499fa97}
-
+void \hyperlink{cunit__stringpool__lib_8c_a1d01a6ae4afcd1ec169f4dc7998ab813}{test\_\-sp\_\-strcat\_\-as\_\-struct} ()
+\begin{DoxyCompactList}\small\item\em Test per sp\_\-strcat\_\-as\_\-struct. \end{DoxyCompactList}\item 
+void \hyperlink{cunit__stringpool__lib_8c_a3b28d0c988a607f9457e96624618d6c6}{test\_\-sp\_\-save\_\-to\_\-file} (void)
+\begin{DoxyCompactList}\small\item\em Test per sp\_\-save\_\-to\_\-file. \end{DoxyCompactList}\item 
+void \hyperlink{cunit__stringpool__lib_8c_a7f017fca52e5abd55d3556d5c1895f38}{test\_\-sp\_\-load\_\-from\_\-file} (void)
+\begin{DoxyCompactList}\small\item\em Test per sp\_\-load\_\-from\_\-file. \end{DoxyCompactList}\item 
+void \hyperlink{cunit__stringpool__lib_8c_ad998697ab077be382192beab2c7e7371}{test\_\-sp\_\-bubble\_\-sort} (void)
+\begin{DoxyCompactList}\small\item\em Test per sp\_\-bubble\_\-sor. \end{DoxyCompactList}\item 
+void \hyperlink{cunit__stringpool__lib_8c_a687a9fee0821aba1d04ecb97effa7358}{test\_\-sp\_\-bin\_\-search} (void)
+\begin{DoxyCompactList}\small\item\em Test per sp\_\-bin\_\-search. \end{DoxyCompactList}\item 
+void \hyperlink{cunit__stringpool__lib_8c_aafc1aba865ad783053508bf2fec3886d}{test\_\-sp\_\-file\_\-exist\_\-create} (void)
+\begin{DoxyCompactList}\small\item\em Test per \_\-sp\_\-file\_\-exist \_\-sp\_\-file\_\-create. \end{DoxyCompactList}\item 
+void \hyperlink{cunit__stringpool__lib_8c_abb04b0327234015cb2b9eb368d28a86c}{test\_\-sp\_\-map\_\-array\_\-stringpool} (void)
+\begin{DoxyCompactList}\small\item\em Test per \_\-sp\_\-map\_\-array\_\-stringpool. \end{DoxyCompactList}\item 
+int \hyperlink{cunit__stringpool__lib_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
 \end{DoxyCompactItemize}
 \subsection*{Variabili}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{
-stringpool {\bfseries sp}}
-\label{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}
-
+\hyperlink{structstringpool}{stringpool} \hyperlink{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{sp}
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a1be08f87f6ede06b8b2cbd03924ee32b}{
-string $\ast$ {\bfseries CONST\_\-TEST\_\-STRING\_\-LOWER\_\-CASE} = NULL}
-\label{cunit__stringpool__lib_8c_a1be08f87f6ede06b8b2cbd03924ee32b}
-
+\hyperlink{structstring}{string} $\ast$ \hyperlink{cunit__stringpool__lib_8c_a1be08f87f6ede06b8b2cbd03924ee32b}{CONST\_\-TEST\_\-STRING\_\-LOWER\_\-CASE} = NULL
 \item 
-\hypertarget{cunit__stringpool__lib_8c_adf3a3e5aa1be473b644c5575259cad94}{
-string $\ast$ {\bfseries CONST\_\-TEST\_\-STRING\_\-UPPER\_\-CASE} = NULL}
-\label{cunit__stringpool__lib_8c_adf3a3e5aa1be473b644c5575259cad94}
-
+\hyperlink{structstring}{string} $\ast$ \hyperlink{cunit__stringpool__lib_8c_adf3a3e5aa1be473b644c5575259cad94}{CONST\_\-TEST\_\-STRING\_\-UPPER\_\-CASE} = NULL
 \item 
-\hypertarget{cunit__stringpool__lib_8c_a7d3d82e855eaacc2afd0fdfe29c1d81d}{
-int {\bfseries CONST\_\-TEST\_\-STRING\_\-LEN}}
-\label{cunit__stringpool__lib_8c_a7d3d82e855eaacc2afd0fdfe29c1d81d}
-
+int \hyperlink{cunit__stringpool__lib_8c_a7d3d82e855eaacc2afd0fdfe29c1d81d}{CONST\_\-TEST\_\-STRING\_\-LEN}
 \end{DoxyCompactItemize}
 
 
 \subsection{Descrizione dettagliata}
-cUnit file 
+File per il testing della libreria stringpool. \begin{DoxyDate}{Data}
+2011 
+\end{DoxyDate}
+\hypertarget{stringpool_8h_license}{}\subsection{Licenza}\label{stringpool_8h_license}
+GPLv2 \href{http://www.softwarelibero.it/gnudoc/gpl.it.txt}{\tt http://www.softwarelibero.it/gnudoc/gpl.it.txt} Per maggiori informazioni visitare il link o visualizzare il file LICENSE 
+
+\subsection{Documentazione delle funzioni}
+\hypertarget{cunit__stringpool__lib_8c_a0ddf1224851353fc92bfbff6f499fa97}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!main@{main}}
+\index{main@{main}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a0ddf1224851353fc92bfbff6f499fa97}
+\hypertarget{cunit__stringpool__lib_8c_a5b91e5ad6276dc51f560a0bb2105597e}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!suite\_\-cleanup\_\-func@{suite\_\-cleanup\_\-func}}
+\index{suite\_\-cleanup\_\-func@{suite\_\-cleanup\_\-func}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{suite\_\-cleanup\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}int suite\_\-cleanup\_\-func (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a5b91e5ad6276dc51f560a0bb2105597e}
+\hypertarget{cunit__stringpool__lib_8c_a78a44015dc0dc2ace96bebe3764bee65}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!suite\_\-init\_\-func@{suite\_\-init\_\-func}}
+\index{suite\_\-init\_\-func@{suite\_\-init\_\-func}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{suite\_\-init\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}int suite\_\-init\_\-func (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a78a44015dc0dc2ace96bebe3764bee65}
+\hypertarget{cunit__stringpool__lib_8c_a0701eb2a5f62048a23ac59e34234a259}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!suite\_\-void\_\-cleanup\_\-func@{suite\_\-void\_\-cleanup\_\-func}}
+\index{suite\_\-void\_\-cleanup\_\-func@{suite\_\-void\_\-cleanup\_\-func}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{suite\_\-void\_\-cleanup\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}int suite\_\-void\_\-cleanup\_\-func (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a0701eb2a5f62048a23ac59e34234a259}
+\hypertarget{cunit__stringpool__lib_8c_a0a8246be9bb3a2ee11cebc821777310c}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!suite\_\-void\_\-init\_\-func@{suite\_\-void\_\-init\_\-func}}
+\index{suite\_\-void\_\-init\_\-func@{suite\_\-void\_\-init\_\-func}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{suite\_\-void\_\-init\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}int suite\_\-void\_\-init\_\-func (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a0a8246be9bb3a2ee11cebc821777310c}
+\hypertarget{cunit__stringpool__lib_8c_af266927c924c79119489d99e13b79358}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-add\_\-string@{test\_\-sp\_\-add\_\-string}}
+\index{test\_\-sp\_\-add\_\-string@{test\_\-sp\_\-add\_\-string}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-add\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-add\_\-string (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_af266927c924c79119489d99e13b79358}
+\hypertarget{cunit__stringpool__lib_8c_abdec3bdc4320f341cb3c9422afae73c3}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-add\_\-string\_\-pos@{test\_\-sp\_\-add\_\-string\_\-pos}}
+\index{test\_\-sp\_\-add\_\-string\_\-pos@{test\_\-sp\_\-add\_\-string\_\-pos}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-add\_\-string\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-add\_\-string\_\-pos (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_abdec3bdc4320f341cb3c9422afae73c3}
+\hypertarget{cunit__stringpool__lib_8c_a687a9fee0821aba1d04ecb97effa7358}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-bin\_\-search@{test\_\-sp\_\-bin\_\-search}}
+\index{test\_\-sp\_\-bin\_\-search@{test\_\-sp\_\-bin\_\-search}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-bin\_\-search}]{\setlength{\rightskip}{0pt plus 5cm}test\_\-sp\_\-bin\_\-search (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a687a9fee0821aba1d04ecb97effa7358}
+
+
+Test per sp\_\-bin\_\-search. 
+
+Caso di test aggiunto per testare la ricerca binaria in concomitanza del bubble sort
+
+
+\begin{DoxyParams}{Parametri}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+void 
+\end{DoxyReturn}
+
+
+Controllo che sp sia vuoto
+
+Inserisco in ordine casuale 6 stringhe
+
+Ne rimuovo una in posizione 3, Ragusa
+
+Ricontrollo la dimensione
+
+Ordino l'array, è una specifica per il binary search
+
+Dopo l'ordinamento mi aspetto che sp sia ordinato in questo modo: Colombo Domenico Flickr Google Monaco
+
+Effettuo una prima ricerca sul valore elimnato e mi aspetto di riceve errore
+
+Controllo che le posizioni degli elementi sia quella che mi aspetto 
+
+\hypertarget{cunit__stringpool__lib_8c_ad998697ab077be382192beab2c7e7371}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-bubble\_\-sort@{test\_\-sp\_\-bubble\_\-sort}}
+\index{test\_\-sp\_\-bubble\_\-sort@{test\_\-sp\_\-bubble\_\-sort}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-bubble\_\-sort}]{\setlength{\rightskip}{0pt plus 5cm}test\_\-sp\_\-bubble\_\-sort (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_ad998697ab077be382192beab2c7e7371}
+
+
+Test per sp\_\-bubble\_\-sor. 
+
+Caso di test aggiunto per testare l'ordinamento con bubble sort conservando posizioni vuote/piene
+
+
+\begin{DoxyParams}{Parametri}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+void 
+\end{DoxyReturn}
+
+
+Dichiaro ed inizializzo un nuovo nome di file da leggere, sempre che esista
+
+Carichiamo da file e controlliamo che il numero di righe caricate corrisponda alla dimensione di sp e che sp sia della dimensione che ci aspettiamo
+
+Ho ordinato le 4 frasi con gEdit e mi aspetto che esse siano nel seguente ordine
+
+Ci aspettiamo che anche dopo l'ordinamente la posizione 3 sia NULL 
+
+\hypertarget{cunit__stringpool__lib_8c_aafc1aba865ad783053508bf2fec3886d}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-file\_\-exist\_\-create@{test\_\-sp\_\-file\_\-exist\_\-create}}
+\index{test\_\-sp\_\-file\_\-exist\_\-create@{test\_\-sp\_\-file\_\-exist\_\-create}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-file\_\-exist\_\-create}]{\setlength{\rightskip}{0pt plus 5cm}test\_\-sp\_\-file\_\-exist\_\-create (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_aafc1aba865ad783053508bf2fec3886d}
+
+
+Test per \_\-sp\_\-file\_\-exist \_\-sp\_\-file\_\-create. 
+
+Caso di test aggiunto per testare le funzioni per creare file e controllare se esite già il file
+
+
+\begin{DoxyParams}{Parametri}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+void 
+\end{DoxyReturn}
+
+
+Dichiaro e creo la variabile per il nome del file
+
+Controllo se esiste
+
+Cerco di crearlo
+
+Ricontrollo se esiste
+
+Rimuovo il file
+
+Rimuovo il file
+
+Controllo se esiste un file NULL
+
+Dichiaro un nome di file pre-\/esistenbte
+
+Controlliamo se esiste
+
+Controlliamo se possiamo sovrascriverlo 
+
+\hypertarget{cunit__stringpool__lib_8c_ace46eafb246f789bb38ac51be93d448d}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-find\_\-string@{test\_\-sp\_\-find\_\-string}}
+\index{test\_\-sp\_\-find\_\-string@{test\_\-sp\_\-find\_\-string}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-find\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-find\_\-string (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_ace46eafb246f789bb38ac51be93d448d}
+\hypertarget{cunit__stringpool__lib_8c_aea503a3cce11b440ea5fbe5495ffff68}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-free@{test\_\-sp\_\-free}}
+\index{test\_\-sp\_\-free@{test\_\-sp\_\-free}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-free (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_aea503a3cce11b440ea5fbe5495ffff68}
+\hypertarget{cunit__stringpool__lib_8c_a99f435a4cdeed3380e53ea11c0a47362}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-free\_\-stringpool@{test\_\-sp\_\-free\_\-stringpool}}
+\index{test\_\-sp\_\-free\_\-stringpool@{test\_\-sp\_\-free\_\-stringpool}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-free\_\-stringpool}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-free\_\-stringpool (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a99f435a4cdeed3380e53ea11c0a47362}
+\hypertarget{cunit__stringpool__lib_8c_a8c4715f527ad1d4f9f64f4c951f2ca60}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-get\_\-allocated\_\-size@{test\_\-sp\_\-get\_\-allocated\_\-size}}
+\index{test\_\-sp\_\-get\_\-allocated\_\-size@{test\_\-sp\_\-get\_\-allocated\_\-size}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-get\_\-allocated\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-get\_\-allocated\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a8c4715f527ad1d4f9f64f4c951f2ca60}
+\hypertarget{cunit__stringpool__lib_8c_a8961a2653c73d541390f06e88abdd4fe}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-get\_\-string@{test\_\-sp\_\-get\_\-string}}
+\index{test\_\-sp\_\-get\_\-string@{test\_\-sp\_\-get\_\-string}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-get\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-get\_\-string (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a8961a2653c73d541390f06e88abdd4fe}
+\hypertarget{cunit__stringpool__lib_8c_abd1ac4d9f80d303dd6f9d66430e80bb7}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-initialize\_\-stringpool@{test\_\-sp\_\-initialize\_\-stringpool}}
+\index{test\_\-sp\_\-initialize\_\-stringpool@{test\_\-sp\_\-initialize\_\-stringpool}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-initialize\_\-stringpool}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-initialize\_\-stringpool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_abd1ac4d9f80d303dd6f9d66430e80bb7}
+\hypertarget{cunit__stringpool__lib_8c_a5ebd133c704fbbcd804c973285ab229d}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-isempty@{test\_\-sp\_\-isempty}}
+\index{test\_\-sp\_\-isempty@{test\_\-sp\_\-isempty}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-isempty}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-isempty (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a5ebd133c704fbbcd804c973285ab229d}
+\hypertarget{cunit__stringpool__lib_8c_a69c1a2ee0a8921170ae1c53b819c3a3f}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-isfull@{test\_\-sp\_\-isfull}}
+\index{test\_\-sp\_\-isfull@{test\_\-sp\_\-isfull}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-isfull}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-isfull (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a69c1a2ee0a8921170ae1c53b819c3a3f}
+\hypertarget{cunit__stringpool__lib_8c_a7f017fca52e5abd55d3556d5c1895f38}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-load\_\-from\_\-file@{test\_\-sp\_\-load\_\-from\_\-file}}
+\index{test\_\-sp\_\-load\_\-from\_\-file@{test\_\-sp\_\-load\_\-from\_\-file}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-load\_\-from\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}test\_\-sp\_\-load\_\-from\_\-file (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a7f017fca52e5abd55d3556d5c1895f38}
+
+
+Test per sp\_\-load\_\-from\_\-file. 
+
+Caso di test aggiunto per testare il caricamento da file
+
+
+\begin{DoxyParams}{Parametri}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+void 
+\end{DoxyReturn}
+
+
+Credo la string con il nome del file da caricare, è stato creato nel test precedente
+
+Controlliamo che sp sia vuoto, riceverà in ingresso le righe del file letto
+
+Controlliamo che il caricamento ritorni il numero di righe della dimensione di sp
+
+Controllo se le stringhe caricate sono esattamente quelle che avevo scritto su file e nella loro posizione
+
+Rimuovo le stringhe da sp
+
+Controllo che sp sia vuoto
+
+Dichiaro ed inizializzo un nuovo nome di file da leggere, sempre che esista
+
+Carichiamo da file e controlliamo che il numero di righe caricate corrisponda alla dimensione di sp e che sp sia della dimensione che ci aspettiamo
+
+Controlliamo che il caricamento in posizioni non contigue sia andato a buon fine
+
+Ci aspettiam che la posizione 3 sia NULL 
+
+\hypertarget{cunit__stringpool__lib_8c_a03117506d7c71ebc5e4e28d51cf1342b}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-lower\_\-case@{test\_\-sp\_\-lower\_\-case}}
+\index{test\_\-sp\_\-lower\_\-case@{test\_\-sp\_\-lower\_\-case}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-lower\_\-case}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-lower\_\-case (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a03117506d7c71ebc5e4e28d51cf1342b}
+\hypertarget{cunit__stringpool__lib_8c_abb04b0327234015cb2b9eb368d28a86c}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-map\_\-array\_\-stringpool@{test\_\-sp\_\-map\_\-array\_\-stringpool}}
+\index{test\_\-sp\_\-map\_\-array\_\-stringpool@{test\_\-sp\_\-map\_\-array\_\-stringpool}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-map\_\-array\_\-stringpool}]{\setlength{\rightskip}{0pt plus 5cm}test\_\-sp\_\-map\_\-array\_\-stringpool (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_abb04b0327234015cb2b9eb368d28a86c}
+
+
+Test per \_\-sp\_\-map\_\-array\_\-stringpool. 
+
+Caso di test aggiunto per testare la creazione della mappa di stringpool
+
+
+\begin{DoxyParams}{Parametri}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+void 
+\end{DoxyReturn}
+
+
+Controllo che sp sia vuoto
+
+Inseriamo a salti alcuni elemnti in sp
+
+Ricontrollo la dimensione
+
+Controlleremo in modo \char`\"{}consecutivo\char`\"{} le posizioni sp ignorando le posizoni reali, Controllando passo per passo elementi consecuitivi, il primo elemento, il secondo ecc...
+
+Il termine Drupal è in posizione reale 0 ed in posizione virtuale map\_\-array 0. In entrambi i casi è il primo elemento.
+
+Il termine Django è in posizione reale 2 ed in posizione virtuale map\_\-array 1. In entrambi i casi è il Secondo elemento.
+
+Il termine Wordpress è in posizione reale 3 ed in posizione virtuale map\_\-array 2. In entrambi i casi è il Terzo elemento.
+
+Il termine Php è in posizione reale 5 ed in posizione virtuale map\_\-array 3. In entrambi i casi è il Quarto elemento.
+
+Il termine Magento è in posizione reale 7 ed in posizione virtuale map\_\-array 4. In entrambi i casi è il Quinto elemento.
+
+Il termine Python è in posizione reale 8 ed in posizione virtuale map\_\-array 5. In entrambi i casi è il Sesto elemento.
+
+Controlliamo immettendo direttamente le posizioni reali 
+
+\hypertarget{cunit__stringpool__lib_8c_a63e0f7efedf84dc6d138f85b9239dd43}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-new\_\-empty\_\-string@{test\_\-sp\_\-new\_\-empty\_\-string}}
+\index{test\_\-sp\_\-new\_\-empty\_\-string@{test\_\-sp\_\-new\_\-empty\_\-string}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-new\_\-empty\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-new\_\-empty\_\-string (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a63e0f7efedf84dc6d138f85b9239dd43}
+\hypertarget{cunit__stringpool__lib_8c_a0412719d05e9f43fb3e16eeca5fcd634}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-new\_\-string@{test\_\-sp\_\-new\_\-string}}
+\index{test\_\-sp\_\-new\_\-string@{test\_\-sp\_\-new\_\-string}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-new\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-new\_\-string (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a0412719d05e9f43fb3e16eeca5fcd634}
+\hypertarget{cunit__stringpool__lib_8c_abfb3db89f8c9b9fd6cf1db4883379c4a}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-remove\_\-string@{test\_\-sp\_\-remove\_\-string}}
+\index{test\_\-sp\_\-remove\_\-string@{test\_\-sp\_\-remove\_\-string}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-remove\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-remove\_\-string (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_abfb3db89f8c9b9fd6cf1db4883379c4a}
+\hypertarget{cunit__stringpool__lib_8c_a13bbd8b3128d03461bc6002d8af03653}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-replace\_\-string@{test\_\-sp\_\-replace\_\-string}}
+\index{test\_\-sp\_\-replace\_\-string@{test\_\-sp\_\-replace\_\-string}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-replace\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-replace\_\-string (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a13bbd8b3128d03461bc6002d8af03653}
+\hypertarget{cunit__stringpool__lib_8c_a3b28d0c988a607f9457e96624618d6c6}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-save\_\-to\_\-file@{test\_\-sp\_\-save\_\-to\_\-file}}
+\index{test\_\-sp\_\-save\_\-to\_\-file@{test\_\-sp\_\-save\_\-to\_\-file}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-save\_\-to\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}test\_\-sp\_\-save\_\-to\_\-file (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a3b28d0c988a607f9457e96624618d6c6}
+
+
+Test per sp\_\-save\_\-to\_\-file. 
+
+Caso di test aggiunto per testare il salvataggio su file 
+\begin{DoxyParams}{Parametri}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+void 
+\end{DoxyReturn}
+
+
+Dichiaro il puntare a string per il nome dle file
+
+Ci assicuriamo che sia vuoto sp
+
+Aggiungiamo 5 string a sp, possibilmente con spazi per verificare se la scrittura di frasi con spazi funziona
+
+Creiamo uno spazio vuoto eliminando la string in posizione 3
+
+Controlliamo se in prima posizine abbimo il nome del file
+
+Controlliamo che sia di dimensione 4
+
+Controlliamo che la dimensione di sp corrisponda al numero di righe scritte
+
+Rimuoviamo le stringhe scritte
+
+Controlliamo che sp sia vuoto
+
+Creiamo una stringa con il nome del file senza metterlo in sp
+
+Aggiungiamo le stringhe in sp, miste con spazi, numeri e simboli speciali
+
+Verifichiamo la dimensione di sp
+
+Verifichiamo che la dimensioni di sp corrisponda al numero di righe scritte
+
+Liberiamo sp dalle righe scritte, svuotandolo
+
+Verifichiamo che sia vuoto
+
+Scriviamo un file vuoto
+
+Non dovrebbe scrivere nessun file e ritornare errore -\/1 a causa del nome sbagliato del file
+
+Non dovrebbe scrivere nessun file e ritornare errore -\/1 a causa del nome sbagliato del file
+
+Non dovrebbe scrivere nessun file e ritornare errore -\/1 a causa del puntatore a sp NULL 
+
+\hypertarget{cunit__stringpool__lib_8c_a00495ad85275950c4830234cc68ac84d}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-sizeof@{test\_\-sp\_\-sizeof}}
+\index{test\_\-sp\_\-sizeof@{test\_\-sp\_\-sizeof}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-sizeof}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-sizeof (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a00495ad85275950c4830234cc68ac84d}
+\hypertarget{cunit__stringpool__lib_8c_ac70d777cc30992e127ad5558ca5f3fd4}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-strcat@{test\_\-sp\_\-strcat}}
+\index{test\_\-sp\_\-strcat@{test\_\-sp\_\-strcat}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-strcat}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-strcat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_ac70d777cc30992e127ad5558ca5f3fd4}
+\hypertarget{cunit__stringpool__lib_8c_a1d01a6ae4afcd1ec169f4dc7998ab813}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-strcat\_\-as\_\-struct@{test\_\-sp\_\-strcat\_\-as\_\-struct}}
+\index{test\_\-sp\_\-strcat\_\-as\_\-struct@{test\_\-sp\_\-strcat\_\-as\_\-struct}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-strcat\_\-as\_\-struct}]{\setlength{\rightskip}{0pt plus 5cm}test\_\-sp\_\-strcat\_\-as\_\-struct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a1d01a6ae4afcd1ec169f4dc7998ab813}
+
+
+Test per sp\_\-strcat\_\-as\_\-struct. 
+
+Caso di test aggiunto in string\_\-manipulation 
+\begin{DoxyParams}{Parametri}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+void 
+\end{DoxyReturn}
+\hypertarget{cunit__stringpool__lib_8c_a2b53839d9b5625d5c95d23eed9ac72bd}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-strcmp@{test\_\-sp\_\-strcmp}}
+\index{test\_\-sp\_\-strcmp@{test\_\-sp\_\-strcmp}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-strcmp}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-strcmp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a2b53839d9b5625d5c95d23eed9ac72bd}
+\hypertarget{cunit__stringpool__lib_8c_aadc58d980b0879d14269a8373c11f960}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-strcpy@{test\_\-sp\_\-strcpy}}
+\index{test\_\-sp\_\-strcpy@{test\_\-sp\_\-strcpy}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-strcpy}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-strcpy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_aadc58d980b0879d14269a8373c11f960}
+\hypertarget{cunit__stringpool__lib_8c_a2951f0443cfada9b6bbc387eff9315de}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-strlen@{test\_\-sp\_\-strlen}}
+\index{test\_\-sp\_\-strlen@{test\_\-sp\_\-strlen}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-strlen}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-strlen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_a2951f0443cfada9b6bbc387eff9315de}
+\hypertarget{cunit__stringpool__lib_8c_acc2f8593e9e4f9cc5806e8825fff2ad4}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!test\_\-sp\_\-upper\_\-case@{test\_\-sp\_\-upper\_\-case}}
+\index{test\_\-sp\_\-upper\_\-case@{test\_\-sp\_\-upper\_\-case}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{test\_\-sp\_\-upper\_\-case}]{\setlength{\rightskip}{0pt plus 5cm}void test\_\-sp\_\-upper\_\-case (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{cunit__stringpool__lib_8c_acc2f8593e9e4f9cc5806e8825fff2ad4}
+
+
+\subsection{Documentazione delle variabili}
+\hypertarget{cunit__stringpool__lib_8c_a7d3d82e855eaacc2afd0fdfe29c1d81d}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!CONST\_\-TEST\_\-STRING\_\-LEN@{CONST\_\-TEST\_\-STRING\_\-LEN}}
+\index{CONST\_\-TEST\_\-STRING\_\-LEN@{CONST\_\-TEST\_\-STRING\_\-LEN}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{CONST\_\-TEST\_\-STRING\_\-LEN}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf CONST\_\-TEST\_\-STRING\_\-LEN}}}
+\label{cunit__stringpool__lib_8c_a7d3d82e855eaacc2afd0fdfe29c1d81d}
+\hypertarget{cunit__stringpool__lib_8c_a1be08f87f6ede06b8b2cbd03924ee32b}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!CONST\_\-TEST\_\-STRING\_\-LOWER\_\-CASE@{CONST\_\-TEST\_\-STRING\_\-LOWER\_\-CASE}}
+\index{CONST\_\-TEST\_\-STRING\_\-LOWER\_\-CASE@{CONST\_\-TEST\_\-STRING\_\-LOWER\_\-CASE}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{CONST\_\-TEST\_\-STRING\_\-LOWER\_\-CASE}]{\setlength{\rightskip}{0pt plus 5cm}{\bf string}$\ast$ {\bf CONST\_\-TEST\_\-STRING\_\-LOWER\_\-CASE} = NULL}}
+\label{cunit__stringpool__lib_8c_a1be08f87f6ede06b8b2cbd03924ee32b}
+\hypertarget{cunit__stringpool__lib_8c_adf3a3e5aa1be473b644c5575259cad94}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!CONST\_\-TEST\_\-STRING\_\-UPPER\_\-CASE@{CONST\_\-TEST\_\-STRING\_\-UPPER\_\-CASE}}
+\index{CONST\_\-TEST\_\-STRING\_\-UPPER\_\-CASE@{CONST\_\-TEST\_\-STRING\_\-UPPER\_\-CASE}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{CONST\_\-TEST\_\-STRING\_\-UPPER\_\-CASE}]{\setlength{\rightskip}{0pt plus 5cm}{\bf string}$\ast$ {\bf CONST\_\-TEST\_\-STRING\_\-UPPER\_\-CASE} = NULL}}
+\label{cunit__stringpool__lib_8c_adf3a3e5aa1be473b644c5575259cad94}
+\hypertarget{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{
+\index{cunit\_\-stringpool\_\-lib.c@{cunit\_\-stringpool\_\-lib.c}!sp@{sp}}
+\index{sp@{sp}!cunit_stringpool_lib.c@{cunit\_\-stringpool\_\-lib.c}}
+\subsubsection[{sp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf stringpool} {\bf sp}}}
+\label{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}

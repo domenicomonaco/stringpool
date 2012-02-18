@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="_release_2spstring_8d" kind="file">
+    <compoundname>spstring.d</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">spstring.d<sp/>spstring.o:<sp/>../spstring.c<sp/>../</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">.h<sp/>../spstring.h<sp/>\</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"><sp/><sp/>../<ref refid="structstringpool" kindref="compound">stringpool</ref>.h</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">../</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">.h:</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">../spstring.h:</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">../<ref refid="structstringpool" kindref="compound">stringpool</ref>.h:</highlight></codeline>
+    </programlisting>
+    <location file="/Users/macbook/Documents/workspace-eclipse/Library/Release/spstring.d"/>
+  </compounddef>
+</doxygen>

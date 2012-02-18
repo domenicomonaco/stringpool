@@ -1,0 +1,112 @@
+\hypertarget{stringpool_8h}{
+\section{Riferimenti per il file Library/stringpool.h}
+\label{stringpool_8h}\index{Library/stringpool.h@{Library/stringpool.h}}
+}
+
+
+Header per tipi di dati stringpool.  
+
+
+\subsection*{Composti}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structstring}{string}
+\item 
+struct \hyperlink{structstringpool}{stringpool}
+\end{DoxyCompactItemize}
+\subsection*{Definizioni}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{stringpool_8h_a95a9e5b28e59f711a67f326b868a36f9}{STRINGPOOL\_\-H\_\-}
+\item 
+\#define \hyperlink{stringpool_8h_a20af6dd1f5a589e2a11eb37c1ea3ee96}{UNUSED\_\-SLOT}~0
+\item 
+\#define \hyperlink{stringpool_8h_a80b8e6b0b534147058fcfc1187079064}{USED\_\-SLOT}~1
+\item 
+\#define \hyperlink{stringpool_8h_aae221160aeb62c7ea119f68a5a79062e}{EMPTY\_\-STRING\_\-POOL}~0
+\item 
+\#define \hyperlink{stringpool_8h_af4c76709286f016c09a7f99a070e6a5e}{MAX\_\-DIM\_\-STRING\_\-POOL}~10
+\item 
+\#define \hyperlink{stringpool_8h_a402d2a2201ce976dc56cc87fe4e657da}{SIZE\_\-STRING\_\-STRUCT}~1
+\item 
+\#define \hyperlink{stringpool_8h_a5b593cfbd4a9d757bacf4df235240ce1}{MAX\_\-CHAR\_\-STRING\_\-LOAD\_\-FROM\_\-FILE}~255
+\item 
+\#define \hyperlink{stringpool_8h_a0eb0be35c4612957306af850919f865d}{PATTERN\_\-READ\_\-WRITE\_\-LINE}~\char`\"{}\%d , \%d , \%s ;$\backslash$n\char`\"{}
+\item 
+\#define \hyperlink{stringpool_8h_a8faae73aa34bbae0ef857459f165cc44}{PATTERN\_\-READ\_\-WRITE\_\-START\_\-LINE\_\-SHORT}~\char`\"{}\%d , \%d ,\char`\"{}
+\item 
+\#define \hyperlink{stringpool_8h_ac01ee82d919f7fa4aa02d04bf97a9bbd}{PATTERN\_\-READ\_\-WRITE\_\-END\_\-LINE\_\-SHORT}~\char`\"{} ;$\backslash$n\char`\"{}
+\item 
+\#define \hyperlink{stringpool_8h_a4be697a4e0e76af4dc284f700e920678}{PATTERN\_\-READ\_\-WRITE\_\-INIT}~\char`\"{}\%d ;$\backslash$n\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrizione dettagliata}
+Header per tipi di dati stringpool. Definizioni di variabili e tipi di dato per la libreria stringpool
+
+\begin{DoxyAuthor}{Autore}
+Domenico Monaco, \href{mailto:domenico.monaco@kiuz.it}{\tt domenico.monaco@kiuz.it} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+2011 
+\end{DoxyDate}
+\hypertarget{stringpool_8h_license}{}\subsection{Licenza}\label{stringpool_8h_license}
+GPLv2 \href{http://www.softwarelibero.it/gnudoc/gpl.it.txt}{\tt http://www.softwarelibero.it/gnudoc/gpl.it.txt} Per maggiori informazioni visitare il link o visualizzare il file LICENSE 
+
+\subsection{Documentazione delle definizioni}
+\hypertarget{stringpool_8h_aae221160aeb62c7ea119f68a5a79062e}{
+\index{stringpool.h@{stringpool.h}!EMPTY\_\-STRING\_\-POOL@{EMPTY\_\-STRING\_\-POOL}}
+\index{EMPTY\_\-STRING\_\-POOL@{EMPTY\_\-STRING\_\-POOL}!stringpool.h@{stringpool.h}}
+\subsubsection[{EMPTY\_\-STRING\_\-POOL}]{\setlength{\rightskip}{0pt plus 5cm}\#define EMPTY\_\-STRING\_\-POOL~0}}
+\label{stringpool_8h_aae221160aeb62c7ea119f68a5a79062e}
+Standard per l'identificazione del numero di stringhe contenute in stringpool per identificarlo come Vuoto. Deve contenere interi, si consiglia EMPTY\_\-STRING\_\-POOL 0. \hypertarget{stringpool_8h_a5b593cfbd4a9d757bacf4df235240ce1}{
+\index{stringpool.h@{stringpool.h}!MAX\_\-CHAR\_\-STRING\_\-LOAD\_\-FROM\_\-FILE@{MAX\_\-CHAR\_\-STRING\_\-LOAD\_\-FROM\_\-FILE}}
+\index{MAX\_\-CHAR\_\-STRING\_\-LOAD\_\-FROM\_\-FILE@{MAX\_\-CHAR\_\-STRING\_\-LOAD\_\-FROM\_\-FILE}!stringpool.h@{stringpool.h}}
+\subsubsection[{MAX\_\-CHAR\_\-STRING\_\-LOAD\_\-FROM\_\-FILE}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAX\_\-CHAR\_\-STRING\_\-LOAD\_\-FROM\_\-FILE~255}}
+\label{stringpool_8h_a5b593cfbd4a9d757bacf4df235240ce1}
+Valore massimo per l'allocazione dell'array di memorizzazione della stringa da file \hypertarget{stringpool_8h_af4c76709286f016c09a7f99a070e6a5e}{
+\index{stringpool.h@{stringpool.h}!MAX\_\-DIM\_\-STRING\_\-POOL@{MAX\_\-DIM\_\-STRING\_\-POOL}}
+\index{MAX\_\-DIM\_\-STRING\_\-POOL@{MAX\_\-DIM\_\-STRING\_\-POOL}!stringpool.h@{stringpool.h}}
+\subsubsection[{MAX\_\-DIM\_\-STRING\_\-POOL}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAX\_\-DIM\_\-STRING\_\-POOL~10}}
+\label{stringpool_8h_af4c76709286f016c09a7f99a070e6a5e}
+Numero massimo di stringhe che stringpool pu˜ contenere. Identifica anche lo stato di stringpool Pieno. Deve contenere un'intero maggiore di 0, si consiglia MAX\_\-DIM\_\-STRING\_\-POOL 10. \hypertarget{stringpool_8h_ac01ee82d919f7fa4aa02d04bf97a9bbd}{
+\index{stringpool.h@{stringpool.h}!PATTERN\_\-READ\_\-WRITE\_\-END\_\-LINE\_\-SHORT@{PATTERN\_\-READ\_\-WRITE\_\-END\_\-LINE\_\-SHORT}}
+\index{PATTERN\_\-READ\_\-WRITE\_\-END\_\-LINE\_\-SHORT@{PATTERN\_\-READ\_\-WRITE\_\-END\_\-LINE\_\-SHORT}!stringpool.h@{stringpool.h}}
+\subsubsection[{PATTERN\_\-READ\_\-WRITE\_\-END\_\-LINE\_\-SHORT}]{\setlength{\rightskip}{0pt plus 5cm}\#define PATTERN\_\-READ\_\-WRITE\_\-END\_\-LINE\_\-SHORT~\char`\"{} ;$\backslash$n\char`\"{}}}
+\label{stringpool_8h_ac01ee82d919f7fa4aa02d04bf97a9bbd}
+Pattern parziale finale per la scirttura su file \hypertarget{stringpool_8h_a4be697a4e0e76af4dc284f700e920678}{
+\index{stringpool.h@{stringpool.h}!PATTERN\_\-READ\_\-WRITE\_\-INIT@{PATTERN\_\-READ\_\-WRITE\_\-INIT}}
+\index{PATTERN\_\-READ\_\-WRITE\_\-INIT@{PATTERN\_\-READ\_\-WRITE\_\-INIT}!stringpool.h@{stringpool.h}}
+\subsubsection[{PATTERN\_\-READ\_\-WRITE\_\-INIT}]{\setlength{\rightskip}{0pt plus 5cm}\#define PATTERN\_\-READ\_\-WRITE\_\-INIT~\char`\"{}\%d ;$\backslash$n\char`\"{}}}
+\label{stringpool_8h_a4be697a4e0e76af4dc284f700e920678}
+Pattern completo per la lettura/scrittura della riga iniziale su file \hypertarget{stringpool_8h_a0eb0be35c4612957306af850919f865d}{
+\index{stringpool.h@{stringpool.h}!PATTERN\_\-READ\_\-WRITE\_\-LINE@{PATTERN\_\-READ\_\-WRITE\_\-LINE}}
+\index{PATTERN\_\-READ\_\-WRITE\_\-LINE@{PATTERN\_\-READ\_\-WRITE\_\-LINE}!stringpool.h@{stringpool.h}}
+\subsubsection[{PATTERN\_\-READ\_\-WRITE\_\-LINE}]{\setlength{\rightskip}{0pt plus 5cm}\#define PATTERN\_\-READ\_\-WRITE\_\-LINE~\char`\"{}\%d , \%d , \%s ;$\backslash$n\char`\"{}}}
+\label{stringpool_8h_a0eb0be35c4612957306af850919f865d}
+Pattern completo per la lettura/scrittura su file \hypertarget{stringpool_8h_a8faae73aa34bbae0ef857459f165cc44}{
+\index{stringpool.h@{stringpool.h}!PATTERN\_\-READ\_\-WRITE\_\-START\_\-LINE\_\-SHORT@{PATTERN\_\-READ\_\-WRITE\_\-START\_\-LINE\_\-SHORT}}
+\index{PATTERN\_\-READ\_\-WRITE\_\-START\_\-LINE\_\-SHORT@{PATTERN\_\-READ\_\-WRITE\_\-START\_\-LINE\_\-SHORT}!stringpool.h@{stringpool.h}}
+\subsubsection[{PATTERN\_\-READ\_\-WRITE\_\-START\_\-LINE\_\-SHORT}]{\setlength{\rightskip}{0pt plus 5cm}\#define PATTERN\_\-READ\_\-WRITE\_\-START\_\-LINE\_\-SHORT~\char`\"{}\%d , \%d ,\char`\"{}}}
+\label{stringpool_8h_a8faae73aa34bbae0ef857459f165cc44}
+Pattern parziale iniziale per la scrittura su file \hypertarget{stringpool_8h_a402d2a2201ce976dc56cc87fe4e657da}{
+\index{stringpool.h@{stringpool.h}!SIZE\_\-STRING\_\-STRUCT@{SIZE\_\-STRING\_\-STRUCT}}
+\index{SIZE\_\-STRING\_\-STRUCT@{SIZE\_\-STRING\_\-STRUCT}!stringpool.h@{stringpool.h}}
+\subsubsection[{SIZE\_\-STRING\_\-STRUCT}]{\setlength{\rightskip}{0pt plus 5cm}\#define SIZE\_\-STRING\_\-STRUCT~1}}
+\label{stringpool_8h_a402d2a2201ce976dc56cc87fe4e657da}
+Dimensione di base per l'allocazione della struttura string \hypertarget{stringpool_8h_a95a9e5b28e59f711a67f326b868a36f9}{
+\index{stringpool.h@{stringpool.h}!STRINGPOOL\_\-H\_\-@{STRINGPOOL\_\-H\_\-}}
+\index{STRINGPOOL\_\-H\_\-@{STRINGPOOL\_\-H\_\-}!stringpool.h@{stringpool.h}}
+\subsubsection[{STRINGPOOL\_\-H\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\#define STRINGPOOL\_\-H\_\-}}
+\label{stringpool_8h_a95a9e5b28e59f711a67f326b868a36f9}
+Impedisce inclusioni multiple \hypertarget{stringpool_8h_a20af6dd1f5a589e2a11eb37c1ea3ee96}{
+\index{stringpool.h@{stringpool.h}!UNUSED\_\-SLOT@{UNUSED\_\-SLOT}}
+\index{UNUSED\_\-SLOT@{UNUSED\_\-SLOT}!stringpool.h@{stringpool.h}}
+\subsubsection[{UNUSED\_\-SLOT}]{\setlength{\rightskip}{0pt plus 5cm}\#define UNUSED\_\-SLOT~0}}
+\label{stringpool_8h_a20af6dd1f5a589e2a11eb37c1ea3ee96}
+Standard per l'identificazione degli slot Liberi Deve contenere interi, si consiglia UNUSED\_\-SLOT 0 \hypertarget{stringpool_8h_a80b8e6b0b534147058fcfc1187079064}{
+\index{stringpool.h@{stringpool.h}!USED\_\-SLOT@{USED\_\-SLOT}}
+\index{USED\_\-SLOT@{USED\_\-SLOT}!stringpool.h@{stringpool.h}}
+\subsubsection[{USED\_\-SLOT}]{\setlength{\rightskip}{0pt plus 5cm}\#define USED\_\-SLOT~1}}
+\label{stringpool_8h_a80b8e6b0b534147058fcfc1187079064}
+Standard per l'identificazione degli slot Occupati Deve contenere interi, si consiglia USED\_\-SLOT 1 

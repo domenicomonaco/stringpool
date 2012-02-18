@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>StringPool:  File sorgente stringpool/src/bool.h</title>
+<title>Stringpool:  File sorgente Library/bool.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -13,14 +13,51 @@
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">StringPool&#160;<span id="projectnumber">stringpool</span></div>
-   <div id="projectbrief">StringPool</div>
+   <div id="projectname">Stringpool&#160;<span id="projectnumber">1.0</span></div>
+   <div id="projectbrief">Libreria Stringpool - Domenico Monaco - 2011</div>
   </td>
  </tr>
  </tbody>
@@ -57,24 +94,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
   </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">stringpool/src/bool.h</div>  </div>
+<div class="title">Library/bool.h</div>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment"> * @filename: boole.h</span>
-<a name="l00003"></a>00003 <span class="comment"> * @author: macbook</span>
-<a name="l00004"></a>00004 <span class="comment"> * @rev: 0.1</span>
-<a name="l00005"></a>00005 <span class="comment"> * @license: GPLV2</span>
-<a name="l00006"></a>00006 <span class="comment"> * @date: 16/mag/2011</span>
-<a name="l00007"></a>00007 <span class="comment"> * @desc: </span>
-<a name="l00008"></a>00008 <span class="comment"> */</span>
-<a name="l00009"></a>00009 
-<a name="l00010"></a>00010 <span class="preprocessor">#ifndef BOOLE_H_</span>
-<a name="l00011"></a>00011 <span class="preprocessor"></span><span class="preprocessor">#define BOOLE_H_</span>
-<a name="l00012"></a>00012 <span class="preprocessor"></span>
-<a name="l00013"></a>00013 <span class="keyword">typedef</span> <span class="keyword">enum</span> {FALSE = 0, TRUE = 1} boolean;
-<a name="l00014"></a>00014 
-<a name="l00015"></a>00015 <span class="preprocessor">#endif </span><span class="comment">/* BOOLE_H_ */</span>
+<a href="bool_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00011"></a>00011 <span class="preprocessor">#ifndef BOOLE_H_</span>
+<a name="l00012"></a><a class="code" href="bool_8h.html#a749658f1eed84e1a4035adaf384252e0">00012</a> <span class="preprocessor"></span><span class="preprocessor">#define BOOLE_H_ </span>
+<a name="l00019"></a><a class="code" href="bool_8h.html#a56a087515036f9d49426777667d056a7">00019</a> <span class="preprocessor">typedef enum {</span>
+<a name="l00020"></a><a class="code" href="bool_8h.html#a56a087515036f9d49426777667d056a7aa1e095cc966dbecf6a0d8aad75348d1a">00020</a> <span class="preprocessor"></span> <a class="code" href="bool_8h.html#a56a087515036f9d49426777667d056a7aa1e095cc966dbecf6a0d8aad75348d1a">FALSE</a> = 0, 
+<a name="l00021"></a><a class="code" href="bool_8h.html#a56a087515036f9d49426777667d056a7aa82764c3079aea4e60c80e45befbb839">00021</a>  <a class="code" href="bool_8h.html#a56a087515036f9d49426777667d056a7aa82764c3079aea4e60c80e45befbb839">TRUE</a> = 1 
+<a name="l00022"></a>00022 } <a class="code" href="bool_8h.html#a56a087515036f9d49426777667d056a7" title="Tipo di dato non primitivo boolean.">boolean</a>;
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 <span class="preprocessor">#endif </span><span class="comment">/* END BOOLE_H_ */</span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -82,7 +113,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Definizioni</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,7 +122,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generato Mar 17 Mag 2011 08:08:06 per StringPool da&#160;
+<hr class="footer"/><address class="footer"><small>Generato Lun 30 Mag 2011 10:09:24 per Stringpool da&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
 </body>

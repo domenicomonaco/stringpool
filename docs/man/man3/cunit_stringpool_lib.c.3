@@ -1,10 +1,10 @@
-.TH "cunit_stringpool_lib/src/cunit_stringpool_lib.c" 3 "Lun 16 Mag 2011" "Version stringpool" "StringPool" \" -*- nroff -*-
+.TH "cunit_stringpool_lib/src/cunit_stringpool_lib.c" 3 "Lun 30 Mag 2011" "Version 1.0" "Stringpool" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 cunit_stringpool_lib/src/cunit_stringpool_lib.c \- 
 .PP
-cUnit file  
+File per il testing della libreria stringpool.  
 
 .SH SYNOPSIS
 .br
@@ -15,11 +15,15 @@ cUnit file
 .br
 \fC#include <string.h>\fP
 .br
+\fC#include <stddef.h>\fP
+.br
 \fC#include 'CUnit/Basic.h'\fP
 .br
-\fC#include 'spstring.h'\fP
-.br
 \fC#include 'bool.h'\fP
+.br
+\fC#include 'stringpool.h'\fP
+.br
+\fC#include 'spstring.h'\fP
 .br
 
 .SS "Funzioni"
@@ -101,6 +105,34 @@ cUnit file
 .RI "void \fBtest_sp_free_stringpool\fP (void)"
 .br
 .ti -1c
+.RI "void \fBtest_sp_strcat_as_struct\fP ()"
+.br
+.RI "\fITest per sp_strcat_as_struct. \fP"
+.ti -1c
+.RI "void \fBtest_sp_save_to_file\fP (void)"
+.br
+.RI "\fITest per sp_save_to_file. \fP"
+.ti -1c
+.RI "void \fBtest_sp_load_from_file\fP (void)"
+.br
+.RI "\fITest per sp_load_from_file. \fP"
+.ti -1c
+.RI "void \fBtest_sp_bubble_sort\fP (void)"
+.br
+.RI "\fITest per sp_bubble_sor. \fP"
+.ti -1c
+.RI "void \fBtest_sp_bin_search\fP (void)"
+.br
+.RI "\fITest per sp_bin_search. \fP"
+.ti -1c
+.RI "void \fBtest_sp_file_exist_create\fP (void)"
+.br
+.RI "\fITest per _sp_file_exist _sp_file_create. \fP"
+.ti -1c
+.RI "void \fBtest_sp_map_array_stringpool\fP (void)"
+.br
+.RI "\fITest per _sp_map_array_stringpool. \fP"
+.ti -1c
 .RI "int \fBmain\fP (int argc, char *argv[])"
 .br
 .in -1c
@@ -108,13 +140,13 @@ cUnit file
 
 .in +1c
 .ti -1c
-.RI "stringpool \fBsp\fP"
+.RI "\fBstringpool\fP \fBsp\fP"
 .br
 .ti -1c
-.RI "string * \fBCONST_TEST_STRING_LOWER_CASE\fP = NULL"
+.RI "\fBstring\fP * \fBCONST_TEST_STRING_LOWER_CASE\fP = NULL"
 .br
 .ti -1c
-.RI "string * \fBCONST_TEST_STRING_UPPER_CASE\fP = NULL"
+.RI "\fBstring\fP * \fBCONST_TEST_STRING_UPPER_CASE\fP = NULL"
 .br
 .ti -1c
 .RI "int \fBCONST_TEST_STRING_LEN\fP"
@@ -122,9 +154,279 @@ cUnit file
 .in -1c
 .SH "Descrizione dettagliata"
 .PP 
-cUnit file 
+File per il testing della libreria stringpool. 
 
+\fBData:\fP
+.RS 4
+2011 
+.RE
+.PP
+.SH "Licenza"
+.PP
+GPLv2 http://www.softwarelibero.it/gnudoc/gpl.it.txt Per maggiori informazioni visitare il link o visualizzare il file LICENSE 
+.SH "Documentazione delle funzioni"
+.PP 
+.SS "int main (intargc, char *argv[])"
+.SS "int suite_cleanup_func (void)"
+.SS "int suite_init_func (void)"
+.SS "int suite_void_cleanup_func (void)"
+.SS "int suite_void_init_func (void)"
+.SS "void test_sp_add_string (void)"
+.SS "void test_sp_add_string_pos (void)"
+.SS "test_sp_bin_search (void)"
+.PP
+Test per sp_bin_search. Caso di test aggiunto per testare la ricerca binaria in concomitanza del bubble sort
+.PP
+\fBParametri:\fP
+.RS 4
+\fIvoid\fP 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+void 
+.RE
+.PP
 
+.PP
+Controllo che sp sia vuoto
+.PP
+Inserisco in ordine casuale 6 stringhe
+.PP
+Ne rimuovo una in posizione 3, Ragusa
+.PP
+Ricontrollo la dimensione
+.PP
+Ordino l'array, è una specifica per il binary search
+.PP
+Dopo l'ordinamento mi aspetto che sp sia ordinato in questo modo: Colombo Domenico Flickr Google Monaco
+.PP
+Effettuo una prima ricerca sul valore elimnato e mi aspetto di riceve errore
+.PP
+Controllo che le posizioni degli elementi sia quella che mi aspetto 
+.SS "test_sp_bubble_sort (void)"
+.PP
+Test per sp_bubble_sor. Caso di test aggiunto per testare l'ordinamento con bubble sort conservando posizioni vuote/piene
+.PP
+\fBParametri:\fP
+.RS 4
+\fIvoid\fP 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.PP
+Dichiaro ed inizializzo un nuovo nome di file da leggere, sempre che esista
+.PP
+Carichiamo da file e controlliamo che il numero di righe caricate corrisponda alla dimensione di sp e che sp sia della dimensione che ci aspettiamo
+.PP
+Ho ordinato le 4 frasi con gEdit e mi aspetto che esse siano nel seguente ordine
+.PP
+Ci aspettiamo che anche dopo l'ordinamente la posizione 3 sia NULL 
+.SS "test_sp_file_exist_create (void)"
+.PP
+Test per _sp_file_exist _sp_file_create. Caso di test aggiunto per testare le funzioni per creare file e controllare se esite già il file
+.PP
+\fBParametri:\fP
+.RS 4
+\fIvoid\fP 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.PP
+Dichiaro e creo la variabile per il nome del file
+.PP
+Controllo se esiste
+.PP
+Cerco di crearlo
+.PP
+Ricontrollo se esiste
+.PP
+Rimuovo il file
+.PP
+Rimuovo il file
+.PP
+Controllo se esiste un file NULL
+.PP
+Dichiaro un nome di file pre-esistenbte
+.PP
+Controlliamo se esiste
+.PP
+Controlliamo se possiamo sovrascriverlo 
+.SS "void test_sp_find_string (void)"
+.SS "void test_sp_free ()"
+.SS "void test_sp_free_stringpool (void)"
+.SS "void test_sp_get_allocated_size ()"
+.SS "void test_sp_get_string (void)"
+.SS "void test_sp_initialize_stringpool ()"
+.SS "void test_sp_isempty (void)"
+.SS "void test_sp_isfull (void)"
+.SS "test_sp_load_from_file (void)"
+.PP
+Test per sp_load_from_file. Caso di test aggiunto per testare il caricamento da file
+.PP
+\fBParametri:\fP
+.RS 4
+\fIvoid\fP 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.PP
+Credo la string con il nome del file da caricare, è stato creato nel test precedente
+.PP
+Controlliamo che sp sia vuoto, riceverà in ingresso le righe del file letto
+.PP
+Controlliamo che il caricamento ritorni il numero di righe della dimensione di sp
+.PP
+Controllo se le stringhe caricate sono esattamente quelle che avevo scritto su file e nella loro posizione
+.PP
+Rimuovo le stringhe da sp
+.PP
+Controllo che sp sia vuoto
+.PP
+Dichiaro ed inizializzo un nuovo nome di file da leggere, sempre che esista
+.PP
+Carichiamo da file e controlliamo che il numero di righe caricate corrisponda alla dimensione di sp e che sp sia della dimensione che ci aspettiamo
+.PP
+Controlliamo che il caricamento in posizioni non contigue sia andato a buon fine
+.PP
+Ci aspettiam che la posizione 3 sia NULL 
+.SS "void test_sp_lower_case ()"
+.SS "test_sp_map_array_stringpool (void)"
+.PP
+Test per _sp_map_array_stringpool. Caso di test aggiunto per testare la creazione della mappa di stringpool
+.PP
+\fBParametri:\fP
+.RS 4
+\fIvoid\fP 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.PP
+Controllo che sp sia vuoto
+.PP
+Inseriamo a salti alcuni elemnti in sp
+.PP
+Ricontrollo la dimensione
+.PP
+Controlleremo in modo 'consecutivo' le posizioni sp ignorando le posizoni reali, Controllando passo per passo elementi consecuitivi, il primo elemento, il secondo ecc...
+.PP
+Il termine Drupal è in posizione reale 0 ed in posizione virtuale map_array 0. In entrambi i casi è il primo elemento.
+.PP
+Il termine Django è in posizione reale 2 ed in posizione virtuale map_array 1. In entrambi i casi è il Secondo elemento.
+.PP
+Il termine Wordpress è in posizione reale 3 ed in posizione virtuale map_array 2. In entrambi i casi è il Terzo elemento.
+.PP
+Il termine Php è in posizione reale 5 ed in posizione virtuale map_array 3. In entrambi i casi è il Quarto elemento.
+.PP
+Il termine Magento è in posizione reale 7 ed in posizione virtuale map_array 4. In entrambi i casi è il Quinto elemento.
+.PP
+Il termine Python è in posizione reale 8 ed in posizione virtuale map_array 5. In entrambi i casi è il Sesto elemento.
+.PP
+Controlliamo immettendo direttamente le posizioni reali 
+.SS "void test_sp_new_empty_string ()"
+.SS "void test_sp_new_string ()"
+.SS "void test_sp_remove_string (void)"
+.SS "void test_sp_replace_string (void)"
+.SS "test_sp_save_to_file (void)"
+.PP
+Test per sp_save_to_file. Caso di test aggiunto per testare il salvataggio su file 
+.PP
+\fBParametri:\fP
+.RS 4
+\fIvoid\fP 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.PP
+Dichiaro il puntare a string per il nome dle file
+.PP
+Ci assicuriamo che sia vuoto sp
+.PP
+Aggiungiamo 5 string a sp, possibilmente con spazi per verificare se la scrittura di frasi con spazi funziona
+.PP
+Creiamo uno spazio vuoto eliminando la string in posizione 3
+.PP
+Controlliamo se in prima posizine abbimo il nome del file
+.PP
+Controlliamo che sia di dimensione 4
+.PP
+Controlliamo che la dimensione di sp corrisponda al numero di righe scritte
+.PP
+Rimuoviamo le stringhe scritte
+.PP
+Controlliamo che sp sia vuoto
+.PP
+Creiamo una stringa con il nome del file senza metterlo in sp
+.PP
+Aggiungiamo le stringhe in sp, miste con spazi, numeri e simboli speciali
+.PP
+Verifichiamo la dimensione di sp
+.PP
+Verifichiamo che la dimensioni di sp corrisponda al numero di righe scritte
+.PP
+Liberiamo sp dalle righe scritte, svuotandolo
+.PP
+Verifichiamo che sia vuoto
+.PP
+Scriviamo un file vuoto
+.PP
+Non dovrebbe scrivere nessun file e ritornare errore -1 a causa del nome sbagliato del file
+.PP
+Non dovrebbe scrivere nessun file e ritornare errore -1 a causa del nome sbagliato del file
+.PP
+Non dovrebbe scrivere nessun file e ritornare errore -1 a causa del puntatore a sp NULL 
+.SS "void test_sp_sizeof (void)"
+.SS "void test_sp_strcat ()"
+.SS "test_sp_strcat_as_struct ()"
+.PP
+Test per sp_strcat_as_struct. Caso di test aggiunto in string_manipulation 
+.PP
+\fBParametri:\fP
+.RS 4
+\fIvoid\fP 
+.RE
+.PP
+\fBRestituisce:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void test_sp_strcmp ()"
+.SS "void test_sp_strcpy ()"
+.SS "void test_sp_strlen ()"
+.SS "void test_sp_upper_case ()"
+.SH "Documentazione delle variabili"
+.PP 
+.SS "int \fBCONST_TEST_STRING_LEN\fP"
+.SS "\fBstring\fP* \fBCONST_TEST_STRING_LOWER_CASE\fP = NULL"
+.SS "\fBstring\fP* \fBCONST_TEST_STRING_UPPER_CASE\fP = NULL"
+.SS "\fBstringpool\fP \fBsp\fP"
 .SH "Autore"
 .PP 
-Generato automaticamente da Doxygen per StringPool a partire dal codice sorgente.
+Generato automaticamente da Doxygen per Stringpool a partire dal codice sorgente.

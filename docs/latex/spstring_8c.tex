@@ -1,24 +1,1377 @@
 \hypertarget{spstring_8c}{
-\section{Riferimenti per il file library/src/spstring.c}
-\label{spstring_8c}\index{library/src/spstring.c@{library/src/spstring.c}}
+\section{Riferimenti per il file Library/spstring.c}
+\label{spstring_8c}\index{Library/spstring.c@{Library/spstring.c}}
 }
 
 
-Implementazione spstring.  
+Implementazione funzioni stringpool.  
 
 
 {\ttfamily \#include $<$stdio.h$>$}\par
 {\ttfamily \#include $<$stdlib.h$>$}\par
 {\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$stddef.h$>$}\par
+{\ttfamily \#include $<$ctype.h$>$}\par
+{\ttfamily \#include \char`\"{}bool.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}stringpool.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}spstring.h\char`\"{}}\par
 \subsection*{Funzioni}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{spstring_8c_a840291bc02cba5474a4cb46a9b9566fe}{
-int {\bfseries main} (void)}
-\label{spstring_8c_a840291bc02cba5474a4cb46a9b9566fe}
-
+void \hyperlink{spstring_8c_a43109a2f4b18023775b877451f725c13}{sp\_\-initialize\_\-stringpool} (\hyperlink{structstringpool}{stringpool} $\ast$\hyperlink{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{sp})
+\begin{DoxyCompactList}\small\item\em Inizializza una struttura Stringpool. \end{DoxyCompactList}\item 
+void \hyperlink{spstring_8c_a60ed4be4036600f174388c36a0370818}{sp\_\-free} (\hyperlink{structstring}{string} $\ast$str)
+\begin{DoxyCompactList}\small\item\em Dealloca lo spazio di memoria a cui sta puntando str. \end{DoxyCompactList}\item 
+void \hyperlink{spstring_8c_a99f5a66367fa19e42c24211e982c4b56}{sp\_\-free\_\-stringpool} (\hyperlink{structstringpool}{stringpool} $\ast$\hyperlink{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{sp})
+\begin{DoxyCompactList}\small\item\em Libera la memoria e reinizializza la struct sringpool. \end{DoxyCompactList}\item 
+\hyperlink{structstring}{string} $\ast$ \hyperlink{spstring_8c_aa9f031abbf235a5d16322d97f78c334d}{sp\_\-new\_\-empty\_\-string} (int len)
+\begin{DoxyCompactList}\small\item\em Crea una string vuota di dimensione len. \end{DoxyCompactList}\item 
+\hyperlink{structstring}{string} $\ast$ \hyperlink{spstring_8c_ac14d3aa446e78a594b506cf2494b7273}{sp\_\-new\_\-string} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Crea una string con contenuto pari a quello in ingresso. \end{DoxyCompactList}\item 
+int \hyperlink{spstring_8c_ab0823663ad7e935718ccfc2db8e316d3}{sp\_\-get\_\-allocated\_\-size} (const \hyperlink{structstring}{string} $\ast$str)
+\begin{DoxyCompactList}\small\item\em Restituisce la dimensione massima allocata per la stringa. \end{DoxyCompactList}\item 
+int \hyperlink{spstring_8c_ac994017d490a951c8f48c37bcbdf0c1b}{sp\_\-strlen} (const \hyperlink{structstring}{string} $\ast$str)
+\begin{DoxyCompactList}\small\item\em Calcola e restituisce la lunghezza logica di una string. \end{DoxyCompactList}\item 
+\hyperlink{bool_8h_a56a087515036f9d49426777667d056a7}{boolean} \hyperlink{spstring_8c_abb131e3e4d7f496a47d12c1692b75e15}{sp\_\-strcmp} (const \hyperlink{structstring}{string} $\ast$str1, const char $\ast$str2)
+\begin{DoxyCompactList}\small\item\em Confronta due stringhe e restituisce il relativo valore di verità \end{DoxyCompactList}\item 
+\hyperlink{structstring}{string} $\ast$ \hyperlink{spstring_8c_afe063a22db56e1ed3b9de5a81820f002}{sp\_\-new\_\-string\_\-as\_\-struct} (const \hyperlink{structstring}{string} $\ast$str)
+\begin{DoxyCompactList}\small\item\em Crea una nuova string il cui contenuto è uguale a quella in ingresso. \end{DoxyCompactList}\item 
+\hyperlink{structstring}{string} $\ast$ \hyperlink{spstring_8c_ad258858c5d6a2aa9b4b9ed5776155afc}{sp\_\-strcpy} (\hyperlink{structstring}{string} $\ast$copy, const char $\ast$original, int offset)
+\begin{DoxyCompactList}\small\item\em Copia il contenuto della string original in copy. \end{DoxyCompactList}\item 
+\hyperlink{structstring}{string} $\ast$ \hyperlink{spstring_8c_af0a1ed949316f182907ea08d4e8bd62b}{sp\_\-strcat} (const char $\ast$str1, const char $\ast$str2)
+\begin{DoxyCompactList}\small\item\em Crea una string ottenuta dalla concatenazione di due stringhe in ingresso. \end{DoxyCompactList}\item 
+\hyperlink{structstring}{string} $\ast$ \hyperlink{spstring_8c_ad8c5bbe3b367845aaa230e19ac9e7919}{sp\_\-strcat\_\-as\_\-struct} (const \hyperlink{structstring}{string} $\ast$str1, const \hyperlink{structstring}{string} $\ast$str2)
+\begin{DoxyCompactList}\small\item\em Crea una string ottenuta dalla conctaenazione delle due string in ingresso. \end{DoxyCompactList}\item 
+\hyperlink{structstring}{string} $\ast$ \hyperlink{spstring_8c_a8b5d366c459a30a563e83fc8804702e2}{sp\_\-lower\_\-case} (const \hyperlink{structstring}{string} $\ast$str)
+\begin{DoxyCompactList}\small\item\em Restituisce una nuova stringa ottenuta ponendo in minuscolo ciascun carattere della stringa in ingresso. \end{DoxyCompactList}\item 
+\hyperlink{structstring}{string} $\ast$ \hyperlink{spstring_8c_a70dbcd0b1199382b8a171ec68067370c}{sp\_\-upper\_\-case} (const \hyperlink{structstring}{string} $\ast$str)
+\begin{DoxyCompactList}\small\item\em Restituisce una nuova stringa ottenuta ponendo in maiuscolo ciascun carattere della stringa in ingresso. \end{DoxyCompactList}\item 
+\hyperlink{bool_8h_a56a087515036f9d49426777667d056a7}{boolean} \hyperlink{spstring_8c_aff3ad92cec105f24f415f745ae476ba1}{sp\_\-isempty} (const \hyperlink{structstringpool}{stringpool} $\ast$\hyperlink{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{sp})
+\begin{DoxyCompactList}\small\item\em Restituisce un valore booleno che indica se lo stringpool è vuoto. \end{DoxyCompactList}\item 
+\hyperlink{bool_8h_a56a087515036f9d49426777667d056a7}{boolean} \hyperlink{spstring_8c_a51a9f7cf9dc077b62d01ff8102301841}{sp\_\-isfull} (const \hyperlink{structstringpool}{stringpool} $\ast$\hyperlink{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{sp})
+\begin{DoxyCompactList}\small\item\em Restituisce un valore booleno che indica se stringpool contiene già il massimo numero di elementi consentiti. \end{DoxyCompactList}\item 
+\hyperlink{bool_8h_a56a087515036f9d49426777667d056a7}{boolean} \hyperlink{spstring_8c_ace396a34f5bb42619cb81756b2f5b375}{sp\_\-add\_\-string\_\-pos} (\hyperlink{structstringpool}{stringpool} $\ast$\hyperlink{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{sp}, \hyperlink{structstring}{string} $\ast$str, int pos)
+\begin{DoxyCompactList}\small\item\em Aggiunge una string all’interno dello stringpool in posizione pos. \end{DoxyCompactList}\item 
+\hyperlink{bool_8h_a56a087515036f9d49426777667d056a7}{boolean} \hyperlink{spstring_8c_ae86751935917ec79d819904cfb087817}{sp\_\-add\_\-string} (\hyperlink{structstringpool}{stringpool} $\ast$\hyperlink{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{sp}, \hyperlink{structstring}{string} $\ast$str)
+\begin{DoxyCompactList}\small\item\em Aggiunge la stringa puntata da str all’interno dello stringpool. \end{DoxyCompactList}\item 
+int \hyperlink{spstring_8c_a96c3685a91d261df2cb06e9745bdca3f}{sp\_\-sizeof} (const \hyperlink{structstringpool}{stringpool} $\ast$\hyperlink{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{sp})
+\begin{DoxyCompactList}\small\item\em Restituisce il numero di stringhe in sp. \end{DoxyCompactList}\item 
+\hyperlink{structstring}{string} $\ast$ \hyperlink{spstring_8c_a0b0458114373e76ff2c48696bcae2782}{sp\_\-get\_\-string} (const \hyperlink{structstringpool}{stringpool} $\ast$\hyperlink{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{sp}, int pos)
+\begin{DoxyCompactList}\small\item\em Restituisce il puntatore alla stringa str che occupa la posizione pos all’interno dello stringpool. \end{DoxyCompactList}\item 
+\hyperlink{structstring}{string} $\ast$ \hyperlink{spstring_8c_a6fd0b8059482b70aa0bc8ee607e3fadb}{sp\_\-remove\_\-string} (\hyperlink{structstringpool}{stringpool} $\ast$\hyperlink{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{sp}, int pos)
+\begin{DoxyCompactList}\small\item\em Rimuove e restituisce la stringa str all’interno dello stringpool in posizione pos. \end{DoxyCompactList}\item 
+\hyperlink{bool_8h_a56a087515036f9d49426777667d056a7}{boolean} \hyperlink{spstring_8c_a465c42024674ec91ddb1158ee58c3466}{sp\_\-replace\_\-string} (\hyperlink{structstringpool}{stringpool} $\ast$\hyperlink{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{sp}, int pos, \hyperlink{structstring}{string} $\ast$newstr)
+\begin{DoxyCompactList}\small\item\em Sostituisce la stringa all’interno dello stringpool in posizione pos, rimpiazzandola con str. \end{DoxyCompactList}\item 
+int \hyperlink{spstring_8c_a971049db5eca3ef305591d1fcd195a0f}{sp\_\-save\_\-to\_\-file} (\hyperlink{structstringpool}{stringpool} $\ast$\hyperlink{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{sp}, const \hyperlink{structstring}{string} fname)
+\begin{DoxyCompactList}\small\item\em Salva il contenuto dello stringpool in un file di testo. \end{DoxyCompactList}\item 
+int \hyperlink{spstring_8c_acc812ec5efe19197bad45658ffefb1fe}{sp\_\-load\_\-from\_\-file} (\hyperlink{structstringpool}{stringpool} $\ast$\hyperlink{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{sp}, const \hyperlink{structstring}{string} fname)
+\begin{DoxyCompactList}\small\item\em Carica il contenuto del file di test fname nello o stringpool. \end{DoxyCompactList}\item 
+void \hyperlink{spstring_8c_ae3399d635eb3cd9893e079f6eaef6e1f}{bubble\_\-sort} (\hyperlink{structstringpool}{stringpool} $\ast$\hyperlink{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{sp})
+\begin{DoxyCompactList}\small\item\em Ordina alfabeticamente gli elementi dello stringpool, applicando l’algoritmo di bubble sort. \end{DoxyCompactList}\item 
+int \hyperlink{spstring_8c_a254f5e6ad18c821b31437d10a923cc83}{bin\_\-search} (const \hyperlink{structstringpool}{stringpool} $\ast$\hyperlink{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{sp}, const \hyperlink{structstring}{string} str)
+\begin{DoxyCompactList}\small\item\em Cerca la stringa str all’interno dello stringpool ordinato attraverso l’algoritmo di ricerca binaria. \end{DoxyCompactList}\item 
+int \hyperlink{spstring_8c_ac0204ece57f1cdce074fe7af7b7419f1}{sp\_\-find\_\-string} (const \hyperlink{structstringpool}{stringpool} $\ast$\hyperlink{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{sp}, const \hyperlink{structstring}{string} $\ast$str)
+\begin{DoxyCompactList}\small\item\em Cerca la stringa str all’interno dello stringpool e ne restituisce la posizione, nel caso sia presente. \end{DoxyCompactList}\item 
+\hyperlink{bool_8h_a56a087515036f9d49426777667d056a7}{boolean} \hyperlink{spstring_8c_a126e34dae1b5bfb99d0bbb34b1526dc8}{\_\-sp\_\-file\_\-exist} (const \hyperlink{structstring}{string} $\ast$fname)
+\begin{DoxyCompactList}\small\item\em Controlla se il file richiesto esiste e ne restituisce il valore di verità \end{DoxyCompactList}\item 
+\hyperlink{bool_8h_a56a087515036f9d49426777667d056a7}{boolean} \hyperlink{spstring_8c_a790c017dd9dec0e2b95bf818d10ba005}{\_\-sp\_\-file\_\-create} (const \hyperlink{structstring}{string} $\ast$fname)
+\begin{DoxyCompactList}\small\item\em Controlla se esiste già il file e se non esiste lo crea. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{spstring_8c_a6143c920f51cf353336ee72034f68962}{\_\-sp\_\-map\_\-array\_\-stringpool} (const \hyperlink{structstringpool}{stringpool} $\ast$\hyperlink{cunit__stringpool__lib_8c_a421ecbacf6dacc6f5e391d074522db9e}{sp})
 \end{DoxyCompactItemize}
 
 
 \subsection{Descrizione dettagliata}
-Implementazione spstring. Contiene il codice di implementazione delle funzioni della libreria \char`\"{}spstring\char`\"{} La libreria stringpool offre i servizi seguenti attraverso funzioni di libreria rivolti alla manipolazione di stringpool, cioeÃÄ di un insieme di stringhe. Inoltre, la libreria permette di ordinare un array di stringhe in ordine alfabetico, salvare e caricare un array da file di test, ed effettuare la ricerca binaria di un elemento 
+Implementazione funzioni stringpool. La libreria stringpool consente la gestione di un'insieme di dati di tipo string. Due sono i tipi di dato gestiti: string, stringpool.
+
+\begin{DoxyAuthor}{Autore}
+Domenico Monaco, \href{mailto:domenico.monaco@kiuz.it}{\tt domenico.monaco@kiuz.it} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+2011 
+\end{DoxyDate}
+\hypertarget{stringpool_8h_license}{}\subsection{Licenza}\label{stringpool_8h_license}
+GPLv2 \href{http://www.softwarelibero.it/gnudoc/gpl.it.txt}{\tt http://www.softwarelibero.it/gnudoc/gpl.it.txt} Per maggiori informazioni visitare il link o visualizzare il file LICENSE 
+
+\subsection{Documentazione delle funzioni}
+\hypertarget{spstring_8c_a790c017dd9dec0e2b95bf818d10ba005}{
+\index{spstring.c@{spstring.c}!\_\-sp\_\-file\_\-create@{\_\-sp\_\-file\_\-create}}
+\index{\_\-sp\_\-file\_\-create@{\_\-sp\_\-file\_\-create}!spstring.c@{spstring.c}}
+\subsubsection[{\_\-sp\_\-file\_\-create}]{\setlength{\rightskip}{0pt plus 5cm}\_\-sp\_\-file\_\-create (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} $\ast$}]{fname}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_a790c017dd9dec0e2b95bf818d10ba005}
+
+
+Controlla se esiste già il file e se non esiste lo crea. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em fname} & puntatore a struttura string costante \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+ifcreated boolean valore di verità, TRUE se è esiste già o se non esiste ed è stato Creato, FALSE se non esiste non è stato possibile crearlo 
+\end{DoxyReturn}
+
+
+Dichiaro la variabile di output
+
+Dichiaro il puntatore a file
+
+Verifico che fname non sia nullo
+
+Controllo se non esiste già il file
+
+Se non esiste cerco di crearlo
+
+Se non si riesce a a crearlo imposto la variabile di output a FALSE
+
+Altrimenti se sono riuscito$\ast$ a crerlo imposto la variabile di output a TRUE
+
+Chiudo il file aperto
+
+Se esiste già imposto la variabile outpt a TRUE
+
+Ritorno il valore di output 
+
+\hypertarget{spstring_8c_a126e34dae1b5bfb99d0bbb34b1526dc8}{
+\index{spstring.c@{spstring.c}!\_\-sp\_\-file\_\-exist@{\_\-sp\_\-file\_\-exist}}
+\index{\_\-sp\_\-file\_\-exist@{\_\-sp\_\-file\_\-exist}!spstring.c@{spstring.c}}
+\subsubsection[{\_\-sp\_\-file\_\-exist}]{\setlength{\rightskip}{0pt plus 5cm}\_\-sp\_\-file\_\-exist (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} $\ast$}]{fname}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_a126e34dae1b5bfb99d0bbb34b1526dc8}
+
+
+Controlla se il file richiesto esiste e ne restituisce il valore di verità 
+
+
+\begin{DoxyParams}{Parametri}
+{\em fname} & puntatore a struttura string costante \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+ifexist valore boolean FALSE se non esiste non è possibile aprirlo in modalità di lettura, TRUE se esiste ed è possibile aprirlo in modalità di lettura 
+\end{DoxyReturn}
+
+
+Dichiaro la variabile di output inizializzandola a FAlSE
+
+Dichiaro il puntatore a file
+
+Verifico che fname non sia nullo
+
+Controllo se è possibile aprire il file richiesto in modalità di lettura
+
+Se non è possibile aprirlo imposto la variabile di output a FALSE
+
+Altrimenti se è possibile aprie il file imposto a TRUE la variabile di output
+
+Chiudo il file
+
+Ritorno la variabile di output 
+
+\hypertarget{spstring_8c_a6143c920f51cf353336ee72034f68962}{
+\index{spstring.c@{spstring.c}!\_\-sp\_\-map\_\-array\_\-stringpool@{\_\-sp\_\-map\_\-array\_\-stringpool}}
+\index{\_\-sp\_\-map\_\-array\_\-stringpool@{\_\-sp\_\-map\_\-array\_\-stringpool}!spstring.c@{spstring.c}}
+\subsubsection[{\_\-sp\_\-map\_\-array\_\-stringpool}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ \_\-sp\_\-map\_\-array\_\-stringpool (
+\begin{DoxyParamCaption}
+\item[{const {\bf stringpool} $\ast$}]{sp}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_a6143c920f51cf353336ee72034f68962}
+
+
+Dichiaro l'array di output
+
+Dichiaro la variabile indice per il ciclo for e la variabile di posizione
+
+Controllo che sp non sia NULL
+
+Inizializzo lo spazio di memoria per l'array di outpu calcolato sulla dimensione di sp
+
+Itero su tutte le possibili posizioni potenzialmente occupate in sp
+
+Controllo se la i-\/esima posizione è occupata
+
+In caso sia occupata salvo in posizioni consecutive la posizione i-\/esima
+
+Incremento la posizione del vettore di output solo se è stato inserito qualcosa
+
+Ritorno la varibile di ouput 
+
+\hypertarget{spstring_8c_a254f5e6ad18c821b31437d10a923cc83}{
+\index{spstring.c@{spstring.c}!bin\_\-search@{bin\_\-search}}
+\index{bin\_\-search@{bin\_\-search}!spstring.c@{spstring.c}}
+\subsubsection[{bin\_\-search}]{\setlength{\rightskip}{0pt plus 5cm}bin\_\-search (
+\begin{DoxyParamCaption}
+\item[{const {\bf stringpool} $\ast$}]{sp, }
+\item[{const {\bf string}}]{str}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_a254f5e6ad18c821b31437d10a923cc83}
+
+
+Cerca la stringa str all’interno dello stringpool ordinato attraverso l’algoritmo di ricerca binaria. 
+
+Ne restituisce la posizione, nel caso in cui str sia presente.
+
+
+\begin{DoxyParams}{Parametri}
+{\em $\backslash$return} & iffound pari alla posizione p della stringa, con 0$<$= p $<$ MAX\_\-DIM\_\-STRING\_\-POOL se str è presente in sp; p=-\/1, altrimenti. Se sp o str sono nulli, restituisce -\/1. \\
+\hline
+\end{DoxyParams}
+
+
+Dichiaro la variabile di output
+
+Dichiaro la variabile indice per il ciclo while della ricerca binaria, rappresenta il numero di controll effettuati
+
+Variabile di controllo per la ricerca della stringa cercata
+
+Variabili per il calcolo dell'i-\/esima posizione da controlla come da definizione del bin\_\-search
+
+Puntatore ad array di interi contenere la mappa delle posizioni degli slot in stringpool
+
+Controllo che sp e str non siano NULL, altrimenti salta salta e restituisce valore di errore -\/1
+
+Calcolo e salvo la dimensione di sp
+
+Se ha dimensione diversa da 0 è possibile effettuare la ricerca
+
+Ottengo la mappa delle posizione degli slot di sp
+
+Imposto il parametro hight del binary serch alla dimensione di sp
+
+Imposoto il parametro low del binary search a 1
+
+Itero finchè str\_\-cmp non è 0 ovvero è stata identificata esattamente la stringa ricercata oppure se abbiamo già controllato tutto gli slot
+
+Calcolo mid su base della formula binary search
+
+Controllo la strina in posizione mid, contrale rispetto \mbox{[}low, hight\mbox{]}
+
+In base al risultato associo a low o hight un valore diverso ed incremento la variabile indice
+
+Alla fine dll'iterazione controllo controllo se sia stata identificata o meno la stringa righesta
+
+In caso sia concluso il ciclo senza trovare la stringa o non sia neanche iniziato, imposto il risultato a -\/1
+
+In caso invece sia stata identificata la stringa resituisco la sua posizione
+
+Ritorno il valore di ritorno che può essere o la posizione p della strnga cercata o -\/1 in caso di errore 
+
+\hypertarget{spstring_8c_ae3399d635eb3cd9893e079f6eaef6e1f}{
+\index{spstring.c@{spstring.c}!bubble\_\-sort@{bubble\_\-sort}}
+\index{bubble\_\-sort@{bubble\_\-sort}!spstring.c@{spstring.c}}
+\subsubsection[{bubble\_\-sort}]{\setlength{\rightskip}{0pt plus 5cm}bubble\_\-sort (
+\begin{DoxyParamCaption}
+\item[{{\bf stringpool} $\ast$}]{sp}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_ae3399d635eb3cd9893e079f6eaef6e1f}
+
+
+Ordina alfabeticamente gli elementi dello stringpool, applicando l’algoritmo di bubble sort. 
+
+Ordina effettuando un controllo su ogni coppia di elementi, partendo dal basso sceglie minore del confronto e lo porta verso l'alto. Ho usato la versione \char`\"{}corta\char`\"{} dell'algoritmo dover per ogni i-\/esimo ciclo assumiamo che l'elemento appena spostato è già in posizione corretta. Ho dovuto applicare un piccolo hack per poter fare l'ordinamento anche su array con elementi non contiugui e lasciare invariate le posizione vuote, in altri termini l'algoritmo ordina gli elementi solo sulle posizione attualmente utilizzare senza alterare la posizione degli slot vuoti.
+
+
+\begin{DoxyParams}{Parametri}
+{\em sp} & puntatore a struttura stringpool \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+void 
+\end{DoxyReturn}
+
+
+Dichiaro le variabili indici per i due cicli dell'algoritmo Bubble sort
+
+Dichiaro la variabile per identificare se nell'i-\/esimo controllo è necessario uno Switch degli slot
+
+Dichiaro la variabile per memorizzare temporaneamente la string da sostituire
+
+Dichiaro la variabile per mappare le posizioni degli slot
+
+Controllo prima se sp non sia NULL ed in seguito se sp non è VUOTO altrimenti non faccio null
+
+Ottengo un array della mappa delle posizione dell'array. Dove ogni i-\/esima posione contiene la posizione reale dello slot. Ad esempio se esistono 4 elementi, ma il sp-\/$>$position\mbox{[}3\mbox{]} è vuoto mentre il sp-\/$>$position\mbox{[}4\mbox{]} è pieno il risultato sarà un arrai del tipo \mbox{[}0-\/$>$0,1-\/$>$1,2-\/$>$2,3-\/$>$4\mbox{]}
+
+Itero su due cicli for come da definizione dell'algoritmo
+
+Il primo ciclo itera da 0 alla dimensione di sp, incrementando il puntatore
+
+Il secondo ciclo itera dalla dimensione di sp meno 1,fino ad i, decrementando l'indice.
+
+Ad ogni iterazione del primo ciclo for, il secndo ciclo for effettuera un passaggio in meno evitando di controllare elementi sicuramente già in posizione corretta
+
+La j esima posione è quella corrente e dipende anche da i. Controlliamo le poszioni (j) e (j-\/1), identificando se sono o meno in ordine alfabetico utilizzando strcmp. Quindi ifswitch sarà -\/1 l'elemento j deve essere spostato in posizione j-\/1 e viceversa
+
+In questi cicli non mi devo preoccupare dei \char`\"{}buchi\char`\"{} nell'array stringpool dato che le iterazioni sono fatte sulla mappa dele posizione che è un array continuo che ci permette di tradurre per ogni iterazione la reale posizione dello slot trattato
+
+Controllo se bisogna scambiare gli elementi
+
+Memorizzo temporanemente la stringa in posizione j
+
+Rimpiazzo in posizione j la strin j-\/1
+
+Rimpiazzo in posizione j-\/1 la stringa memorizzata precedentemente, ovvero quella in posizione j 
+
+\hypertarget{spstring_8c_ae86751935917ec79d819904cfb087817}{
+\index{spstring.c@{spstring.c}!sp\_\-add\_\-string@{sp\_\-add\_\-string}}
+\index{sp\_\-add\_\-string@{sp\_\-add\_\-string}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-add\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-add\_\-string (
+\begin{DoxyParamCaption}
+\item[{{\bf stringpool} $\ast$}]{sp, }
+\item[{{\bf string} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_ae86751935917ec79d819904cfb087817}
+
+
+Aggiunge la stringa puntata da str all’interno dello stringpool. 
+
+Viene aggiunta nella prima posizione libera. Nessuna operazione è compiuta se str e/o sp sono nulli, oppure se sp è pieno.
+
+
+\begin{DoxyParams}{Parametri}
+{\em sp} & puntatore a struttura stringpool \\
+\hline
+{\em str} & puntatore a struttura string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+is\_\-added TRUE se l’inserimento è andato a buon fine, FALSE altrimenti. 
+\end{DoxyReturn}
+
+
+Dichiaro la variabile di outpu inizializzandola a FALSE
+
+Dichiaro la varibile di verità per la posizione libera
+
+Variabile indice per ciclo while per la ricerca della posizione libera
+
+Variabile
+
+Controllo che sp ed str non siano NULL
+
+Controllo se lo string pool non è pieno
+
+Ciclo per l'intero stringpool alla ricerca della prima posizione libera
+
+Il ciclo continua finchè check\_\-free è diverso da 1 e non abbiamo controllato tutte le posizini
+
+Per ogni ciclo controllo se l'i-\/esima posizione è libera
+
+In caso affermativo, imposto check\_\-free a 1
+
+Provo quindi ad aggiungere la string in ingresso nella posizione libera appena trovata
+
+Memoriazando il risutlato di tale operazione
+
+Controllo se l'operazione di aggiunta della string in posizine iesima è andata a buon fine
+
+In caso affermativo imposto la variabile di output a TRUE
+
+In caso negativo, riporto check\_\-free a 0 permettendo di continuare a cercare un'altra posizione
+
+Incremente il contatore iesimo
+
+Ritorno il valore di verità per l'operazione di aggiunta string 
+
+\hypertarget{spstring_8c_ace396a34f5bb42619cb81756b2f5b375}{
+\index{spstring.c@{spstring.c}!sp\_\-add\_\-string\_\-pos@{sp\_\-add\_\-string\_\-pos}}
+\index{sp\_\-add\_\-string\_\-pos@{sp\_\-add\_\-string\_\-pos}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-add\_\-string\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-add\_\-string\_\-pos (
+\begin{DoxyParamCaption}
+\item[{{\bf stringpool} $\ast$}]{sp, }
+\item[{{\bf string} $\ast$}]{str, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_ace396a34f5bb42619cb81756b2f5b375}
+
+
+Aggiunge una string all’interno dello stringpool in posizione pos. 
+
+Nessuna operazione è compiuta se str e/o sp sono nulli, se pos è fuori dall’intervallo 0$<$= pos $<$ MAX\_\-DIM\_\-STRING\_\-POOL 
+\begin{DoxyParams}{Parametri}
+{\em sp} & puntatore a struttura stringpool \\
+\hline
+{\em str} & puntatore a struttura string \\
+\hline
+{\em pos} & intero che indica la posizione in cui aggiungere la string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+is\_\-added vale TRUE se l’inserimento è andato a buon fine, FALSE altrimenti. 
+\end{DoxyReturn}
+
+
+Dichiaro la variabile di output inizializzandola a FALSE
+
+Controllo che sp e str non siano null e controllo che la posizione richiesta esista nello stringpool
+
+Controllo che la posizione pos sia già occupata, in tal caso libero la memoria
+
+Inesrisco in strings\mbox{[}pos\mbox{]} il puntatore a str passata
+
+positions e used\_\-counter sono aggiornati solo se è realmente presente in strings\mbox{[}pos\mbox{]} l'indirizzo voluto, altrimenti non aggiorna le variabili
+
+L'assocciazione è andata a buon fine, posso aggiornare le variabili positions, used\_\-counter e is\_\-added per l'output
+
+Ritorno la variabile di output 
+
+\hypertarget{spstring_8c_ac0204ece57f1cdce074fe7af7b7419f1}{
+\index{spstring.c@{spstring.c}!sp\_\-find\_\-string@{sp\_\-find\_\-string}}
+\index{sp\_\-find\_\-string@{sp\_\-find\_\-string}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-find\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-find\_\-string (
+\begin{DoxyParamCaption}
+\item[{const {\bf stringpool} $\ast$}]{sp, }
+\item[{const {\bf string} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_ac0204ece57f1cdce074fe7af7b7419f1}
+
+
+Cerca la stringa str all’interno dello stringpool e ne restituisce la posizione, nel caso sia presente. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em sp} & puntatore a struttura stringpool \\
+\hline
+{\em str} & puntatore a struttura string costante \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+position\_\-find Posizione p della stringa, con 0$<$= p $<$ MAX\_\-DIM\_\-STRING\_\-POOL se str è presente in sp; p=-\/1, altrimenti. Se sp e/o str sono NULL, restituisce -\/1. 
+\end{DoxyReturn}
+
+
+Dichiaro la varibile di output e la inizializzo a -\/1 in caso di problemi durante la computazione
+
+Dichiaro la variabile per l'iterazione su tutto l'array
+
+Variabile di controllo per risultato comparazione
+
+Controllo che sp ed str non siano NUL
+
+Itero su tutta la dimensione possibile dell'array
+
+Controllo se la posizione i-\/esima è utilizzata
+
+Comparo le stringhe e salvo il risultato
+
+Controllo il risultato della comparazione
+
+Se è stata identificata la stringa salvo la posizione i-\/esima corrente
+
+Forzo l'indice i a sforare sul valore di uscita dal ciclo for
+
+Resituisco il valore di output, -\/1 se ci sono stati problemi e/o non è stata trovata o $>$= pari alla posione della stringa cercata in sp 
+
+\hypertarget{spstring_8c_a60ed4be4036600f174388c36a0370818}{
+\index{spstring.c@{spstring.c}!sp\_\-free@{sp\_\-free}}
+\index{sp\_\-free@{sp\_\-free}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf string} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_a60ed4be4036600f174388c36a0370818}
+
+
+Dealloca lo spazio di memoria a cui sta puntando str. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em str} & puntatore a struttura string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+void 
+\end{DoxyReturn}
+
+
+Verifica che il puntatore str non sia NULL
+
+Verifica che sia stato allocato dello spazio in corrispondenza all'area di memoria puntata da str-\/$>$char\_\-array
+
+Libera lo spazio puntato da str-\/$>$char\_\-array
+
+Libera lo spazio puntato da str
+
+Forza str a valere NULL dopo la deallocazione 
+
+\hypertarget{spstring_8c_a99f5a66367fa19e42c24211e982c4b56}{
+\index{spstring.c@{spstring.c}!sp\_\-free\_\-stringpool@{sp\_\-free\_\-stringpool}}
+\index{sp\_\-free\_\-stringpool@{sp\_\-free\_\-stringpool}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-free\_\-stringpool}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-free\_\-stringpool (
+\begin{DoxyParamCaption}
+\item[{{\bf stringpool} $\ast$}]{sp}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_a99f5a66367fa19e42c24211e982c4b56}
+
+
+Libera la memoria e reinizializza la struct sringpool. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em sp} & puntatore a stringpool \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+void 
+\end{DoxyReturn}
+
+
+i -\/ indice intero per ciclo for per la deallocazione delle stringe
+
+Verifica che sp non sia NULL
+
+Iterazione per liberare la memoria delle stringe salvate
+
+Verifica che la posizione i-\/esima sia occupata da una stringa altrimenti evita istruzioni inutili
+
+Rimuove la stringa decrementando used\_\-counter e ponendo a 0 position\mbox{[}i\mbox{]} Per ogni iterazione la struttura stringpool è consistente e coerente con le string rimosse e da rimuovere
+
+Libero la memoria occupata dalla stringa i-\/esima
+
+Operazione non necessaria se \hyperlink{spstring_8c_a6fd0b8059482b70aa0bc8ee607e3fadb}{sp\_\-remove\_\-string()} e \hyperlink{spstring_8c_a60ed4be4036600f174388c36a0370818}{sp\_\-free()} operano correttamente 
+
+\hypertarget{spstring_8c_ab0823663ad7e935718ccfc2db8e316d3}{
+\index{spstring.c@{spstring.c}!sp\_\-get\_\-allocated\_\-size@{sp\_\-get\_\-allocated\_\-size}}
+\index{sp\_\-get\_\-allocated\_\-size@{sp\_\-get\_\-allocated\_\-size}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-get\_\-allocated\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-get\_\-allocated\_\-size (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_ab0823663ad7e935718ccfc2db8e316d3}
+
+
+Restituisce la dimensione massima allocata per la stringa. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em str} & puntatore a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+allocated\_\-size dimensione fisica allocata per str; se str è 0, restituisce NULL 
+\end{DoxyReturn}
+
+
+Variabile allocated\_\-size di output
+
+Verifica che str e str-\/$>$char\_\-array non siano NULL
+
+imposta allocated\_\-size al valore di str-\/$>$allocated\_\-size
+
+In caso allocated\_\-size è 0 viene portato a NULL
+
+Ritorna allocated\_\-size che sarà $>$ 0 oppure NULL 
+
+\hypertarget{spstring_8c_a0b0458114373e76ff2c48696bcae2782}{
+\index{spstring.c@{spstring.c}!sp\_\-get\_\-string@{sp\_\-get\_\-string}}
+\index{sp\_\-get\_\-string@{sp\_\-get\_\-string}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-get\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-get\_\-string (
+\begin{DoxyParamCaption}
+\item[{const {\bf stringpool} $\ast$}]{sp, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_a0b0458114373e76ff2c48696bcae2782}
+
+
+Restituisce il puntatore alla stringa str che occupa la posizione pos all’interno dello stringpool. 
+
+Se pos è fuori da questo intervallo o se sp è nullo, allora la funzione restituisce restituisce NULL.
+
+
+\begin{DoxyParams}{Parametri}
+{\em sp} & puntatore costante a struttura string pull \\
+\hline
+{\em pos} & intero positivo che indica la posizione da controllare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+str\_\-output puntatore a string in posizione pos, se 0$<$= pos $<$ MAX\_\-DIM\_\-STRING\_\-POOL; 
+\end{DoxyReturn}
+
+
+Dichiaro la variabile di output e la inizializzo a NULL
+
+Controllo come da specifica se sp è NULL, se la posizione è all'interno degli indici di stringpool
+
+Controllo se la posizione richiesta è utilizzata
+
+In tal caso assozio l'indirizzo a cui punta stirngs\mbox{[}pos\mbox{]} alla variabile di output
+
+Ritorno la variabile di output 
+
+\hypertarget{spstring_8c_a43109a2f4b18023775b877451f725c13}{
+\index{spstring.c@{spstring.c}!sp\_\-initialize\_\-stringpool@{sp\_\-initialize\_\-stringpool}}
+\index{sp\_\-initialize\_\-stringpool@{sp\_\-initialize\_\-stringpool}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-initialize\_\-stringpool}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-initialize\_\-stringpool (
+\begin{DoxyParamCaption}
+\item[{{\bf stringpool} $\ast$}]{sp}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_a43109a2f4b18023775b877451f725c13}
+
+
+Inizializza una struttura Stringpool. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em sp} & puntatore a struttura stringpool \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+void 
+\end{DoxyReturn}
+
+
+Verifica se il puntatore sp non è NULL
+
+Imposta il counter degli slot utilizzati al valore di EMPTY\_\-STRING\_\-POOL
+
+Imposta le posizioni al valore di UNUSED\_\-SLOT rendendole tutte libere 
+
+\hypertarget{spstring_8c_aff3ad92cec105f24f415f745ae476ba1}{
+\index{spstring.c@{spstring.c}!sp\_\-isempty@{sp\_\-isempty}}
+\index{sp\_\-isempty@{sp\_\-isempty}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-isempty}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-isempty (
+\begin{DoxyParamCaption}
+\item[{const {\bf stringpool} $\ast$}]{sp}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_aff3ad92cec105f24f415f745ae476ba1}
+
+
+Restituisce un valore booleno che indica se lo stringpool è vuoto. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em sp} & puntatore a struttura stringpool costante \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+isempty è TRUE se sp è vuoto, FALSE altrimenti; se sp è NULL, restituisce FALSE 
+\end{DoxyReturn}
+
+
+Dichiaro la variabile di output e la inizializzo a FALSE
+
+Verifico che sp non sia NUL
+
+Controllo se il numero di slot usati è EMPTY\_\-STRING\_\-POOL
+
+In caso affermativo, imposta isempty a TRUE, altrimenti rimane FALSE
+
+Ritorno il valore di verità per sp VUOTO 
+
+\hypertarget{spstring_8c_a51a9f7cf9dc077b62d01ff8102301841}{
+\index{spstring.c@{spstring.c}!sp\_\-isfull@{sp\_\-isfull}}
+\index{sp\_\-isfull@{sp\_\-isfull}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-isfull}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-isfull (
+\begin{DoxyParamCaption}
+\item[{const {\bf stringpool} $\ast$}]{sp}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_a51a9f7cf9dc077b62d01ff8102301841}
+
+
+Restituisce un valore booleno che indica se stringpool contiene già il massimo numero di elementi consentiti. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em sp} & puntatore a struttura stringpool costante \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+isfull è TRUE se il numero di elementi presenti è == MAX\_\-DIM\_\-STRING\_\-POOL, FALSE altrimenti; se sp è NULL, restituisce TRUE 
+\end{DoxyReturn}
+
+
+Dichiaro la variabile di output
+
+Controllo se sp è diverso da NULL
+
+Controllo se il counter degli slot è impotato alla dimensione massima di stringpool
+
+Tutti gli slot sono usati, imposto isfull a TRUE
+
+Caso in cui sp == NULL
+
+Imposto come da specifica isfull a TRUE
+
+Ritorno il valore di verita per sp PIENO 
+
+\hypertarget{spstring_8c_acc812ec5efe19197bad45658ffefb1fe}{
+\index{spstring.c@{spstring.c}!sp\_\-load\_\-from\_\-file@{sp\_\-load\_\-from\_\-file}}
+\index{sp\_\-load\_\-from\_\-file@{sp\_\-load\_\-from\_\-file}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-load\_\-from\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-load\_\-from\_\-file (
+\begin{DoxyParamCaption}
+\item[{{\bf stringpool} $\ast$}]{sp, }
+\item[{const {\bf string}}]{fname}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_acc812ec5efe19197bad45658ffefb1fe}
+
+
+Carica il contenuto del file di test fname nello o stringpool. 
+
+L’intera stringa letta su una riga sarà un elemento dello stringpool. Inoltre conserva l'ordinamento ed il posizionamento originale delle stringhe pizzandole esattamene nella posizione originale.
+
+
+\begin{DoxyParams}{Parametri}
+{\em sp} & puntatore a struttura stringpool \\
+\hline
+{\em fname} & struttura string contenente il nome del file da leggere \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+number\_\-loaded\_\-line il numero di righe lette e caricate 
+\end{DoxyReturn}
+
+
+Dichiaro la variabile di output, la inizializzo a -\/1 in caso si incontrano problemi nel caricamento
+
+Variabile di indice per ciclo for per caricamento righe
+
+Dichiaro la variabile per la lettura \char`\"{}massima\char`\"{} di righe da file
+
+Puntatore a file da leggere
+
+Variabile per l'i-\/esimo slot letto da file
+
+Varibile della posizione dell'i-\/esimo slot lett da file
+
+array temporanei
+
+tmp\_\-slot\_\-start\_\-line per contenere l'inizio della stringa
+
+tmp\_\-slot\_\-end\_\-line per contenere la fine della riga, ovvero uno spazio un punto e virgola ed il carattere di nuova linea
+
+Controllo che sp non sia NULL, e che il nome del file richiesto non sia vuoto o pari al solo spazio
+
+Controllo che il file richiesto esista
+
+In caso esiste viene ri-\/aperto
+
+Imposto il numero di righe caricate a 0
+
+Leggo la prima informazione del file che contiene il numero di stringhe salvate Ed imposto tale valore a number\_\-slot.
+
+Effettuo una iterazione su number\_\-slot in modo da leggere le righe e salvarle
+
+Se il puntarore all'i-\/esima itezione non è NULL continuo
+
+Se il puntatore all'i-\/esima iterazione non è parti a EOF continuo
+
+Effettuo una prima lettura della righa con fscanf prelevando posizione dello slot letto e la sua dimesione
+
+Effettuo una seconda lettura con fgets leggendo la parte restante del testo basandomi sulla dimensione appena letta
+
+Effettuo una terza lettura utile solo a far avanzare il puntatore, leggendo i 3 caratteri finali della stinga sufficenti a far trovare il puntare ad inizio riga alla prosssima iterazione
+
+Aggiungo in sp lo slot lett con tmp\_\-slot\_\-start\_\-line in posizione pos
+
+Incremento la varibile che indica il numero di righe caricate
+
+Contollo di sicurezza in caso il valore letto da pos non sia compatibile con la dimensione massima e minima contenibile in uno stringpool
+
+Chiudo il file aperto
+
+Restituisco il valore di ritorno pari al numero di righe lette 
+
+\hypertarget{spstring_8c_a8b5d366c459a30a563e83fc8804702e2}{
+\index{spstring.c@{spstring.c}!sp\_\-lower\_\-case@{sp\_\-lower\_\-case}}
+\index{sp\_\-lower\_\-case@{sp\_\-lower\_\-case}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-lower\_\-case}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-lower\_\-case (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_a8b5d366c459a30a563e83fc8804702e2}
+
+
+Restituisce una nuova stringa ottenuta ponendo in minuscolo ciascun carattere della stringa in ingresso. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em str} & puntatore a string costante \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+lower\_\-output Puntatore a string contenente caratteri in minuscolo 
+\end{DoxyReturn}
+
+
+Dichiaro variabile di output
+
+Variabile per lunghezza stringa
+
+Variabile temporanea per carattere da porre in minuscolo
+
+Variabile indice per ciclo for, per porre iterativamente tutti i caratteri in minuscolo
+
+Controllo che str sia diverso da NULL
+
+Controllo che sia diverso da NULL anche char\_\-array
+
+Calcolo la lungehzza della stringa, che potrebbe essere diversa dalla dimensione allocata per la stringa
+
+Creo una nuova stringa vuota di dimensione della stringa in ingresso
+
+Ciclo su tutta la lunghezza della stringa
+
+Passo alla funzione tolower il carattere iesimo copiandolo in tmp\_\-lower
+
+Copio quindi tmp\_\-lower nella posizione i-\/esima della string di output, passaggio inutile ma migliora la leggibilità
+
+Salvo il carattere di terminazine stringa in ultima+1 posizione
+
+Ritorno la nuova stringa ottenuta ponendo in minuscolo ogni carattere 
+
+\hypertarget{spstring_8c_aa9f031abbf235a5d16322d97f78c334d}{
+\index{spstring.c@{spstring.c}!sp\_\-new\_\-empty\_\-string@{sp\_\-new\_\-empty\_\-string}}
+\index{sp\_\-new\_\-empty\_\-string@{sp\_\-new\_\-empty\_\-string}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-new\_\-empty\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-new\_\-empty\_\-string (
+\begin{DoxyParamCaption}
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_aa9f031abbf235a5d16322d97f78c334d}
+
+
+Crea una string vuota di dimensione len. 
+
+Equivale alla stringa \char`\"{}\char`\"{} 
+\begin{DoxyParams}{Parametri}
+{\em len} & intero maggiore uguale a zero \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+new\_\-empty\_\-string puntatore a struttura di tipo stringa 
+\end{DoxyReturn}
+
+
+Variabile di output, puntatre a string, inzializzata a NULL nel caso len non è $>$= 0
+
+Verifica che len sia maggiore uguale a zero
+
+Alloca la memoria per il puntatore new\_\-empty\_\-string, di dimensione SIZE\_\-STRING\_\-STRUCT
+
+Imposta la memoria allocata al valore di len
+
+Alloca lo spazio di dimensione len caratteria al puntatore char\_\-array
+
+Inserisce il carattere di terminazione nello spazio allocato
+
+Ritorna l'indirizzo della struct string, è NULL solo se len $<$ 0 altrimenti punta ad una locazione di memoria valida
+
+\hypertarget{spstring_8c_ac14d3aa446e78a594b506cf2494b7273}{
+\index{spstring.c@{spstring.c}!sp\_\-new\_\-string@{sp\_\-new\_\-string}}
+\index{sp\_\-new\_\-string@{sp\_\-new\_\-string}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-new\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-new\_\-string (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_ac14d3aa446e78a594b506cf2494b7273}
+
+
+Crea una string con contenuto pari a quello in ingresso. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em str} & puntatore costante a caratteri \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+new\_\-string puntatore a string 
+\end{DoxyReturn}
+
+
+Calcolo e salvo la lunghezza della stringa passata, essa non contiene conto del carattere di terminazione $\backslash$0
+
+Creo ed alloco una nuova stringa vuota di lunghezza (len\_\-str+1)
+
+Copio il contenuto di str in new\_\-string-\/$>$char\_\-array
+
+Ritorno il puntatore alla struct string 
+
+\hypertarget{spstring_8c_afe063a22db56e1ed3b9de5a81820f002}{
+\index{spstring.c@{spstring.c}!sp\_\-new\_\-string\_\-as\_\-struct@{sp\_\-new\_\-string\_\-as\_\-struct}}
+\index{sp\_\-new\_\-string\_\-as\_\-struct@{sp\_\-new\_\-string\_\-as\_\-struct}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-new\_\-string\_\-as\_\-struct}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-new\_\-string\_\-as\_\-struct (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_afe063a22db56e1ed3b9de5a81820f002}
+
+
+Crea una nuova string il cui contenuto è uguale a quella in ingresso. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em str} & puntatore a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+string\_\-as\_\-struct puntatore a string 
+\end{DoxyReturn}
+
+
+inizializzo la variabile di ritorno
+
+associo alla variabile di ritorno il l'indirizzo della nuova string creata con sp\_\-new\_\-string
+
+Ritorno l'indirizzo della nuova string 
+
+\hypertarget{spstring_8c_a6fd0b8059482b70aa0bc8ee607e3fadb}{
+\index{spstring.c@{spstring.c}!sp\_\-remove\_\-string@{sp\_\-remove\_\-string}}
+\index{sp\_\-remove\_\-string@{sp\_\-remove\_\-string}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-remove\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-remove\_\-string (
+\begin{DoxyParamCaption}
+\item[{{\bf stringpool} $\ast$}]{sp, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_a6fd0b8059482b70aa0bc8ee607e3fadb}
+
+
+Rimuove e restituisce la stringa str all’interno dello stringpool in posizione pos. 
+
+Nessuna operazione è compiuta se sp è nullo, oppure se pos è fuori dall’intervallo pos, MAX\_\-DIM\_\-STRING\_\-POOL 
+\begin{DoxyParams}{Parametri}
+{\em sp} & puntatore a struttura stringpool \\
+\hline
+{\em pos} & intero che indica una posizione in stringpool \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+removed\_\-str puntatore alla stringa rimossa dallo stringpool, oppure NULL se nessuna stringa è presente in posizione pos 
+\end{DoxyReturn}
+
+
+Dichiaro la variabile di output e la inzializzo a NULL
+
+Controllo se sp è NULL o se pos sia all'interno del range di inidici di stringpool
+
+Controllo se la posizione cercata contiene una Stringa Se la condizione è soddisfatta salvo il suo indirizzo
+
+Una volta salvato l'indirizzo della string rimossa, imposto la posizione come DISPONIBILE
+
+Importo il counter degli slot utilizzati ad un valore inferiore
+
+Ritorno la variabile di ouput contenente l'indirizzo della string rimossa 
+
+\hypertarget{spstring_8c_a465c42024674ec91ddb1158ee58c3466}{
+\index{spstring.c@{spstring.c}!sp\_\-replace\_\-string@{sp\_\-replace\_\-string}}
+\index{sp\_\-replace\_\-string@{sp\_\-replace\_\-string}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-replace\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-replace\_\-string (
+\begin{DoxyParamCaption}
+\item[{{\bf stringpool} $\ast$}]{sp, }
+\item[{int}]{pos, }
+\item[{{\bf string} $\ast$}]{newstr}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_a465c42024674ec91ddb1158ee58c3466}
+
+
+Sostituisce la stringa all’interno dello stringpool in posizione pos, rimpiazzandola con str. 
+
+Nessuna operazione è compiuta se str e/o sp sono nulli, oppure se pos è fuori dall’intervallo \mbox{[}pos, MAX\_\-DIM\_\-STRING\_\-POOL\mbox{[} 
+\begin{DoxyParams}{Parametri}
+{\em sp} & puntatore a struttura stringpool \\
+\hline
+{\em newstr} & puntatore a struttura string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+is\_\-relpaced TRUE se la sostituzione è andata a buon fine, FALSE altrimenti 
+\end{DoxyReturn}
+
+
+Dichiaro la variabile di output
+
+Controllo se sp è NULL oppure se la posizione richiesta è all'interno del range di indiici di stringpool
+
+Controllo se la posizone richiesta è utilizzata e se la nuova string è diverso da NULL
+
+Rimuvo la stringa richiesta in posizione POS, verranno decrementati il contatore ed impostato a libera la posizione pos
+
+Aggiungo in posizionepos la nuova stringa, verrano reincrementati il contatore ed il valore di utilizzo dello slot
+
+Salvo com'è andata l'operazione nel valore di ritorno
+
+Ritorno la variabile di output che indica se l'operazione è andata a buon fine 
+
+\hypertarget{spstring_8c_a971049db5eca3ef305591d1fcd195a0f}{
+\index{spstring.c@{spstring.c}!sp\_\-save\_\-to\_\-file@{sp\_\-save\_\-to\_\-file}}
+\index{sp\_\-save\_\-to\_\-file@{sp\_\-save\_\-to\_\-file}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-save\_\-to\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-save\_\-to\_\-file (
+\begin{DoxyParamCaption}
+\item[{{\bf stringpool} $\ast$}]{sp, }
+\item[{const {\bf string}}]{fname}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_a971049db5eca3ef305591d1fcd195a0f}
+
+
+Salva il contenuto dello stringpool in un file di testo. 
+
+Specificando il nome nel secondo paramentro fname. Ogni elemento sarà salvato su una riga diversa.
+
+
+\begin{DoxyParams}{Parametri}
+{\em sp} & puntatore a struttura stringpool \\
+\hline
+{\em fname} & puntatore a struttura string costante \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+number\_\-writed\_\-line con il numero di elementi scritti nel file oppure -\/1 in caso di errore. 
+\end{DoxyReturn}
+
+
+Dichiaro la variabile di output e la inizializzo a -\/1 in caso sia possibile effettuare alcuna operazione
+
+Inizializzo la variabile indice per il ciclo di scruttura delle n linee
+
+Inizializzo il puntatore al file per la lettura
+
+Controllo che sp non sia null e che il nome del file su cui scrivere sia diverso da \char`\"{}\char`\"{} o \char`\"{} \char`\"{}
+
+Credo il file richiesto e se l'operazione è andata a buon fine continuo
+
+Apro il file appena creato e se l'operazione va a buon fine continuo
+
+Imposto il numero di linee scritte a 0 dato che stiamo per scrivere un numero di righe $>$= 0
+
+Itero per l'intero numero massimo di posizione dell'array stringpool
+
+controllo che lo slot i-\/esimo sia occupato da una string
+
+In caso sia passata la condizione precedente, scrivo la riga i-\/esima basandomi sul pattern di scrittura e lettura PATTERN\_\-READ\_\-WRITE\_\-LINE
+
+Incremento il contatore del numero di righe scritte
+
+In caso la riapertura del file non è andata a buon fine imposto la variabile di output a -\/1 come da specifica
+
+Chiudo il file aperto
+
+Ritorno il valore di output che sarà -\/1 se è stato incontrato qualche problema, altrimento sarò $>$= 0 ovvero il numero di linee scritte pari a sp\_\-sizeof($<$STRINPOOL$>$) 
+
+\hypertarget{spstring_8c_a96c3685a91d261df2cb06e9745bdca3f}{
+\index{spstring.c@{spstring.c}!sp\_\-sizeof@{sp\_\-sizeof}}
+\index{sp\_\-sizeof@{sp\_\-sizeof}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-sizeof}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-sizeof (
+\begin{DoxyParamCaption}
+\item[{const {\bf stringpool} $\ast$}]{sp}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_a96c3685a91d261df2cb06e9745bdca3f}
+
+
+Restituisce il numero di stringhe in sp. 
+
+Restituisce 0 se lo stringpool è vuoto; -\/1 se sp è NULL 
+\begin{DoxyParams}{Parametri}
+{\em $\backslash$return} & size\_\-of\_\-sp intero contenente il numero di elementi n$>$=0 presenti nello stringpool \\
+\hline
+\end{DoxyParams}
+
+
+Dichiaro la variabile di output
+
+Controllo che sp sia diverso da NULL
+
+In tal caso, associo alla variabile di output il numero di rigeh utilizzate che sarà sempre n$>$=0 e 0 solo se sp è vuoto
+
+Nel caso sp sia NULL, associo alla variabile di output il valore -\/1
+
+Ritorno il valore di Output 
+
+\hypertarget{spstring_8c_af0a1ed949316f182907ea08d4e8bd62b}{
+\index{spstring.c@{spstring.c}!sp\_\-strcat@{sp\_\-strcat}}
+\index{sp\_\-strcat@{sp\_\-strcat}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-strcat}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-strcat (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str1, }
+\item[{const char $\ast$}]{str2}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_af0a1ed949316f182907ea08d4e8bd62b}
+
+
+Crea una string ottenuta dalla concatenazione di due stringhe in ingresso. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em str1} & puntatore a caratteri costante \\
+\hline
+{\em str2} & puntatore a caratteri costante \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+str\_\-cat puntatore a string contenete una stringa equivalente a str1+str2 
+\end{DoxyReturn}
+
+
+Dichiarro la variabile di ritorno
+
+Dichiaro le variabili per le lunghezze rispettivamente di str2, str1 e string di output
+
+Verifico che entrambe le stringhe non siano NULL
+
+inizializzo le lunghezze di str1 e str2
+
+Dichiaro la lunghezza complessiva della string concatenata sommando le lunghezze logiche di str1 e str2
+
+Creo una nuova string vuota di lunghezza str\_\-cat\_\-len + 1 dato che sp\_\-new\_\-empty\_\-string non tiene conto del carattere di terminazione
+
+Copio in str\_\-cat a partire dalla posizione 0 il contenuto di str1
+
+Copio in str\_\-cat a partire dalla posizione str\_\-len\_\-str1 la str2
+
+Caso in cui almeno uno delle due string è NULL ma non entrambe NULL
+
+Controllo quale delle due string è NULL
+
+Nel caso fosse NULL la str1, creiamo una nuova string con il solo contenuto della str2
+
+Nel caso fosse NULL la str2, creiamo una nuova string con il solo contenuto della str1
+
+Ritorno il puntatore a string contenente le due stringhe concatenate 
+
+\hypertarget{spstring_8c_ad8c5bbe3b367845aaa230e19ac9e7919}{
+\index{spstring.c@{spstring.c}!sp\_\-strcat\_\-as\_\-struct@{sp\_\-strcat\_\-as\_\-struct}}
+\index{sp\_\-strcat\_\-as\_\-struct@{sp\_\-strcat\_\-as\_\-struct}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-strcat\_\-as\_\-struct}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-strcat\_\-as\_\-struct (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} $\ast$}]{str1, }
+\item[{const {\bf string} $\ast$}]{str2}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_ad8c5bbe3b367845aaa230e19ac9e7919}
+
+
+Crea una string ottenuta dalla conctaenazione delle due string in ingresso. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em str1} & puntatore a string costanti \\
+\hline
+{\em str2} & puntatore a string costanti \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+strcat\_\-as\_\-struct puntatore a string pari a str1+str2 
+\end{DoxyReturn}
+
+
+Dichiaro la variabile di output
+
+Verifico che entrmabe str1 e str2 non siano NULL
+
+Controllo lo spazio allocato, se $>$ 0 vuol dire che non sono vuote
+
+Concateno le due stringhe utilizzando \hyperlink{spstring_8c_af0a1ed949316f182907ea08d4e8bd62b}{sp\_\-strcat()}\{\}
+
+Caso in cui almeno una delle due ha dimensione 0 ma non entrambe di dimensione 0
+
+Controllo quale delle due string è di dimensione 0
+
+Nel caso str1 è di dimensione 0, creo una string con contenuto di str2
+
+Nel caso str2 è di dimensione 0, creo una string con contenuto di str1
+
+Caso in cui str1 o str2 è NULL ma non entrambe NULL
+
+Verifico quale delle due è NULL
+
+Nel caso fosse srt1 NULL e str2 sia di dimensione mazziore di 0, creo una stringa con il contenuto di str2
+
+Nel caso fosse srt2 NULL e str1 sia di dimensione mazziore di 0, creo una stringa con il contenuto di str1
+
+Ritorno il valore di ritorno 
+
+\hypertarget{spstring_8c_abb131e3e4d7f496a47d12c1692b75e15}{
+\index{spstring.c@{spstring.c}!sp\_\-strcmp@{sp\_\-strcmp}}
+\index{sp\_\-strcmp@{sp\_\-strcmp}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-strcmp}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-strcmp (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} $\ast$}]{str1, }
+\item[{const char $\ast$}]{str2}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_abb131e3e4d7f496a47d12c1692b75e15}
+
+
+Confronta due stringhe e restituisce il relativo valore di verità 
+
+
+\begin{DoxyParams}{Parametri}
+{\em str1} & puntatore a string costante \\
+\hline
+{\em str2} & puntatore a carattere costante \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+ifequal che sarà TRUE se str1 == str2; FALSE altrimenti 
+\end{DoxyReturn}
+
+
+Dichiaro ed inizializzo variabile di output Booleana a FALSE
+
+Dichiaro le variabili per la lunghezza delle due stringhe
+
+Controllo che str1 e str-\/$>$char array non siano NULL, str2 sarà al massimo vuoto
+
+inizializzo la lunghezza delle due stringhe
+
+Verifico se hanno la stessa lunghezza, se sono lunghe uguali potrebbero anche essere identiche, altrimenti sono sicuramente diverse. Evito quindi di richiamere strcmp
+
+Se sono lunghe uguali, verifico anche se sono identiche
+
+Se sono anche identiche imposto ifequal a TRUE
+
+Se non sono identiche imposto ifequal a FALSE
+
+Se non sono lunghe uguali sono anche diverse, non faccio niente altro avendo ifequal inizializzato a FALSE
+
+Ritorno il risultato che sarà TRUE solo nel caso siano identiche str1 e str2 altrimenti restuirà FALSE 
+
+\hypertarget{spstring_8c_ad258858c5d6a2aa9b4b9ed5776155afc}{
+\index{spstring.c@{spstring.c}!sp\_\-strcpy@{sp\_\-strcpy}}
+\index{sp\_\-strcpy@{sp\_\-strcpy}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-strcpy}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-strcpy (
+\begin{DoxyParamCaption}
+\item[{{\bf string} $\ast$}]{copy, }
+\item[{const char $\ast$}]{original, }
+\item[{int}]{offset}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_ad258858c5d6a2aa9b4b9ed5776155afc}
+
+
+Copia il contenuto della string original in copy. 
+
+Copia la string partire dal carattere in posizione offset di copy. Se offset è 0, allora la copia avviene dall’inizio della stringa copy. La dimensione di copy deve essere pari o maggiore di quella di original. 
+\begin{DoxyParams}{Parametri}
+{\em copy} & \\
+\hline
+{\em original} & \\
+\hline
+{\em offset} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+copy puntatore a string che punga ad una copia della string original, assumendo che N $>$= M, a partire dalla posizione offset 
+\end{DoxyReturn}
+
+
+Dichiaro la variabile per la lunghezza della stringa original
+
+Verifico che copy non sia NULL
+
+controllo che offset sia minore della grandezza di copy e che original sia diverso da NULL
+
+Ottengo la dimensione di original
+
+Controllo che copy sia maggiore o uguale alla dimensione di original
+
+Copio il contenuto di original in copy dalla posizione offset in poi
+
+Ritorno l'indirizzo di string copy 
+
+\hypertarget{spstring_8c_ac994017d490a951c8f48c37bcbdf0c1b}{
+\index{spstring.c@{spstring.c}!sp\_\-strlen@{sp\_\-strlen}}
+\index{sp\_\-strlen@{sp\_\-strlen}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-strlen}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-strlen (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_ac994017d490a951c8f48c37bcbdf0c1b}
+
+
+Calcola e restituisce la lunghezza logica di una string. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em str} & puntatore a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+strlen\_\-current\_\-str Intero n rappresentante la lunghezza con n$>$= 0; se str = NULL, allora n = 0 
+\end{DoxyReturn}
+
+
+Dichiaro ed inizializzo la variabile di output a 0
+
+Verifico che str e str-\/$>$char\_\-array non siano NULL e che la dimensione allocata non sia 0
+
+Calcolo la lunghezza della stringa contenuta in str-\/$>$char\_\-array
+
+Ritorna la linghezza della stringa, sarà 0 str o str-\/$>$char\_\-arrat sono NULL 
+
+\hypertarget{spstring_8c_a70dbcd0b1199382b8a171ec68067370c}{
+\index{spstring.c@{spstring.c}!sp\_\-upper\_\-case@{sp\_\-upper\_\-case}}
+\index{sp\_\-upper\_\-case@{sp\_\-upper\_\-case}!spstring.c@{spstring.c}}
+\subsubsection[{sp\_\-upper\_\-case}]{\setlength{\rightskip}{0pt plus 5cm}sp\_\-upper\_\-case (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}
+\label{spstring_8c_a70dbcd0b1199382b8a171ec68067370c}
+
+
+Restituisce una nuova stringa ottenuta ponendo in maiuscolo ciascun carattere della stringa in ingresso. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em str} & puntatore a string costante \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+upper\_\-output Puntatore a string contenente caratteri in maiuscolo 
+\end{DoxyReturn}
+
+
+Dichiaro la variabile di output
+
+Variabile per lunghezza string di output
+
+Variabile temporanea per carattere da porre in maiuscolo
+
+Variabile indice per ciclo for, per trasformare in maiuscolo tutti i caratteri
+
+Controllo che str nons ia NULL
+
+Controllo che char\_\-array non sia NULL
+
+Ottengo la lunghezza di str e creo una nuova stringa vuota di lungehzza uguale a str
+
+Ciclo su tutta la lungehzza si str
+
+Ottengo i-\/esimo carattere di str e lo trasformo in maiuscolo
+
+Salvo l'iesimo carattere maiuscolo nella string di output
+
+Salvo il carattere di terminazine stringa in ultima+1 posizione
+
+Ritorno la string di output con tutti i caratteri di str in maiuscolo 
+

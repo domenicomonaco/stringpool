@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Stringpool:  File sorgente Library/stringpool.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generato da Doxygen 1.7.4 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+--></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Stringpool&#160;<span id="projectnumber">1.0</span></div>
+   <div id="projectbrief">Libreria Stringpool - Domenico Monaco - 2011</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Pagina&#160;Principale</span></a></li>
+      <li><a href="annotated.html"><span>Classi</span></a></li>
+      <li class="current"><a href="files.html"><span>File</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Elenco&#160;dei&#160;file</span></a></li>
+      <li><a href="globals.html"><span>Elementi&#160;dei&#160;file</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Library/stringpool.h</div>  </div>
+</div>
+<div class="contents">
+<a href="stringpool_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00013"></a>00013 <span class="preprocessor">#ifndef STRINGPOOL_H_</span>
+<a name="l00014"></a><a class="code" href="stringpool_8h.html#a95a9e5b28e59f711a67f326b868a36f9">00014</a> <span class="preprocessor"></span><span class="preprocessor">#define STRINGPOOL_H_</span>
+<a name="l00020"></a><a class="code" href="stringpool_8h.html#a20af6dd1f5a589e2a11eb37c1ea3ee96">00020</a> <span class="preprocessor">#define UNUSED_SLOT 0</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span>
+<a name="l00026"></a><a class="code" href="stringpool_8h.html#a80b8e6b0b534147058fcfc1187079064">00026</a> <span class="preprocessor">#define USED_SLOT 1</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00032"></a><a class="code" href="stringpool_8h.html#aae221160aeb62c7ea119f68a5a79062e">00032</a> <span class="preprocessor">#define EMPTY_STRING_POOL 0</span>
+<a name="l00033"></a>00033 <span class="preprocessor"></span>
+<a name="l00038"></a><a class="code" href="stringpool_8h.html#af4c76709286f016c09a7f99a070e6a5e">00038</a> <span class="preprocessor">#define MAX_DIM_STRING_POOL 10</span>
+<a name="l00039"></a>00039 <span class="preprocessor"></span>
+<a name="l00043"></a><a class="code" href="stringpool_8h.html#a402d2a2201ce976dc56cc87fe4e657da">00043</a> <span class="preprocessor">#define SIZE_STRING_STRUCT 1</span>
+<a name="l00044"></a>00044 <span class="preprocessor"></span>
+<a name="l00048"></a><a class="code" href="stringpool_8h.html#a5b593cfbd4a9d757bacf4df235240ce1">00048</a> <span class="preprocessor">#define MAX_CHAR_STRING_LOAD_FROM_FILE 255</span>
+<a name="l00049"></a>00049 <span class="preprocessor"></span>
+<a name="l00053"></a><a class="code" href="stringpool_8h.html#a0eb0be35c4612957306af850919f865d">00053</a> <span class="preprocessor">#define PATTERN_READ_WRITE_LINE &quot;%d , %d , %s ;\n&quot;</span>
+<a name="l00054"></a>00054 <span class="preprocessor"></span>
+<a name="l00058"></a><a class="code" href="stringpool_8h.html#a8faae73aa34bbae0ef857459f165cc44">00058</a> <span class="preprocessor">#define PATTERN_READ_WRITE_START_LINE_SHORT &quot;%d , %d ,&quot;</span>
+<a name="l00059"></a>00059 <span class="preprocessor"></span>
+<a name="l00063"></a><a class="code" href="stringpool_8h.html#ac01ee82d919f7fa4aa02d04bf97a9bbd">00063</a> <span class="preprocessor">#define PATTERN_READ_WRITE_END_LINE_SHORT &quot; ;\n&quot;</span>
+<a name="l00064"></a>00064 <span class="preprocessor"></span>
+<a name="l00068"></a><a class="code" href="stringpool_8h.html#a4be697a4e0e76af4dc284f700e920678">00068</a> <span class="preprocessor">#define PATTERN_READ_WRITE_INIT &quot;%d ;\n&quot;</span>
+<a name="l00069"></a>00069 <span class="preprocessor"></span>
+<a name="l00074"></a><a class="code" href="structstring.html">00074</a> <span class="keyword">typedef</span> <span class="keyword">struct </span>{
+<a name="l00075"></a><a class="code" href="structstring.html#acd450648098ba3eaf4db79064af67051">00075</a>  <span class="keywordtype">char</span>* <a class="code" href="structstring.html#acd450648098ba3eaf4db79064af67051">char_array</a>; 
+<a name="l00076"></a><a class="code" href="structstring.html#ac06bb82958ec7c45e2838ae575b124ec">00076</a>  <span class="keywordtype">int</span> <a class="code" href="structstring.html#ac06bb82958ec7c45e2838ae575b124ec">allocated_size</a>; 
+<a name="l00077"></a>00077 } <a class="code" href="structstring.html">string</a>;
+<a name="l00078"></a>00078 
+<a name="l00084"></a><a class="code" href="structstringpool.html">00084</a> <span class="keyword">typedef</span> <span class="keyword">struct </span>{
+<a name="l00085"></a><a class="code" href="structstringpool.html#af28549aacb7ae1827e1000400381bdbb">00085</a>  <span class="keywordtype">string</span>* strings[<a class="code" href="stringpool_8h.html#af4c76709286f016c09a7f99a070e6a5e">MAX_DIM_STRING_POOL</a>]; 
+<a name="l00086"></a><a class="code" href="structstringpool.html#ae8c4c199ad0a8d10621110791d6d653e">00086</a>  <span class="keywordtype">int</span> <a class="code" href="structstringpool.html#ae8c4c199ad0a8d10621110791d6d653e">used_counter</a>; 
+<a name="l00087"></a><a class="code" href="structstringpool.html#ab0cc50c97d44081fab72467d607a9325">00087</a>  <span class="keywordtype">int</span> positions[<a class="code" href="stringpool_8h.html#af4c76709286f016c09a7f99a070e6a5e">MAX_DIM_STRING_POOL</a>]; 
+<a name="l00088"></a>00088 } <a class="code" href="structstringpool.html">stringpool</a>;
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090 <span class="preprocessor">#endif </span><span class="comment">/* END STRINGPOOL_H_ */</span>
+</pre></div></div>
+</div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Definizioni</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generato Lun 30 Mag 2011 10:09:24 per Stringpool da&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
+</body>
+</html>
